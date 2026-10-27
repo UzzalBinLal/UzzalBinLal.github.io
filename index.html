@@ -20,7 +20,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -134,30 +133,9 @@
       position: relative;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 15px;
-      border-radius: 30px;
-      color: var(--gold);
-      background: rgba(244,200,121,.075);
-      border: 1px solid rgba(244,200,121,.24);
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    .eyebrow span {
-      width: 7px;
-      height: 7px;
-      background: #71dfab;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #71dfab;
-    }
-
     .hero h2 {
       max-width: 820px;
-      margin: 25px auto 15px;
+      margin: 0 auto 15px;
       font-size: clamp(31px, 5.5vw, 57px);
       line-height: 1.35;
       letter-spacing: -.8px;
@@ -380,12 +358,10 @@
 
   <main>
     <section class="hero">
-      <div class="eyebrow">
-        <span></span>
-        <span data-bn="ডিজিটাল সেবার নতুন ঠিকানা" data-en="YOUR DIGITAL DESTINATION">ডিজিটাল সেবার নতুন ঠিকানা</span>
-      </div>
-
-      <h2 data-bn="লাল ডিজিটাল সেবায় স্বাগতম" data-en="Welcome to Lal Digital Services">লাল ডিজিটাল সেবায় স্বাগতম</h2>
+      <h2 data-bn="লাল ডিজিটাল সেবায় স্বাগতম"
+          data-en="Welcome to Lal Digital Services">
+        লাল ডিজিটাল সেবায় স্বাগতম
+      </h2>
 
       <p data-bn="আপনার প্রয়োজনীয় ডিজিটাল টুলস ও ব্যবসা পরিচালনার অ্যাপ—একটি সহজ ও সুন্দর প্ল্যাটফর্মে।"
          data-en="Your essential digital tools and business management applications, together in one simple platform.">
@@ -398,7 +374,8 @@
     <section>
       <div class="section-heading">
         <h2 data-bn="আমাদের অ্যাপসমূহ" data-en="Our Applications">আমাদের অ্যাপসমূহ</h2>
-        <span data-bn="ডিজিটাল • সহজ • কার্যকর" data-en="DIGITAL • SIMPLE • USEFUL">ডিজিটাল • সহজ • কার্যকর</span>
+        <span data-bn="ডিজিটাল • সহজ • কার্যকর"
+              data-en="DIGITAL • SIMPLE • USEFUL">ডিজিটাল • সহজ • কার্যকর</span>
       </div>
 
       <div class="apps">
@@ -410,7 +387,8 @@
             ভয়েসওভার, অডিও এবং ভিডিও তৈরির সুবিধা পেতে আমাদের ভয়েস অ্যাপ ব্যবহার করুন।
           </p>
           <a class="action" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer">
-            <span data-bn="অ্যাপ খুলুন" data-en="Open App">অ্যাপ খুলুন</span> <span aria-hidden="true">↗</span>
+            <span data-bn="অ্যাপ খুলুন" data-en="Open App">অ্যাপ খুলুন</span>
+            <span aria-hidden="true">↗</span>
           </a>
         </article>
 
@@ -422,7 +400,9 @@
             বিক্রয়, পণ্য, স্টক, ক্রয়, বাকি এবং ব্যবসার হিসাব ব্যবস্থাপনার জন্য।
           </p>
           <span class="action secondary" data-bn="লিংক শীঘ্রই আসছে" data-en="Link Coming Soon">লিংক শীঘ্রই আসছে</span>
-          <div class="status" data-bn="প্রস্তুত হলে এখানে যুক্ত হবে" data-en="Link will be added when ready">প্রস্তুত হলে এখানে যুক্ত হবে</div>
+          <div class="status" data-bn="প্রস্তুত হলে এখানে যুক্ত হবে" data-en="Link will be added when ready">
+            প্রস্তুত হলে এখানে যুক্ত হবে
+          </div>
         </article>
 
         <article class="card">
@@ -438,7 +418,8 @@
     </section>
 
     <section class="bottom-note">
-      <strong data-bn="একটি প্ল্যাটফর্ম, আরও সম্ভাবনা" data-en="One Platform, More Possibilities">একটি প্ল্যাটফর্ম, আরও সম্ভাবনা</strong>
+      <strong data-bn="একটি প্ল্যাটফর্ম, আরও সম্ভাবনা"
+              data-en="One Platform, More Possibilities">একটি প্ল্যাটফর্ম, আরও সম্ভাবনা</strong>
       <div data-bn="আপনার ডিজিটাল কাজকে সহজ করতে LAL Digital Services-এর সঙ্গে থাকুন।"
            data-en="Stay with LAL Digital Services to make your digital work easier.">
         আপনার ডিজিটাল কাজকে সহজ করতে LAL Digital Services-এর সঙ্গে থাকুন।
@@ -486,6 +467,7 @@
     } catch (error) {
       savedLanguage = "bn";
     }
+
     setLanguage(savedLanguage);
   </script>
 </body>
