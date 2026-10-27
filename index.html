@@ -1,13 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#701c2c"><link rel="icon" href="Logo.ico">
+  <meta name="theme-color" content="#701c2c">
+
+  <link rel="icon" href="Logo.ico" type="image/x-icon">
+
   <title>Uzzal Bin Lal | Lal Digital Services</title>
   <meta name="description" content="Lal Digital Services — AI voice, video tools and business management applications.">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, "Noto Sans Bengali", sans-serif;
@@ -15,50 +23,115 @@
       background: linear-gradient(145deg, #171a2b, #401725, #101827);
       min-height: 100vh;
     }
+
+    /* উপরের হেডার */
     header {
-      padding: 18px 6%;
+      width: 100%;
+      padding: 16px 5%;
       display: flex;
       align-items: center;
-      gap: 14px;
+      justify-content: flex-start;
+      gap: 16px;
       border-bottom: 1px solid #ffffff22;
       background: #10121dcc;
     }
+
+    /* আসল LAL লোগো */
     .logo {
-      width: 54px;
-      height: 54px;
+      width: 68px;
+      height: 68px;
+      flex: 0 0 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       border-radius: 12px;
+      background: #ffffff;
       border: 1px solid #ffffff55;
-      display: grid;
-      place-items: center;
-      font-size: 23px;
-      font-weight: bold;
-      color: #ffd48a;
-      background: #702536;
     }
-    header h1 { font-size: 21px; margin: 0; }
-    header p { font-size: 12px; color: #d9c8ce; margin: 5px 0 0; }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .brand {
+      min-width: 0;
+    }
+
+    header h1 {
+      font-size: clamp(19px, 3vw, 26px);
+      margin: 0;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    header p {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #d9c8ce;
+      margin: 5px 0 0;
+    }
+
+    /* মূল অংশ */
     main {
       width: min(1000px, 92%);
-      margin: 55px auto;
+      margin: 48px auto;
     }
-    .welcome { text-align: center; margin-bottom: 36px; }
-    .welcome h2 { font-size: clamp(27px, 5vw, 43px); margin: 0 0 14px; }
-    .welcome p { color: #e0d5dc; line-height: 1.8; }
+
+    .welcome {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .welcome h2 {
+      font-size: clamp(27px, 5vw, 43px);
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+
+    .welcome p {
+      color: #e0d5dc;
+      line-height: 1.9;
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
+    /* অ্যাপ কার্ড */
     .apps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
       gap: 20px;
     }
+
     .card {
       padding: 25px;
       background: #ffffff0d;
       border: 1px solid #ffffff25;
       border-radius: 18px;
       box-shadow: 0 12px 30px #00000020;
+      overflow-wrap: anywhere;
     }
-    .symbol { font-size: 36px; }
-    .card h3 { margin: 12px 0; font-size: 21px; }
-    .card p { color: #d7ccd2; line-height: 1.7; min-height: 52px; }
+
+    .symbol {
+      font-size: 36px;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .card p {
+      color: #d7ccd2;
+      line-height: 1.8;
+      min-height: 52px;
+    }
+
     .btn {
       display: inline-block;
       padding: 12px 18px;
@@ -68,30 +141,67 @@
       text-decoration: none;
       font-weight: bold;
       margin-top: 10px;
+      transition: background 0.2s ease;
     }
-    .btn:hover { background: #c33a58; }
-    .soon { color: #ffd48a; font-weight: bold; }
+
+    .btn:hover {
+      background: #c33a58;
+    }
+
+    .soon {
+      display: inline-block;
+      color: #ffd48a;
+      font-weight: bold;
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+
+    /* নিচের অংশ */
     footer {
       text-align: center;
       padding: 25px 12px;
       color: #cbbec5;
       border-top: 1px solid #ffffff20;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 1.9;
+    }
+
+    /* মোবাইলের জন্য */
+    @media (max-width: 480px) {
+      header {
+        padding: 13px 4%;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+      }
+
+      header p {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      main {
+        margin: 32px auto;
+      }
+
+      .card {
+        padding: 21px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
-  <img src="Logo.jpg" alt="LAL Logo">.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-}
-</div>
-    <div>
+      <img src="Logo.jpg" alt="LAL Enterprise Logo">
+    </div>
+
+    <div class="brand">
       <h1>Uzzal Bin Lal</h1>
       <p>LAL DIGITAL SERVICES</p>
     </div>
@@ -100,7 +210,10 @@
   <main>
     <section class="welcome">
       <h2>লাল ডিজিটাল সেবায় স্বাগতম</h2>
-      <p>আপনার প্রয়োজনীয় AI টুলস ও ব্যবসা পরিচালনার অ্যাপ—এক জায়গায়।</p>
+      <p>
+        আপনার প্রয়োজনীয় AI টুলস ও ব্যবসা পরিচালনার অ্যাপ—
+        এক জায়গায়।
+      </p>
     </section>
 
     <section class="apps">
@@ -108,7 +221,12 @@
         <div class="symbol">🎙️</div>
         <h3>Lal Voice Assistance</h3>
         <p>ভয়েস, অডিও ও ভিডিও তৈরির টুল ব্যবহার করুন।</p>
-        <a class="btn" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer">অ্যাপ খুলুন</a>
+        <a
+          class="btn"
+          href="https://lal-bangla-ai-studio.onrender.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >অ্যাপ খুলুন</a>
       </article>
 
       <article class="card">
@@ -133,4 +251,3 @@
   </footer>
 </body>
 </html>
-
