@@ -9,74 +9,48 @@
 <meta name="description" content="LAL Digital Services — AI tools and business applications.">
 <style>
 :root{--bg:#11111d;--border:rgba(255,255,255,.12);--text:#fff8f5;--muted:#c8c1d0;--gold:#f4c879;--red:#b52d50}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;min-height:100vh;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--text);background:radial-gradient(ellipse at 10% 0%,rgba(142,38,77,.30),transparent 38%),radial-gradient(ellipse at 95% 30%,rgba(68,66,135,.22),transparent 36%),linear-gradient(145deg,#11111d,#201323 48%,#111927)}
-a{color:inherit}
-.top-glow{height:4px;background:linear-gradient(90deg,#8f2348,#f4c879,#6659b6,#8f2348)}
+a{color:inherit}.top-glow{height:4px;background:linear-gradient(90deg,#8f2348,#f4c879,#6659b6,#8f2348)}
 header{width:100%;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--border);background:rgba(13,13,24,.78);backdrop-filter:blur(14px);position:relative;z-index:2}
-.brand{display:flex;align-items:center;gap:14px;min-width:0}
-.logo{width:65px;height:65px;flex:0 0 65px;border-radius:15px;padding:4px;background:#fff;box-shadow:0 0 25px rgba(244,200,121,.13);overflow:hidden}
-.logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-.brand h1{margin:0;font-size:clamp(18px,2.5vw,25px);line-height:1.35;overflow-wrap:anywhere}
-.brand p{margin:5px 0 0;color:var(--gold);font-size:11px;letter-spacing:2px}
-.language{display:flex;align-items:center;gap:4px;padding:5px;flex-shrink:0;border:1px solid var(--border);background:rgba(255,255,255,.05);border-radius:30px}
-.language button{border:0;cursor:pointer;border-radius:22px;padding:10px 13px;color:#ddd6e5;background:transparent;font-weight:bold;font-size:13px}
-.language button.active{color:#211321;background:var(--gold);box-shadow:0 3px 12px #0003}
-main{width:min(1080px,90%);margin:0 auto}
-.hero{text-align:center;padding:76px 0 50px;position:relative}
-.hero h2{max-width:820px;margin:0 auto 15px;font-size:clamp(31px,5.5vw,57px);line-height:1.35;letter-spacing:-.8px;background:linear-gradient(100deg,#fff8f5 15%,#f4c879 52%,#f5a5bd 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero>p{max-width:650px;margin:0 auto;color:var(--muted);font-size:clamp(14px,2vw,17px);line-height:1.95}
-.hero-line{width:85px;height:3px;margin:27px auto 0;border-radius:10px;background:linear-gradient(90deg,var(--red),var(--gold))}
-.section-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:0 0 20px}
-.section-heading h2{font-size:clamp(21px,3vw,27px);margin:0}
-.section-heading span{color:var(--gold);font-size:12px}
-.apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;padding-bottom:65px}
-.card{min-width:0;position:relative;overflow:hidden;padding:25px 23px 24px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));box-shadow:0 18px 45px rgba(0,0,0,.13);transition:transform .25s ease,border-color .25s ease,background .25s ease}
-.card:before{content:"";position:absolute;top:0;left:20px;right:20px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75}
-.card:hover{transform:translateY(-5px);border-color:rgba(244,200,121,.42);background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035))}
-.app-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:17px;font-size:29px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(145deg,rgba(181,45,80,.32),rgba(111,79,154,.22))}
-.card h3{margin:19px 0 10px;font-size:20px;line-height:1.5;overflow-wrap:anywhere}
-.card p{color:var(--muted);font-size:14px;line-height:1.9;min-height:78px;margin:0 0 16px}
-.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:14px;background:linear-gradient(110deg,#a92249,#c43d58);border:1px solid rgba(255,255,255,.12);color:white;transition:filter .2s ease,transform .2s ease}
-.action:hover{filter:brightness(1.16);transform:translateY(-1px)}
-.action.secondary{color:var(--gold);background:rgba(244,200,121,.07);border-color:rgba(244,200,121,.25);cursor:default}
-.status{display:inline-block;color:var(--gold);font-size:12px;margin-top:10px}
-.contact-strip{display:grid;grid-template-columns:1.05fr 1fr;gap:22px;align-items:stretch;margin:0 0 55px}
-.bottom-note{margin:0;padding:23px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.035);text-align:center;color:var(--muted);line-height:1.9;display:flex;flex-direction:column;justify-content:center}
-.bottom-note strong{color:var(--gold)}
-
-/* পরিচয় বক্স: ছবি উপরে, নাম ও তথ্য ছবির নিচে */
-.owner-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:10px;padding:20px;min-width:0;text-align:center;border:1px solid rgba(244,200,121,.32);border-radius:16px;background:rgba(255,255,255,.045);box-shadow:0 12px 35px rgba(0,0,0,.12)}
-.owner-photo{display:block;width:120px;height:140px;max-width:100%;flex:0 0 auto;object-fit:contain;object-position:center;border-radius:12px;border:2px solid var(--gold);background:rgba(255,255,255,.05)}
-.owner-details{min-width:0;width:100%;max-width:100%;overflow-wrap:anywhere;line-height:1.9;font-size:13px;color:var(--muted)}
-.owner-details h3{color:var(--gold);font-size:16px;line-height:1.7;margin:0 0 8px}
-.owner-details a{color:var(--text);text-decoration:none}
-.owner-details a:hover{color:var(--gold);text-decoration:underline}
-footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-top:1px solid var(--border);color:#aaa3b4;font-size:12px;line-height:2}
-footer .footer-brand{color:var(--gold);font-weight:bold;letter-spacing:1px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}.logo{width:65px;height:65px;flex:0 0 65px;border-radius:15px;padding:4px;background:#fff;box-shadow:0 0 25px rgba(244,200,121,.13);overflow:hidden}.logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.brand h1{margin:0;font-size:clamp(18px,2.5vw,25px);line-height:1.35;overflow-wrap:anywhere}.brand p{margin:5px 0 0;color:var(--gold);font-size:11px;letter-spacing:2px}
+.language{display:flex;align-items:center;gap:4px;padding:5px;flex-shrink:0;border:1px solid var(--border);background:rgba(255,255,255,.05);border-radius:30px}.language button{border:0;cursor:pointer;border-radius:22px;padding:10px 13px;color:#ddd6e5;background:transparent;font-weight:bold;font-size:13px}.language button.active{color:#211321;background:var(--gold);box-shadow:0 3px 12px #0003}
+main{width:min(1080px,90%);margin:0 auto}.hero{text-align:center;padding:76px 0 50px;position:relative}.hero h2{max-width:820px;margin:0 auto 15px;font-size:clamp(31px,5.5vw,57px);line-height:1.35;letter-spacing:-.8px;background:linear-gradient(100deg,#fff8f5 15%,#f4c879 52%,#f5a5bd 85%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero>p{max-width:650px;margin:0 auto;color:var(--muted);font-size:clamp(14px,2vw,17px);line-height:1.95}.hero-line{width:85px;height:3px;margin:27px auto 0;border-radius:10px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:0 0 20px}.section-heading h2{font-size:clamp(21px,3vw,27px);margin:0}.section-heading span{color:var(--gold);font-size:12px}
+.apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;padding-bottom:65px}.card{min-width:0;position:relative;overflow:hidden;padding:25px 23px 24px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));box-shadow:0 18px 45px rgba(0,0,0,.13);transition:transform .25s ease,border-color .25s ease,background .25s ease}.card:before{content:"";position:absolute;top:0;left:20px;right:20px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75}.card:hover{transform:translateY(-5px);border-color:rgba(244,200,121,.42);background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035))}
+.app-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:17px;font-size:29px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(145deg,rgba(181,45,80,.32),rgba(111,79,154,.22))}.card h3{margin:19px 0 10px;font-size:20px;line-height:1.5;overflow-wrap:anywhere}.card p{color:var(--muted);font-size:14px;line-height:1.9;min-height:78px;margin:0 0 16px}
+.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:14px;background:linear-gradient(110deg,#a92249,#c43d58);border:1px solid rgba(255,255,255,.12);color:white;transition:filter .2s ease,transform .2s ease}.action:hover{filter:brightness(1.16);transform:translateY(-1px)}.action.secondary{color:var(--gold);background:rgba(244,200,121,.07);border-color:rgba(244,200,121,.25);cursor:default}.status{display:inline-block;color:var(--gold);font-size:12px;margin-top:10px}
+.contact-strip{display:grid;grid-template-columns:1.05fr 1fr;gap:22px;align-items:stretch;margin:0 0 55px}.bottom-note{margin:0;padding:23px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.035);text-align:center;color:var(--muted);line-height:1.9;display:flex;flex-direction:column;justify-content:center}.bottom-note strong{color:var(--gold)}
+.owner-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px;min-width:0;text-align:center;border:1px solid rgba(244,200,121,.32);border-radius:16px;background:rgba(255,255,255,.045);box-shadow:0 12px 35px rgba(0,0,0,.12)}.owner-photo{display:block;width:120px;height:140px;flex:0 0 auto;object-fit:contain;object-position:center;border-radius:12px;border:2px solid var(--gold);background:rgba(255,255,255,.05)}.owner-details{min-width:0;max-width:100%;overflow-wrap:anywhere;line-height:1.9;font-size:13px;color:var(--muted)}.owner-details h3{color:var(--gold);font-size:16px;line-height:1.7;margin:0 0 8px}.owner-details a{color:var(--text);text-decoration:none}.owner-details a:hover{color:var(--gold);text-decoration:underline}
+footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-top:1px solid var(--border);color:#aaa3b4;font-size:12px;line-height:2}footer .footer-brand{color:var(--gold);font-weight:bold;letter-spacing:1px}
 @media(max-width:850px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:58px}}
-@media(max-width:700px){.contact-strip{grid-template-columns:1fr;gap:15px}.owner-card{padding:16px}.owner-photo{width:120px;height:140px}}
-@media(max-width:560px){
-header{padding:13px 4%;gap:8px}
-.brand{gap:10px}
-.logo{width:49px;height:49px;flex-basis:49px;border-radius:11px}
-.brand h1{font-size:16px}
-.brand p{font-size:9px;letter-spacing:1px}
-.language{padding:3px}
-.language button{padding:9px 8px;font-size:11px}
-main{width:91%}
-.hero{padding:48px 0 37px}
-.hero h2{font-size:clamp(29px,8vw,39px)}
-.apps{grid-template-columns:1fr;gap:15px;padding-bottom:40px}
-.card{padding:23px}
-.card p{min-height:0}
-.bottom-note{padding:18px}
-.contact-strip{margin-bottom:38px}
-.owner-card{gap:10px}
-.owner-details h3{font-size:14px}
-}
+@media(max-width:700px){.contact-strip{grid-template-columns:1fr;gap:15px}.owner-card{padding:16px}.owner-photo{width:120px;height:140px;flex-basis:auto}}
+@media(max-width:560px){header{padding:13px 4%;gap:8px}.brand{gap:10px}.logo{width:49px;height:49px;flex-basis:49px;border-radius:11px}.brand h1{font-size:16px}.brand p{font-size:9px;letter-spacing:1px}.language{padding:3px}.language button{padding:9px 8px;font-size:11px}main{width:91%}.hero{padding:48px 0 37px}.hero h2{font-size:clamp(29px,8vw,39px)}.apps{grid-template-columns:1fr;gap:15px;padding-bottom:40px}.card{padding:23px}.card p{min-height:0}.bottom-note{padding:18px}.contact-strip{margin-bottom:38px}.owner-card{gap:10px}.owner-details h3{font-size:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+.lifetime-banner{position:relative;overflow:hidden;margin:0 0 38px;padding:clamp(22px,4vw,38px);border:1px solid rgba(244,200,121,.35);border-radius:22px;text-align:center;background:radial-gradient(circle at 10% 20%,rgba(181,45,80,.45),transparent 35%),radial-gradient(circle at 90% 80%,rgba(98,67,190,.4),transparent 35%),linear-gradient(120deg,#140d25,#21112d 55%,#10182c);box-shadow:0 20px 45px rgba(0,0,0,.2)}
+.lifetime-banner .eyebrow{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:2px;margin-bottom:9px}
+.lifetime-banner h2{font-size:clamp(25px,4.5vw,43px);line-height:1.25;margin:0 0 10px;background:linear-gradient(90deg,#ffe9a9,#ff8eae,#a7a5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lifetime-banner p{max-width:760px;margin:0 auto 17px;color:#eee5f5;line-height:1.8;font-size:14px}
+.module-card{display:flex;flex-direction:column;min-height:100%;padding:22px 20px 20px}
+.module-card .module-top{display:flex;align-items:center;gap:13px}
+.module-card .app-icon{flex:0 0 54px;width:54px;height:54px}
+.module-card h3{margin:0;font-size:17px}
+.module-card .module-subtitle{color:var(--gold);font-size:11px;line-height:1.6;margin:10px 0 8px;font-weight:bold}
+.module-card .module-short{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 13px;min-height:0}
+.module-card details{margin-top:auto;border-top:1px solid var(--border);padding-top:12px}
+.module-card summary{cursor:pointer;color:#f4c879;font-size:13px;font-weight:bold;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.module-card summary::-webkit-details-marker{display:none}
+.module-card summary:after{content:"＋";font-size:17px}
+.module-card details[open] summary:after{content:"−"}
+.module-card .module-quote{margin:12px 0 0;padding:12px;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;background:rgba(255,255,255,.045);font-size:13px;line-height:1.9;color:#f2eaf5}
+.module-card .module-actions{margin-top:14px}
+.module-card .module-actions .action{font-size:12px;padding:10px 12px}
+.module-card .status{display:block;line-height:1.6}
+@media(max-width:850px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.apps{grid-template-columns:1fr}.module-card{padding:20px}.module-card .module-short{font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -94,33 +68,77 @@ main{width:91%}
 <main>
   <section class="hero">
     <h2 data-bn="লাল ডিজিটাল সেবায় স্বাগতম" data-en="Welcome to Lal Digital Services">লাল ডিজিটাল সেবায় স্বাগতম</h2>
-    <p data-bn="আপনার প্রয়োজনীয় ডিজিটাল টুলস ও ব্যবসা পরিচালনার অ্যাপ—একটি সহজ ও সুন্দর প্ল্যাটফর্মে।" data-en="Your essential digital tools and business management applications, together in one simple platform.">আপনার প্রয়োজনীয় ডিজিটাল টুলস ও ব্যবসা পরিচালনার অ্যাপ—একটি সহজ ও সুন্দর প্ল্যাটফর্মে।</p>
+    <p data-bn="AI সেবা ও ব্যবসা পরিচালনার ৭টি কোর মডিউল—পরিকল্পনা, হিসাব ও দৈনন্দিন কাজের জন্য একটি সহজ প্ল্যাটফর্ম।" data-en="Seven core modules for AI services and business management, brought together in one simple platform.">AI সেবা ও ব্যবসা পরিচালনার ৭টি কোর মডিউল—পরিকল্পনা, হিসাব ও দৈনন্দিন কাজের জন্য একটি সহজ প্ল্যাটফর্ম।</p>
     <div class="hero-line"></div>
   </section>
+
+  <section class="lifetime-banner" aria-labelledby="lifetime-heading">
+    <div class="eyebrow" data-bn="এককালীন পেমেন্টের পরিকল্পনা" data-en="ONE-TIME PAYMENT PLAN">এককালীন পেমেন্টের পরিকল্পনা</div>
+    <h2 id="lifetime-heading" data-bn="LIFETIME ACCESS" data-en="LIFETIME ACCESS">LIFETIME ACCESS</h2>
+    <p data-bn="একবার পেমেন্ট করে দীর্ঘমেয়াদে ব্যবহারের লক্ষ্য—মাসিক ভাড়ার বদলে নিজের ব্যবসার ব্যবস্থাপনা নিজের নিয়ন্ত্রণে। কোন মডিউল, মূল্য ও শর্ত প্রযোজ্য তা নিশ্চিত করে নিন।" data-en="Designed for long-term access after a one-time payment, instead of recurring monthly rent. Please confirm the included modules, price and terms before purchase.">একবার পেমেন্ট করে দীর্ঘমেয়াদে ব্যবহারের লক্ষ্য—মাসিক ভাড়ার বদলে নিজের ব্যবসার ব্যবস্থাপনা নিজের নিয়ন্ত্রণে। কোন মডিউল, মূল্য ও শর্ত প্রযোজ্য তা নিশ্চিত করে নিন।</p>
+    <a class="action" href="mailto:mslalenterprise@gmail.com?subject=LAL%20Digital%20Services%20-%20Lifetime%20Access"><span data-bn="অ্যাক্সেস সম্পর্কে যোগাযোগ করুন" data-en="Ask About Access">অ্যাক্সেস সম্পর্কে যোগাযোগ করুন</span><span aria-hidden="true">↗</span></a>
+  </section>
+
   <section>
     <div class="section-heading">
-      <h2 data-bn="আমাদের অ্যাপসমূহ" data-en="Our Applications">আমাদের অ্যাপসমূহ</h2>
-      <span data-bn="ডিজিটাল • সহজ • কার্যকর" data-en="DIGITAL • SIMPLE • USEFUL">ডিজিটাল • সহজ • কার্যকর</span>
+      <h2 data-bn="৭টি কোর মডিউল" data-en="7 Core Modules">৭টি কোর মডিউল</h2>
+      <span data-bn="বিস্তারিত জানতে প্রতিটি কার্ড খুলুন" data-en="Open each card for details">বিস্তারিত জানতে প্রতিটি কার্ড খুলুন</span>
     </div>
     <div class="apps">
-      <article class="card">
-        <div class="app-icon">🎙️</div>
-        <h3>Lal Voice Assistance</h3>
-        <p data-bn="ভয়েসওভার, অডিও এবং ভিডিও তৈরির সুবিধা পেতে আমাদের ভয়েস অ্যাপ ব্যবহার করুন।" data-en="Use our voice application for voiceovers, audio, and video creation.">ভয়েসওভার, অডিও এবং ভিডিও তৈরির সুবিধা পেতে আমাদের ভয়েস অ্যাপ ব্যবহার করুন।</p>
-        <a class="action" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer"><span data-bn="অ্যাপ খুলুন" data-en="Open App">অ্যাপ খুলুন</span><span aria-hidden="true">↗</span></a>
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">🎙️</div><h3>Lal AI Voices</h3></div>
+        <div class="module-subtitle" data-bn="AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক" data-en="AI Voice • Photo • Video • Lip-sync">AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক</div>
+        <p class="module-short" data-bn="লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।" data-en="Tools to help create voiceovers from text, animate photos and make video content.">লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”" data-en="“Provide a photo and a script—Lal AI helps with the next steps. Voiceovers, photo animation and lip-sync video tools in one place. Voice cloning and realistic lip-sync depend on the selected AI service and its limits.”">“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”</div></details>
+        <div class="module-actions"><a class="action" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer"><span data-bn="Lal AI Voices খুলুন" data-en="Open Lal AI Voices">Lal AI Voices খুলুন</span> ↗</a></div>
       </article>
-      <article class="card">
-        <div class="app-icon">📊</div>
-        <h3>LAL Sales Management System</h3>
-        <p data-bn="বিক্রয়, পণ্য, স্টক, ক্রয়, বাকি এবং ব্যবসার হিসাব ব্যবস্থাপনার জন্য।" data-en="Manage sales, products, inventory, purchases, customer dues, and business accounts.">বিক্রয়, পণ্য, স্টক, ক্রয়, বাকি এবং ব্যবসার হিসাব ব্যবস্থাপনার জন্য।</p>
-        <a class="action" href="https://drive.google.com/uc?export=download&amp;id=16YKwrfE0woqEi31L_ztWWU-P0bJYt4fF" target="_blank" rel="noopener noreferrer"><span data-bn="ডাউনলোড ও ইনস্টল করুন" data-en="Download &amp; Install">ডাউনলোড ও ইনস্টল করুন</span><span aria-hidden="true">⬇</span></a>
-        <div class="status" data-bn="Windows কম্পিউটারের জন্য" data-en="For Windows computers">Windows কম্পিউটারের জন্য</div>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">🏗️</div><h3 data-bn="রড-সিমেন্ট পাইকারি ও খুচরা" data-en="Rod Cement Wholesale & Retail">রড-সিমেন্ট পাইকারি ও খুচরা</h3></div>
+        <div class="module-subtitle" data-bn="স্টক • ক্রয়-বিক্রয় • বাকি • লাভ" data-en="Stock • Purchase & Sales • Dues • Profit">স্টক • ক্রয়-বিক্রয় • বাকি • লাভ</div>
+        <p class="module-short" data-bn="এক ব্যাগ থেকে এক ট্রাক—পাইকারি ও খুচরা বিক্রির হিসাব একসঙ্গে সাজানোর পরিকল্পনা।" data-en="Plan to manage wholesale and retail records, from a single bag to a full truckload.">এক ব্যাগ থেকে এক ট্রাক—পাইকারি ও খুচরা বিক্রির হিসাব একসঙ্গে সাজানোর পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“এক ব্যাগ থেকে এক ট্রাক—খুচরা ও পাইকারি হিসাব একসাথে। স্টক, বাকি, চালান ও লাভের হিসাব সহজে গুছিয়ে রাখার লক্ষ্য, যাতে খাতার ওপর নির্ভরতা কমে।”" data-en="“From one bag to a truckload—keep retail and wholesale records together. Organize stock, customer dues, invoices and profit to reduce dependence on paper ledgers.”">“এক ব্যাগ থেকে এক ট্রাক—খুচরা ও পাইকারি হিসাব একসাথে। স্টক, বাকি, চালান ও লাভের হিসাব সহজে গুছিয়ে রাখার লক্ষ্য, যাতে খাতার ওপর নির্ভরতা কমে।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
       </article>
-      <article class="card">
-        <div class="app-icon">🚀</div>
-        <h3 data-bn="নতুন ডিজিটাল সেবা" data-en="New Digital Services">নতুন ডিজিটাল সেবা</h3>
-        <p data-bn="ভবিষ্যতে নতুন অ্যাপ ও ডিজিটাল সেবার লিংক এখানে যুক্ত করা হবে।" data-en="Links to future applications and digital services will be added here.">ভবিষ্যতে নতুন অ্যাপ ও ডিজিটাল সেবার লিংক এখানে যুক্ত করা হবে।</p>
-        <span class="action secondary" data-bn="আরও আসছে" data-en="More Coming Soon">আরও আসছে</span>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">📡</div><h3 data-bn="টেলিকমিউনিকেশন" data-en="Telecommunication">টেলিকমিউনিকেশন</h3></div>
+        <div class="module-subtitle">GP • Robi • Airtel • Banglalink • Teletalk</div>
+        <p class="module-short" data-bn="সিম, রিচার্জ, ডিস্ট্রিবিউশন ও কমিশনের হিসাব একই ব্যবস্থায় রাখার পরিকল্পনা।" data-en="A planned unified view of SIMs, recharge, distribution and commission records.">সিম, রিচার্জ, ডিস্ট্রিবিউশন ও কমিশনের হিসাব একই ব্যবস্থায় রাখার পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“GP • Robi • Airtel • Banglalink • Teletalk—সব অপারেটরের সিম, রিচার্জ, ডিস্ট্রিবিউশন ও কমিশনের হিসাব একটি স্বচ্ছ ব্যবস্থায় গুছিয়ে রাখার লক্ষ্য।”" data-en="“GP • Robi • Airtel • Banglalink • Teletalk—aim to organize SIM, recharge, distribution and commission records for all operators in one transparent system.”">“GP • Robi • Airtel • Banglalink • Teletalk—সব অপারেটরের সিম, রিচার্জ, ডিস্ট্রিবিউশন ও কমিশনের হিসাব একটি স্বচ্ছ ব্যবস্থায় গুছিয়ে রাখার লক্ষ্য।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
+      </article>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">💊</div><h3 data-bn="ফার্মেসি পাইকারি ও খুচরা" data-en="Pharmacy Wholesale & Retail">ফার্মেসি পাইকারি ও খুচরা</h3></div>
+        <div class="module-subtitle" data-bn="ওষুধের স্টক • ব্যাচ • মেয়াদ" data-en="Medicine Stock • Batch • Expiry">ওষুধের স্টক • ব্যাচ • মেয়াদ</div>
+        <p class="module-short" data-bn="ওষুধের স্টক, ক্রয়-বিক্রয় এবং মেয়াদের তথ্য সংগঠিত রাখার পরিকল্পনা।" data-en="Plan to organize medicine inventory, purchase and sales, and expiry information.">ওষুধের স্টক, ক্রয়-বিক্রয় এবং মেয়াদের তথ্য সংগঠিত রাখার পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“ওষুধের মেয়াদ ভুলবেন না, আর এক টাকার হিসাবও হারাবেন না। পাইকারি কেনা, খুচরা বিক্রি ও মেয়াদোত্তীর্ণ পণ্যের সতর্কতা—সবকিছু গুছিয়ে রাখার লক্ষ্য।”" data-en="“Keep medicine expiry and every taka accounted for. Organize wholesale purchases, retail sales and expiry alerts in one place.”">“ওষুধের মেয়াদ ভুলবেন না, আর এক টাকার হিসাবও হারাবেন না। পাইকারি কেনা, খুচরা বিক্রি ও মেয়াদোত্তীর্ণ পণ্যের সতর্কতা—সবকিছু গুছিয়ে রাখার লক্ষ্য।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
+      </article>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">🥤</div><h3 data-bn="বেভারেজ কনজিউমার ও ডিলার" data-en="Beverages Consumer & Dealer">বেভারেজ কনজিউমার ও ডিলার</h3></div>
+        <div class="module-subtitle" data-bn="ডিলার • ফ্রিজ • ড্যামেজ" data-en="Dealer • Fridge • Damage">ডিলার • ফ্রিজ • ড্যামেজ</div>
+        <p class="module-short" data-bn="ঠান্ডা পানীয়ের স্টক, ডিলার কমিশন, ফ্রিজ ও ক্ষতিগ্রস্ত পণ্যের হিসাবের পরিকল্পনা।" data-en="Planned tracking for beverage stock, dealer commissions, fridges and damaged products.">ঠান্ডা পানীয়ের স্টক, ডিলার কমিশন, ফ্রিজ ও ক্ষতিগ্রস্ত পণ্যের হিসাবের পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“ফ্রিজ থেকে গোডাউন—ঠান্ডা পানীয়ের হিসাব গুছিয়ে রাখুন। ডিলার কমিশন, ফ্রিজ লোন ও ড্যামেজের হিসাব পরিষ্কারভাবে নথিবদ্ধ করার লক্ষ্য।”" data-en="“From fridge to warehouse—organize beverage records, dealer commissions, fridge loans and damaged stock clearly.”">“ফ্রিজ থেকে গোডাউন—ঠান্ডা পানীয়ের হিসাব গুছিয়ে রাখুন। ডিলার কমিশন, ফ্রিজ লোন ও ড্যামেজের হিসাব পরিষ্কারভাবে নথিবদ্ধ করার লক্ষ্য।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
+      </article>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">💄</div><h3 data-bn="ব্র্যান্ডভিত্তিক কসমেটিকস" data-en="Brand-wise Cosmetics">ব্র্যান্ডভিত্তিক কসমেটিকস</h3></div>
+        <div class="module-subtitle" data-bn="ব্র্যান্ড • শেড • বিক্রির প্রবণতা" data-en="Brand • Shade • Sales Trends">ব্র্যান্ড • শেড • বিক্রির প্রবণতা</div>
+        <p class="module-short" data-bn="ব্র্যান্ড ও শেড অনুযায়ী পণ্য সাজিয়ে স্টক এবং বিক্রির প্রবণতা বোঝার পরিকল্পনা।" data-en="Plan to organize products by brand and shade and review stock and sales trends.">ব্র্যান্ড ও শেড অনুযায়ী পণ্য সাজিয়ে স্টক এবং বিক্রির প্রবণতা বোঝার পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“ব্র্যান্ড অনুযায়ী সাজানো—Lakmé থেকে Maybelline। কোন শেড কত আছে, কোন পণ্য বেশি চলছে—স্টক ও বিক্রির তথ্য থেকে সহজে বুঝতে সাহায্য করবে।”" data-en="“Organized by brand, from Lakmé to Maybelline. Review shade availability and identify popular products from stock and sales information.”">“ব্র্যান্ড অনুযায়ী সাজানো—Lakmé থেকে Maybelline। কোন শেড কত আছে, কোন পণ্য বেশি চলছে—স্টক ও বিক্রির তথ্য থেকে সহজে বুঝতে সাহায্য করবে।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
+      </article>
+
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">🎡</div><h3 data-bn="পার্ক এন্টারটেইনমেন্ট" data-en="Park Entertainment">পার্ক এন্টারটেইনমেন্ট</h3></div>
+        <div class="module-subtitle" data-bn="টিকিট • রাইড • দৈনিক কালেকশন" data-en="Tickets • Rides • Daily Collection">টিকিট • রাইড • দৈনিক কালেকশন</div>
+        <p class="module-short" data-bn="উপজেলা পর্যায়ের মিনি পার্কের টিকিট, রাইড ও দৈনিক আয়-ব্যয়ের হিসাবের পরিকল্পনা।" data-en="Planned ticketing, ride and daily income/expense records for a small local park.">উপজেলা পর্যায়ের মিনি পার্কের টিকিট, রাইড ও দৈনিক আয়-ব্যয়ের হিসাবের পরিকল্পনা।</p>
+        <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“উপজেলার ছোট পার্ক, বড় স্বপ্ন। এন্ট্রি টিকিট, রাইড, অনুমতির নথি ও দৈনিক কালেকশনের হিসাব এক জায়গায় গুছিয়ে রাখার লক্ষ্য।”" data-en="“A small local park with a big vision. Organize entry tickets, rides, permit records and daily collections in one place.”">“উপজেলার ছোট পার্ক, বড় স্বপ্ন। এন্ট্রি টিকিট, রাইড, অনুমতির নথি ও দৈনিক কালেকশনের হিসাব এক জায়গায় গুছিয়ে রাখার লক্ষ্য।”</div></details>
+        <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
       </article>
     </div>
   </section>
@@ -149,7 +167,12 @@ main{width:91%}
 function setLanguage(language) {
   document.documentElement.lang = language;
   document.querySelectorAll("[data-bn][data-en]").forEach(function (element) {
-    element.textContent = element.getAttribute(language === "en" ? "data-en" : "data-bn");
+    var translated = element.getAttribute(language === "en" ? "data-en" : "data-bn");
+    if (element.tagName === "SUMMARY" || element.classList.contains("module-quote")) {
+      element.textContent = translated;
+    } else {
+      element.textContent = translated;
+    }
   });
   var bnButton = document.getElementById("bnButton");
   var enButton = document.getElementById("enButton");
