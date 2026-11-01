@@ -71,6 +71,49 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
 @media(max-width:420px){#lal-pathshala .lp-letter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#lal-pathshala .lp-btn-card{min-height:100px}}
 
 
+
+/* শিশুদের জন্য রঙিন 3D বাটন */
+#lal-pathshala .lp-btn-card{
+  position:relative;isolation:isolate;overflow:hidden;
+  border:2px solid rgba(255,255,255,.75)!important;
+  border-radius:20px!important;
+  background-image:linear-gradient(145deg,rgba(255,255,255,.28),transparent 48%)!important;
+  box-shadow:0 8px 0 rgba(20,20,45,.28),0 13px 22px rgba(20,20,45,.20),inset 0 2px 3px rgba(255,255,255,.48)!important;
+  text-shadow:0 2px 3px rgba(0,0,0,.22);
+  transform:translateY(0);
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+#lal-pathshala .lp-btn-card::after{
+  content:"";position:absolute;z-index:-1;left:8%;right:8%;top:5px;height:38%;
+  border-radius:15px;background:linear-gradient(180deg,rgba(255,255,255,.30),transparent);
+  pointer-events:none;
+}
+#lal-pathshala .lp-btn-card:hover{filter:saturate(1.18) brightness(1.06);transform:translateY(-3px);box-shadow:0 11px 0 rgba(20,20,45,.25),0 17px 25px rgba(20,20,45,.22),inset 0 2px 3px #ffffff88!important}
+#lal-pathshala .lp-btn-card:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(20,20,45,.28),inset 0 3px 8px #0002!important}
+#lal-pathshala .lp-btn-card b{font-size:42px;filter:drop-shadow(0 3px 1px #0003)}
+#lal-pathshala .lp-letter{
+  position:relative;border:1px solid #fff!important;border-radius:16px!important;
+  background:linear-gradient(145deg,#fff,#f1f5ff)!important;
+  box-shadow:0 5px 0 #cbd5e1,0 8px 13px #1e293b18,inset 0 1px 0 #fff!important;
+  transition:transform .14s ease,box-shadow .14s ease,filter .14s ease;
+}
+#lal-pathshala .lp-letter:nth-child(6n+1){background:linear-gradient(145deg,#fff1f2,#fecdd3)!important;box-shadow:0 5px 0 #fb7185,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:nth-child(6n+2){background:linear-gradient(145deg,#eff6ff,#bfdbfe)!important;box-shadow:0 5px 0 #60a5fa,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:nth-child(6n+3){background:linear-gradient(145deg,#fffbeb,#fde68a)!important;box-shadow:0 5px 0 #fbbf24,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:nth-child(6n+4){background:linear-gradient(145deg,#ecfdf5,#a7f3d0)!important;box-shadow:0 5px 0 #34d399,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:nth-child(6n+5){background:linear-gradient(145deg,#f5f3ff,#ddd6fe)!important;box-shadow:0 5px 0 #a78bfa,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:nth-child(6n){background:linear-gradient(145deg,#fdf2f8,#fbcfe8)!important;box-shadow:0 5px 0 #f472b6,0 8px 13px #1e293b18!important}
+#lal-pathshala .lp-letter:active{transform:translateY(4px);filter:saturate(1.15);box-shadow:0 1px 0 #94a3b8!important}
+#lal-pathshala .lp-letter b{color:#312e81;text-shadow:0 1px 0 #fff}
+#lal-pathshala .lp-back,#lal-pathshala .lp-tools button,#lal-pathshala .lp-math-card button,#lal-pathshala .lp-modal-card button{
+  border:1px solid #ffffffaa!important;box-shadow:0 4px 0 #9f1239,0 7px 12px #1e293b20,inset 0 1px 0 #ffffff88!important;
+  transition:transform .14s ease,box-shadow .14s ease;
+}
+#lal-pathshala .lp-back:active,#lal-pathshala .lp-tools button:active,#lal-pathshala .lp-math-card button:active,#lal-pathshala .lp-modal-card button:active{transform:translateY(3px);box-shadow:0 1px 0 #9f1239!important}
+#lal-pathshala .lp-tools button{background:linear-gradient(145deg,#fff1f2,#fecdd3)!important}
+#lal-pathshala .lp-math-card button{background:linear-gradient(145deg,#fde047,#f59e0b)!important}
+@media(prefers-reduced-motion:reduce){#lal-pathshala .lp-btn-card,#lal-pathshala .lp-letter{transition:none}}
+
 </style>
 </head>
 <body>
