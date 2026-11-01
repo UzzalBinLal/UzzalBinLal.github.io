@@ -52,16 +52,24 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
 @media(max-width:560px){.apps{grid-template-columns:1fr}.module-card{padding:20px}.module-card .module-short{font-size:14px}}
 
 
-/* Lal Digital Pathshala — embedded learning section */
-#lal-pathshala{margin:10px 0 58px;padding:clamp(18px,3vw,30px);border:1px solid rgba(244,200,121,.3);border-radius:24px;background:linear-gradient(145deg,rgba(255,245,245,.98),rgba(239,246,255,.98));color:#211323;box-shadow:0 18px 45px rgba(0,0,0,.18)}
-#lal-pathshala *{box-sizing:border-box}#lal-pathshala .lp-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}#lal-pathshala .lp-logo{width:58px;height:58px;object-fit:contain;border-radius:12px;background:#fff;padding:4px}
-#lal-pathshala h2{margin:0;color:#e30613;font-size:clamp(23px,4vw,34px);line-height:1.3}#lal-pathshala .lp-sub{margin:6px 0 20px;color:#555;font-size:14px;line-height:1.8}
-#lal-pathshala .lp-founder{display:flex;align-items:center;gap:12px;background:#fff;border-left:5px solid #e30613;border-radius:15px;padding:12px;margin:0 0 18px;box-shadow:0 5px 18px rgba(227,6,19,.08)}#lal-pathshala .lp-founder img{width:58px;height:58px;object-fit:contain;border-radius:50%;border:2px solid #e30613;background:#fff}#lal-pathshala .lp-founder strong{color:#e30613}
-#lal-pathshala .lp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}#lal-pathshala .lp-tile{border:0;border-radius:17px;padding:14px 8px;min-height:118px;color:#fff;font-weight:800;cursor:pointer;box-shadow:0 5px 12px rgba(0,0,0,.15);transition:transform .15s}#lal-pathshala .lp-tile:hover{transform:translateY(-2px)}#lal-pathshala .lp-tile b{display:block;font-size:45px;line-height:1.3}#lal-pathshala .lp-tile span{display:block;font-size:13px}
-#lal-pathshala .lp-canvas-wrap{background:#fff;border-radius:17px;padding:14px;margin-top:18px;box-shadow:0 5px 18px rgba(0,0,0,.07)}#lal-pathshala .lp-canvas-wrap h3{margin:0 0 10px;color:#e30613}#lal-pathshala canvas{display:block;width:100%;height:180px;border:2px dashed #fda4af;border-radius:12px;touch-action:none;background:#fff}
-#lal-pathshala .lp-tools{display:flex;gap:8px;margin-top:9px}#lal-pathshala .lp-tools button{flex:1;padding:11px 8px;border:0;border-radius:10px;font-weight:700;cursor:pointer;background:#ffe4e6;color:#7f1d1d}#lal-pathshala .lp-tools button:last-child{background:#dbeafe;color:#1e3a8a}#lal-pathshala .lp-note{font-size:12px;color:#555;line-height:1.7;margin:12px 0 0}
-#lal-pathshala .lp-modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}#lal-pathshala .lp-modal-card{width:min(360px,100%);background:#fff;border-radius:20px;padding:22px;text-align:center;box-shadow:0 15px 45px #0005}#lal-pathshala .lp-modal-letter{font-size:84px;color:#e30613;line-height:1.3}#lal-pathshala .lp-modal-text{font-weight:800;color:#b91c1c;margin:8px 0 16px}#lal-pathshala .lp-modal-card button{width:100%;padding:12px;border:0;border-radius:11px;background:#e30613;color:#fff;font-size:16px;font-weight:800}
-@media(max-width:650px){#lal-pathshala .lp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#lal-pathshala .lp-tile{min-height:105px}#lal-pathshala .lp-founder img{width:52px;height:52px}}
+/* Lal Digital Pathshala — multi-page learning app */
+#lal-pathshala{margin:10px 0 58px;padding:clamp(14px,3vw,24px);border:1px solid rgba(244,200,121,.3);border-radius:24px;background:linear-gradient(145deg,#fff5f5,#eff6ff);color:#211323;box-shadow:0 18px 45px rgba(0,0,0,.18)}
+#lal-pathshala *{box-sizing:border-box}#lal-pathshala .lp-shell{max-width:650px;margin:auto;background:#f9fafb;border-radius:18px;overflow:hidden;color:#111827;box-shadow:0 8px 25px #1112}
+#lal-pathshala .lp-header{background:#fff;padding:14px 16px;border-bottom:2px solid #e30613}#lal-pathshala .lp-header h2{margin:0;color:#e30613;font-size:21px;line-height:1.4}#lal-pathshala .lp-header p{margin:2px 0 0;font-size:12px;color:#666}
+#lal-pathshala .lp-founder{background:#fff;margin:12px;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center;border-left:4px solid #e30613}#lal-pathshala .lp-founder img{width:55px;height:55px;object-fit:contain;border-radius:50%;border:2px solid #e30613;background:#fff}#lal-pathshala .lp-founder strong{color:#e30613}
+#lal-pathshala .lp-page{display:none;padding:12px}#lal-pathshala .lp-page.active{display:block}
+#lal-pathshala .lp-home-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#lal-pathshala .lp-btn-card{border:0;border-radius:16px;padding:22px 10px;text-align:center;color:#fff;font-weight:900;cursor:pointer;box-shadow:0 6px 0 #0002;min-height:110px}#lal-pathshala .lp-btn-card b{font-size:38px;display:block}#lal-pathshala .lp-btn-card small{font-size:12px;display:block;margin-top:6px}
+#lal-pathshala .lp-back{background:#fff;border:0;padding:10px 14px;border-radius:20px;font-weight:700;margin-bottom:12px;cursor:pointer;color:#222}
+#lal-pathshala .lp-letter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#lal-pathshala .lp-letter{background:#fff;border:0;border-radius:14px;padding:14px 6px;text-align:center;box-shadow:0 2px 6px #0001;cursor:pointer;color:#222;min-width:0}#lal-pathshala .lp-letter b{font-size:30px;display:block}#lal-pathshala .lp-letter span{font-size:12px}
+#lal-pathshala .lp-canvas-wrap{background:#fff;border-radius:16px;padding:12px;margin-top:14px}#lal-pathshala canvas{display:block;width:100%;height:180px;border:2px dashed #e30613;border-radius:12px;touch-action:none;background:#fff}
+#lal-pathshala .lp-tools{display:flex;gap:8px;margin-top:8px}#lal-pathshala .lp-tools button{flex:1;padding:10px;border:0;border-radius:10px;background:#ffe4e6;color:#7f1d1d;font-weight:700;cursor:pointer}
+#lal-pathshala .lp-math-card{background:#fff;border-radius:16px;padding:18px;text-align:center;margin-bottom:12px}#lal-pathshala .lp-math-card strong{font-size:32px;color:#e30613}#lal-pathshala .lp-math-card button{margin:8px 4px 0;padding:10px 16px;border:0;border-radius:10px;background:#f59e0b;font-weight:800;cursor:pointer}
+#lal-pathshala .lp-modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}#lal-pathshala .lp-modal-card{background:#fff;border-radius:20px;padding:20px;text-align:center;max-width:320px;width:100%}#lal-pathshala .lp-modal-letter{font-size:90px;color:#e30613}#lal-pathshala .lp-modal-text{font-weight:700;margin:10px 0}#lal-pathshala .lp-modal-card button{width:100%;padding:12px;background:#e30613;color:#fff;border:0;border-radius:12px;font-weight:800}
+#lal-pathshala .lp-info{font-size:12px;color:#555;line-height:1.7;margin:12px 0 0}
+@media(max-width:420px){#lal-pathshala .lp-letter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#lal-pathshala .lp-btn-card{min-height:100px}}
+
 
 </style>
 </head>
@@ -155,20 +163,23 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
     </div>
   </section>
 
-  <section id="lal-pathshala" aria-labelledby="lp-title">
-    <div class="lp-head"><img class="lp-logo" src="Logo.jpg" alt="LAL Logo"><div><h2 id="lp-title">লাল ডিজিটাল পাঠশালা</h2><div style="font-size:12px;color:#555">শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</div></div></div>
-    <p class="lp-sub">বাংলা বর্ণ ও ইংরেজি অক্ষর চিনুন, উচ্চারণ শুনুন এবং আঙুল দিয়ে লিখে অনুশীলন করুন।</p>
-    <div class="lp-founder"><img src="Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">উদ্যোগ: LAL Digital Services</span></div></div>
-    <div class="lp-grid" aria-label="শেখার অক্ষর">
-      <button class="lp-tile" style="background:#e30613" type="button" data-letter="অ" data-say="অ তে অজগর"><b>অ</b><span>অ তে অজগর</span></button>
-      <button class="lp-tile" style="background:#2563eb" type="button" data-letter="আ" data-say="আ তে আম"><b>আ</b><span>আ তে আম</span></button>
-      <button class="lp-tile" style="background:#f59e0b;color:#241500" type="button" data-letter="ই" data-say="ই তে ইলিশ"><b>ই</b><span>ই তে ইলিশ</span></button>
-      <button class="lp-tile" style="background:#10b981" type="button" data-letter="ঈ" data-say="ঈ তে ঈগল"><b>ঈ</b><span>ঈ তে ঈগল</span></button>
-      <button class="lp-tile" style="background:#8b5cf6" type="button" data-letter="উ" data-say="উ তে উট"><b>উ</b><span>উ তে উট</span></button>
-      <button class="lp-tile" style="background:#ec4899" type="button" data-letter="A" data-say="A for Apple"><b>A</b><span>A for Apple</span></button>
+  <section id="lal-pathshala" aria-label="লাল ডিজিটাল পাঠশালা">
+    <div class="lp-shell">
+      <div class="lp-header"><h2>লাল ডিজিটাল পাঠশালা</h2><p>শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</p></div>
+      <div class="lp-founder"><img src="Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">প্রতিষ্ঠাতা • LAL Digital Services</span></div></div>
+      <div id="lp-page-home" class="lp-page active"><div class="lp-home-grid">
+        <button class="lp-btn-card" style="background:#e30613" type="button" data-open="bangla"><b>অ</b><small>বাংলা বর্ণমালা</small></button>
+        <button class="lp-btn-card" style="background:#2563eb" type="button" data-open="english"><b>A</b><small>English Alphabet</small></button>
+        <button class="lp-btn-card" style="background:#f59e0b;color:#111" type="button" data-open="math"><b>১+১</b><small>সংখ্যা ও অংক</small></button>
+        <button class="lp-btn-card" style="background:#10b981" type="button" data-open="numbers"><b>১২৩</b><small>১-১০০ সংখ্যা</small></button>
+      </div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#e30613">✏️ হাত ঘুরিয়ে লেখো</h3><canvas id="lp-can-home" width="720" height="360" aria-label="লেখার অনুশীলন"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-home">🧹 মুছুন</button></div></div></div>
+      <div id="lp-page-bangla" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#e30613">বাংলা বর্ণমালা</h3><div class="lp-letter-grid" id="lp-bangla-grid"></div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#e30613">✏️ লিখে অনুশীলন</h3><canvas id="lp-can-bangla" width="720" height="360"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-bangla">🧹 মুছুন</button></div></div></div>
+      <div id="lp-page-english" class="lp-page"><button class="lp-back" type="button" data-open="home">← Home</button><h3 style="color:#2563eb">English Alphabet</h3><div class="lp-letter-grid" id="lp-english-grid"></div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#2563eb">✏️ Practice writing</h3><canvas id="lp-can-english" width="720" height="360"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-english">🧹 Clear</button></div></div></div>
+      <div id="lp-page-math" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#f59e0b">সংখ্যা ও অংক</h3><div id="lp-math-grid"></div></div>
+      <div id="lp-page-numbers" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#10b981">১ থেকে ১০০ সংখ্যা</h3><div class="lp-letter-grid" id="lp-number-grid"></div></div>
+      <p class="lp-info" style="padding:0 14px 14px">অক্ষর বা সংখ্যা চাপলে উচ্চারণ শোনা যাবে। ভয়েস সুবিধা আপনার ডিভাইসের বাংলা Text-to-Speech সমর্থনের ওপর নির্ভর করে।</p>
     </div>
-    <div class="lp-canvas-wrap"><h3>✏️ হাত ঘুরিয়ে লেখো</h3><canvas id="lp-canvas" width="720" height="360" aria-label="লেখার অনুশীলনের জায়গা"></canvas><div class="lp-tools"><button id="lp-clear" type="button">🧹 মুছুন</button><button id="lp-repeat" type="button">🔊 আবার শুনুন</button></div><p class="lp-note">অক্ষরের কার্ডে চাপ দিলে উচ্চারণ শোনা যাবে। ক্যানভাসে আঙুল বা মাউস দিয়ে লিখে অনুশীলন করুন। ভয়েস সুবিধা আপনার ডিভাইসের বাংলা Text-to-Speech সমর্থনের ওপর নির্ভর করে।</p></div>
-    <div class="lp-modal" id="lp-modal" role="dialog" aria-modal="true" aria-label="অক্ষরের উচ্চারণ"><div class="lp-modal-card"><div class="lp-modal-letter" id="lp-modal-letter"></div><div class="lp-modal-text" id="lp-modal-text"></div><button id="lp-modal-repeat" type="button">🔊 আবার শুনুন</button></div></div>
+    <div class="lp-modal" id="lp-pop" role="dialog" aria-modal="true" aria-label="উচ্চারণ"><div class="lp-modal-card"><div class="lp-modal-letter" id="lp-pop-letter"></div><div class="lp-modal-text" id="lp-pop-text"></div><button id="lp-pop-repeat" type="button">🔊 আবার শুনুন</button></div></div>
   </section>
 
   <section class="contact-strip">
@@ -217,13 +228,23 @@ try { savedLanguage = localStorage.getItem("lal-site-language") || "bn"; } catch
 setLanguage(savedLanguage);
 </script>
 <script>
-(function(){const root=document.getElementById('lal-pathshala');if(!root)return;let lastText='',lastLetter='';const modal=root.querySelector('#lp-modal');
-function speak(text,letter){lastText=text;lastLetter=letter;root.querySelector('#lp-modal-letter').textContent=letter;root.querySelector('#lp-modal-text').textContent=text;modal.style.display='flex';if('speechSynthesis'in window&&'SpeechSynthesisUtterance'in window){const u=new SpeechSynthesisUtterance(text);u.lang=/[A-Za-z]/.test(letter)?'en-US':'bn-BD';window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}}
-root.querySelectorAll('.lp-tile').forEach(b=>b.addEventListener('click',()=>speak(b.dataset.say,b.dataset.letter)));
-function repeat(){if(lastText&&'speechSynthesis'in window){const u=new SpeechSynthesisUtterance(lastText);u.lang=/[A-Za-z]/.test(lastLetter)?'en-US':'bn-BD';window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}}
-root.querySelector('#lp-repeat').addEventListener('click',repeat);root.querySelector('#lp-modal-repeat').addEventListener('click',repeat);modal.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none';});document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.style.display='none';});
-const c=root.querySelector('#lp-canvas'),ctx=c.getContext('2d');let drawing=false;function pos(e){const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height};}
-c.addEventListener('pointerdown',e=>{drawing=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);c.setPointerCapture(e.pointerId);});c.addEventListener('pointermove',e=>{if(!drawing)return;const p=pos(e);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#e30613';ctx.lineTo(p.x,p.y);ctx.stroke();});c.addEventListener('pointerup',()=>drawing=false);c.addEventListener('pointercancel',()=>drawing=false);root.querySelector('#lp-clear').addEventListener('click',()=>ctx.clearRect(0,0,c.width,c.height));})();
+(function(){
+ const root=document.getElementById('lal-pathshala');if(!root)return;
+ let lastText='',lastLang='bn-BD';
+ const bn=[['অ','অ তে অজগর'],['আ','আ তে আম'],['ই','ই তে ইলিশ'],['ঈ','ঈ তে ঈগল'],['উ','উ তে উট'],['ঊ','ঊ তে ঊষা'],['ঋ','ঋ তে ঋষি'],['এ','এ তে একতারা'],['ঐ','ঐ তে ঐরাবত'],['ও','ও তে ওল'],['ঔ','ঔ তে ঔষধ'],['ক','ক তে কলা'],['খ','খ তে খরগোশ'],['গ','গ তে গরু'],['ঘ','ঘ তে ঘোড়া'],['ঙ','ঙ — বর্ণ পরিচয়'],['চ','চ তে চাঁদ'],['ছ','ছ তে ছাতা'],['জ','জ তে জাহাজ'],['ঝ','ঝ তে ঝিনুক'],['ঞ','ঞ — বর্ণ পরিচয়'],['ট','ট তে টমেটো'],['ঠ','ঠ তে ঠেলা'],['ড','ড তে ডাব'],['ঢ','ঢ তে ঢোল'],['ণ','ণ — বর্ণ পরিচয়'],['ত','ত তে তাল'],['থ','থ তে থালা'],['দ','দ তে দই'],['ধ','ধ তে ধান'],['ন','ন তে নৌকা'],['প','প তে পাখি'],['ফ','ফ তে ফুল'],['ব','ব তে বই'],['ভ','ভ তে ভালুক'],['ম','ম তে মাছ'],['য','য তে যব'],['র','র তে রথ'],['ল','ল তে লিচু'],['শ','শ তে শাপলা'],['ষ','ষ — বর্ণ পরিচয়'],['স','স তে সিংহ'],['হ','হ তে হাঁস'],['ড়','ড় — বর্ণ পরিচয়'],['ঢ়','ঢ় — বর্ণ পরিচয়'],['য়','য় — বর্ণ পরিচয়'],['ৎ','ৎ — খণ্ড-ত'],['ং','ং — অনুস্বার'],['ঃ','ঃ — বিসর্গ'],['ঁ','ঁ — চন্দ্রবিন্দু']];
+ const en='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((x)=>[x,x+' for '+({A:'Apple',B:'Ball',C:'Cat',D:'Dog',E:'Elephant',F:'Fish',G:'Goat',H:'Hen',I:'Ice cream',J:'Jug',K:'Kite',L:'Lion',M:'Mango',N:'Nest',O:'Orange',P:'Parrot',Q:'Queen',R:'Rose',S:'Sun',T:'Tiger',U:'Umbrella',V:'Van',W:'Watch',X:'Xylophone',Y:'Yak',Z:'Zebra'}[x])]);
+ const digits=['শূন্য','এক','দুই','তিন','চার','পাঁচ','ছয়','সাত','আট','নয়','দশ','এগারো','বারো','তেরো','চৌদ্দ','পনেরো','ষোলো','সতেরো','আঠারো','উনিশ','বিশ','একুশ','বাইশ','তেইশ','চব্বিশ','পঁচিশ','ছাব্বিশ','সাতাশ','আটাশ','ঊনত্রিশ','ত্রিশ','একত্রিশ','বত্রিশ','তেত্রিশ','চৌত্রিশ','পঁয়ত্রিশ','ছত্রিশ','সাঁইত্রিশ','আটত্রিশ','ঊনচল্লিশ','চল্লিশ','একচল্লিশ','বিয়াল্লিশ','তেতাল্লিশ','চুয়াল্লিশ','পঁয়তাল্লিশ','ছেচল্লিশ','সাতচল্লিশ','আটচল্লিশ','ঊনপঞ্চাশ','পঞ্চাশ','একান্ন','বাহান্ন','তিপ্পান্ন','চুয়ান্ন','পঞ্চান্ন','ছাপ্পান্ন','সাতান্ন','আটান্ন','ঊনষাট','ষাট','একষট্টি','বাষট্টি','তেষট্টি','চৌষট্টি','পঁয়ষট্টি','ছেষট্টি','সাতষট্টি','আটষট্টি','ঊনসত্তর','সত্তর','একাত্তর','বাহাত্তর','তিয়াত্তর','চুয়াত্তর','পঁচাত্তর','ছিয়াত্তর','সাতাত্তর','আটাত্তর','ঊনআশি','আশি','একাশি','বিরাশি','তিরাশি','চুরাশি','পঁচাশি','ছিয়াশি','সাতাশি','আটাশি','ঊননব্বই','নব্বই','একানব্বই','বিরানব্বই','তিরানব্বই','চুরানব্বই','পঁচানব্বই','ছিয়ানব্বই','সাতানব্বই','আটানব্বই','নিরানব্বই','একশ'];
+ const bnDigits=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[Number(d)]);
+ function speak(t,l){lastText=t;lastLang=l;if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=.9;window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}
+ function show(l,t,lang){root.querySelector('#lp-pop-letter').textContent=l;root.querySelector('#lp-pop-text').textContent=t;root.querySelector('#lp-pop').style.display='flex';speak(t,lang);}
+ function render(id,data,lang){const g=root.querySelector('#'+id);data.forEach(([l,t])=>{const b=document.createElement('button');b.type='button';b.className='lp-letter';const strong=document.createElement('b');strong.textContent=l;const span=document.createElement('span');span.textContent=t;b.append(strong,span);b.addEventListener('click',()=>show(l,t,lang));g.appendChild(b);});}
+ render('lp-bangla-grid',bn,'bn-BD');render('lp-english-grid',en,'en-US');render('lp-number-grid',Array.from({length:101},(_,n)=>[bnDigits(n),digits[n]]),'bn-BD');
+ const math=root.querySelector('#lp-math-grid');[[1,1],[2,3],[5,2],[10,5],[7,4],[9,6]].forEach(([a,b])=>{const sum=a+b,card=document.createElement('div');card.className='lp-math-card';const q=document.createElement('strong');q.textContent=bnDigits(a)+' + '+bnDigits(b)+' = ?';const answer=document.createElement('button');answer.type='button';answer.textContent='উত্তর দেখুন';answer.addEventListener('click',()=>show(bnDigits(sum),bnDigits(a)+' যোগ '+bnDigits(b)+' সমান '+bnDigits(sum),'bn-BD'));card.append(q,document.createElement('br'),answer);math.appendChild(card);});
+ root.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.lp-page').forEach(p=>p.classList.remove('active'));root.querySelector('#lp-page-'+b.dataset.open).classList.add('active');root.scrollIntoView({behavior:'smooth',block:'start'});}));
+ const pop=root.querySelector('#lp-pop');pop.addEventListener('click',e=>{if(e.target===pop)pop.style.display='none';});root.querySelector('#lp-pop-repeat').addEventListener('click',()=>speak(lastText,lastLang));document.addEventListener('keydown',e=>{if(e.key==='Escape')pop.style.display='none';});
+ function setupCanvas(id){const c=root.querySelector('#'+id);if(!c)return;const ctx=c.getContext('2d');let drawing=false;const pos=e=>{const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height};};c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);});c.addEventListener('pointermove',e=>{if(!drawing)return;const p=pos(e);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#e30613';ctx.lineTo(p.x,p.y);ctx.stroke();});['pointerup','pointercancel','lostpointercapture'].forEach(ev=>c.addEventListener(ev,()=>drawing=false));}
+ ['lp-can-home','lp-can-bangla','lp-can-english'].forEach(setupCanvas);root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const c=root.querySelector('#'+b.dataset.clear);c.getContext('2d').clearRect(0,0,c.width,c.height);}));
+})();
 </script>
 </body>
 </html>
