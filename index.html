@@ -51,6 +51,18 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
 @media(max-width:850px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.apps{grid-template-columns:1fr}.module-card{padding:20px}.module-card .module-short{font-size:14px}}
 
+
+/* Lal Digital Pathshala — embedded learning section */
+#lal-pathshala{margin:10px 0 58px;padding:clamp(18px,3vw,30px);border:1px solid rgba(244,200,121,.3);border-radius:24px;background:linear-gradient(145deg,rgba(255,245,245,.98),rgba(239,246,255,.98));color:#211323;box-shadow:0 18px 45px rgba(0,0,0,.18)}
+#lal-pathshala *{box-sizing:border-box}#lal-pathshala .lp-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}#lal-pathshala .lp-logo{width:58px;height:58px;object-fit:contain;border-radius:12px;background:#fff;padding:4px}
+#lal-pathshala h2{margin:0;color:#e30613;font-size:clamp(23px,4vw,34px);line-height:1.3}#lal-pathshala .lp-sub{margin:6px 0 20px;color:#555;font-size:14px;line-height:1.8}
+#lal-pathshala .lp-founder{display:flex;align-items:center;gap:12px;background:#fff;border-left:5px solid #e30613;border-radius:15px;padding:12px;margin:0 0 18px;box-shadow:0 5px 18px rgba(227,6,19,.08)}#lal-pathshala .lp-founder img{width:58px;height:58px;object-fit:contain;border-radius:50%;border:2px solid #e30613;background:#fff}#lal-pathshala .lp-founder strong{color:#e30613}
+#lal-pathshala .lp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}#lal-pathshala .lp-tile{border:0;border-radius:17px;padding:14px 8px;min-height:118px;color:#fff;font-weight:800;cursor:pointer;box-shadow:0 5px 12px rgba(0,0,0,.15);transition:transform .15s}#lal-pathshala .lp-tile:hover{transform:translateY(-2px)}#lal-pathshala .lp-tile b{display:block;font-size:45px;line-height:1.3}#lal-pathshala .lp-tile span{display:block;font-size:13px}
+#lal-pathshala .lp-canvas-wrap{background:#fff;border-radius:17px;padding:14px;margin-top:18px;box-shadow:0 5px 18px rgba(0,0,0,.07)}#lal-pathshala .lp-canvas-wrap h3{margin:0 0 10px;color:#e30613}#lal-pathshala canvas{display:block;width:100%;height:180px;border:2px dashed #fda4af;border-radius:12px;touch-action:none;background:#fff}
+#lal-pathshala .lp-tools{display:flex;gap:8px;margin-top:9px}#lal-pathshala .lp-tools button{flex:1;padding:11px 8px;border:0;border-radius:10px;font-weight:700;cursor:pointer;background:#ffe4e6;color:#7f1d1d}#lal-pathshala .lp-tools button:last-child{background:#dbeafe;color:#1e3a8a}#lal-pathshala .lp-note{font-size:12px;color:#555;line-height:1.7;margin:12px 0 0}
+#lal-pathshala .lp-modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}#lal-pathshala .lp-modal-card{width:min(360px,100%);background:#fff;border-radius:20px;padding:22px;text-align:center;box-shadow:0 15px 45px #0005}#lal-pathshala .lp-modal-letter{font-size:84px;color:#e30613;line-height:1.3}#lal-pathshala .lp-modal-text{font-weight:800;color:#b91c1c;margin:8px 0 16px}#lal-pathshala .lp-modal-card button{width:100%;padding:12px;border:0;border-radius:11px;background:#e30613;color:#fff;font-size:16px;font-weight:800}
+@media(max-width:650px){#lal-pathshala .lp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#lal-pathshala .lp-tile{min-height:105px}#lal-pathshala .lp-founder img{width:52px;height:52px}}
+
 </style>
 </head>
 <body>
@@ -142,6 +154,23 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
       </article>
     </div>
   </section>
+
+  <section id="lal-pathshala" aria-labelledby="lp-title">
+    <div class="lp-head"><img class="lp-logo" src="Logo.jpg" alt="LAL Logo"><div><h2 id="lp-title">লাল ডিজিটাল পাঠশালা</h2><div style="font-size:12px;color:#555">শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</div></div></div>
+    <p class="lp-sub">বাংলা বর্ণ ও ইংরেজি অক্ষর চিনুন, উচ্চারণ শুনুন এবং আঙুল দিয়ে লিখে অনুশীলন করুন।</p>
+    <div class="lp-founder"><img src="Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">উদ্যোগ: LAL Digital Services</span></div></div>
+    <div class="lp-grid" aria-label="শেখার অক্ষর">
+      <button class="lp-tile" style="background:#e30613" type="button" data-letter="অ" data-say="অ তে অজগর"><b>অ</b><span>অ তে অজগর</span></button>
+      <button class="lp-tile" style="background:#2563eb" type="button" data-letter="আ" data-say="আ তে আম"><b>আ</b><span>আ তে আম</span></button>
+      <button class="lp-tile" style="background:#f59e0b;color:#241500" type="button" data-letter="ই" data-say="ই তে ইলিশ"><b>ই</b><span>ই তে ইলিশ</span></button>
+      <button class="lp-tile" style="background:#10b981" type="button" data-letter="ঈ" data-say="ঈ তে ঈগল"><b>ঈ</b><span>ঈ তে ঈগল</span></button>
+      <button class="lp-tile" style="background:#8b5cf6" type="button" data-letter="উ" data-say="উ তে উট"><b>উ</b><span>উ তে উট</span></button>
+      <button class="lp-tile" style="background:#ec4899" type="button" data-letter="A" data-say="A for Apple"><b>A</b><span>A for Apple</span></button>
+    </div>
+    <div class="lp-canvas-wrap"><h3>✏️ হাত ঘুরিয়ে লেখো</h3><canvas id="lp-canvas" width="720" height="360" aria-label="লেখার অনুশীলনের জায়গা"></canvas><div class="lp-tools"><button id="lp-clear" type="button">🧹 মুছুন</button><button id="lp-repeat" type="button">🔊 আবার শুনুন</button></div><p class="lp-note">অক্ষরের কার্ডে চাপ দিলে উচ্চারণ শোনা যাবে। ক্যানভাসে আঙুল বা মাউস দিয়ে লিখে অনুশীলন করুন। ভয়েস সুবিধা আপনার ডিভাইসের বাংলা Text-to-Speech সমর্থনের ওপর নির্ভর করে।</p></div>
+    <div class="lp-modal" id="lp-modal" role="dialog" aria-modal="true" aria-label="অক্ষরের উচ্চারণ"><div class="lp-modal-card"><div class="lp-modal-letter" id="lp-modal-letter"></div><div class="lp-modal-text" id="lp-modal-text"></div><button id="lp-modal-repeat" type="button">🔊 আবার শুনুন</button></div></div>
+  </section>
+
   <section class="contact-strip">
     <div class="bottom-note">
       <strong data-bn="একটি প্ল্যাটফর্ম, আরও সম্ভাবনা" data-en="One Platform, More Possibilities">একটি প্ল্যাটফর্ম, আরও সম্ভাবনা</strong>
@@ -186,6 +215,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 var savedLanguage = "bn";
 try { savedLanguage = localStorage.getItem("lal-site-language") || "bn"; } catch (error) { savedLanguage = "bn"; }
 setLanguage(savedLanguage);
+</script>
+<script>
+(function(){const root=document.getElementById('lal-pathshala');if(!root)return;let lastText='',lastLetter='';const modal=root.querySelector('#lp-modal');
+function speak(text,letter){lastText=text;lastLetter=letter;root.querySelector('#lp-modal-letter').textContent=letter;root.querySelector('#lp-modal-text').textContent=text;modal.style.display='flex';if('speechSynthesis'in window&&'SpeechSynthesisUtterance'in window){const u=new SpeechSynthesisUtterance(text);u.lang=/[A-Za-z]/.test(letter)?'en-US':'bn-BD';window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}}
+root.querySelectorAll('.lp-tile').forEach(b=>b.addEventListener('click',()=>speak(b.dataset.say,b.dataset.letter)));
+function repeat(){if(lastText&&'speechSynthesis'in window){const u=new SpeechSynthesisUtterance(lastText);u.lang=/[A-Za-z]/.test(lastLetter)?'en-US':'bn-BD';window.speechSynthesis.cancel();window.speechSynthesis.speak(u);}}
+root.querySelector('#lp-repeat').addEventListener('click',repeat);root.querySelector('#lp-modal-repeat').addEventListener('click',repeat);modal.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none';});document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.style.display='none';});
+const c=root.querySelector('#lp-canvas'),ctx=c.getContext('2d');let drawing=false;function pos(e){const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height};}
+c.addEventListener('pointerdown',e=>{drawing=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);c.setPointerCapture(e.pointerId);});c.addEventListener('pointermove',e=>{if(!drawing)return;const p=pos(e);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#e30613';ctx.lineTo(p.x,p.y);ctx.stroke();});c.addEventListener('pointerup',()=>drawing=false);c.addEventListener('pointercancel',()=>drawing=false);root.querySelector('#lp-clear').addEventListener('click',()=>ctx.clearRect(0,0,c.width,c.height));})();
 </script>
 </body>
 </html>
