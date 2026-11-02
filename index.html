@@ -254,13 +254,59 @@ header{height:auto!important;min-height:98px!important;overflow:visible!importan
  .hero h2{font-size:17px!important;line-height:1.5!important}
 }
 
+
+/* Three balanced header panels and permanent running ticker */
+header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(220px,1fr) minmax(0,1fr)!important;gap:10px!important;align-items:stretch!important;padding:9px 2.5%!important;min-height:104px!important;height:auto!important;overflow:visible!important;background:linear-gradient(115deg,#183b55,#244c68 48%,#302b59)!important;border-bottom:2px solid #e4bd72!important}
+.header-box{min-width:0;min-height:82px;border:1px solid #ffffff42;border-radius:13px;background:linear-gradient(145deg,#ffffff20,#071a3040);box-shadow:inset 0 1px 0 #ffffff35,0 5px 15px #0003;display:flex;align-items:center;justify-content:center;padding:8px}
+.header-left{justify-content:flex-start;gap:9px}
+.header-left .brand-visual{width:66px;height:66px;flex:0 0 66px;border-radius:11px}
+.header-left .brand-copy{min-width:0;min-height:64px;height:auto;overflow:visible;padding:2px}
+.header-left .brand-copy h1{font-size:clamp(14px,1.4vw,20px)!important;line-height:1.35!important;color:#ffe1a0!important;white-space:normal!important;overflow:visible!important}
+.header-left .brand-copy .brand-address{font-size:9px;line-height:1.3;white-space:normal}
+.header-left .brand-copy .brand-person{font-size:8px;line-height:1.25}
+.header-center h1{margin:0;text-align:center;color:#fff4d7;font-size:clamp(18px,2.1vw,30px);line-height:1.45;text-shadow:0 2px 5px #0006}
+.header-right{gap:8px;flex-wrap:wrap;justify-content:center}
+.header-right .language{padding:3px}
+.header-right .language button{padding:8px 10px;font-size:11px}
+.header-clock{display:flex;flex-direction:column;align-items:center;gap:3px;color:#fff;font-size:11px;white-space:nowrap}
+.header-clock strong{font-size:16px;color:#ffe1a0;font-variant-numeric:tabular-nums}
+.hero{padding:5px 0!important;min-height:8px}
+.hero>p,.hero-line{display:none!important}
+.apps{padding-bottom:85px!important}
+.coming-card{min-height:94px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.coming-card .module-top{justify-content:center}
+.coming-card .module-actions .action{font-size:10px!important;padding:6px 12px!important;white-space:nowrap}
+.fixed-running-bar{position:fixed;z-index:2000;bottom:0;left:0;right:0;height:54px;display:flex;align-items:center;gap:12px;padding:5px 14px;background:linear-gradient(100deg,#142e48,#1c4762,#302b59);border-top:2px solid #e4bd72;box-shadow:0 -5px 18px #0005}
+.fixed-running-bar>img{width:42px;height:42px;flex:0 0 42px;object-fit:contain;background:#fff;border-radius:8px;padding:2px}
+.ticker-window{overflow:hidden;white-space:nowrap;flex:1}
+.ticker-track{display:flex;width:max-content;animation:lalTicker 24s linear infinite}
+.ticker-track span{padding-right:70px;color:#fff1cf;font-size:13px;font-weight:700}
+@keyframes lalTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){
+ header.three-panel-header{grid-template-columns:1fr 1fr!important;gap:6px!important;padding:6px!important;min-height:0!important}
+ .header-box{min-height:60px;padding:5px}
+ .header-left{grid-column:1;grid-row:1}
+ .header-center{grid-column:2;grid-row:1}
+ .header-center h1{font-size:clamp(14px,3.7vw,19px)}
+ .header-right{grid-column:1/-1;grid-row:2;min-height:48px;justify-content:space-between}
+ .header-left .brand-visual{width:48px;height:48px;flex-basis:48px}
+ .header-left .brand-copy h1{font-size:12px!important}
+ .header-left .brand-copy .brand-address{font-size:8px}
+ .header-clock{flex-direction:row;gap:7px;font-size:9px}
+ .header-clock strong{font-size:13px}
+ .fixed-running-bar{height:48px;padding:4px 8px;gap:8px}
+ .fixed-running-bar>img{width:38px;height:38px;flex-basis:38px}
+ .ticker-track span{font-size:11px}
+ .apps{padding-bottom:65px!important}
+}
+
 </style>
 </head>
 <body>
 <div class="top-glow"></div>
-<header>
-  <div class="brand">
-    <div class="brand-visual" aria-label="লাল ডিজিটাল সেবা ও প্রতিষ্ঠাতার পরিচিতি">
+<header class="three-panel-header">
+  <div class="header-box header-left">
+    <div class="brand-visual" aria-label="LAL logo and founder photo">
       <img id="brandLogo" class="active" src="Logo.jpg" alt="LAL Logo">
       <img id="brandOwnerPhoto" src="Uzzal.jpg" alt="মোঃ অহিদুল হক উজ্জ্বল বিন লাল">
     </div>
@@ -270,14 +316,18 @@ header{height:auto!important;min-height:98px!important;overflow:visible!importan
       <div class="brand-person" id="brandPerson">মোঃ অহিদুল হক উজ্জ্বল বিন লাল<br>মোবাইল: ০১৭১১১৬৭৬৬১<br>ইমেইল: mslalenterprise@gmail.com<br>ঠিকানা: স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর</div>
     </div>
   </div>
-  <nav class="language" aria-label="Language">
-    <button type="button" id="bnButton" class="active" aria-pressed="true" onclick="setLanguage('bn')">বাংলা</button>
-    <button type="button" id="enButton" aria-pressed="false" onclick="setLanguage('en')">English</button>
-  </nav>
+  <div class="header-box header-center"><h1>লাল ডিজিটাল সেবায় স্বাগতম</h1></div>
+  <div class="header-box header-right">
+    <nav class="language" aria-label="Language">
+      <button type="button" id="bnButton" class="active" aria-pressed="true" onclick="setLanguage('bn')">বাংলা</button>
+      <button type="button" id="enButton" aria-pressed="false" onclick="setLanguage('en')">English</button>
+    </nav>
+    <div class="header-clock"><span id="headerDate">তারিখ</span><strong id="headerTime">সময়</strong></div>
+  </div>
 </header>
 <main>
   <section class="hero">
-    <h2 data-bn="লাল ডিজিটাল সেবায় স্বাগতম" data-en="Welcome to Lal Digital Services">লাল ডিজিটাল সেবায় স্বাগতম</h2>
+    
     
     <div class="hero-line"></div>
   </section>
@@ -296,7 +346,7 @@ header{height:auto!important;min-height:98px!important;overflow:visible!importan
     </div>
     <div class="apps">
       <article class="card module-card">
-        <div class="module-top"><div class="app-icon">🎙️</div><h3>Lal AI Voices</h3></div>
+        <div class="module-top"><div class="app-icon">🎙️<article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article></div><h3>Lal AI Voices</h3></div>
         <div class="module-subtitle" data-bn="AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক" data-en="AI Voice • Photo • Video • Lip-sync">AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক</div>
         <p class="module-short" data-bn="লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।" data-en="Tools to help create voiceovers from text, animate photos and make video content.">লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।</p>
         <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”" data-en="“Provide a photo and a script—Lal AI helps with the next steps. Voiceovers, photo animation and lip-sync video tools in one place. Voice cloning and realistic lip-sync depend on the selected AI service and its limits.”">“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”</div></details>
@@ -402,29 +452,13 @@ function setLanguage(language) {
   try { localStorage.setItem("lal-site-language", language); } catch (error) {}
 }
 document.getElementById("year").textContent = new Date().getFullYear();
-// Header identity carousel: logo/service details, then founder photo/details.
+// Header left identity carousel and live date/time
 (function(){
-  const logo=document.getElementById("brandLogo");
-  const photo=document.getElementById("brandOwnerPhoto");
-  const copy=document.getElementById("brandCopy");
-  const title=document.getElementById("brandTitle");
-  const address=document.getElementById("brandAddress");
-  if(!logo||!photo||!copy||!title||!address)return;
-  let showingOwner=false;
-  function rotateHeader(){
-    showingOwner=!showingOwner;
-    logo.classList.toggle("active",!showingOwner);
-    photo.classList.toggle("active",showingOwner);
-    copy.classList.toggle("person-mode",showingOwner);
-    if(showingOwner){
-      title.textContent="মোঃ অহিদুল হক উজ্জ্বল বিন লাল";
-      address.textContent="প্রতিষ্ঠাতা • LAL DIGITAL SERVICES";
-    }else{
-      title.textContent="লাল ডিজিটাল সেবা";
-      address.textContent="ঠিকানা: স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর";
-    }
-  }
-  window.setInterval(rotateHeader,5000);
+ const logo=document.getElementById("brandLogo"),photo=document.getElementById("brandOwnerPhoto"),copy=document.getElementById("brandCopy"),title=document.getElementById("brandTitle"),address=document.getElementById("brandAddress");
+ if(logo&&photo&&copy&&title&&address){let owner=false;setInterval(()=>{owner=!owner;logo.classList.toggle("active",!owner);photo.classList.toggle("active",owner);copy.classList.toggle("person-mode",owner);title.textContent=owner?"মোঃ অহিদুল হক উজ্জ্বল বিন লাল":"লাল ডিজিটাল সেবা";address.textContent=owner?"প্রতিষ্ঠাতা • LAL DIGITAL SERVICES":"ঠিকানা: স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর";},5000);}
+ const date=document.getElementById("headerDate"),time=document.getElementById("headerTime");
+ function updateClock(){const now=new Date();if(date)date.textContent=now.toLocaleDateString("bn-BD",{day:"numeric",month:"short",year:"numeric"});if(time)time.textContent=now.toLocaleTimeString("bn-BD",{hour:"2-digit",minute:"2-digit",second:"2-digit"});}
+ updateClock();setInterval(updateClock,1000);
 })();
 var savedLanguage = "bn";
 try { savedLanguage = localStorage.getItem("lal-site-language") || "bn"; } catch (error) { savedLanguage = "bn"; }
@@ -451,5 +485,6 @@ setLanguage(savedLanguage);
  ['lp-can-home','lp-can-bangla','lp-can-english'].forEach(setupCanvas);root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const c=root.querySelector('#'+b.dataset.clear);c.getContext('2d').clearRect(0,0,c.width,c.height);}));
 })();
 </script>
+<div class="fixed-running-bar"><img src="Logo.jpg" alt="LAL"><div class="ticker-window"><div class="ticker-track"><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span></div></div></div>
 </body>
 </html>
