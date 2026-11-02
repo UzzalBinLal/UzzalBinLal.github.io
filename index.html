@@ -300,6 +300,26 @@ header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,
  .apps{padding-bottom:65px!important}
 }
 
+
+/* Refined header sizing and blank boxes */
+header.three-panel-header{grid-template-columns:minmax(0,1fr) minmax(260px,1.2fr) minmax(0,1fr)!important;min-height:112px!important}
+.header-left .brand-visual{width:68px!important;height:68px!important;flex:0 0 68px!important;overflow:hidden!important}
+.header-left .brand-visual img{width:100%!important;height:100%!important;object-fit:contain!important;padding:3px!important}
+.header-left .brand-copy{flex:1;min-width:0}
+.header-left .brand-copy h1{font-size:clamp(14px,1.35vw,19px)!important}
+.header-center{flex-direction:column;gap:4px}
+.header-center h1{font-size:clamp(17px,2vw,27px)!important}
+.header-lifetime{color:#ffe2a1;font-size:clamp(8px,.85vw,11px);font-weight:800;letter-spacing:.5px;text-align:center;line-height:1.4}
+.header-lifetime span{color:#fff;margin:0 3px}
+.blank-card{min-height:96px!important;background:rgba(255,255,255,.018)!important;border:1px dashed rgba(244,200,121,.25)!important;box-shadow:none!important}
+.blank-card:before{display:none!important}
+@media(max-width:700px){
+ header.three-panel-header{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+ .header-left .brand-visual{width:48px!important;height:48px!important;flex-basis:48px!important}
+ .header-lifetime{font-size:7px;letter-spacing:0}
+ .header-center h1{font-size:clamp(13px,3.4vw,18px)!important}
+ .blank-card{min-height:72px!important}
+}
 </style>
 </head>
 <body>
@@ -316,7 +336,7 @@ header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,
       <div class="brand-person" id="brandPerson">মোঃ অহিদুল হক উজ্জ্বল বিন লাল<br>মোবাইল: ০১৭১১১৬৭৬৬১<br>ইমেইল: mslalenterprise@gmail.com<br>ঠিকানা: স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর</div>
     </div>
   </div>
-  <div class="header-box header-center"><h1>লাল ডিজিটাল সেবায় স্বাগতম</h1></div>
+  <div class="header-box header-center"><h1>লাল ডিজিটাল সেবায় স্বাগতম</h1><div class="header-lifetime">LIFETIME ACCESS <span>•</span> ONE TIME PAYMENT <span>•</span> LIFETIME USE</div></div>
   <div class="header-box header-right">
     <nav class="language" aria-label="Language">
       <button type="button" id="bnButton" class="active" aria-pressed="true" onclick="setLanguage('bn')">বাংলা</button>
@@ -332,12 +352,7 @@ header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,
     <div class="hero-line"></div>
   </section>
 
-  <section class="lifetime-banner" aria-labelledby="lifetime-heading">
-    <div class="eyebrow" data-bn="এককালীন পেমেন্টের পরিকল্পনা" data-en="ONE-TIME PAYMENT PLAN">এককালীন পেমেন্টের পরিকল্পনা</div>
-    <h2 id="lifetime-heading" data-bn="LIFETIME ACCESS" data-en="LIFETIME ACCESS">LIFETIME ACCESS</h2>
-    <p data-bn="একবার পেমেন্ট করে দীর্ঘমেয়াদে ব্যবহারের লক্ষ্য—মাসিক ভাড়ার বদলে নিজের ব্যবসার ব্যবস্থাপনা নিজের নিয়ন্ত্রণে। কোন মডিউল, মূল্য ও শর্ত প্রযোজ্য তা নিশ্চিত করে নিন।" data-en="Designed for long-term access after a one-time payment, instead of recurring monthly rent. Please confirm the included modules, price and terms before purchase.">একবার পেমেন্ট করে দীর্ঘমেয়াদে ব্যবহারের লক্ষ্য—মাসিক ভাড়ার বদলে নিজের ব্যবসার ব্যবস্থাপনা নিজের নিয়ন্ত্রণে। কোন মডিউল, মূল্য ও শর্ত প্রযোজ্য তা নিশ্চিত করে নিন।</p>
-    <a class="action" href="mailto:mslalenterprise@gmail.com?subject=LAL%20Digital%20Services%20-%20Lifetime%20Access"><span data-bn="অ্যাক্সেস সম্পর্কে যোগাযোগ করুন" data-en="Ask About Access">অ্যাক্সেস সম্পর্কে যোগাযোগ করুন</span><span aria-hidden="true">↗</span></a>
-  </section>
+
 
   <section>
     <div class="section-heading">
@@ -346,7 +361,7 @@ header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,
     </div>
     <div class="apps">
       <article class="card module-card">
-        <div class="module-top"><div class="app-icon">🎙️<article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article><article class="card module-card coming-card"><div class="module-top"><div class="app-icon">✨</div><h3>নতুন সেবা</h3></div><div class="module-actions"><span class="action secondary">Coming Soon</span></div></article></div><h3>Lal AI Voices</h3></div>
+        <div class="module-top"><div class="app-icon">🎙️</div><h3>Lal AI Voices</h3></div>
         <div class="module-subtitle" data-bn="AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক" data-en="AI Voice • Photo • Video • Lip-sync">AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক</div>
         <p class="module-short" data-bn="লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।" data-en="Tools to help create voiceovers from text, animate photos and make video content.">লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।</p>
         <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”" data-en="“Provide a photo and a script—Lal AI helps with the next steps. Voiceovers, photo animation and lip-sync video tools in one place. Voice cloning and realistic lip-sync depend on the selected AI service and its limits.”">“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”</div></details>
@@ -405,6 +420,10 @@ header.three-panel-header{display:grid!important;grid-template-columns:minmax(0,
         <p class="module-short">শিশুদের জন্য রঙিন ও আনন্দময় শেখার পৃষ্ঠা। অক্ষর, সংখ্যা ও আরবি হরফে চাপ দিলে উচ্চারণ শুনতে পারবে।</p>
         <div class="module-actions"><a class="action" href="/pathshala/">পাঠশালা খুলুন ↗</a></div>
       </article>
+      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
+      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
+      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
+      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
 
     </div>
   </section>
