@@ -133,6 +133,82 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
 #lal-pathshala #lp-page-arabic .lp-letter{font-family:Arial,"Noto Naskh Arabic",serif}#lal-pathshala #lp-page-arabic .lp-letter b{font-size:38px;color:#0f766e}
 @media(max-width:390px){#lal-pathshala .lp-btn-card{min-height:112px!important;padding:16px 6px!important}#lal-pathshala .lp-btn-card b{font-size:36px!important}}
 
+
+/* Compact single-screen home layout and steady identity header */
+header{height:98px;min-height:98px;padding:10px 4%;gap:12px;overflow:hidden}
+.brand{height:76px;min-height:76px;align-items:center;gap:12px}
+.brand-visual{width:76px;height:76px;min-width:76px;flex:0 0 76px;border-radius:12px}
+.brand-visual img{width:100%;height:100%;padding:3px;object-fit:contain}
+.brand-copy{height:76px;min-height:76px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.brand-copy h1{font-size:clamp(20px,2.4vw,29px);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-copy .brand-address{font-size:11px;line-height:1.3;margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-copy.person-mode h1{font-size:clamp(16px,1.8vw,21px);line-height:1.15;white-space:nowrap}
+.brand-copy .brand-person{font-size:10px;line-height:1.25;margin-top:3px;white-space:normal}
+main{width:min(1200px,96%);margin:0 auto}
+.hero{padding:18px 0 12px}
+.hero h2{font-size:clamp(24px,3vw,36px);line-height:1.15;margin-bottom:5px}
+.hero>p{font-size:12px;line-height:1.45}
+.hero-line{margin:9px auto 0;width:55px;height:2px}
+.lifetime-banner{margin:0 0 14px;padding:12px 18px;border-radius:14px}
+.lifetime-banner .eyebrow{font-size:10px;margin-bottom:3px}
+.lifetime-banner h2{font-size:clamp(20px,2.5vw,29px);line-height:1.1;margin:0 0 4px}
+.lifetime-banner p{font-size:11px;line-height:1.4;margin:0 auto 7px}
+.lifetime-banner .action{padding:6px 10px;font-size:11px}
+.section-heading{margin:0 0 8px}
+.section-heading h2{font-size:18px}
+.section-heading span{font-size:10px}
+.apps{grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding-bottom:16px}
+.module-card{padding:10px 11px 9px;border-radius:13px}
+.module-card .module-top{gap:7px}
+.module-card .app-icon{width:32px;height:32px;flex-basis:32px;border-radius:9px;font-size:18px}
+.module-card h3{font-size:12px;line-height:1.25}
+.module-card .module-subtitle{font-size:9px;line-height:1.25;margin:5px 0 3px}
+.module-card .module-short{font-size:10px;line-height:1.35;margin:0 0 5px}
+.module-card details{padding-top:5px}
+.module-card summary{font-size:10px}
+.module-card .module-quote{font-size:10px;line-height:1.45;padding:6px;margin-top:5px}
+.module-card .module-actions{margin-top:6px}
+.module-card .module-actions .action{font-size:10px;padding:6px 8px;border-radius:7px}
+.contact-strip{gap:10px;margin:0 0 12px}
+.bottom-note{padding:10px;font-size:11px;line-height:1.4}
+.owner-card{padding:8px;gap:5px;flex-direction:row;justify-content:center}
+.owner-photo{width:58px;height:68px;flex:0 0 58px}
+.owner-details{font-size:10px;line-height:1.35}
+.owner-details h3{font-size:11px;line-height:1.3;margin-bottom:3px}
+footer{padding:8px;font-size:10px;line-height:1.4}
+@media(max-width:850px){.apps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){
+ header{height:78px;min-height:78px;padding:6px 2%;gap:5px}
+ .brand{height:64px;min-height:64px;gap:7px}
+ .brand-visual{width:64px;height:64px;min-width:64px;flex-basis:64px}
+ .brand-copy{height:64px;min-height:64px}
+ .brand-copy h1{font-size:clamp(15px,4vw,21px)}
+ .brand-copy .brand-address{font-size:9px}
+ .brand-copy.person-mode h1{font-size:13px}
+ .brand-copy .brand-person{font-size:8px;line-height:1.15}
+ .language{gap:2px}
+ .language button{padding:7px 7px;font-size:10px}
+ main{width:96%}
+ .hero{padding:12px 0 8px}
+ .lifetime-banner{padding:9px 10px;margin-bottom:10px}
+ .apps{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .module-card{padding:9px}
+ .contact-strip{grid-template-columns:1fr 1fr;gap:7px}
+ .owner-card{flex-direction:column}
+ .owner-photo{width:48px;height:55px;flex-basis:55px}
+}
+@media(max-width:390px){
+ .brand-visual{width:54px;height:54px;min-width:54px;flex-basis:54px}
+ .brand{gap:5px}
+ .brand-copy h1{font-size:14px}
+ .brand-copy .brand-address{font-size:8px}
+ .language button{padding:6px 5px;font-size:9px}
+ .apps{gap:5px}
+ .module-card{padding:7px}
+ .module-card h3{font-size:11px}
+ .module-card .module-short{font-size:9px}
+}
+
 </style>
 </head>
 <body>
