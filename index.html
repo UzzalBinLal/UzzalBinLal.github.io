@@ -356,6 +356,24 @@ header.three-panel-header{height:112px!important;min-height:112px!important;max-
 .site-footer .footer-brand{margin-top:2px;color:var(--gold);font-weight:800;letter-spacing:1px}
 @media(max-width:560px){.site-footer{padding:7px 8px 54px!important}.coming-soon-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:6px}.coming-soon-button{min-height:40px;padding:10px 8px;font-size:14px}}
 </style>
+<style id="uniform-module-button-sizes">
+.apps{grid-auto-rows:1fr!important;align-items:stretch!important}
+.apps>.module-card{display:flex!important;flex-direction:column!important;height:100%!important;min-width:0!important}
+.apps>.module-card .module-actions{display:flex!important;width:100%!important;margin-top:auto!important;padding-top:10px!important}
+.apps>.module-card .module-actions .action,
+.apps>.module-card .module-actions a.action,
+.apps>.module-card .module-actions span.action{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;max-height:42px!important;padding:8px 6px!important;margin:0!important;border-radius:10px!important;font-size:12px!important;line-height:1.2!important;white-space:normal!important;text-align:center!important}
+.apps>.module-card .module-actions .action span{display:inline!important}
+.apps>.module-card .module-actions .action:not(.secondary)::after{content:none!important}
+.apps>.module-card .module-actions .action.secondary{display:flex!important}
+@media(max-width:560px){
+ .apps{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:1fr!important;gap:7px!important}
+ .apps>.module-card{padding:10px 8px!important}
+ .apps>.module-card .module-actions .action,
+ .apps>.module-card .module-actions a.action,
+ .apps>.module-card .module-actions span.action{height:42px!important;min-height:42px!important;max-height:42px!important;padding:6px 4px!important;font-size:10px!important}
+}
+</style>
 </head>
 <body>
 <div class="top-glow"></div>
