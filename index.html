@@ -209,6 +209,30 @@ footer{padding:8px;font-size:10px;line-height:1.4}
  .module-card .module-short{font-size:9px}
 }
 
+
+/* Final compact home layout */
+.hero{padding:10px 0 6px!important}
+.hero h2{font-size:clamp(20px,2.5vw,30px)!important;line-height:1.2!important;margin:0 auto!important;white-space:normal;overflow-wrap:anywhere}
+.hero-line{display:none!important}
+.apps{gap:7px!important}
+.module-card{padding:10px 9px!important;border-radius:12px!important}
+.module-card .module-top{gap:6px!important}
+.module-card .app-icon{font-size:23px!important}
+.module-card h3{font-size:11px!important;line-height:1.25!important}
+.module-card .module-subtitle,.module-card .module-short,.module-card details{display:none!important}
+.module-card .module-actions{margin-top:7px!important}
+.module-card .module-actions .action{min-height:25px!important;padding:5px 8px!important;font-size:0!important;line-height:1!important;min-width:32px!important;text-align:center!important}
+.module-card .module-actions .action span{display:none!important}
+.module-card .module-actions .action:not(.secondary)::after{content:"↗";font-size:14px!important}
+.module-card .module-actions .action.secondary{display:none!important}
+@media(max-width:560px){
+ .hero{padding:8px 0 5px!important}
+ .hero h2{font-size:clamp(18px,5vw,25px)!important}
+ .apps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+ .module-card{padding:9px 7px!important}
+ .module-card h3{font-size:10px!important}
+}
+
 </style>
 </head>
 <body>
@@ -233,7 +257,7 @@ footer{padding:8px;font-size:10px;line-height:1.4}
 <main>
   <section class="hero">
     <h2 data-bn="লাল ডিজিটাল সেবায় স্বাগতম" data-en="Welcome to Lal Digital Services">লাল ডিজিটাল সেবায় স্বাগতম</h2>
-    <p data-bn="AI সেবা ও ব্যবসা পরিচালনার ৭টি কোর মডিউল—পরিকল্পনা, হিসাব ও দৈনন্দিন কাজের জন্য একটি সহজ প্ল্যাটফর্ম।" data-en="Seven core modules for AI services and business management, brought together in one simple platform.">AI সেবা ও ব্যবসা পরিচালনার ৭টি কোর মডিউল—পরিকল্পনা, হিসাব ও দৈনন্দিন কাজের জন্য একটি সহজ প্ল্যাটফর্ম।</p>
+    
     <div class="hero-line"></div>
   </section>
 
