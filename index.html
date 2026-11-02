@@ -320,6 +320,27 @@ header.three-panel-header{grid-template-columns:minmax(0,1fr) minmax(260px,1.2fr
  .header-center h1{font-size:clamp(13px,3.4vw,18px)!important}
  .blank-card{min-height:72px!important}
 }
+/* Stable logo/photo carousel: identical frame and fixed header height */
+header.three-panel-header{height:112px!important;min-height:112px!important;max-height:112px!important;overflow:hidden!important;align-items:center!important}
+.header-left{height:88px!important;min-height:88px!important;max-height:88px!important;overflow:hidden!important;align-items:center!important}
+.header-left .brand-visual{width:68px!important;height:68px!important;min-width:68px!important;min-height:68px!important;max-width:68px!important;max-height:68px!important;flex:0 0 68px!important;border-radius:11px!important}
+.header-left .brand-visual img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:3px!important}
+.header-left .brand-copy{height:68px!important;min-height:68px!important;max-height:68px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;overflow:hidden!important}
+.header-left .brand-copy h1{font-size:clamp(13px,1.2vw,17px)!important;line-height:1.25!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.header-left .brand-copy .brand-address{display:block!important;font-size:9px!important;line-height:1.25!important;white-space:normal!important;margin:3px 0 0!important}
+.header-left .brand-copy .brand-person{display:none!important}
+.header-left .brand-copy.person-mode .brand-address{display:block!important}
+.header-left .brand-copy.person-mode .brand-address:after{content:" • প্রতিষ্ঠাতা";color:#ffe1a0}
+.lal-ai-launch{position:relative!important;z-index:2!important;display:inline-flex!important;min-height:44px!important;align-items:center!important;justify-content:center!important;pointer-events:auto!important;cursor:pointer!important}
+@media(max-width:700px){
+ header.three-panel-header{height:116px!important;min-height:116px!important;max-height:116px!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+ .header-left{height:58px!important;min-height:58px!important;max-height:58px!important}
+ .header-left .brand-visual{width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;max-width:48px!important;max-height:48px!important;flex-basis:48px!important}
+ .header-left .brand-copy{height:48px!important;min-height:48px!important;max-height:48px!important}
+ .header-left .brand-copy h1{font-size:11px!important}
+ .header-left .brand-copy .brand-address{font-size:7px!important}
+}
+
 </style>
 </head>
 <body>
@@ -365,7 +386,7 @@ header.three-panel-header{grid-template-columns:minmax(0,1fr) minmax(260px,1.2fr
         <div class="module-subtitle" data-bn="AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক" data-en="AI Voice • Photo • Video • Lip-sync">AI ভয়েস • ছবি • ভিডিও • লিপ-সিংক</div>
         <p class="module-short" data-bn="লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।" data-en="Tools to help create voiceovers from text, animate photos and make video content.">লেখা থেকে ভয়েসওভার, ছবি অ্যানিমেশন এবং ভিডিও কনটেন্ট তৈরির সহায়ক টুল।</p>
         <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”" data-en="“Provide a photo and a script—Lal AI helps with the next steps. Voiceovers, photo animation and lip-sync video tools in one place. Voice cloning and realistic lip-sync depend on the selected AI service and its limits.”">“একটি ছবি দিন, একটি লেখা দিন—বাকিটা Lal AI করতে সাহায্য করবে। ভয়েসওভার, ছবি অ্যানিমেশন ও লিপ-সিংক ভিডিও তৈরির সুবিধা এক জায়গায়। কণ্ঠস্বর ক্লোনিং বা বাস্তবসম্মত লিপ-সিংকের সুবিধা ব্যবহৃত AI সেবা ও তার সীমার ওপর নির্ভর করবে।”</div></details>
-        <div class="module-actions"><a class="action" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer"><span data-bn="Lal AI Voices খুলুন" data-en="Open Lal AI Voices">Lal AI Voices খুলুন</span> ↗</a></div>
+        <div class="module-actions"><a class="action lal-ai-launch" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Lal AI Voices অ্যাপ খুলুন"><span data-bn="Lal AI Voices খুলুন" data-en="Open Lal AI Voices">Lal AI Voices খুলুন</span> <span aria-hidden="true">↗</span></a></div>
       </article>
 
       <article class="card module-card">
@@ -420,10 +441,6 @@ header.three-panel-header{grid-template-columns:minmax(0,1fr) minmax(260px,1.2fr
         <p class="module-short">শিশুদের জন্য রঙিন ও আনন্দময় শেখার পৃষ্ঠা। অক্ষর, সংখ্যা ও আরবি হরফে চাপ দিলে উচ্চারণ শুনতে পারবে।</p>
         <div class="module-actions"><a class="action" href="/pathshala/">পাঠশালা খুলুন ↗</a></div>
       </article>
-      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
-      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
-      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
-      <article class="card module-card blank-card" aria-label="ফাঁকা বক্স"></article>
 
     </div>
   </section>
