@@ -82,13 +82,14 @@ body{margin:0;padding:14px;background:linear-gradient(145deg,#111827,#312044);mi
 #lal-pathshala .lp-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 #lal-pathshala .lp-page-arabic-placeholder{direction:rtl}
 @media(max-width:420px){body{padding:8px}#lal-pathshala{padding:10px}}
+#lal-pathshala .lp-header{display:flex;align-items:center;gap:12px;text-align:left}#lal-pathshala .lp-logo{width:58px;height:58px;flex:0 0 58px;object-fit:contain;border-radius:12px;border:1px solid #e30613;background:#fff;padding:3px}#lal-pathshala .lp-header-copy{min-width:0}#lal-pathshala .lp-founder img{object-fit:cover;object-position:center}
 </style><link rel="icon" href="/Logo.ico?v=2" type="image/x-icon">
 <link rel="apple-touch-icon" href="/Logo.jpg">
 </head><body>
 <section id="lal-pathshala" aria-label="লাল ডিজিটাল পাঠশালা">
     <div class="lp-shell">
-      <div class="lp-header"><h2>লাল ডিজিটাল পাঠশালা</h2><p>শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</p></div>
-      <div class="lp-founder"><img src="Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">প্রতিষ্ঠাতা • LAL Digital Services</span></div></div>
+      <div class="lp-header"><img class="lp-logo" src="/Logo.jpg" alt="LAL লোগো"><div class="lp-header-copy"><h2>লাল ডিজিটাল পাঠশালা</h2><p>শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</p></div></div>
+      <div class="lp-founder"><img src="/Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">প্রতিষ্ঠাতা • LAL Digital Services</span></div></div>
       <div id="lp-page-home" class="lp-page active"><div class="lp-home-grid">
         <button class="lp-btn-card" style="background:#e30613" type="button" data-open="bangla"><b>অ</b><small>বাংলা বর্ণমালা</small></button>
         <button class="lp-btn-card" style="background:#2563eb" type="button" data-open="english"><b>A</b><small>English Alphabet</small></button>
@@ -139,7 +140,8 @@ body{margin:0;padding:14px;background:linear-gradient(145deg,#111827,#312044);mi
  render('lp-arabic-grid',ar,'ar');
  const math=root.querySelector('#lp-math-grid');[[1,1],[2,3],[5,2],[10,5],[7,4],[9,6]].forEach(([a,b])=>{const sum=a+b,card=document.createElement('div');card.className='lp-math-card';const q=document.createElement('strong');q.textContent=bnDigits(a)+' + '+bnDigits(b)+' = ?';const answer=document.createElement('button');answer.type='button';answer.textContent='উত্তর দেখুন';answer.addEventListener('click',()=>show(bnDigits(sum),bnDigits(a)+' যোগ '+bnDigits(b)+' সমান '+bnDigits(sum),'bn-BD'));card.append(q,document.createElement('br'),answer);math.appendChild(card);});
  root.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{const names={home:'হোম',bangla:'বাংলা বর্ণমালা',english:'ইংরেজি বর্ণমালা',math:'সংখ্যা ও অংক',numbers:'এক থেকে একশ সংখ্যা',arabic:'আরবি হরফ'};speak(names[b.dataset.open]||'শিক্ষা পৃষ্ঠা','bn-BD');root.querySelectorAll('.lp-page').forEach(p=>p.classList.remove('active'));root.querySelector('#lp-page-'+b.dataset.open).classList.add('active');root.scrollIntoView({behavior:'smooth',block:'start'});}));
- if('speechSynthesis'in window){window.speechSynthesis.getVoices();window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();}\n const pop=root.querySelector('#lp-pop');pop.addEventListener('click',e=>{if(e.target===pop)pop.style.display='none';});root.querySelector('#lp-pop-repeat').addEventListener('click',()=>speak(lastText,lastLang));document.addEventListener('keydown',e=>{if(e.key==='Escape')pop.style.display='none';});
+ if('speechSynthesis'in window){window.speechSynthesis.getVoices();window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();}
+ const pop=root.querySelector('#lp-pop');pop.addEventListener('click',e=>{if(e.target===pop)pop.style.display='none';});root.querySelector('#lp-pop-repeat').addEventListener('click',()=>speak(lastText,lastLang));document.addEventListener('keydown',e=>{if(e.key==='Escape')pop.style.display='none';});
  function setupCanvas(id){const c=root.querySelector('#'+id);if(!c)return;const ctx=c.getContext('2d');let drawing=false;const pos=e=>{const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height};};c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);});c.addEventListener('pointermove',e=>{if(!drawing)return;const p=pos(e);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#e30613';ctx.lineTo(p.x,p.y);ctx.stroke();});['pointerup','pointercancel','lostpointercapture'].forEach(ev=>c.addEventListener(ev,()=>drawing=false));}
  ['lp-can-home','lp-can-bangla','lp-can-english'].forEach(setupCanvas);root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const c=root.querySelector('#'+b.dataset.clear);c.getContext('2d').clearRect(0,0,c.width,c.height);}));
 })();
