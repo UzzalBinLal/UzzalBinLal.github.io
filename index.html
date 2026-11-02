@@ -213,28 +213,17 @@ footer{padding:27px 15px;text-align:center;background:rgba(8,8,17,.45);border-to
         <details><summary data-bn="বিস্তারিত পড়ুন" data-en="Read details">বিস্তারিত পড়ুন</summary><div class="module-quote" data-bn="“উপজেলার ছোট পার্ক, বড় স্বপ্ন। এন্ট্রি টিকিট, রাইড, অনুমতির নথি ও দৈনিক কালেকশনের হিসাব এক জায়গায় গুছিয়ে রাখার লক্ষ্য।”" data-en="“A small local park with a big vision. Organize entry tickets, rides, permit records and daily collections in one place.”">“উপজেলার ছোট পার্ক, বড় স্বপ্ন। এন্ট্রি টিকিট, রাইড, অনুমতির নথি ও দৈনিক কালেকশনের হিসাব এক জায়গায় গুছিয়ে রাখার লক্ষ্য।”</div></details>
         <div class="module-actions"><span class="action secondary" data-bn="শীঘ্রই আসছে" data-en="Coming soon">শীঘ্রই আসছে</span></div>
       </article>
+      <article class="card module-card">
+        <div class="module-top"><div class="app-icon">📚</div><h3>লাল ডিজিটাল পাঠশালা</h3></div>
+        <div class="module-subtitle">বাংলা • English • গণিত • সংখ্যা • আরবি</div>
+        <p class="module-short">শিশুদের জন্য রঙিন ও আনন্দময় শেখার পৃষ্ঠা। অক্ষর, সংখ্যা ও আরবি হরফে চাপ দিলে উচ্চারণ শুনতে পারবে।</p>
+        <div class="module-actions"><a class="action" href="pathshala.html">পাঠশালা খুলুন ↗</a></div>
+      </article>
+
     </div>
   </section>
 
-  <section id="lal-pathshala" aria-label="লাল ডিজিটাল পাঠশালা">
-    <div class="lp-shell">
-      <div class="lp-header"><h2>লাল ডিজিটাল পাঠশালা</h2><p>শিশুদের জন্য আনন্দময় প্রাথমিক শেখা</p></div>
-      <div class="lp-founder"><img src="Uzzal.jpg" alt="প্রতিষ্ঠাতার ছবি"><div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><br><span style="font-size:12px;color:#555">প্রতিষ্ঠাতা • LAL Digital Services</span></div></div>
-      <div id="lp-page-home" class="lp-page active"><div class="lp-home-grid">
-        <button class="lp-btn-card" style="background:#e30613" type="button" data-open="bangla"><b>অ</b><small>বাংলা বর্ণমালা</small></button>
-        <button class="lp-btn-card" style="background:#2563eb" type="button" data-open="english"><b>A</b><small>English Alphabet</small></button>
-        <button class="lp-btn-card" style="background:#f59e0b;color:#111" type="button" data-open="math"><b>১+১</b><small>সংখ্যা ও অংক</small></button>
-        <button class="lp-btn-card" style="background:#10b981" type="button" data-open="numbers"><b>১২৩</b><small>১-১০০ সংখ্যা</small></button>
-        <button class="lp-btn-card" type="button" data-open="arabic"><b>ا ب ت</b><small>আরবি হরফ শেখা</small></button>
-      </div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#e30613">✏️ হাত ঘুরিয়ে লেখো</h3><canvas id="lp-can-home" width="720" height="360" aria-label="লেখার অনুশীলন"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-home">🧹 মুছুন</button></div></div></div>
-      <div id="lp-page-bangla" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#e30613">বাংলা বর্ণমালা</h3><div class="lp-letter-grid" id="lp-bangla-grid"></div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#e30613">✏️ লিখে অনুশীলন</h3><canvas id="lp-can-bangla" width="720" height="360"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-bangla">🧹 মুছুন</button></div></div></div>
-      <div id="lp-page-english" class="lp-page"><button class="lp-back" type="button" data-open="home">← Home</button><h3 style="color:#2563eb">English Alphabet</h3><div class="lp-letter-grid" id="lp-english-grid"></div><div class="lp-canvas-wrap"><h3 style="margin:0 0 8px;color:#2563eb">✏️ Practice writing</h3><canvas id="lp-can-english" width="720" height="360"></canvas><div class="lp-tools"><button type="button" data-clear="lp-can-english">🧹 Clear</button></div></div></div>
-      <div id="lp-page-math" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#f59e0b">সংখ্যা ও অংক</h3><div id="lp-math-grid"></div></div>
-      <div id="lp-page-numbers" class="lp-page"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#10b981">১ থেকে ১০০ সংখ্যা</h3><div class="lp-letter-grid" id="lp-number-grid"></div><div id="lp-page-arabic" class="lp-page" dir="rtl"><button class="lp-back" type="button" data-open="home">← হোম</button><h3 style="color:#0f766e;text-align:right">আরবি হরফ (২৮টি)</h3><p style="font-size:13px;color:#555;text-align:right">প্রতিটি হরফে চাপ দিলে নাম ও উচ্চারণ শোনা যাবে।</p><div class="lp-letter-grid" id="lp-arabic-grid"></div></div></div>
-      <p class="lp-info" style="padding:0 14px 14px">অক্ষর বা সংখ্যা চাপলে উচ্চারণ শোনা যাবে। ভয়েস সুবিধা আপনার ডিভাইসের বাংলা Text-to-Speech সমর্থনের ওপর নির্ভর করে।</p>
-    </div>
-    <div class="lp-modal" id="lp-pop" role="dialog" aria-modal="true" aria-label="উচ্চারণ"><div class="lp-modal-card"><div class="lp-modal-letter" id="lp-pop-letter"></div><div class="lp-modal-text" id="lp-pop-text"></div><button id="lp-pop-repeat" type="button">🔊 আবার শুনুন</button></div></div>
-  </section>
+  
 
   <section class="contact-strip">
     <div class="bottom-note">
