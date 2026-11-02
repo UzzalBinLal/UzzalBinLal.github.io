@@ -233,6 +233,27 @@ footer{padding:8px;font-size:10px;line-height:1.4}
  .module-card h3{font-size:10px!important}
 }
 
+
+/* Prevent Bengali headings from being clipped at the top */
+header{height:auto!important;min-height:98px!important;overflow:visible!important;align-items:center!important}
+.brand{min-height:76px!important;height:auto!important;align-items:center!important}
+.brand-copy{height:auto!important;min-height:76px!important;overflow:visible!important;justify-content:center!important;padding:5px 0!important}
+.brand-copy h1{display:block!important;overflow:visible!important;text-overflow:clip!important;white-space:normal!important;line-height:1.45!important;padding:2px 0 4px!important;margin:0!important}
+.hero{overflow:visible!important;padding-top:14px!important}
+.hero h2{display:block!important;overflow:visible!important;line-height:1.5!important;padding:3px 2px 5px!important}
+@media(max-width:700px){
+ header{min-height:82px!important;height:auto!important;padding:7px 2%!important}
+ .brand{height:auto!important;min-height:64px!important}
+ .brand-copy{height:auto!important;min-height:64px!important;padding:4px 0!important}
+ .brand-copy h1{font-size:clamp(14px,3.8vw,20px)!important;line-height:1.45!important}
+ .hero{padding:10px 0 6px!important}
+ .hero h2{font-size:clamp(17px,4.8vw,24px)!important;line-height:1.5!important}
+}
+@media(max-width:390px){
+ .brand-copy h1{font-size:13px!important;line-height:1.5!important}
+ .hero h2{font-size:17px!important;line-height:1.5!important}
+}
+
 </style>
 </head>
 <body>
