@@ -342,6 +342,13 @@ header.three-panel-header{height:112px!important;min-height:112px!important;max-
 }
 
 </style>
+<style>
+.site-footer{padding:12px 15px 58px!important;text-align:center;background:rgba(8,8,17,.45);border-top:1px solid var(--border);color:#aaa3b4;font-size:12px;line-height:1.5}
+.coming-soon-box{width:min(620px,92%);margin:0 auto 12px;padding:13px 18px;border:1px solid rgba(244,200,121,.42);border-radius:14px;background:linear-gradient(120deg,rgba(181,45,80,.18),rgba(98,67,190,.16));box-shadow:0 8px 24px #0003;color:#eee5f5}
+.coming-soon-label{display:inline-block;margin-bottom:5px;color:var(--gold);font-size:15px;font-weight:800;letter-spacing:.4px}
+.site-footer .footer-brand{margin-top:2px;color:var(--gold);font-weight:800;letter-spacing:1px}
+@media(max-width:560px){.site-footer{padding:10px 10px 54px!important}.coming-soon-box{padding:10px 12px;margin-bottom:8px}.coming-soon-label{font-size:14px}}
+</style>
 </head>
 <body>
 <div class="top-glow"></div>
@@ -463,7 +470,11 @@ header.three-panel-header{height:112px!important;min-height:112px!important;max-
     </div>
   </section>
 </main>
-<footer>
+<footer class="site-footer">
+  <div class="coming-soon-box">
+    <span class="coming-soon-label" data-bn="শীঘ্রই আসছে" data-en="Coming Soon">শীঘ্রই আসছে</span>
+    <div data-bn="নতুন ডিজিটাল সেবা ও আরও প্রয়োজনীয় অ্যাপ খুব শিগগিরই যুক্ত হবে।" data-en="More useful digital services and apps will be added soon.">নতুন ডিজিটাল সেবা ও আরও প্রয়োজনীয় অ্যাপ খুব শিগগিরই যুক্ত হবে।</div>
+  </div>
   <div class="footer-brand">LAL DIGITAL SERVICES</div>
   <div>© <span id="year"></span> Uzzal Bin Lal</div>
   <div data-bn="বাংলাদেশ" data-en="Bangladesh">বাংলাদেশ</div>
