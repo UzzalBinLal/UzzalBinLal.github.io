@@ -374,3 +374,10 @@ document.getElementById('p').addEventListener('keydown',e=>{if(e.key==='Enter')d
  }
 }
 </style>
+
+<style>
+/* Fix login overlay: hidden login must override the high-specificity layout rule */
+#loginPage.login.hide{display:none!important}
+#mainApp.app.hide{display:none!important}
+#mainApp.app:not(.hide){display:block!important}
+</style>
