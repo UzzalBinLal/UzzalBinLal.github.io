@@ -721,5 +721,53 @@ setLanguage(savedLanguage);
 })();
 </script>
 <div class="fixed-running-bar"><img src="Logo.jpg" alt="LAL"><div class="ticker-window"><div class="ticker-track"><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span></div></div></div>
+
+<style id="lal-module-groups-style">
+.apps .module-group-heading{
+  grid-column:1/-1;
+  margin:8px 0 0;
+  padding:11px 16px;
+  border-radius:12px;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:.2px;
+  background:linear-gradient(100deg,#7136c9,#2869d8 55%,#079b91);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 5px 14px rgba(4,18,35,.2);
+}
+.apps .module-group-heading.upcoming{
+  margin-top:20px;
+  background:linear-gradient(100deg,#42536b,#536b7c 55%,#356b68);
+}
+</style>
+<script id="lal-auto-module-groups">
+(function(){
+  function arrangeModules(){
+    const grid=document.querySelector('.apps');
+    if(!grid || grid.dataset.grouped==='yes') return;
+    const cards=Array.from(grid.querySelectorAll(':scope > .module-card'));
+    if(!cards.length) return;
+    const isComplete=card=>Array.from(card.querySelectorAll('.module-actions a.action[href]'))
+      .some(link=>link.getAttribute('href') && link.getAttribute('href')!=='#');
+    const completed=cards.filter(isComplete);
+    const upcoming=cards.filter(card=>!isComplete(card));
+    const heading=(label,extra)=>{const h=document.createElement('div');h.className='module-group-heading'+(extra?' '+extra:'');h.textContent=label;return h;};
+    grid.replaceChildren();
+    if(completed.length){
+      grid.appendChild(heading('✓ সম্পন্ন মডিউল'));
+      completed.forEach(card=>grid.appendChild(card));
+    }
+    if(upcoming.length){
+      grid.appendChild(heading('⏳ উন্নয়নাধীন মডিউল','upcoming'));
+      upcoming.forEach(card=>grid.appendChild(card));
+    }
+    grid.dataset.grouped='yes';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',arrangeModules);
+  else arrangeModules();
+})();
+</script>
+
 </body>
 </html>
