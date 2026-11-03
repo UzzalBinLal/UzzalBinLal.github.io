@@ -77,6 +77,71 @@
 #loginPage .developer-login-card p{font-size:11px!important;line-height:1.45!important;margin:3px 0!important}
 @media(max-width:900px){#loginPage.login{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:64px 300px 300px!important}#loginPage .login-live-box{grid-row:1!important}#loginPage .slide-box,#loginPage .login-center{grid-row:2!important;height:300px!important;min-height:300px!important;max-height:300px!important}#loginPage .officer-login-card,#loginPage .developer-login-card{grid-row:3!important;height:300px!important;min-height:300px!important;max-height:300px!important}}
 @media(max-width:560px){#loginPage.login{grid-template-columns:1fr!important;grid-template-rows:auto 230px 310px 290px 290px!important;gap:10px!important;padding:10px!important}#loginPage .login-live-box{grid-column:1!important;grid-row:1!important;height:auto!important;min-height:54px!important;display:flex;flex-wrap:wrap;gap:5px 12px!important;padding:7px!important}#loginPage .live-title{font-size:12px!important}#loginPage .live-stats{gap:12px!important}#loginPage .live-stats strong{font-size:16px!important}#loginPage .live-stats span{font-size:10px!important}#loginPage .login-live-box small{display:none}#loginPage .slide-box{grid-row:2!important;height:230px!important;min-height:230px!important;max-height:230px!important}#loginPage .login-center{grid-row:3!important;height:310px!important;min-height:310px!important;max-height:310px!important}#loginPage .officer-login-card{grid-row:4!important;height:290px!important;min-height:290px!important;max-height:290px!important}#loginPage .developer-login-card{grid-row:5!important;height:290px!important;min-height:290px!important;max-height:290px!important}}
+
+/* FINAL LOGIN ORDER + FOUR EQUAL 3:5 PANELS */
+@media(min-width:901px){
+  #loginPage.login{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    grid-template-rows:auto auto!important;
+    align-items:stretch!important;
+    gap:14px!important;
+    padding:14px 16px 22px!important;
+    min-height:0!important;
+  }
+  #loginPage .login-live-box{
+    grid-column:1/-1!important;grid-row:1!important;
+    width:100%!important;height:auto!important;min-height:58px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    flex-wrap:wrap!important;padding:7px 14px!important;margin:0!important;
+  }
+  /* Order: UNO profile, slideshow, login, developer */
+  #loginPage #officerLoginCard{grid-column:1!important;grid-row:2!important}
+  #loginPage #loginSlideBox{grid-column:2!important;grid-row:2!important}
+  #loginPage .login-center{grid-column:3!important;grid-row:2!important}
+  #loginPage .developer-login-card{grid-column:4!important;grid-row:2!important}
+  #loginPage .officer-login-card,
+  #loginPage .slide-box,
+  #loginPage .login-center,
+  #loginPage .developer-login-card{
+    width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;
+    aspect-ratio:3/5!important;box-sizing:border-box!important;margin:0!important;
+    align-self:stretch!important;overflow:hidden!important;
+  }
+  #loginPage .officer-login-card,#loginPage .login-center,#loginPage .developer-login-card{
+    padding:12px!important;display:flex!important;flex-direction:column!important;
+    align-items:center!important;justify-content:center!important;text-align:center!important;
+  }
+  #loginPage .officer-login-card .admin-photo{width:82px!important;height:82px!important}
+  #loginPage .national-emblem-inline{width:64px!important;height:64px!important}
+  #loginPage .developer-login-card img{width:82px!important;height:82px!important;margin:0 auto 8px!important}
+  #loginPage .slide-box img{width:100%!important;height:100%!important;object-fit:cover!important}
+}
+@media(max-width:900px){
+  #loginPage.login{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:auto auto auto!important;gap:12px!important}
+  #loginPage .login-live-box{grid-column:1/-1!important;grid-row:1!important}
+  #loginPage #officerLoginCard{grid-column:1!important;grid-row:2!important}
+  #loginPage #loginSlideBox{grid-column:2!important;grid-row:2!important}
+  #loginPage .login-center{grid-column:1!important;grid-row:3!important}
+  #loginPage .developer-login-card{grid-column:2!important;grid-row:3!important}
+  #loginPage .officer-login-card,#loginPage .slide-box,#loginPage .login-center,#loginPage .developer-login-card{
+    width:100%!important;height:auto!important;min-height:320px!important;max-height:none!important;
+    aspect-ratio:3/5!important;overflow:hidden!important;
+  }
+}
+@media(max-width:560px){
+  #loginPage.login{grid-template-columns:1fr!important;grid-template-rows:auto!important;gap:10px!important;padding:10px!important}
+  #loginPage .login-live-box{grid-column:1!important;grid-row:1!important;min-height:54px!important;height:auto!important}
+  #loginPage #officerLoginCard{grid-column:1!important;grid-row:2!important}
+  #loginPage #loginSlideBox{grid-column:1!important;grid-row:3!important}
+  #loginPage .login-center{grid-column:1!important;grid-row:4!important}
+  #loginPage .developer-login-card{grid-column:1!important;grid-row:5!important}
+  #loginPage .officer-login-card,#loginPage .slide-box,#loginPage .login-center,#loginPage .developer-login-card{
+    aspect-ratio:3/5!important;width:min(100%,300px)!important;min-height:0!important;
+    height:auto!important;max-height:none!important;justify-self:center!important;
+  }
+  #loginPage .slide-box{height:auto!important}
+}
 </style><link rel="icon" href="/Logo.ico?v=2" type="image/x-icon">
 <link rel="apple-touch-icon" href="/Logo.jpg">
 </head><body>
