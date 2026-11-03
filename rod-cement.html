@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>রড-সিমেন্ট ম্যানেজমেন্ট সিস্টেম | LAL Digital Services</title>
+<style>
+:root{--bg:#f3f6f8;--ink:#172533;--muted:#657583;--brand:#126b58;--line:#dce5e9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,"Noto Sans Bengali",sans-serif}
+header{background:linear-gradient(120deg,#103d38,#177c65);color:white;padding:24px 16px;text-align:center}
+header h1{margin:0 0 7px;font-size:clamp(23px,4vw,34px)}header p{margin:0;color:#e2f5ed}
+.wrap{max-width:1080px;margin:auto;padding:18px}
+.intro,.panel,.cta{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 5px 18px #173d4b0b}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.view{background:linear-gradient(120deg,#176b57,#279b78)}.download{background:linear-gradient(120deg,#2457a6,#397bd4)}.contact{background:linear-gradient(120deg,#a33b28,#d45c43)}
+.tabs{display:flex;gap:8px;overflow:auto;padding:5px 0 12px}.tab{border:1px solid #cbd9dd;background:#fff;color:#244;padding:10px 13px;border-radius:9px;white-space:nowrap;font-weight:650;cursor:pointer}.tab.active{background:#176b57;color:white;border-color:#176b57}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.metric{background:#f3f8f6;border:1px solid #dcece5;border-radius:12px;padding:14px}.metric small{color:var(--muted)}.metric strong{display:block;font-size:23px;margin-top:6px}
+table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);font-size:14px}th{background:#eff6f3}
+.demo-screen{display:none}.demo-screen.active{display:block}
+.notice{background:#fff7e6;border:1px solid #f0d9a8;padding:12px;border-radius:10px;color:#72501a}
+footer{text-align:center;color:var(--muted);padding:24px 12px;font-size:14px}
+@media(max-width:560px){.wrap{padding:12px}.intro,.panel,.cta{padding:14px}.btn{width:100%}th,td{padding:8px;font-size:12px}}
+</style></head>
+<body>
+<header><h1>রড-সিমেন্ট ব্যবসা ব্যবস্থাপনা</h1><p>এক ব্যাগ থেকে এক ট্রাক — স্টক, ক্রয়-বিক্রয়, বাকি ও লাভের হিসাব এক জায়গায়</p></header>
+<main class="wrap">
+<section class="intro"><h2>সফটওয়্যারটি আগে ঘুরে দেখুন</h2><p>নিচের ডেমোতে নমুনা তথ্য ব্যবহার করা হয়েছে। মেনুতে ক্লিক করে ড্যাশবোর্ড, স্টক, ক্রয়-বিক্রয়, বাকি ও রিপোর্টের নমুনা স্ক্রিন দেখুন। এটি পরিচিতিমূলক ডেমো; এখানে দেওয়া হিসাব বাস্তব ব্যবসার তথ্য নয়।</p>
+<div class="actions"><a class="btn view" href="#demo">▶ ভিউ সিস্টেম</a><a class="btn download" href="https://drive.google.com/uc?export=download&amp;id=16YKwrfE0woqEi31L_ztWWU-P0bJYt4fF" target="_blank" rel="noopener">⬇ সফটওয়্যার ডাউনলোড</a></div></section>
+<section id="demo" class="panel"><h2>ইন্টারঅ্যাকটিভ ডেমো প্রিভিউ</h2><div class="notice">ডেমো মোড — সব নাম, পরিমাণ ও টাকার অঙ্ক কেবল নমুনা।</div>
+<nav class="tabs" aria-label="ডেমো মেনু">
+<button class="tab active" data-screen="dashboard">ড্যাশবোর্ড</button><button class="tab" data-screen="stock">স্টক</button><button class="tab" data-screen="purchase">ক্রয়</button><button class="tab" data-screen="sales">বিক্রয়</button><button class="tab" data-screen="dues">বাকি</button><button class="tab" data-screen="reports">রিপোর্ট</button>
+</nav>
+<div id="dashboard" class="demo-screen active"><h3>আজকের সারসংক্ষেপ</h3><div class="grid"><div class="metric"><small>মোট পণ্য</small><strong>১২টি</strong></div><div class="metric"><small>আজকের বিক্রয়</small><strong>৳ ৮৫,০০০</strong></div><div class="metric"><small>মোট বাকি</small><strong>৳ ১,২৫,০০০</strong></div><div class="metric"><small>আনুমানিক লাভ</small><strong>৳ ১২,৫০০</strong></div></div></div>
+<div id="stock" class="demo-screen"><h3>স্টক তালিকা</h3><table><thead><tr><th>পণ্যের নাম</th><th>একক</th><th>মজুদ</th></tr></thead><tbody><tr><td>রড ১০ মিমি</td><td>টন</td><td>৪.৫০</td></tr><tr><td>রড ১২ মিমি</td><td>টন</td><td>৩.২৫</td></tr><tr><td>সিমেন্ট</td><td>ব্যাগ</td><td>৫৮০</td></tr><tr><td>বালু</td><td>ঘনফুট</td><td>১,২০০</td></tr></tbody></table></div>
+<div id="purchase" class="demo-screen"><h3>ক্রয় হিসাব</h3><table><thead><tr><th>তারিখ</th><th>সরবরাহকারী</th><th>পণ্য</th><th>মোট</th></tr></thead><tbody><tr><td>০২-১১-২০২৬</td><td>মেসার্স নমুনা ট্রেডার্স</td><td>রড ১০ মিমি</td><td>৳ ৬০,০০০</td></tr><tr><td>০১-১১-২০২৬</td><td>নমুনা সিমেন্ট ডিপো</td><td>সিমেন্ট ১০০ ব্যাগ</td><td>৳ ৫২,০০০</td></tr></tbody></table></div>
+<div id="sales" class="demo-screen"><h3>বিক্রয় হিসাব</h3><table><thead><tr><th>চালান</th><th>ক্রেতা</th><th>পণ্য</th><th>বিক্রয়</th></tr></thead><tbody><tr><td>INV-1001</td><td>রহিম কনস্ট্রাকশন</td><td>রড ১২ মিমি</td><td>৳ ৪৫,০০০</td></tr><tr><td>INV-1002</td><td>করিম বিল্ডার্স</td><td>সিমেন্ট ৫০ ব্যাগ</td><td>৳ ৪০,০০০</td></tr></tbody></table></div>
+<div id="dues" class="demo-screen"><h3>গ্রাহকের বাকি</h3><table><thead><tr><th>গ্রাহক</th><th>মোবাইল</th><th>বাকি</th></tr></thead><tbody><tr><td>রহিম কনস্ট্রাকশন</td><td>01XXXXXXXXX</td><td>৳ ৭৫,০০০</td></tr><tr><td>করিম বিল্ডার্স</td><td>01XXXXXXXXX</td><td>৳ ৫০,০০০</td></tr></tbody></table></div>
+<div id="reports" class="demo-screen"><h3>আয়-ব্যয় ও লাভের রিপোর্ট</h3><div class="grid"><div class="metric"><small>মোট বিক্রয়</small><strong>৳ ৮৫,০০০</strong></div><div class="metric"><small>মোট ক্রয়</small><strong>৳ ৬০,০০০</strong></div><div class="metric"><small>নমুনা লাভ</small><strong>৳ ১২,৫০০</strong></div></div><p>রিপোর্টে নির্দিষ্ট সময়ের ক্রয়, বিক্রয়, খরচ, বাকি ও লাভের সারাংশ দেখানোর নমুনা।</p></div>
+</section>
+<section class="cta"><h2>পছন্দ হলে সফটওয়্যারটি নিন</h2><p>ডাউনলোডের পর আপনার প্রতিষ্ঠানের নাম, প্রয়োজনীয় সেটিংস, প্রাথমিক পণ্য/স্টক এবং ব্যবহারকারীর তথ্য অনুযায়ী সেটআপ করে দেওয়া হবে। সেটআপ ও লাইসেন্সের মূল্য/পেমেন্টের বিস্তারিত ডেভেলপারের সঙ্গে নিশ্চিত করুন। পেমেন্ট নিশ্চিত হওয়ার পর সেটআপ সম্পন্ন করা হবে।</p><div class="actions"><a class="btn download" href="https://drive.google.com/uc?export=download&amp;id=16YKwrfE0woqEi31L_ztWWU-P0bJYt4fF" target="_blank" rel="noopener">⬇ ডাউনলোড করুন</a><a class="btn contact" href="tel:01711167661">☎ সেটআপের জন্য যোগাযোগ: ০১৭১১১৬৭৬৬১</a></div></section>
+</main><footer>LAL Digital Services · MS LAL ENTERPRISES</footer>
+<script>
+document.querySelectorAll('.tab').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.demo-screen').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.screen).classList.add('active')})});
+</script></body></html>
