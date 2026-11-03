@@ -163,11 +163,11 @@
 <link rel="apple-touch-icon" href="/Logo.jpg">
 </head><body>
 <div id="loginPage" class="login">
-<section class="login-live-box" aria-live="polite"><div class="live-title">🔴 লাইভ টিকিট বিক্রির হিসাব</div><div class="live-stats"><div><strong id="loginTodayQty">০</strong><span>আজকের টিকিট বিক্রি</span></div><div><strong id="loginTodayTotal">৳ ০</strong><span>আজকের মোট টাকা</span></div></div><small id="loginLiveDate"></small></section>
+<section class="login-live-box" aria-live="polite"><div class="live-stat-panel"><div class="live-title">🎟️ আজকের প্রবেশ টিকিট বিক্রি</div><div class="live-stats"><div><strong id="loginEntryQty">০</strong><span>প্রবেশ টিকিট সংখ্যা</span></div><div><strong id="loginEntryTotal">৳ ০</strong><span>মোট টাকা</span></div></div></div><div class="live-stat-panel"><div class="live-title">🎠 আজকের রাইড টিকিট বিক্রি</div><div class="live-stats"><div><strong id="loginRideQty">০</strong><span>রাইড টিকিট সংখ্যা</span></div><div><strong id="loginRideTotal">৳ ০</strong><span>মোট টাকা</span></div></div></div><small id="loginLiveDate"></small></section>
 <section class="slide-box" id="loginSlideBox" aria-label="পার্কের ছবি"><div class="slide-empty" id="slideEmpty">🖼️<br>সেটিংস থেকে ছবি যোগ করলে<br>এখানে স্লাইডশো দেখাবে</div><img id="loginSlideImage" class="hide" alt="পার্কের ছবি"><div class="slide-caption" id="slideCaption">উপজেলা মিনি শিশু পার্ক</div></section>
 <section class="login-card login-center"><h2 id="loginParkName" style="text-align:center;color:#006a4e">উপজেলা মিনি শিশু পার্ক</h2><p style="text-align:center;color:#64748b">টিকিট ও দৈনিক হিসাব — লগইন</p><input id="u" class="inp" placeholder="ইউজার আইডি" autocomplete="username"><input id="p" type="password" class="inp" placeholder="পাসওয়ার্ড" autocomplete="current-password"><button class="btn" style="width:100%;margin-top:8px" onclick="doLogin()">🔐 লগইন</button><a class="btn gray" href="/" style="display:block;text-align:center;text-decoration:none;margin-top:8px">🏠 মূল ওয়েবসাইটে ফিরে যান</a><p class="muted">লগইন করতে নির্ধারিত ইউজার আইডি ও পাসওয়ার্ড ব্যবহার করুন।</p></section>
-<section class="officer-card officer-login-card" id="officerLoginCard"><h3>UNO মহোদয়ের পরিচয়</h3><img id="loginOfficerPhoto" class="admin-photo hide" alt="UNO মহোদয়ের ছবি"><h3 id="loginOfficerName">উপজেলা নির্বাহী কর্মকর্তা</h3><p id="loginOfficerAddress">বর্তমান কর্মকর্তার পরিচয় সেটিংস থেকে যোগ করুন।</p><img id="loginOfficerLogo" class="national-emblem-inline hide" alt="উপজেলার সরকারি লোগো"></section>
-<section class="developer-card developer-login-card"><img src="/Uzzal.jpg" alt="মোঃ অহিদুল হক উজ্জ্বল বিন লাল"><div><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p class="developer-role">প্রস্তুতকারক ও ডেভেলপার</p><p><strong>LAL Digital Services</strong></p><p>স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর • মোবাইল: ০১৭১১১৬৭৬৬১</p></div></section>
+
+<section class="developer-card developer-login-card"><div class="uno-profile-half"><h3>🏛️ UNO মহোদয়ের পরিচয়</h3><img id="loginOfficerPhoto" class="admin-photo hide" alt="UNO মহোদয়ের ছবি"><h3 id="loginOfficerName">উপজেলা নির্বাহী কর্মকর্তা</h3><p id="loginOfficerAddress">বর্তমান কর্মকর্তার পরিচয় সেটিংস থেকে যোগ করুন।</p><img id="loginOfficerLogo" class="national-emblem-inline hide" alt="উপজেলার সরকারি লোগো"></div><div class="developer-profile-half"><img src="/Uzzal.jpg" alt="মোঃ অহিদুল হক উজ্জ্বল বিন লাল"><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p class="developer-role">প্রস্তুতকারক ও ডেভেলপার</p><p><strong>LAL Digital Services</strong></p><p>স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর • মোবাইল: ০১৭১১১৬৭৬৬১</p></div></section>
 </div><div id="mainApp" class="app hide"><header class="header"><div><h1 id="parkHeaderName">উপজেলা মিনি শিশু পার্ক</h1><small id="parkHeaderAddress">উপজেলা / ঠিকানা সেটিংস থেকে লিখুন • টিকিট ব্যবস্থাপনা</small><div class="header-brand">Lal Digital Services</div></div><div class="clock"><span id="clock"></span><br><button class="btn gray no-print" onclick="logout()">লগআউট</button></div></header>
 <section id="page-dashboard" class="page active"><div class="kpis" id="kpiToday"></div><div class="grid" id="mainButtons"></div><div class="box" style="margin-top:16px"><h3>বিক্রির রিপোর্ট</h3><div class="toolbar"><input type="date" id="fFrom" class="inp"><input type="date" id="fTo" class="inp"></div><button class="btn" onclick="filterReport()">রিপোর্ট দেখুন</button><div class="table-wrap"><table><thead><tr><th>তারিখ</th><th>ধরন</th><th>সংখ্যা</th><th>টাকা</th><th>অপারেটর</th></tr></thead><tbody id="reportRows"></tbody></table></div></div></section>
 <section id="page-entry" class="page"><div class="box ticket"><h3>🎟️ প্রবেশ টিকিট</h3><input id="entryPriceShow" class="inp" readonly><input id="entryQty" type="number" min="1" step="1" class="inp" placeholder="প্রবেশ সংখ্যা" oninput="calcEntry()"><div class="total">মোট: <b id="entryTotal">৳ 0</b></div><button class="btn red no-print" style="width:100%" onclick="submitEntry()">সাবমিট ও প্রিন্ট</button><div id="entryPrint" class="receipt print-area hide"></div></div></section>
@@ -190,7 +190,7 @@ function saveDB(){localStorage.setItem(KEY,JSON.stringify(DB))}
 function localDate(d=new Date()){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function money(n){return '৳ '+Number(n||0).toLocaleString('bn-BD')}
 function stamp(){return new Date().toISOString()}
-function renderLoginLiveStats(){const today=localDate(),rows=DB.sales.filter(s=>localDate(new Date(s.ts))===today),qty=rows.reduce((a,s)=>a+(Number(s.qty)||0),0),total=rows.reduce((a,s)=>a+(Number(s.total)||0),0);const q=document.getElementById('loginTodayQty'),t=document.getElementById('loginTodayTotal'),d=document.getElementById('loginLiveDate');if(q)q.textContent=qty.toLocaleString('bn-BD');if(t)t.textContent=money(total);if(d)d.textContent='তারিখ: '+new Date().toLocaleDateString('bn-BD')+' • স্বয়ংক্রিয় আপডেট'}
+function renderLoginLiveStats(){const today=localDate(),rows=DB.sales.filter(s=>localDate(new Date(s.ts))===today);const entry=rows.filter(s=>s.type==='entry'),ride=rows.filter(s=>s.type==='ride');const sum=a=>({qty:a.reduce((n,s)=>n+(Number(s.qty)||0),0),total:a.reduce((n,s)=>n+(Number(s.total)||0),0)});const e=sum(entry),r=sum(ride);[['loginEntryQty',e.qty.toLocaleString('bn-BD')],['loginEntryTotal',money(e.total)],['loginRideQty',r.qty.toLocaleString('bn-BD')],['loginRideTotal',money(r.total)]].forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.textContent=value});const d=document.getElementById('loginLiveDate');if(d)d.textContent='তারিখ: '+new Date().toLocaleDateString('bn-BD')+' • স্বয়ংক্রিয় আপডেট'}
 function doLogin(){const u=document.getElementById('u').value.trim().toLowerCase(),p=document.getElementById('p').value;const defaults={gate:'gate123',ride:'ride123'};const adminMatch=(u==='admin'&&p===DB.users.admin);if(adminMatch||((u==='gate'||u==='ride')&&DB.users[u]===p)||defaults[u]===p){if(defaults[u]===p&&DB.users[u]!==p){DB.users[u]=p;saveDB()}currentUser=adminMatch?'admin':u;document.getElementById('loginPage').classList.add('hide');document.getElementById('mainApp').classList.remove('hide');initApp()}else alert('ইউজার আইডি বা পাসওয়ার্ড ভুল।')}
 function logout(){currentUser=null;document.getElementById('mainApp').classList.add('hide');document.getElementById('loginPage').classList.remove('hide');document.getElementById('p').value=''}
 function initApp(){document.getElementById('setUpazilaName').value=DB.upazilaName||'';document.getElementById('setParkAddress').value=DB.parkAddress||'';renderParkIdentity();document.getElementById('noticeText').textContent=DB.notice;document.getElementById('adminNameInput').value=DB.adminProfile.name||'';document.getElementById('adminAddressInput').value=DB.adminProfile.address||'';document.getElementById('slideCount').textContent=DB.slides.length+'টি ছবি সংরক্ষিত';renderAdminProfile();startSlides();document.getElementById('officerNameInput').value=DB.officer?.name||'';document.getElementById('officerAddressInput').value=DB.officer?.address||'';renderOfficerProfile();document.getElementById('entryPriceShow').value=money(DB.entryPrice);document.getElementById('setEntryPrice').value=DB.entryPrice;document.getElementById('setNotice').value=DB.notice;renderButtons();renderRideSelect();renderKPIToday();renderRideList();filterReport();setInterval(()=>document.getElementById('clock').textContent=new Date().toLocaleString('bn-BD'),1000);if(currentUser==='gate')showPage('entry');else if(currentUser==='ride')showPage('ride')}
@@ -231,3 +231,51 @@ function exportBackup(){const blob=new Blob([JSON.stringify(DB,null,2)],{type:'a
 function importBackup(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const x=JSON.parse(rd.result);if(!Array.isArray(x.sales)||!Array.isArray(x.rides)||!x.users)throw Error();if(!confirm('বর্তমান ডাটা ব্যাকআপের ডাটা দিয়ে প্রতিস্থাপন করবেন?'))return;DB={...structuredClone(DEFAULT),...x};saveDB();location.reload()}catch(err){alert('ব্যাকআপ ফাইলটি সঠিক নয়।')} };rd.readAsText(f)}
 document.getElementById('p').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});renderAdminProfile();startSlides();
 </script></body></html>
+<style>
+/* Final requested login layout: one slideshow, unchanged login, split UNO/developer card */
+#loginPage.login{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)!important;grid-template-rows:auto auto!important;align-items:stretch!important}
+#loginPage .login-live-box{grid-column:1/-1!important;grid-row:1!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;height:auto!important;min-height:76px!important;padding:8px 12px!important}
+#loginPage .live-stat-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px 8px;border-radius:10px;background:#ffffff16;border:1px solid #ffffff35;min-width:0}
+#loginPage .live-stat-panel+.live-stat-panel{border-left:1px solid #ffffff55}
+#loginPage .live-stat-panel .live-title{font-size:14px!important;white-space:normal!important;text-align:center;margin:0 0 4px!important}
+#loginPage .live-stat-panel .live-stats{gap:20px!important;flex-wrap:wrap!important;justify-content:center!important}
+#loginPage .live-stat-panel .live-stats div{display:flex!important;flex-direction:row!important;gap:7px!important;align-items:center!important}
+#loginPage .live-stat-panel .live-stats strong{font-size:19px!important}
+#loginPage .live-stat-panel .live-stats span{font-size:12px!important}
+#loginPage #loginSlideBox{grid-column:1!important;grid-row:2!important;aspect-ratio:3/5!important;height:auto!important;min-height:0!important;max-height:none!important}
+#loginPage .login-center{grid-column:2!important;grid-row:2!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:3/5!important}
+#loginPage .developer-login-card{grid-column:3!important;grid-row:2!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:3/5!important;padding:0!important;display:flex!important;flex-direction:column!important;justify-content:stretch!important;align-items:stretch!important;overflow:hidden!important}
+#loginPage .uno-profile-half,#loginPage .developer-profile-half{flex:1 1 50%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 12px;overflow:hidden}
+#loginPage .uno-profile-half{background:linear-gradient(145deg,#ecfdf5,#bbf7d0);border-bottom:3px solid #d97706}
+#loginPage .uno-profile-half h3{font-size:14px;margin:3px 0;color:#065f46}
+#loginPage .uno-profile-half p{font-size:11px;line-height:1.45;margin:3px 0;white-space:pre-line;overflow-wrap:anywhere}
+#loginPage .uno-profile-half .admin-photo{width:66px!important;height:66px!important;aspect-ratio:1!important;border-radius:12px!important;object-fit:cover!important}
+#loginPage .uno-profile-half .national-emblem-inline{width:42px!important;height:42px!important;margin-top:3px!important}
+#loginPage .developer-profile-half{background:linear-gradient(120deg,#fff7ed,#ffedd5 55%,#dbeafe)}
+#loginPage .developer-profile-half img{width:66px!important;height:66px!important;object-fit:cover;border-radius:50%;border:3px solid #d97706;margin:0 auto 5px!important;flex:none}
+#loginPage .developer-profile-half h2{font-size:13px!important;line-height:1.35;margin:3px 0!important;color:#006a4e}
+#loginPage .developer-profile-half p{font-size:10px!important;line-height:1.4!important;margin:2px 0!important;overflow-wrap:anywhere}
+#loginPage .developer-profile-half .developer-role{font-weight:900;color:#b45309}
+@media(max-width:900px){
+ #loginPage.login{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #loginPage .login-live-box{grid-column:1/-1!important;grid-row:1!important}
+ #loginPage #loginSlideBox{grid-column:1!important;grid-row:2!important}
+ #loginPage .login-center{grid-column:2!important;grid-row:2!important}
+ #loginPage .developer-login-card{grid-column:1/-1!important;grid-row:3!important;aspect-ratio:auto!important;min-height:300px!important;display:grid!important;grid-template-columns:1fr 1fr!important;flex-direction:row!important}
+ #loginPage .uno-profile-half,#loginPage .developer-profile-half{min-height:300px}
+ #loginPage .uno-profile-half{border-bottom:0;border-right:3px solid #d97706}
+}
+@media(max-width:560px){
+ #loginPage.login{grid-template-columns:1fr!important;grid-template-rows:auto!important}
+ #loginPage .login-live-box{grid-column:1!important;grid-row:1!important;grid-template-columns:1fr 1fr!important;gap:5px!important}
+ #loginPage .live-stat-panel .live-title{font-size:11px!important}
+ #loginPage .live-stat-panel .live-stats{gap:7px!important}
+ #loginPage .live-stat-panel .live-stats strong{font-size:15px!important}
+ #loginPage .live-stat-panel .live-stats span{font-size:10px!important}
+ #loginPage #loginSlideBox{grid-column:1!important;grid-row:2!important;width:min(100%,300px)!important;justify-self:center!important}
+ #loginPage .login-center{grid-column:1!important;grid-row:3!important;width:min(100%,300px)!important;justify-self:center!important}
+ #loginPage .developer-login-card{grid-column:1!important;grid-row:4!important;width:min(100%,300px)!important;justify-self:center!important;grid-template-columns:1fr!important;grid-template-rows:1fr 1fr!important;min-height:560px!important}
+ #loginPage .uno-profile-half,#loginPage .developer-profile-half{min-height:0}
+ #loginPage .uno-profile-half{border-right:0;border-bottom:3px solid #d97706}
+}
+</style>
