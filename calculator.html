@@ -102,9 +102,9 @@ function evaluate(src){
 }
 function format(n){return Number(n.toPrecision(12)).toLocaleString('en-US',{maximumFractionDigits:10,useGrouping:false})}
 function preview(){const s=input.value.trim();if(!s){result.textContent='';status.textContent='সাধারণ ক্যালকুলেটর';return}try{const v=evaluate(s);result.textContent='= '+format(v);status.textContent='হিসাব প্রস্তুত'}catch(e){result.textContent='';status.textContent='হিসাব লিখুন'}}
-function insert(v){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;input.setRangeText(v,a,b,'end');input.focus();preview()}
-function clear(){input.value='';history.textContent='';lastValue=null;preview();input.focus()}
-function back(){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;if(a!==b)input.setRangeText('',a,b,'end');else if(a>0)input.setRangeText('',a-1,a,'end');input.focus();preview()}
+function insert(v){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;input.setRangeText(v,a,b,'end');preview()}
+function clear(){input.value='';history.textContent='';lastValue=null;preview()}
+function back(){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;if(a!==b)input.setRangeText('',a,b,'end');else if(a>0)input.setRangeText('',a-1,a,'end');preview()}
 function calculate(){try{const val=evaluate(input.value);history.textContent=input.value+' =';input.value=format(val);lastValue=val;result.textContent='= '+format(val);status.textContent='সফল';input.setSelectionRange(input.value.length,input.value.length)}catch(e){result.textContent=e.message;status.textContent='ত্রুটি'}}
 document.querySelectorAll('[data-insert]').forEach(b=>b.addEventListener('click',()=>insert(b.dataset.insert)));
 document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.action==='clear')clear();if(b.dataset.action==='back')back();if(b.dataset.action==='equals')calculate()}));
