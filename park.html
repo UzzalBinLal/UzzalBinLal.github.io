@@ -349,3 +349,28 @@ document.getElementById('p').addEventListener('keydown',e=>{if(e.key==='Enter')d
  #loginPage .developer-login-card{width:min(100%,420px)!important}
 }
 </style>
+
+
+<style>
+/* Live bar: equal entry/ride sections, date and time in a 2-inch right column */
+#loginPage .login-live-box{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) 2in!important;
+}
+#loginPage .live-stat-panel{width:100%!important;min-width:0!important}
+#loginPage .live-date-time{
+  width:2in!important;min-width:2in!important;max-width:2in!important;
+  justify-self:end!important;align-items:flex-end!important;
+  text-align:right!important;padding-right:8px!important;
+  border-left:1px solid #ffffff55!important;
+  border-right:0!important;
+}
+@media(max-width:560px){
+ #loginPage .login-live-box{
+   grid-template-columns:minmax(0,1fr) minmax(0,1fr) 2in!important;
+ }
+ #loginPage .live-date-time{
+   width:2in!important;min-width:2in!important;max-width:2in!important;
+   font-size:9px!important;align-items:flex-end!important;
+ }
+}
+</style>
