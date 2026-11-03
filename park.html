@@ -56,6 +56,27 @@
 .developer-role{font-weight:900;color:#b45309}
 .header{padding-left:16px}
 @media(max-width:900px){.login{grid-template-columns:1fr;grid-template-rows:auto;min-height:auto;padding:14px}.slide-box{height:250px;min-height:220px;order:1}.login-center{order:2;max-width:520px;width:100%;justify-self:center}.officer-login-card{order:3;min-height:260px}.developer-login-card{order:4;grid-column:1;flex-direction:column;text-align:center}.developer-login-card img{width:100px;height:100px}}
+/* Corrected compact login arrangement */
+#loginPage.login{min-height:0!important;height:auto!important;width:100%;max-width:1400px;margin:0 auto;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:64px 330px!important;align-items:stretch!important;gap:12px!important;padding:12px 16px 18px!important;overflow:visible}
+#loginPage .login-live-box{grid-column:1/-1!important;grid-row:1!important;width:100%!important;max-width:none!important;height:64px!important;min-height:0!important;padding:7px 16px!important;border-radius:12px!important;display:flex;align-items:center;justify-content:center;gap:20px;box-shadow:0 4px 0 #071b2b,0 8px 14px #0003!important}
+#loginPage .live-title{font-size:14px!important;margin:0!important;white-space:nowrap}
+#loginPage .live-stats{gap:22px!important;flex-wrap:nowrap!important}
+#loginPage .live-stats div{min-width:0!important;flex-direction:row!important;align-items:center;gap:7px!important;white-space:nowrap}
+#loginPage .live-stats strong{font-size:18px!important}
+#loginPage .live-stats span{font-size:12px!important}
+#loginPage .login-live-box small{font-size:10px!important;white-space:nowrap}
+#loginPage .slide-box,#loginPage .login-center,#loginPage .officer-login-card,#loginPage .developer-login-card{grid-row:2!important;grid-column:auto!important;width:100%!important;height:330px!important;min-height:330px!important;max-height:330px!important;min-width:0!important;max-width:none!important;margin:0!important;align-self:stretch!important;overflow:hidden}
+#loginPage .slide-box img{width:100%!important;height:100%!important;object-fit:cover!important}
+#loginPage .login-center{padding:18px!important;justify-content:center}
+#loginPage .officer-login-card{padding:14px!important;gap:5px!important}
+#loginPage .officer-login-card .admin-photo{width:100px!important;height:100px!important}
+#loginPage .national-emblem-inline{width:70px!important;height:70px!important;margin-top:4px!important}
+#loginPage .developer-login-card{padding:14px!important;justify-content:center!important}
+#loginPage .developer-login-card img{width:100px!important;height:100px!important;margin:0 auto 8px!important}
+#loginPage .developer-login-card h2{font-size:15px!important;margin:4px 0!important}
+#loginPage .developer-login-card p{font-size:11px!important;line-height:1.45!important;margin:3px 0!important}
+@media(max-width:900px){#loginPage.login{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:64px 300px 300px!important}#loginPage .login-live-box{grid-row:1!important}#loginPage .slide-box,#loginPage .login-center{grid-row:2!important;height:300px!important;min-height:300px!important;max-height:300px!important}#loginPage .officer-login-card,#loginPage .developer-login-card{grid-row:3!important;height:300px!important;min-height:300px!important;max-height:300px!important}}
+@media(max-width:560px){#loginPage.login{grid-template-columns:1fr!important;grid-template-rows:auto 230px 310px 290px 290px!important;gap:10px!important;padding:10px!important}#loginPage .login-live-box{grid-column:1!important;grid-row:1!important;height:auto!important;min-height:54px!important;display:flex;flex-wrap:wrap;gap:5px 12px!important;padding:7px!important}#loginPage .live-title{font-size:12px!important}#loginPage .live-stats{gap:12px!important}#loginPage .live-stats strong{font-size:16px!important}#loginPage .live-stats span{font-size:10px!important}#loginPage .login-live-box small{display:none}#loginPage .slide-box{grid-row:2!important;height:230px!important;min-height:230px!important;max-height:230px!important}#loginPage .login-center{grid-row:3!important;height:310px!important;min-height:310px!important;max-height:310px!important}#loginPage .officer-login-card{grid-row:4!important;height:290px!important;min-height:290px!important;max-height:290px!important}#loginPage .developer-login-card{grid-row:5!important;height:290px!important;min-height:290px!important;max-height:290px!important}}
 </style><link rel="icon" href="/Logo.ico?v=2" type="image/x-icon">
 <link rel="apple-touch-icon" href="/Logo.jpg">
 </head><body>
