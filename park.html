@@ -332,3 +332,20 @@ document.getElementById('p').addEventListener('keydown',e=>{if(e.key==='Enter')d
  #loginPage .uno-profile-half{border-right:0!important;border-bottom:3px solid #d97706!important}
 }
 </style>
+
+
+<style>
+/* Enlarge every login panel by roughly one inch on each side */
+@media(min-width:901px){
+ #loginPage.login{max-width:1450px!important;padding-left:24px!important;padding-right:24px!important;gap:18px!important}
+}
+@media(max-width:900px) and (min-width:561px){
+ #loginPage.login{padding:22px!important;gap:18px!important}
+}
+@media(max-width:560px){
+ #loginPage.login{padding:16px!important;gap:16px!important}
+ #loginPage #loginSlideBox{width:min(100%,480px)!important}
+ #loginPage .login-center{width:min(100%,360px)!important}
+ #loginPage .developer-login-card{width:min(100%,420px)!important}
+}
+</style>
