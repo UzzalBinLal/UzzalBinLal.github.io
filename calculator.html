@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#006a4e">
+<meta name="description" content="LAL Digital Services-এর মোবাইল-ফ্রেন্ডলি বৈজ্ঞানিক ক্যালকুলেটর।">
+<title>Calculator PRO | LAL Digital Services</title>
+<link rel="icon" href="/Logo.ico" type="image/x-icon">
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#172337;--panel2:#101a2b;--line:#2d4058;--text:#f8fafc;--muted:#9aabc0;--green:#00845f;--gold:#f5a623;--red:#c94b59}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;padding:14px;background:radial-gradient(circle at 15% 0,#164b45 0,transparent 32%),linear-gradient(145deg,#0b1220,#111d31);font-family:system-ui,"Noto Sans Bengali",sans-serif;color:var(--text);display:flex;justify-content:center;align-items:center}
+.app{width:min(100%,430px);background:linear-gradient(160deg,#1b2a40,#101a2b);border:1px solid #35445a;border-radius:26px;overflow:hidden;box-shadow:0 24px 70px #0009}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 17px 12px;gap:8px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand img{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.brand h1{font-size:16px;line-height:1.3;margin:0}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.toolbar{display:flex;gap:6px}.tool{border:1px solid var(--line);background:#2a3a51;color:#fff;border-radius:9px;padding:8px 10px;font-weight:700;font-size:12px}
+.screen{margin:0 12px;padding:15px 14px 13px;background:#07101d;border:1px solid #25364b;border-radius:17px;text-align:right;min-height:116px;display:flex;flex-direction:column;justify-content:flex-end}
+.mode{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;margin-bottom:9px}.history{min-height:20px;color:#8fa1b8;font-size:13px;overflow-wrap:anywhere}.expression{width:100%;border:0;outline:0;background:transparent;color:#fff;text-align:right;font-size:clamp(25px,7vw,34px);font-weight:700;padding:5px 0;min-width:0}.result{font-size:17px;color:#8ee0bd;min-height:22px;overflow-wrap:anywhere}
+.sci{display:none;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px 12px 0}.sci.show{display:grid}
+.keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:12px}
+.key{min-height:57px;border:0;border-radius:14px;font-size:20px;font-weight:750;cursor:pointer;box-shadow:0 4px 0 #0005;transition:transform .08s,filter .08s;touch-action:manipulation}
+.key:active{transform:translateY(3px);box-shadow:0 1px 0 #0005;filter:brightness(1.12)}
+.num{background:#e6edf5;color:#152236}.op{background:#e99b20;color:white}.fun{background:#30435d;color:#f8fafc;font-size:15px}.danger{background:#7d3442;color:#fff}.equal{background:linear-gradient(145deg,#00966c,#006a4e);color:#fff;font-size:26px}
+.sci .key{min-height:43px;font-size:14px}
+.bottom{display:flex;justify-content:space-between;gap:10px;padding:0 16px 15px;color:#7f91a8;font-size:10px}.bottom button{border:0;background:none;color:#b7dccc;font-size:11px}
+@media(max-width:360px){body{padding:7px}.app{border-radius:20px}.key{min-height:51px}.keys{gap:7px;padding:10px}.top{padding:13px}.brand h1{font-size:14px}}
+@media(min-height:800px){.key{min-height:62px}.screen{min-height:132px}}
+</style>
+</head>
+<body>
+<main class="app" aria-label="বৈজ্ঞানিক ক্যালকুলেটর">
+<header class="top"><div class="brand"><img src="/Logo.jpg" alt="LAL"><div><h1>Calculator PRO</h1><small>LAL Digital Services • Uzzal Bin Lal</small></div></div><div class="toolbar"><button class="tool" id="angleBtn" type="button">DEG</button><button class="tool" id="sciBtn" type="button" aria-expanded="false">ƒx</button></div></header>
+<section class="screen"><div class="mode"><span id="status">সাধারণ ক্যালকুলেটর</span><span>বাংলা • English</span></div><div class="history" id="history" aria-live="polite"></div><input class="expression" id="expression" aria-label="হিসাব লিখুন" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0"><div class="result" id="result" aria-live="polite"></div></section>
+<section class="sci" id="scientific">
+<button class="key fun" data-insert="sin(">sin</button><button class="key fun" data-insert="cos(">cos</button><button class="key fun" data-insert="tan(">tan</button><button class="key fun" data-insert="log(">log</button>
+<button class="key fun" data-insert="sqrt(">√</button><button class="key fun" data-insert="^">xʸ</button><button class="key fun" data-insert="(">(</button><button class="key fun" data-insert=")">)</button>
+<button class="key fun" data-insert="pi">π</button><button class="key fun" data-insert="e">e</button><button class="key fun" data-insert="!">n!</button><button class="key fun" data-insert="ln(">ln</button>
+<button class="key fun" data-insert="asin(">sin⁻¹</button><button class="key fun" data-insert="acos(">cos⁻¹</button><button class="key fun" data-insert="atan(">tan⁻¹</button><button class="key fun" data-insert="abs(">abs</button>
+</section>
+<section class="keys" aria-label="ক্যালকুলেটর কী">
+<button class="key danger" data-action="clear">AC</button><button class="key fun" data-action="back">⌫</button><button class="key fun" data-insert="%">%</button><button class="key op" data-insert="/">÷</button>
+<button class="key num" data-insert="7">7</button><button class="key num" data-insert="8">8</button><button class="key num" data-insert="9">9</button><button class="key op" data-insert="*">×</button>
+<button class="key num" data-insert="4">4</button><button class="key num" data-insert="5">5</button><button class="key num" data-insert="6">6</button><button class="key op" data-insert="-">−</button>
+<button class="key num" data-insert="1">1</button><button class="key num" data-insert="2">2</button><button class="key num" data-insert="3">3</button><button class="key op" data-insert="+">+</button>
+<button class="key num" data-insert="00">00</button><button class="key num" data-insert="0">0</button><button class="key num" data-insert=".">.</button><button class="key equal" data-action="equals">=</button>
+</section>
+<footer class="bottom"><span>Uzzal Bin Lal • Boalmari</span><button type="button" id="copyBtn">ফলাফল কপি</button><span>v2.0</span></footer>
+</main>
+<script>
+(function(){
+const input=document.getElementById('expression'),result=document.getElementById('result'),history=document.getElementById('history'),sci=document.getElementById('scientific'),sciBtn=document.getElementById('sciBtn'),angleBtn=document.getElementById('angleBtn'),status=document.getElementById('status');
+let angle='DEG',lastValue=null;
+const allowedFns={sin:Math.sin,cos:Math.cos,tan:Math.tan,asin:Math.asin,acos:Math.acos,atan:Math.atan,log:Math.log10,ln:Math.log,sqrt:Math.sqrt,abs:Math.abs};
+function factorial(n){if(!Number.isInteger(n)||n<0||n>170)throw Error('ফ্যাক্টোরিয়ালের জন্য ০–১৭০ পূর্ণসংখ্যা দিন');let v=1;for(let i=2;i<=n;i++)v*=i;return v}
+function tokenize(src){
+ src=src.replace(/×/g,'*').replace(/÷/g,'/').replace(/π/g,'pi').replace(/\s+/g,'');
+ const tokens=[];let i=0;
+ while(i<src.length){
+  const rest=src.slice(i);let m;
+  if((m=/^(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?/i.exec(rest))){tokens.push({t:'num',v:Number(m[0])});i+=m[0].length;continue}
+  if((m=/^[a-z]+/i.exec(rest))){const name=m[0].toLowerCase();if(!['pi','e',...Object.keys(allowedFns)].includes(name))throw Error('অজানা ফাংশন: '+name);tokens.push({t:'name',v:name});i+=m[0].length;continue}
+  const c=src[i];if('+-*/^()%!'.includes(c)){tokens.push({t:c,v:c});i++;continue}
+  throw Error('অবৈধ চিহ্ন');
+ }
+ // Implicit multiplication: 2pi, 2(3), (2)(3), 2sin(30)
+ const out=[];
+ for(let j=0;j<tokens.length;j++){const a=tokens[j],b=tokens[j+1];out.push(a);if(b&&((a.t==='num'||a.t===')'||a.t==='!'||a.v==='pi'||a.v==='e')&&(b.t==='name'||b.t==='('||b.t==='num')))out.push({t:'*',v:'*'});}
+ return out;
+}
+function evaluate(src){
+ const ts=tokenize(src);let p=0;
+ const peek=()=>ts[p];const take=()=>ts[p++];
+ const toRad=x=>angle==='DEG'?x*Math.PI/180:x;
+ const fromRad=x=>angle==='DEG'?x*180/Math.PI:x;
+ function primary(){
+  const t=take();if(!t)throw Error('অসম্পূর্ণ হিসাব');
+  if(t.t==='num')return t.v;
+  if(t.t==='+'||t.t==='-'){const v=expression(25);return t.t==='-'?-v:v}
+  if(t.t==='('){const v=expression(0);if(!peek()||take().t!==')')throw Error('বন্ধনী মিলেনি');return v}
+  if(t.t==='name'){
+   if(t.v==='pi')return Math.PI;if(t.v==='e')return Math.E;
+   if(!peek()||take().t!=='(')throw Error('ফাংশনের পরে ( দিন');
+   const v=expression(0);if(!peek()||take().t!==')')throw Error('বন্ধনী মিলেনি');
+   if(['sin','cos','tan'].includes(t.v))return allowedFns[t.v](toRad(v));
+   if(['asin','acos','atan'].includes(t.v))return fromRad(allowedFns[t.v](v));
+   return allowedFns[t.v](v);
+  }
+  throw Error('হিসাবটি বুঝতে পারিনি');
+ }
+ function expression(min){
+  let left=primary();
+  while(peek()){
+   const op=peek().t;
+   if(op==='!'){if(30<min)break;take();left=factorial(left);continue}
+   if(op==='%'){if(30<min)break;take();left=left/100;continue}
+   const bp={'+':10,'-':10,'*':20,'/':20,'^':30}[op];if(bp===undefined||bp<min)break;take();
+   const right=expression(op==='^'?bp:bp+1);
+   if(op==='+')left+=right;else if(op==='-')left-=right;else if(op==='*')left*=right;else if(op==='/'){if(right===0)throw Error('শূন্য দিয়ে ভাগ করা যায় না');left/=right}else left=Math.pow(left,right);
+  }
+  return left;
+ }
+ if(!ts.length)throw Error('হিসাব লিখুন');const v=expression(0);if(p!==ts.length)throw Error('হিসাবটি সম্পূর্ণ নয়');if(!Number.isFinite(v))throw Error('ফলাফল নির্ণয় করা যায়নি');return v;
+}
+function format(n){return Number(n.toPrecision(12)).toLocaleString('en-US',{maximumFractionDigits:10,useGrouping:false})}
+function preview(){const s=input.value.trim();if(!s){result.textContent='';status.textContent='সাধারণ ক্যালকুলেটর';return}try{const v=evaluate(s);result.textContent='= '+format(v);status.textContent='হিসাব প্রস্তুত'}catch(e){result.textContent='';status.textContent='হিসাব লিখুন'}}
+function insert(v){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;input.setRangeText(v,a,b,'end');input.focus();preview()}
+function clear(){input.value='';history.textContent='';lastValue=null;preview();input.focus()}
+function back(){const a=input.selectionStart??input.value.length,b=input.selectionEnd??input.value.length;if(a!==b)input.setRangeText('',a,b,'end');else if(a>0)input.setRangeText('',a-1,a,'end');input.focus();preview()}
+function calculate(){try{const val=evaluate(input.value);history.textContent=input.value+' =';input.value=format(val);lastValue=val;result.textContent='= '+format(val);status.textContent='সফল';input.setSelectionRange(input.value.length,input.value.length)}catch(e){result.textContent=e.message;status.textContent='ত্রুটি'}}
+document.querySelectorAll('[data-insert]').forEach(b=>b.addEventListener('click',()=>insert(b.dataset.insert)));
+document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.action==='clear')clear();if(b.dataset.action==='back')back();if(b.dataset.action==='equals')calculate()}));
+input.addEventListener('input',preview);
+input.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='='){e.preventDefault();calculate()}else if(e.key==='Escape'){clear()}});
+sciBtn.addEventListener('click',()=>{sci.classList.toggle('show');sciBtn.setAttribute('aria-expanded',sci.classList.contains('show')?'true':'false')});
+angleBtn.addEventListener('click',()=>{angle=angle==='DEG'?'RAD':'DEG';angleBtn.textContent=angle;status.textContent=angle==='DEG'?'ডিগ্রি মোড':'রেডিয়ান মোড';preview()});
+document.getElementById('copyBtn').addEventListener('click',async()=>{const text=lastValue===null?result.textContent:format(lastValue);if(!text)return;try{await navigator.clipboard.writeText(text);status.textContent='কপি হয়েছে'}catch(e){status.textContent='কপি করা যায়নি'}});
+preview();
+})();
+</script>
+</body></html>
