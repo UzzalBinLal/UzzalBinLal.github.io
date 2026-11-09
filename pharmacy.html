@@ -94,6 +94,20 @@ body:not(.login-mode) .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e
 @media(max-width:700px){body.login-mode main{padding:14px}.login-screen{min-height:calc(100vh - 28px)}.login-glass{padding:20px}.developer-profile{gap:9px}.dev-details{width:100%}.dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.glass-tile{min-height:116px;padding:14px}.glass-tile b{font-size:14px}}
 @media(max-width:380px){.dashboard-grid{grid-template-columns:1fr}.login-brand h2{font-size:20px}}
 
+
+/* Real translucent glass buttons with distinct jewel colors */
+.glass-tile{position:relative;isolation:isolate;overflow:hidden;border:1px solid #ffffffa8!important;background:linear-gradient(145deg,#ffffff48,#ffffff0c)!important;box-shadow:0 12px 30px #07132655,inset 0 1px 0 #ffffffb8,inset 0 -1px 0 #ffffff25!important;backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%);transition:transform .2s ease,box-shadow .2s ease}
+.glass-tile:before{content:"";position:absolute;inset:0;z-index:-2;opacity:.88;background:linear-gradient(135deg,var(--tile-a),var(--tile-b))}
+.glass-tile:after{content:"";position:absolute;z-index:-1;right:-32px;top:-55px;width:145px;height:145px;border-radius:50%;background:radial-gradient(circle,#ffffff70 0%,#ffffff18 48%,transparent 72%);filter:blur(2px)}
+.glass-tile:nth-child(6n+1){--tile-a:#075985;--tile-b:#22b8c8}
+.glass-tile:nth-child(6n+2){--tile-a:#8b1e50;--tile-b:#ed6b79}
+.glass-tile:nth-child(6n+3){--tile-a:#5030a0;--tile-b:#a855d0}
+.glass-tile:nth-child(6n+4){--tile-a:#066b60;--tile-b:#4fbd8a}
+.glass-tile:nth-child(6n+5){--tile-a:#98520b;--tile-b:#e7b54d}
+.glass-tile:nth-child(6n){--tile-a:#263e7c;--tile-b:#6b83e8}
+.glass-tile:hover,.glass-tile:focus-visible{transform:translateY(-4px);box-shadow:0 18px 38px #07132675,inset 0 1px 0 #fff!important;outline:2px solid #ffffffaa;outline-offset:2px}
+.glass-tile .emoji,.glass-tile b,.glass-tile small{position:relative;z-index:1;text-shadow:0 1px 4px #0004}
+
 </style>
 </head>
 <body class="login-mode">
@@ -120,7 +134,7 @@ body:not(.login-mode) .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e
   <section class="developer-profile">
    <img class="dev-logo" src="Logo.jpg" alt="LAL Logo">
    <img class="dev-photo" src="Uzzal.jpg" alt="Developer">
-   <div class="dev-details"><h2>Md. Ahidul Hoque Uzzal Bin Lal</h2><p>Developer &amp; Founder</p><div>Stadium Road, Boalmari, Faridpur, Bangladesh</div><div>☎ +880 1711-167661</div><div>✉ mslalenterprise@gmail.com</div></div>
+   <div class="dev-details"><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p>Developer &amp; Founder</p><div>স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর</div><div>☎ ০১৭১১১৬৭৬৬১</div><div>✉ mslalenterprise@gmail.com</div></div>
   </section>
  </div>
 </section>
@@ -201,7 +215,7 @@ document.addEventListener("click",function(e){const pageBtn=e.target.closest("[d
 $("backBtn").addEventListener("click",back);$("logoutBtn").addEventListener("click",logout);
 $("pageContent").addEventListener("change",function(e){if(e.target.id==="orgLogoFile"){const f=e.target.files&&e.target.files[0];if(!f)return;if(f.size>1500000){alert("১.৫ MB-এর কম লোগো নির্বাচন করুন।");return}if(!/^image\/(png|jpeg|webp)$/.test(f.type)){alert("JPG, PNG বা WebP ছবি দিন।");return}const rd=new FileReader();rd.onload=()=>{try{localStorage.setItem("lalOrg_logo",rd.result);$("orgLogoPreview").src=rd.result;setOrgHeader()}catch(err){alert("লোগো সংরক্ষণ করা যায়নি।")}};rd.readAsDataURL(f)}if(e.target.id==="restoreFile"&&e.target.files[0])restore(e.target.files[0])});
 $("pageContent").addEventListener("input",function(e){if(e.target.id==="invMedicine"){e.target.setAttribute("list","medList");const m=db.medicines.find(x=>x.name.toLowerCase()===e.target.value.trim().toLowerCase());if(m&&$("invPrice"))$("invPrice").value=m.sale||""}if(e.target.id==="medSearch"){const rows=$("medicineRows");if(rows)rows.innerHTML=medicineRows(e.target.value)}});
-setOrgHeader();clock();setInterval(clock,1000);$("loginSales").textContent=money(salesToday());
+setOrgHeader();clock();setInterval(clock,1000);const loginSalesEl=$("loginSales");if(loginSalesEl)loginSalesEl.textContent=money(salesToday());
 })();
 </script>
 </body>
