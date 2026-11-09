@@ -746,27 +746,30 @@ setLanguage(savedLanguage);
 (function(){
   function arrangeModules(){
     const grid=document.querySelector('.apps');
-    if(!grid || grid.dataset.grouped==='yes') return;
-    const cards=Array.from(grid.querySelectorAll(':scope > .module-card'));
+    if(!grid) return;
+    const cards=Array.from(grid.children).filter(el=>el.matches('.module-card'));
     if(!cards.length) return;
-    const isComplete=card=>Array.from(card.querySelectorAll('.module-actions a.action[href]'))
-      .some(link=>link.getAttribute('href') && link.getAttribute('href')!=='#');
+    const isComplete=card=>Array.from(card.querySelectorAll('.module-actions a[href]'))
+      .some(link=>{
+        const href=(link.getAttribute('href')||'').trim();
+        return href!=='' && href!=='#' && !/^javascript:/i.test(href);
+      });
     const completed=cards.filter(isComplete);
     const upcoming=cards.filter(card=>!isComplete(card));
+    grid.querySelectorAll(':scope > .module-group-heading').forEach(el=>el.remove());
     const heading=(label,extra)=>{const h=document.createElement('div');h.className='module-group-heading'+(extra?' '+extra:'');h.textContent=label;return h;};
-    grid.replaceChildren();
     if(completed.length){
-      grid.appendChild(heading('✓ সম্পন্ন মডিউল'));
+      grid.insertBefore(heading('✓ সম্পন্ন মডিউল'),cards[0]);
       completed.forEach(card=>grid.appendChild(card));
     }
     if(upcoming.length){
       grid.appendChild(heading('⏳ উন্নয়নাধীন মডিউল','upcoming'));
       upcoming.forEach(card=>grid.appendChild(card));
     }
-    grid.dataset.grouped='yes';
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',arrangeModules);
   else arrangeModules();
+  window.addEventListener('load',arrangeModules);
 })();
 </script>
 
