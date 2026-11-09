@@ -8,6 +8,46 @@ main{max-width:1450px;margin:auto;padding:96px 18px 92px}.layout{display:grid;gr
 .notice{position:fixed;z-index:11;bottom:0;left:0;right:0;min-height:60px;background:linear-gradient(100deg,#080b27,#171b43,#080b27);color:white;border-top:1px solid #d0a65b;display:flex;align-items:center;gap:12px;padding:8px 16px}.notice b{white-space:nowrap;background:linear-gradient(100deg,#9c5a29,#7650a5);padding:9px 13px;border-radius:18px;font-size:12px}.ticker{overflow:hidden;white-space:nowrap;flex:1;font-size:12px}.ticker span{display:inline-block;padding-left:100%;animation:run 28s linear infinite}@keyframes run{to{transform:translateX(-100%)}}
 .view{display:none}.viewtop{display:flex;justify-content:space-between;align-items:center;margin:10px 0 15px}.viewtop h2{margin:0;color:#102b57}.panel{background:white;border:1px solid #dce4ef;border-radius:14px;padding:17px;box-shadow:0 5px 15px #13294b0c}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:white;padding:14px;border:1px solid #dce4ef;border-radius:12px}.stat span{font-size:12px;color:#6b7890}.stat strong{display:block;font-size:21px;color:#102b57;margin-top:7px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.quick button{min-height:105px;border:0;border-radius:13px;color:white;font-weight:bold;font-size:15px;background:linear-gradient(135deg,#087baf,#34369b)}.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.fields label{font-size:13px}.fields input{display:block;width:100%;padding:11px;border:1px solid #cbd5e2;border-radius:8px;margin-top:5px}.action{padding:10px 14px;border:0;border-radius:8px;background:#176bd7;color:white;font-weight:bold;margin:12px 6px 0 0}.hint{font-size:12px;color:#6b7890;margin-top:12px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:480px}td,th{text-align:left;padding:11px;border-bottom:1px solid #e5ebf3;font-size:13px}th{background:#edf3fb}
 @media(max-width:850px){.layout{grid-template-columns:1fr}.login{order:-1}.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){header{height:66px;padding:6px 9px}.logo{width:39px;height:48px;font-size:19px}.brand b{font-size:15px}.brand small{font-size:9px}.clock{display:none}.headbtn{font-size:11px;padding:8px}main{padding:80px 10px 85px}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.tile{min-height:120px}.tile i{font-size:29px}.tile b{font-size:13px}.promo{height:138px}.module-box{padding:8px}.stats{grid-template-columns:repeat(2,1fr)}.quick{grid-template-columns:repeat(2,1fr)}.fields{grid-template-columns:1fr}.notice{min-height:55px;padding:6px 8px;gap:7px}.notice b{font-size:10px;padding:8px}.ticker{font-size:10px}}
+
+/* Responsive repair: mobile-first stacking and readable controls */
+@media (max-width: 850px) {
+  main { padding-top: 88px; padding-bottom: 90px; }
+  .layout { display:flex !important; flex-direction:column !important; gap:14px !important; }
+  .login { order:0 !important; width:100% !important; min-width:0 !important; padding:18px !important; }
+  .layout > div { order:1; width:100%; min-width:0; }
+  .promo { width:100%; height:150px; }
+  .module-box { width:100%; padding:10px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:9px !important; }
+  .tile { width:100%; min-width:0; min-height:112px; padding:10px 6px; white-space:normal; text-align:center; }
+  .tile b { line-height:1.35; overflow-wrap:anywhere; }
+  .tile small { line-height:1.35; }
+  .identity { text-align:center; }
+  .identity-logo { margin-left:auto; margin-right:auto; }
+  .contact { overflow-wrap:anywhere; }
+}
+@media (max-width: 480px) {
+  header { gap:7px; }
+  .brand b { font-size:14px; }
+  .brand small { font-size:9px; }
+  .headbtn { padding:7px 8px; font-size:11px; }
+  main { padding:78px 10px 82px; }
+  .login h2 { font-size:18px; }
+  .login label { line-height:1.5; }
+  .login input { display:block; width:100%; min-height:43px; margin-top:5px; }
+  .login button { min-height:42px; }
+  .promo { height:125px; }
+  .tile { min-height:105px; }
+  .tile i { font-size:27px; }
+  .tile b { font-size:13px; }
+  .tile small { font-size:10px; }
+  .notice { min-height:54px; }
+  .notice b { font-size:9px; padding:7px 8px; }
+  .ticker { font-size:10px; }
+}
+@media (min-width: 851px) {
+  .layout { grid-template-columns:minmax(0,1fr) 340px; }
+}
+
 </style></head><body>
 <header><div class="logo"><img src="Logo.jpg" alt="LAL Logo" style="width:100%;height:100%;object-fit:contain;background:#fff;border-radius:5px;padding:2px"></div><div class="brand"><b>LAL Pharmacy</b><small>Pharmacy Management System</small></div><div class="spacer"></div><div class="clock"><div id="date"></div><div id="time"></div></div><button class="headbtn" onclick="goBack()">← ব্যাক</button><button class="headbtn" onclick="logout()">লগআউট</button></header>
 <main><section id="landing"><div class="layout"><div><div class="promo" aria-label="স্লাইড প্রদর্শনী"><div class="slide active"></div><div class="slide"></div><div class="slide"></div><div class="slide-dots"><i class="active"></i><i></i><i></i></div></div><div class="module-box"><div class="grid">
@@ -34,6 +74,7 @@ function dashboard(){return '<div class="stats"><div class="stat"><span>আজ�
 function fields(a){return '<div class="panel"><div class="fields">'+a.map(x=>'<label>'+x+'<input placeholder="'+x+'"></label>').join('')+'</div><button class="action" onclick="alert(\'ডেটা সংরক্ষণ পরবর্তী উন্নয়নে যুক্ত হবে।\')">সংরক্ষণ করুন</button><p class="hint">প্রাথমিক নকশা; ডেটাবেস ও প্রকৃত হিসাব সংযোগ এখনো করা হয়নি।</p></div>'}
 function table(h,r){return '<div class="panel"><div class="tablewrap"><table><thead><tr>'+h.map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>'+r.map(row=>'<tr>'+row.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table></div><p class="hint">এগুলো নমুনা তথ্য; বাস্তব ডেটা সংরক্ষণ এখনো যুক্ত হয়নি।</p></div>'}
 function page(k){if(k==='dashboard')return dashboard();if(k==='invoice')return fields(['ইনভয়েস নম্বর','তারিখ','কাস্টমারের নাম','মোবাইল নম্বর','ওষুধের নাম','ব্যাচ নম্বর','পরিমাণ','একক বিক্রয় মূল্য','জমা টাকা']);if(k==='purchase')return fields(['চালান নম্বর','তারিখ','সরবরাহকারীর নাম','ওষুধের নাম','কোম্পানি','ব্যাচ নম্বর','মেয়াদ উত্তীর্ণের তারিখ','পরিমাণ','ক্রয়মূল্য','বিক্রয়মূল্য']);if(k==='stock')return table(['ওষুধ','ব্যাচ','মেয়াদ','স্টক','ক্রয়মূল্য','বিক্রয়মূল্য'],[['Paracetamol 500mg','P-101','2027-08','120','৳1.20','৳2.00'],['Omeprazole 20mg','O-221','2027-03','45','৳3.00','৳5.00']]);if(k==='today')return table(['সময়','ইনভয়েস','গ্রাহক','মোট','পরিশোধ'],[['10:30','INV-001','নমুনা গ্রাহক','৳1,250','৳1,250']]);if(k==='dues')return table(['গ্রাহক','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='reports')return table(['বিবরণ','আজ','এই মাস'],[['বিক্রয়','৳12,500','৳1,25,000'],['ক্রয়','৳8,000','৳82,000'],['আনুমানিক লাভ','৳2,100','৳18,500']]);if(k==='customers')return table(['নাম','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='medicines')return table(['ওষুধ','জেনেরিক','শক্তি','ধরন'],[['Paracetamol','Paracetamol','500mg','Tablet']]);if(k==='settings'){const v=(key)=>localStorage.getItem('lalOrg_'+key)||'';return '<div class="panel"><h3>প্রতিষ্ঠানের তথ্য</h3><div class="fields">'+[['name','প্রতিষ্ঠানের নাম'],['owner','মালিকের নাম'],['phone','মোবাইল নম্বর'],['address','ঠিকানা'],['license','লাইসেন্স / ট্রেড লাইসেন্স নম্বর'],['email','ইমেইল']].map(a=>'<label>'+a[1]+'<input id="org_'+a[0]+'" value="'+v(a[0]).replace(/"/g,'&quot;')+'" placeholder="'+a[1]+'"></label>').join('')+'</div><button class="action" onclick="saveOrg()">প্রতিষ্ঠানের তথ্য সংরক্ষণ</button><hr><h3>ব্যবহারকারীর লগইন পরিবর্তন</h3><div class="fields"><label>নতুন ইউজার আইডি<input id="newUser" placeholder="নতুন ইউজার আইডি"></label><label>নতুন পাসওয়ার্ড<input id="newPass" type="password" placeholder="নতুন পাসওয়ার্ড"></label></div><button class="action" onclick="changeLogin()">আইডি ও পাসওয়ার্ড পরিবর্তন</button><p class="hint">প্রতিষ্ঠানের লাইসেন্স/অ্যাক্টিভেশন পরিবর্তন এই প্যানেল থেকে করা যাবে না। এই ওয়েব সংস্করণে সার্ভার-ভিত্তিক লাইসেন্স যাচাই এখনো সংযুক্ত হয়নি।</p></div>'}}
-function saveOrg(){['name','owner','phone','address','license','email'].forEach(k=>localStorage.setItem('lalOrg_'+k,document.getElementById('org_'+k).value.trim()));alert('প্রতিষ্ঠানের তথ্য সংরক্ষণ হয়েছে।')}function changeLogin(){const u=document.getElementById('newUser').value.trim(),p=document.getElementById('newPass').value;if(!u||!p){alert('নতুন আইডি ও পাসওয়ার্ড দুটোই লিখুন।');return}localStorage.setItem('lalPharmacyUser',u);localStorage.setItem('lalPharmacyPass',p);alert('লগইন তথ্য পরিবর্তন হয়েছে। পরবর্তী লগইনে নতুন তথ্য ব্যবহার করুন।')}\n(()=>{const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.slide-dots i')];let n=0;setInterval(()=>{slides[n].classList.remove('active');dots[n].classList.remove('active');n=(n+1)%slides.length;slides[n].classList.add('active');dots[n].classList.add('active')},4000)})();
+function saveOrg(){['name','owner','phone','address','license','email'].forEach(k=>localStorage.setItem('lalOrg_'+k,document.getElementById('org_'+k).value.trim()));alert('প্রতিষ্ঠানের তথ্য সংরক্ষণ হয়েছে।')}function changeLogin(){const u=document.getElementById('newUser').value.trim(),p=document.getElementById('newPass').value;if(!u||!p){alert('নতুন আইডি ও পাসওয়ার্ড দুটোই লিখুন।');return}localStorage.setItem('lalPharmacyUser',u);localStorage.setItem('lalPharmacyPass',p);alert('লগইন তথ্য পরিবর্তন হয়েছে। পরবর্তী লগইনে নতুন তথ্য ব্যবহার করুন।')}
+(()=>{const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.slide-dots i')];let n=0;setInterval(()=>{slides[n].classList.remove('active');dots[n].classList.remove('active');n=(n+1)%slides.length;slides[n].classList.add('active');dots[n].classList.add('active')},4000)})();
 function clock(){let d=new Date();document.getElementById('date').textContent=d.toLocaleDateString('bn-BD',{day:'numeric',month:'short',year:'numeric'});document.getElementById('time').textContent=d.toLocaleTimeString('bn-BD')}clock();setInterval(clock,1000);
 </script></body></html>
