@@ -117,9 +117,108 @@ img{max-width:100%;height:auto}
   .ticker{font-size:10px!important}
 }
 
+
+/* New three-column LAL Pharmacy portal */
+#landing{width:100%}
+.portal-layout{display:grid;grid-template-columns:288px minmax(260px,1fr) 310px;gap:14px;align-items:stretch;min-height:390px}
+.dev-column,.center-column,.user-column{min-width:0;display:flex;flex-direction:column;gap:12px}
+.glass-card{color:#fff;background:linear-gradient(145deg,rgba(10,14,43,.97),rgba(35,31,76,.94));border:1px solid rgba(226,185,105,.85);border-radius:19px;box-shadow:0 12px 28px rgba(9,13,39,.24),inset 0 1px 0 rgba(255,255,255,.17);backdrop-filter:blur(12px)}
+.developer-card,.user-card{padding:15px;text-align:center;flex:1}
+.card-kicker{font-size:11px;letter-spacing:1.4px;color:#f5cf82;font-weight:800;margin-bottom:10px}
+.dev-logo{width:76px;height:62px;object-fit:contain;background:#fff;border-radius:10px;padding:4px;display:block;margin:0 auto 8px}
+.dev-photo{width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid #e6bd70;margin:0 auto 8px;background:#eee}
+.dev-photo img{width:100%;height:100%;object-fit:cover}
+.developer-card h2,.user-card h2{font-size:15px;line-height:1.45;margin:7px 0 2px;color:#fff}
+.developer-card p,.user-card p{font-size:11px;color:#d5d9ea;margin:3px 0 10px}
+.dev-contact,.user-contact{background:rgba(255,255,255,.92);color:#20233b;text-align:left;padding:9px;border-radius:10px;font-size:11px;line-height:1.9;overflow-wrap:anywhere}
+.dev-status{display:inline-block;background:#146a58;color:#d8ffed;border-radius:20px;padding:6px 12px;font-size:10px;margin-top:9px}
+.dev-access{padding:8px}
+.dev-access-toggle{width:100%;padding:10px;border:1px solid #8c79ca;border-radius:10px;color:white;background:linear-gradient(100deg,#5134a7,#9b3b88);font-weight:700;font-size:12px}
+.dev-access-panel{padding:10px 3px 3px}
+.dev-access-panel[hidden]{display:none}
+.dev-access-panel label,.user-card label{display:block;text-align:left;font-size:11px;color:#f2e9ff;margin:8px 0 4px}
+.dev-access-panel input,.user-card input{width:100%;min-width:0;padding:10px;border:1px solid #c9cfe0;border-radius:8px;background:#f8f8fc;color:#17203a;margin-top:4px}
+.dev-access-panel button,.user-card form button{width:100%;padding:10px;border:0;border-radius:9px;color:white;font-weight:800;background:linear-gradient(100deg,#7639d7,#d24787,#e58c32);margin-top:10px}
+#devErr{font-size:10px;line-height:1.5;color:#ffd7a1;margin:8px 0 0}
+.today-highlight{min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px}
+.today-highlight span{font-size:13px;color:#f6d99b;font-weight:700}
+.today-highlight strong{font-size:29px;color:#fff;text-shadow:0 2px 12px #d34d9c;margin-top:4px}
+.premium-slider{height:245px;flex:1;min-height:220px;border-radius:19px}
+.premium-slider .slide{display:flex;align-items:center;justify-content:center;padding:20px;background-size:cover}
+.premium-slider .slide:nth-child(1){background:radial-gradient(circle at 20% 25%,#f2ad6c88,transparent 35%),linear-gradient(125deg,#10132f,#412a77,#a53f78)}
+.premium-slider .slide:nth-child(2){background:radial-gradient(circle at 80% 20%,#52d7ce88,transparent 35%),linear-gradient(125deg,#102b45,#176e7b,#24255e)}
+.premium-slider .slide:nth-child(3){background:radial-gradient(circle at 50% 55%,#f5c66d88,transparent 34%),linear-gradient(125deg,#301b4b,#9b3c55,#17254c)}
+.slide-copy{width:min(100%,460px);padding:20px;border:1px solid #ffffff75;border-radius:18px;background:#080b2b99;box-shadow:0 10px 35px #0005;text-align:center;backdrop-filter:blur(9px)}
+.slide-copy small{display:block;color:#f7ca7b;font-weight:800;letter-spacing:2px;font-size:10px}
+.slide-copy strong{display:block;color:#fff;font-size:clamp(18px,2.4vw,29px);line-height:1.35;margin:10px 0}
+.slide-copy span{font-size:12px;color:#f0eafa}
+.premium-slider .slide-dots{bottom:13px}
+.user-card{padding:15px}
+.user-avatar{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:linear-gradient(135deg,#f5b449,#b23c91,#3334a1);border:3px solid #f2d28d;color:#fff;font-size:22px;font-weight:900;overflow:hidden}
+.user-login-title{font-size:15px;font-weight:900;margin:15px 0 8px;color:#f8d99b}
+.user-footnote{font-size:10px;color:#cbd3e8;margin-top:10px;line-height:1.5}
+.landing-modules{margin-top:14px}
+@media(max-width:1050px){.portal-layout{grid-template-columns:minmax(210px, .85fr) minmax(260px,1.2fr)}.user-column{grid-column:1/-1}.user-card{display:grid;grid-template-columns:90px 1fr 1.2fr;column-gap:12px;align-items:center;text-align:left}.user-card .card-kicker,.user-card .user-footnote{grid-column:1/-1;text-align:center}.user-avatar{grid-row:2/5}.user-card h2,.user-card p{grid-column:2}.user-contact{grid-column:3;grid-row:2/4}.user-login-title{grid-column:2}.user-card form{grid-column:2/4;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end}.user-card form label{margin:0}.user-card form button{margin:0}.user-card .err{grid-column:1/-1}}
+@media(max-width:650px){main{padding-top:76px!important;padding-bottom:75px!important}.portal-layout{display:flex;flex-direction:column;gap:10px}.dev-column{display:grid;grid-template-columns:1fr;gap:8px}.developer-card{padding:11px}.dev-photo{width:76px;height:76px}.dev-logo{width:62px;height:48px}.dev-contact{font-size:10px}.center-column{gap:8px}.today-highlight{min-height:70px}.today-highlight strong{font-size:25px}.premium-slider{height:170px;min-height:170px}.slide-copy{padding:13px}.slide-copy strong{font-size:19px}.user-card{display:block;text-align:center;padding:13px}.user-avatar{width:64px;height:64px}.user-card form{display:block}.user-card form label{text-align:left;margin:9px 0 4px}.user-card form button{margin-top:10px}.landing-modules{margin-top:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(min-width:651px){main{padding-top:92px;padding-bottom:82px}}
+
 </style></head><body>
 <header><div class="logo"><img src="Logo.jpg" alt="LAL Logo" style="width:100%;height:100%;object-fit:contain;background:#fff;border-radius:5px;padding:2px"></div><div class="brand"><b>LAL Pharmacy</b><small>Pharmacy Management System</small></div><div class="spacer"></div><div class="clock"><div id="date"></div><div id="time"></div></div><button class="headbtn" onclick="goBack()">← ব্যাক</button><button class="headbtn" onclick="logout()">লগআউট</button></header>
-<main><section id="landing"><div class="layout"><div><div class="promo" aria-label="স্লাইড প্রদর্শনী"><div class="slide active"></div><div class="slide"></div><div class="slide"></div><div class="slide-dots"><i class="active"></i><i></i><i></i></div></div><div class="module-box"><div class="grid">
+<main><section id="landing">
+<div class="portal-layout">
+  <aside class="dev-column">
+    <section class="glass-card developer-card">
+      <div class="card-kicker">DEVELOPER IDENTITY</div>
+      <img class="dev-logo" src="Logo.jpg" alt="LAL Logo">
+      <div class="dev-photo"><img src="Uzzal.jpg" alt="Developer portrait"></div>
+      <h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2>
+      <p>Developer & Founder</p>
+      <div class="dev-contact">⌖ স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর<br>☎ 01711167661<br>✉ mslalenterprise@gmail.com</div>
+      <span class="dev-status">● Active Developer</span>
+    </section>
+    <section class="glass-card dev-access">
+      <button class="dev-access-toggle" type="button" onclick="toggleDevAccess()">🔐 Developer Secure Access</button>
+      <div id="devAccessPanel" class="dev-access-panel" hidden>
+        <label>Developer ID<input id="devUid" autocomplete="username" placeholder="Developer ID"></label>
+        <label>Password<input id="devPwd" type="password" autocomplete="current-password" placeholder="Developer password"></label>
+        <button type="button" onclick="developerLogin()">Secure Login</button>
+        <p id="devErr">Developer credentials must be provisioned securely by the system administrator.</p>
+      </div>
+    </section>
+  </aside>
+
+  <section class="center-column">
+    <div class="today-highlight glass-card">
+      <span>আজকের মোট বিক্রি</span>
+      <strong id="landingTodaySales">৳ ০.০০</strong>
+    </div>
+    <div class="promo premium-slider" aria-label="প্রচার ও স্লাইড প্রদর্শনী">
+      <div class="slide active"><div class="slide-copy"><small>LAL PHARMACY</small><strong>আপনার ফার্মেসি, আরও গোছানো</strong><span>বিক্রি • স্টক • কাস্টমার হিসাব</span></div></div>
+      <div class="slide"><div class="slide-copy"><small>SMART MANAGEMENT</small><strong>ওষুধের হিসাব রাখুন সহজে</strong><span>ইনভয়েস ও দৈনিক বিক্রির ব্যবস্থাপনা</span></div></div>
+      <div class="slide"><div class="slide-copy"><small>CARE WITH CONFIDENCE</small><strong>প্রতিটি লেনদেন থাকুক নথিভুক্ত</strong><span>কাস্টমার ও পাওনার হিসাব এক জায়গায়</span></div></div>
+      <div class="slide-dots"><i class="active"></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <aside class="user-column">
+    <section class="glass-card user-card">
+      <div class="card-kicker">PHARMACY / OWNER</div>
+      <div class="user-avatar" id="orgAvatar">LAL</div>
+      <h2 id="orgDisplayName">LAL Pharmacy</h2>
+      <p id="orgDisplayOwner">Pharmacy Management System</p>
+      <div class="user-contact" id="orgDisplayContact">প্রতিষ্ঠানের তথ্য সেটিংস থেকে যুক্ত করুন</div>
+      <div class="user-login-title">🔒 PHARMACY LOGIN</div>
+      <form id="loginForm">
+        <label>ইউজার আইডি / Username</label><input id="uid" autocomplete="username" placeholder="আপনার ইউজার আইডি" required>
+        <label>পাসওয়ার্ড / Password</label><input id="pwd" type="password" autocomplete="current-password" placeholder="পাসওয়ার্ড লিখুন" required>
+        <button type="submit">Login / লগইন</button>
+        <div class="err" id="err"></div>
+      </form>
+      <div class="user-footnote">প্রতিষ্ঠানের পরিচয় ও ছবি ডেভেলপার কর্তৃক সেটআপ করা হবে।</div>
+    </section>
+  </aside>
+</div>
+<div class="module-box landing-modules"><div class="grid">
 <button class="tile t1" onclick="openInvoice()"><i>🧾</i><b>কাস্টমার ইনভয়েস</b><small>সরাসরি ইনভয়েস খুলুন</small><em>Open ➜</em></button>
 <button class="tile t2" onclick="needLogin('purchase')"><i>📦</i><b>পারচেজ / ক্রয়</b><small>ওষুধ ক্রয় এন্ট্রি</small><em>Login ➜</em></button>
 <button class="tile t3" onclick="needLogin('stock')"><i>💊</i><b>স্টক ম্যানেজমেন্ট</b><small>মজুদ ও মেয়াদ</small><em>Login ➜</em></button>
@@ -128,8 +227,9 @@ img{max-width:100%;height:auto}
 <button class="tile t6" onclick="needLogin('reports')"><i>📈</i><b>রিপোর্ট</b><small>লাভ-ক্ষতি ও হিসাব</small><em>Login ➜</em></button>
 <button class="tile t7" onclick="needLogin('customers')"><i>👥</i><b>কাস্টমার তালিকা</b><small>গ্রাহক ব্যবস্থাপনা</small><em>Login ➜</em></button>
 <button class="tile t8" onclick="needLogin('medicines')"><i>💉</i><b>ওষুধের তালিকা</b><small>মেডিসিন মাস্টার</small><em>Login ➜</em></button>
-<button class="tile t9" onclick="needLogin('settings')"><i>⚙️</i><b>সেটিংস</b><small>সিস্টেম সেটআপ</small><em>Login ➜</em></button></div></div></div>
-<aside class="login"><h2>🔒 PHARMACY LOGIN</h2><p>Secure Owner / Staff Access</p><form id="loginForm"><label>ইউজার আইডি / Username</label><input id="uid" placeholder="আপনার ইউজার আইডি" required><label>পাসওয়ার্ড / Password</label><input id="pwd" type="password" placeholder="পাসওয়ার্ড লিখুন" required><button>Login / লগইন</button><div class="err" id="err"></div></form><div class="identity"><h3>DEVELOPER IDENTITY</h3><img class="identity-logo" src="Logo.jpg" alt="LAL Logo"><div class="avatar"><img src="Uzzal.jpg" alt="Developer portrait"></div><strong>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</strong><small>Developer & Founder</small><div class="contact">⌖ স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর<br>☎ 01711167661<br>✉ mslalenterprise@gmail.com</div><span class="online">● Online • Active Developer</span></div></aside></div></section>
+<button class="tile t9" onclick="needLogin('settings')"><i>⚙️</i><b>সেটিংস</b><small>সিস্টেম সেটআপ</small><em>Login ➜</em></button>
+</div></div>
+</section>
 <section class="view" id="view"><div class="viewtop"><h2 id="title"></h2><button class="action" onclick="goBack()">← ফিরে যান</button></div><div id="content"></div></section></main>
 <footer class="notice"><span style="font-size:23px">📢</span><b>RUNNING NOTICE</b><div class="ticker"><span>ফার্মেসির স্টক নিয়মিত আপডেট করুন　•　মেয়াদোত্তীর্ণ ওষুধ বিক্রি করবেন না　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　LAL Pharmacy</span></div></footer>
 <script>
@@ -145,7 +245,13 @@ function table(h,r){return '<div class="panel"><div class="tablewrap"><table><th
 function page(k){if(k==='dashboard')return dashboard();if(k==='invoice')return fields(['ইনভয়েস নম্বর','তারিখ','কাস্টমারের নাম','মোবাইল নম্বর','ওষুধের নাম','ব্যাচ নম্বর','পরিমাণ','একক বিক্রয় মূল্য','জমা টাকা']);if(k==='purchase')return fields(['চালান নম্বর','তারিখ','সরবরাহকারীর নাম','ওষুধের নাম','কোম্পানি','ব্যাচ নম্বর','মেয়াদ উত্তীর্ণের তারিখ','পরিমাণ','ক্রয়মূল্য','বিক্রয়মূল্য']);if(k==='stock')return table(['ওষুধ','ব্যাচ','মেয়াদ','স্টক','ক্রয়মূল্য','বিক্রয়মূল্য'],[['Paracetamol 500mg','P-101','2027-08','120','৳1.20','৳2.00'],['Omeprazole 20mg','O-221','2027-03','45','৳3.00','৳5.00']]);if(k==='today')return table(['সময়','ইনভয়েস','গ্রাহক','মোট','পরিশোধ'],[['10:30','INV-001','নমুনা গ্রাহক','৳1,250','৳1,250']]);if(k==='dues')return table(['গ্রাহক','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='reports')return table(['বিবরণ','আজ','এই মাস'],[['বিক্রয়','৳12,500','৳1,25,000'],['ক্রয়','৳8,000','৳82,000'],['আনুমানিক লাভ','৳2,100','৳18,500']]);if(k==='customers')return table(['নাম','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='medicines')return table(['ওষুধ','জেনেরিক','শক্তি','ধরন'],[['Paracetamol','Paracetamol','500mg','Tablet']]);if(k==='settings'){const v=(key)=>localStorage.getItem('lalOrg_'+key)||'';return '<div class="panel"><h3>প্রতিষ্ঠানের তথ্য</h3><div class="fields">'+[['name','প্রতিষ্ঠানের নাম'],['owner','মালিকের নাম'],['phone','মোবাইল নম্বর'],['address','ঠিকানা'],['license','লাইসেন্স / ট্রেড লাইসেন্স নম্বর'],['email','ইমেইল']].map(a=>'<label>'+a[1]+'<input id="org_'+a[0]+'" value="'+v(a[0]).replace(/"/g,'&quot;')+'" placeholder="'+a[1]+'"></label>').join('')+'</div><button class="action" onclick="saveOrg()">প্রতিষ্ঠানের তথ্য সংরক্ষণ</button><hr><h3>ব্যবহারকারীর লগইন পরিবর্তন</h3><div class="fields"><label>নতুন ইউজার আইডি<input id="newUser" placeholder="নতুন ইউজার আইডি"></label><label>নতুন পাসওয়ার্ড<input id="newPass" type="password" placeholder="নতুন পাসওয়ার্ড"></label></div><button class="action" onclick="changeLogin()">আইডি ও পাসওয়ার্ড পরিবর্তন</button><p class="hint">প্রতিষ্ঠানের লাইসেন্স/অ্যাক্টিভেশন পরিবর্তন এই প্যানেল থেকে করা যাবে না। এই ওয়েব সংস্করণে সার্ভার-ভিত্তিক লাইসেন্স যাচাই এখনো সংযুক্ত হয়নি।</p></div>'}}
 function saveOrg(){['name','owner','phone','address','license','email'].forEach(k=>localStorage.setItem('lalOrg_'+k,document.getElementById('org_'+k).value.trim()));alert('প্রতিষ্ঠানের তথ্য সংরক্ষণ হয়েছে।')}function changeLogin(){const u=document.getElementById('newUser').value.trim(),p=document.getElementById('newPass').value;if(!u||!p){alert('নতুন আইডি ও পাসওয়ার্ড দুটোই লিখুন।');return}localStorage.setItem('lalPharmacyUser',u);localStorage.setItem('lalPharmacyPass',p);alert('লগইন তথ্য পরিবর্তন হয়েছে। পরবর্তী লগইনে নতুন তথ্য ব্যবহার করুন।')}
 (()=>{const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.slide-dots i')];let n=0;setInterval(()=>{slides[n].classList.remove('active');dots[n].classList.remove('active');n=(n+1)%slides.length;slides[n].classList.add('active');dots[n].classList.add('active')},4000)})();
-function clock(){let d=new Date();document.getElementById('date').textContent=d.toLocaleDateString('bn-BD',{day:'numeric',month:'short',year:'numeric'});document.getElementById('time').textContent=d.toLocaleTimeString('bn-BD')}clock();setInterval(clock,1000);
+function clock(){let d=new Date();document.getElementById('date').textContent=d.toLocaleDateString('bn-BD',{day:'numeric',month:'short',year:'numeric'});document.getElementById('time').textContent=d.toLocaleTimeString('bn-BD')}clock();setInterval(clock,1000);updateLandingSummary();updateOrgIdentity();
+
+
+function toggleDevAccess(){const p=document.getElementById('devAccessPanel');p.hidden=!p.hidden}
+function developerLogin(){document.getElementById('devErr').textContent='Developer account authentication is not yet connected to a secure server. This static website cannot safely verify developer credentials or protect client setup actions.'}
+function updateLandingSummary(){const d=db(),today=new Date().toLocaleDateString('en-CA');const total=d.invoices.filter(x=>x.date===today).reduce((a,x)=>a+Number(x.total||0),0);const el=document.getElementById('landingTodaySales');if(el)el.textContent=money(total)}
+function updateOrgIdentity(){const get=k=>localStorage.getItem('lalOrg_'+k)||'';const name=get('name')||'LAL Pharmacy',owner=get('owner')||'Pharmacy Management System';document.getElementById('orgDisplayName').textContent=name;document.getElementById('orgDisplayOwner').textContent=owner;const bits=[get('phone'),get('address'),get('email')].filter(Boolean);document.getElementById('orgDisplayContact').textContent=bits.length?bits.join(' • '):'প্রতিষ্ঠানের তথ্য সেটিংস থেকে যুক্ত করুন';document.getElementById('orgAvatar').textContent=(name.trim().slice(0,3)||'LAL').toUpperCase()}
 
 /* CUSTOMER, INVOICE AND MEDICINE MASTER DATA */
 const DBKEY='lalPharmacyDataV1';
