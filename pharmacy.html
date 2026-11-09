@@ -1,318 +1,131 @@
 <!doctype html>
-<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090d2b"><title>LAL Pharmacy Management System</title><link rel="icon" href="Logo.ico">
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#651d32">
+<title>LAL Pharmacy Management System</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#eef2f8;color:#18243b}button,input{font:inherit;cursor:pointer}
-header{position:fixed;z-index:10;top:0;left:0;right:0;height:76px;padding:8px 18px;background:linear-gradient(100deg,#080b27,#171b43,#080b27);color:#fff;display:flex;align-items:center;gap:12px;box-shadow:0 4px 18px #0004;border-bottom:1px solid #d4ae65}.logo{width:48px;height:54px;display:grid;place-items:center;background:linear-gradient(140deg,#f3a23b,#9b31c5,#c52a48);font-weight:900;font-size:23px}.brand b{font-size:19px}.brand small{display:block;color:#cbd5e8;font-size:11px;margin-top:3px}.spacer{flex:1}.clock{text-align:right;font-size:11px;line-height:1.7;color:#e4d6b1}.headbtn{background:#ffffff17;border:1px solid #ffffff55;color:white;border-radius:8px;padding:9px 12px}
-main{max-width:1450px;margin:auto;padding:96px 18px 92px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px}.promo,.login{background:linear-gradient(130deg,#090d2b,#1a1c48,#090d2b);color:white;border:1px solid #d0a65b;border-radius:17px;box-shadow:0 8px 22px #10183230}.promo{height:178px;padding:0;position:relative;overflow:hidden;border:1px solid #d0a65b;border-radius:17px;background:#101637}.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}.slide.active{opacity:1}.slide:nth-child(1){background:radial-gradient(circle at 20% 35%,#f6b04b88,transparent 32%),linear-gradient(120deg,#10152f,#472b75,#a33d72)}.slide:nth-child(2){background:radial-gradient(circle at 75% 35%,#55d5d188,transparent 30%),linear-gradient(120deg,#102d47,#176b78,#22245c)}.slide:nth-child(3){background:radial-gradient(circle at 50% 50%,#ffcf6a77,transparent 34%),linear-gradient(120deg,#341d50,#a34242,#1c2852)}.slide-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:7px}.slide-dots i{width:7px;height:7px;border-radius:50%;background:#ffffff70}.slide-dots i.active{background:#fff;transform:scale(1.25)}.module-box{margin-top:12px;padding:12px;border:1px solid #d0a65b;border-radius:17px;background:linear-gradient(145deg,#10152f,#20234c);box-shadow:0 8px 22px #10183230}.promo button,.login button{border:0;border-radius:9px;padding:11px 22px;background:linear-gradient(100deg,#7639d7,#d24787,#e58c32);color:white;font-weight:bold}.section{font-size:24px;margin:19px 0 12px}.section span{color:#bd4d72}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{min-height:137px;border:2px solid #ffffffaa;border-radius:18px;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;box-shadow:0 7px 16px #11193640}.tile i{font-style:normal;font-size:34px}.tile b{font-size:15px}.tile small{font-size:11px}.tile em{font-size:10px;font-style:normal;background:#d8a54b;border-radius:14px;padding:3px 10px}.t1{background:linear-gradient(140deg,#f4a83c,#a83c98)}.t2{background:linear-gradient(140deg,#5634b4,#202257)}.t3{background:linear-gradient(140deg,#ed426e,#602a9a)}.t4{background:linear-gradient(140deg,#087bb7,#153b82)}.t5{background:linear-gradient(140deg,#079b77,#075b6b)}.t6{background:linear-gradient(140deg,#e18b25,#943a26)}.t7{background:linear-gradient(140deg,#3274db,#222e82)}.t8{background:linear-gradient(140deg,#56a82d,#176d58)}.t9{background:linear-gradient(140deg,#7950d9,#26276e)}
-.login{padding:20px}.login h2{font-size:19px;margin:0 0 4px}.login p{font-size:12px;color:#c9d3e6;margin:0 0 14px}.login label{display:block;font-size:13px;margin:12px 0 6px}.login input{width:100%;padding:11px;border-radius:8px;border:1px solid #bbc6d7;background:#f5f6fa}.login button{width:100%;margin-top:13px}.err{font-size:12px;color:#ffb5b5;min-height:18px;margin-top:8px}.identity{text-align:center;border-top:1px solid #ffffff35;margin-top:15px;padding-top:14px}.avatar{margin:auto;width:104px;height:104px;border-radius:50%;border:3px solid #d8ac60;background:#e5eaf2;overflow:hidden;display:grid;place-items:center}.avatar img{width:100%;height:100%;object-fit:cover}.identity-logo{display:block;width:92px;height:62px;object-fit:contain;margin:0 auto 10px;background:#fff;border-radius:8px;padding:5px}.identity strong{display:block;margin-top:9px;font-size:14px}.identity small{color:#cbd5e8}.contact{margin-top:12px;padding:10px;background:#e6e8ef;color:#171d2b;border-radius:9px;text-align:left;font-size:11px;line-height:1.9}.online{display:inline-block;margin-top:12px;border-radius:20px;padding:6px 12px;background:#126a59;color:#d7ffeb;font-size:11px}
-.notice{position:fixed;z-index:11;bottom:0;left:0;right:0;min-height:60px;background:linear-gradient(100deg,#080b27,#171b43,#080b27);color:white;border-top:1px solid #d0a65b;display:flex;align-items:center;gap:12px;padding:8px 16px}.notice b{white-space:nowrap;background:linear-gradient(100deg,#9c5a29,#7650a5);padding:9px 13px;border-radius:18px;font-size:12px}.ticker{overflow:hidden;white-space:nowrap;flex:1;font-size:12px}.ticker span{display:inline-block;padding-left:100%;animation:run 28s linear infinite}@keyframes run{to{transform:translateX(-100%)}}
-.view{display:none}.viewtop{display:flex;justify-content:space-between;align-items:center;margin:10px 0 15px}.viewtop h2{margin:0;color:#102b57}.panel{background:white;border:1px solid #dce4ef;border-radius:14px;padding:17px;box-shadow:0 5px 15px #13294b0c}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:white;padding:14px;border:1px solid #dce4ef;border-radius:12px}.stat span{font-size:12px;color:#6b7890}.stat strong{display:block;font-size:21px;color:#102b57;margin-top:7px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.quick button{min-height:105px;border:0;border-radius:13px;color:white;font-weight:bold;font-size:15px;background:linear-gradient(135deg,#087baf,#34369b)}.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.fields label{font-size:13px}.fields input{display:block;width:100%;padding:11px;border:1px solid #cbd5e2;border-radius:8px;margin-top:5px}.action{padding:10px 14px;border:0;border-radius:8px;background:#176bd7;color:white;font-weight:bold;margin:12px 6px 0 0}.hint{font-size:12px;color:#6b7890;margin-top:12px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:480px}td,th{text-align:left;padding:11px;border-bottom:1px solid #e5ebf3;font-size:13px}th{background:#edf3fb}
-@media(max-width:850px){.layout{grid-template-columns:1fr}.login{order:-1}.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){header{height:66px;padding:6px 9px}.logo{width:39px;height:48px;font-size:19px}.brand b{font-size:15px}.brand small{font-size:9px}.clock{display:none}.headbtn{font-size:11px;padding:8px}main{padding:80px 10px 85px}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.tile{min-height:120px}.tile i{font-size:29px}.tile b{font-size:13px}.promo{height:138px}.module-box{padding:8px}.stats{grid-template-columns:repeat(2,1fr)}.quick{grid-template-columns:repeat(2,1fr)}.fields{grid-template-columns:1fr}.notice{min-height:55px;padding:6px 8px;gap:7px}.notice b{font-size:10px;padding:8px}.ticker{font-size:10px}}
-
-/* Responsive repair: mobile-first stacking and readable controls */
-@media (max-width: 850px) {
-  main { padding-top: 88px; padding-bottom: 90px; }
-  .layout { display:flex !important; flex-direction:column !important; gap:14px !important; }
-  .login { order:0 !important; width:100% !important; min-width:0 !important; padding:18px !important; }
-  .layout > div { order:1; width:100%; min-width:0; }
-  .promo { width:100%; height:150px; }
-  .module-box { width:100%; padding:10px; }
-  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:9px !important; }
-  .tile { width:100%; min-width:0; min-height:112px; padding:10px 6px; white-space:normal; text-align:center; }
-  .tile b { line-height:1.35; overflow-wrap:anywhere; }
-  .tile small { line-height:1.35; }
-  .identity { text-align:center; }
-  .identity-logo { margin-left:auto; margin-right:auto; }
-  .contact { overflow-wrap:anywhere; }
-}
-@media (max-width: 480px) {
-  header { gap:7px; }
-  .brand b { font-size:14px; }
-  .brand small { font-size:9px; }
-  .headbtn { padding:7px 8px; font-size:11px; }
-  main { padding:78px 10px 82px; }
-  .login h2 { font-size:18px; }
-  .login label { line-height:1.5; }
-  .login input { display:block; width:100%; min-height:43px; margin-top:5px; }
-  .login button { min-height:42px; }
-  .promo { height:125px; }
-  .tile { min-height:105px; }
-  .tile i { font-size:27px; }
-  .tile b { font-size:13px; }
-  .tile small { font-size:10px; }
-  .notice { min-height:54px; }
-  .notice b { font-size:9px; padding:7px 8px; }
-  .ticker { font-size:10px; }
-}
-@media (min-width: 851px) {
-  .layout { grid-template-columns:minmax(0,1fr) 340px; }
-}
-
-
-/* FINAL MOBILE/TABLET LAYOUT OVERRIDE */
-html, body { max-width:100%; overflow-x:hidden; }
-img { max-width:100%; }
-main, #landing, .layout, .layout > div, .login, .identity { min-width:0; max-width:100%; }
-.identity-logo { display:block !important; width:92px !important; height:62px !important; max-width:92px !important; max-height:62px !important; object-fit:contain !important; margin:0 auto 10px !important; }
-.avatar { width:104px !important; height:104px !important; max-width:104px !important; overflow:hidden !important; margin:12px auto !important; }
-.avatar img { width:100% !important; height:100% !important; max-width:100% !important; object-fit:cover !important; }
-@media screen and (max-width: 1100px) {
-  main { width:100% !important; max-width:100% !important; padding:82px 12px 88px !important; }
-  .layout { display:flex !important; flex-direction:column !important; width:100% !important; gap:14px !important; }
-  .layout > div { width:100% !important; order:2 !important; }
-  .login { display:block !important; width:100% !important; order:1 !important; padding:18px !important; }
-  .login form { width:100% !important; }
-  .login input { display:block !important; width:100% !important; min-width:0 !important; height:44px; margin:5px 0 10px !important; }
-  .login button { width:100% !important; min-height:42px; }
-  .identity { width:100% !important; }
-  .promo { width:100% !important; height:132px !important; }
-  .module-box { width:100% !important; margin-top:10px !important; padding:9px !important; }
-  .grid { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; width:100% !important; gap:8px !important; }
-  .tile { width:100% !important; min-width:0 !important; min-height:104px !important; padding:9px 5px !important; }
-  .tile b, .tile small { max-width:100%; overflow-wrap:anywhere; text-align:center; }
-  .contact { width:100% !important; overflow-wrap:anywhere; }
-}
-@media screen and (min-width: 1101px) {
-  .layout { display:grid !important; grid-template-columns:minmax(0,1fr) 340px !important; }
-}
-
-
-/* Final responsive layout repair */
-html,body{width:100%;max-width:100%;min-height:100%;margin:0;overflow-x:hidden}
-img{max-width:100%;height:auto}
-.identity-logo{display:block!important;width:76px!important;height:54px!important;max-width:76px!important;object-fit:contain!important;margin:0 auto 10px!important;background:#fff;border-radius:7px;padding:3px}
-.avatar{width:92px!important;height:92px!important;max-width:92px!important;overflow:hidden!important;border-radius:50%!important}
-.avatar img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
-@media screen and (max-width:850px){
-  main{width:100%!important;max-width:100%!important;padding:84px 12px 78px!important;margin:0!important}
-  .layout{display:flex!important;flex-direction:column!important;width:100%!important;max-width:100%!important;min-width:0!important;gap:14px!important}
-  .layout>div{display:block!important;order:2!important;width:100%!important;max-width:100%!important;min-width:0!important}
-  .layout>.login,.layout>aside.login{display:block!important;order:1!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important}
-  .promo{width:100%!important;height:132px!important}
-  .module-box{width:100%!important;max-width:100%!important;min-width:0!important}
-  .grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;gap:9px!important}
-  .tile{width:100%!important;min-width:0!important;min-height:105px!important;padding:9px 5px!important;white-space:normal!important}
-  .tile b,.tile small{max-width:100%;overflow-wrap:anywhere;line-height:1.35}
-  .login{padding:16px!important;overflow:hidden}
-  .login form{width:100%!important;max-width:100%!important}
-  .login input{display:block!important;width:100%!important;max-width:100%!important;min-height:42px!important;margin:5px 0 10px!important}
-  .login button{display:block;width:100%!important;min-height:42px!important}
-  .identity{width:100%;text-align:center}
-  .contact{width:100%;overflow-wrap:anywhere}
-}
-@media screen and (max-width:480px){
-  header{height:62px!important;padding:5px 8px!important;gap:7px!important}
-  .logo{width:36px!important;height:46px!important;flex:0 0 36px}
-  .brand{min-width:0}
-  .brand b{font-size:14px!important}
-  .brand small{font-size:9px!important}
-  .headbtn{font-size:10px!important;padding:7px 8px!important;white-space:nowrap}
-  main{padding:74px 9px 76px!important}
-  .login h2{font-size:18px!important}
-  .login label{display:block!important;line-height:1.5}
-  .identity-logo{width:68px!important;height:48px!important}
-  .avatar{width:86px!important;height:86px!important}
-  .notice{min-height:52px!important;padding:5px 7px!important;gap:6px!important}
-  .notice b{font-size:9px!important;padding:7px!important}
-  .ticker{font-size:10px!important}
-}
-
-
-/* New three-column LAL Pharmacy portal */
-#landing{width:100%}
-.portal-layout{display:grid;grid-template-columns:288px minmax(260px,1fr) 310px;gap:14px;align-items:stretch;min-height:390px}
-.dev-column,.center-column,.user-column{min-width:0;display:flex;flex-direction:column;gap:12px}
-.glass-card{color:#fff;background:linear-gradient(145deg,rgba(10,14,43,.97),rgba(35,31,76,.94));border:1px solid rgba(226,185,105,.85);border-radius:19px;box-shadow:0 12px 28px rgba(9,13,39,.24),inset 0 1px 0 rgba(255,255,255,.17);backdrop-filter:blur(12px)}
-.developer-card,.user-card{padding:15px;text-align:center;flex:1}
-.card-kicker{font-size:11px;letter-spacing:1.4px;color:#f5cf82;font-weight:800;margin-bottom:10px}
-.dev-logo{width:76px;height:62px;object-fit:contain;background:#fff;border-radius:10px;padding:4px;display:block;margin:0 auto 8px}
-.dev-photo{width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid #e6bd70;margin:0 auto 8px;background:#eee}
-.dev-photo img{width:100%;height:100%;object-fit:cover}
-.developer-card h2,.user-card h2{font-size:15px;line-height:1.45;margin:7px 0 2px;color:#fff}
-.developer-card p,.user-card p{font-size:11px;color:#d5d9ea;margin:3px 0 10px}
-.dev-contact,.user-contact{background:rgba(255,255,255,.92);color:#20233b;text-align:left;padding:9px;border-radius:10px;font-size:11px;line-height:1.9;overflow-wrap:anywhere}
-.dev-status{display:inline-block;background:#146a58;color:#d8ffed;border-radius:20px;padding:6px 12px;font-size:10px;margin-top:9px}
-.dev-access{padding:8px}
-.dev-access-toggle{width:100%;padding:10px;border:1px solid #8c79ca;border-radius:10px;color:white;background:linear-gradient(100deg,#5134a7,#9b3b88);font-weight:700;font-size:12px}
-.dev-access-panel{padding:10px 3px 3px}
-.dev-access-panel[hidden]{display:none}
-.dev-access-panel label,.user-card label{display:block;text-align:left;font-size:11px;color:#f2e9ff;margin:8px 0 4px}
-.dev-access-panel input,.user-card input{width:100%;min-width:0;padding:10px;border:1px solid #c9cfe0;border-radius:8px;background:#f8f8fc;color:#17203a;margin-top:4px}
-.dev-access-panel button,.user-card form button{width:100%;padding:10px;border:0;border-radius:9px;color:white;font-weight:800;background:linear-gradient(100deg,#7639d7,#d24787,#e58c32);margin-top:10px}
-#devErr{font-size:10px;line-height:1.5;color:#ffd7a1;margin:8px 0 0}
-.today-highlight{min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px}
-.today-highlight span{font-size:13px;color:#f6d99b;font-weight:700}
-.today-highlight strong{font-size:29px;color:#fff;text-shadow:0 2px 12px #d34d9c;margin-top:4px}
-.premium-slider{height:245px;flex:1;min-height:220px;border-radius:19px}
-.premium-slider .slide{display:flex;align-items:center;justify-content:center;padding:20px;background-size:cover}
-.premium-slider .slide:nth-child(1){background:radial-gradient(circle at 20% 25%,#f2ad6c88,transparent 35%),linear-gradient(125deg,#10132f,#412a77,#a53f78)}
-.premium-slider .slide:nth-child(2){background:radial-gradient(circle at 80% 20%,#52d7ce88,transparent 35%),linear-gradient(125deg,#102b45,#176e7b,#24255e)}
-.premium-slider .slide:nth-child(3){background:radial-gradient(circle at 50% 55%,#f5c66d88,transparent 34%),linear-gradient(125deg,#301b4b,#9b3c55,#17254c)}
-.slide-copy{width:min(100%,460px);padding:20px;border:1px solid #ffffff75;border-radius:18px;background:#080b2b99;box-shadow:0 10px 35px #0005;text-align:center;backdrop-filter:blur(9px)}
-.slide-copy small{display:block;color:#f7ca7b;font-weight:800;letter-spacing:2px;font-size:10px}
-.slide-copy strong{display:block;color:#fff;font-size:clamp(18px,2.4vw,29px);line-height:1.35;margin:10px 0}
-.slide-copy span{font-size:12px;color:#f0eafa}
-.premium-slider .slide-dots{bottom:13px}
-.user-card{padding:15px}
-.user-avatar{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:linear-gradient(135deg,#f5b449,#b23c91,#3334a1);border:3px solid #f2d28d;color:#fff;font-size:22px;font-weight:900;overflow:hidden}
-.user-login-title{font-size:15px;font-weight:900;margin:15px 0 8px;color:#f8d99b}
-.user-footnote{font-size:10px;color:#cbd3e8;margin-top:10px;line-height:1.5}
-.landing-modules{margin-top:14px}
-@media(max-width:1050px){.portal-layout{grid-template-columns:minmax(210px, .85fr) minmax(260px,1.2fr)}.user-column{grid-column:1/-1}.user-card{display:grid;grid-template-columns:90px 1fr 1.2fr;column-gap:12px;align-items:center;text-align:left}.user-card .card-kicker,.user-card .user-footnote{grid-column:1/-1;text-align:center}.user-avatar{grid-row:2/5}.user-card h2,.user-card p{grid-column:2}.user-contact{grid-column:3;grid-row:2/4}.user-login-title{grid-column:2}.user-card form{grid-column:2/4;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end}.user-card form label{margin:0}.user-card form button{margin:0}.user-card .err{grid-column:1/-1}}
-@media(max-width:650px){main{padding-top:76px!important;padding-bottom:75px!important}.portal-layout{display:flex;flex-direction:column;gap:10px}.dev-column{display:grid;grid-template-columns:1fr;gap:8px}.developer-card{padding:11px}.dev-photo{width:76px;height:76px}.dev-logo{width:62px;height:48px}.dev-contact{font-size:10px}.center-column{gap:8px}.today-highlight{min-height:70px}.today-highlight strong{font-size:25px}.premium-slider{height:170px;min-height:170px}.slide-copy{padding:13px}.slide-copy strong{font-size:19px}.user-card{display:block;text-align:center;padding:13px}.user-avatar{width:64px;height:64px}.user-card form{display:block}.user-card form label{text-align:left;margin:9px 0 4px}.user-card form button{margin-top:10px}.landing-modules{margin-top:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(min-width:651px){main{padding-top:92px;padding-bottom:82px}}
-
-
-/* Split promo slider and live report */
-.center-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;min-height:220px;flex:1}
-.center-split .premium-slider{height:100%;min-height:220px}
-.live-report{min-width:0;padding:13px 14px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.live-report-head{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#fff;font-size:13px}
-.live-report-head span{display:inline-flex;align-items:center;gap:5px;color:#8ef2ce;font-size:10px;font-weight:900;letter-spacing:1px}
-.live-report-head span i{width:7px;height:7px;border-radius:50%;background:#42e6a5;box-shadow:0 0 10px #42e6a5;animation:livePulse 1.5s infinite}
-@keyframes livePulse{50%{opacity:.35;transform:scale(.75)}}
-.live-total{font-size:clamp(21px,2.2vw,30px);font-weight:900;color:#fff;margin-top:13px}
-.live-report>small{color:#d3d8ec;font-size:10px}
-.live-chart{width:100%;height:100px;margin-top:8px;overflow:visible}
-.live-report-foot{display:flex;justify-content:space-between;gap:5px;flex-wrap:wrap;color:#d9dced;font-size:9px;border-top:1px solid #ffffff35;padding-top:8px;margin-top:3px}
-.live-report-foot b{color:#fff}
-@media(max-width:650px){.center-split{grid-template-columns:1fr;gap:8px}.center-split .premium-slider{height:155px;min-height:155px}.live-report{min-height:180px}.live-chart{height:85px}}
-
-.logo-upload-label{display:block;margin:12px 0;padding:12px;border:1px dashed #b7bfd4;border-radius:10px;background:#f7f8fc}.logo-upload-label input{display:block;margin-top:8px;max-width:100%}.org-logo-preview{display:flex;align-items:center;gap:12px;min-height:85px;padding:10px;border:1px solid #d8deeb;border-radius:10px;margin-bottom:12px;background:#fff}.org-logo-preview small{color:#59647b;font-size:12px}
-</style></head><body>
-<header><div class="logo"><img id="headerOrgLogo" src="Logo.jpg" alt="প্রতিষ্ঠানের লোগো" style="width:100%;height:100%;object-fit:contain;background:#fff;border-radius:5px;padding:2px"></div><div class="brand"><b>LAL Pharmacy</b><small>Pharmacy Management System</small></div><div class="spacer"></div><div class="clock"><div id="date"></div><div id="time"></div></div><button class="headbtn" onclick="goBack()">← ব্যাক</button><button class="headbtn" onclick="logout()">লগআউট</button></header>
-<main><section id="landing">
-<div class="portal-layout">
-  <aside class="dev-column">
-    <section class="glass-card developer-card">
-      <div class="card-kicker">DEVELOPER IDENTITY</div>
-      <img class="dev-logo" src="Logo.jpg" alt="LAL Logo">
-      <div class="dev-photo"><img src="Uzzal.jpg" alt="Developer portrait"></div>
-      <h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2>
-      <p>Developer & Founder</p>
-      <div class="dev-contact">⌖ স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর<br>☎ 01711167661<br>✉ mslalenterprise@gmail.com</div>
-      <span class="dev-status">● Active Developer</span>
-    </section>
-    <section class="glass-card dev-access">
-      <button class="dev-access-toggle" type="button" onclick="toggleDevAccess()">🔐 Developer Secure Access</button>
-      <div id="devAccessPanel" class="dev-access-panel" hidden>
-        <label>Developer ID<input id="devUid" autocomplete="username" placeholder="Developer ID"></label>
-        <label>Password<input id="devPwd" type="password" autocomplete="current-password" placeholder="Developer password"></label>
-        <button type="button" onclick="developerLogin()">Secure Login</button>
-        <p id="devErr">Developer credentials must be provisioned securely by the system administrator.</p>
-      </div>
-    </section>
-  </aside>
-
-  <section class="center-column">
-    <div class="today-highlight glass-card">
-      <span>আজকের মোট বিক্রি</span>
-      <strong id="landingTodaySales">৳ ০.০০</strong>
-    </div>
-    <div class="center-split">
-      <div class="promo premium-slider" aria-label="প্রচার ও স্লাইড প্রদর্শনী">
-        <div class="slide active"><div class="slide-copy"><small>LAL PHARMACY</small><strong>আপনার ফার্মেসি, আরও গোছানো</strong><span>বিক্রি • স্টক • কাস্টমার হিসাব</span></div></div>
-        <div class="slide"><div class="slide-copy"><small>SMART MANAGEMENT</small><strong>ওষুধের হিসাব রাখুন সহজে</strong><span>ইনভয়েস ও দৈনিক বিক্রির ব্যবস্থাপনা</span></div></div>
-        <div class="slide"><div class="slide-copy"><small>CARE WITH CONFIDENCE</small><strong>প্রতিটি লেনদেন থাকুক নথিভুক্ত</strong><span>কাস্টমার ও পাওনার হিসাব এক জায়গায়</span></div></div>
-        <div class="slide-dots"><i class="active"></i><i></i><i></i></div>
-      </div>
-      <section class="live-report glass-card" aria-label="লাইভ বিক্রির রিপোর্ট">
-        <div class="live-report-head"><b>লাইভ বিক্রির রিপোর্ট</b><span><i></i> LIVE</span></div>
-        <div class="live-total" id="liveSalesTotal">৳ ০.০০</div>
-        <small>আজকের মোট বিক্রি</small>
-        <svg class="live-chart" viewBox="0 0 320 112" role="img" aria-label="আজকের বিক্রির লাইভ রেখাচিত্র">
-          <defs><linearGradient id="liveArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5de0c0" stop-opacity=".42"/><stop offset="1" stop-color="#5de0c0" stop-opacity="0"/></linearGradient></defs>
-          <path d="M0 91 H320 M0 60 H320 M0 29 H320" stroke="#ffffff25" stroke-width="1" fill="none"/>
-          <path id="liveAreaPath" d="M0 91 L45 82 L90 85 L135 55 L180 64 L225 35 L270 43 L320 18 L320 112 L0 112 Z" fill="url(#liveArea)"/>
-          <path id="liveLinePath" d="M0 91 L45 82 L90 85 L135 55 L180 64 L225 35 L270 43 L320 18" fill="none" stroke="#65e6c3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle id="liveLineDot" cx="320" cy="18" r="4" fill="#fff" stroke="#65e6c3" stroke-width="3"/>
-        </svg>
-        <div class="live-report-foot"><span>ইনভয়েস: <b id="liveInvoiceCount">০</b></span><span>সর্বশেষ আপডেট: <b id="liveUpdateTime">--:--</b></span></div>
-      </section>
-    </div>
+:root{--wine:#651d32;--wine2:#8d2945;--navy:#172943;--gold:#e6b85c;--bg:#f3f5f9;--ink:#202b3c;--muted:#68758a;--line:#e1e6ef;--white:#fff;--green:#17845b;--red:#c0394b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Noto Sans Bengali",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}header{height:66px;background:linear-gradient(100deg,var(--wine),var(--navy));color:#fff;display:flex;align-items:center;gap:12px;padding:8px 18px;position:sticky;top:0;z-index:5;box-shadow:0 3px 12px #14213a25}.brandmark{height:44px;width:44px;border-radius:9px;background:#fff;display:grid;place-items:center;overflow:hidden}.brandmark img{max-width:100%;max-height:100%;object-fit:contain}.brand b{display:block;font-size:17px}.brand small{font-size:11px;opacity:.8}.grow{flex:1}.clock{text-align:right;font-size:12px;line-height:1.5}.headbtn,.btn{border:0;border-radius:8px;padding:10px 14px;background:var(--wine);color:#fff;font-weight:700}.headbtn{background:#ffffff20;border:1px solid #ffffff55}.btn.secondary{background:var(--navy)}.btn.light{background:#eef1f7;color:var(--navy)}.btn.danger{background:var(--red)}.btn.success{background:var(--green)}main{max-width:1440px;margin:auto;padding:18px;min-height:calc(100vh - 116px)}.login-layout{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(300px,1.4fr) minmax(280px,1fr);gap:16px;align-items:stretch}.card,.panel,.tile,.stat{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 5px 18px #1729430b}.card{padding:20px}.developer{text-align:center;background:linear-gradient(160deg,#fff,#f8f0f3)}.developer .logo{width:86px;height:86px;object-fit:contain;background:#fff;border-radius:12px;padding:5px}.portrait{width:105px;height:105px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 3px 12px #0002;margin:12px auto}.developer h2{font-size:18px;margin:8px 0}.developer p,.subtle{color:var(--muted);font-size:13px;line-height:1.6}.center-welcome{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#172943,#6b243c);color:#fff;min-height:360px}.center-welcome h1{font-size:clamp(24px,3vw,38px);line-height:1.35;margin:0 0 12px}.center-welcome p{line-height:1.8;color:#f5e9ed}.today-box{padding:15px;border-radius:12px;background:#ffffff16;margin-top:22px}.today-box strong{display:block;font-size:27px;color:#ffe2a1;margin-top:5px}.login-card h2{text-align:center;color:var(--wine);margin:0 0 5px}.login-card .subtle{text-align:center;margin:0 0 18px}.field{display:flex;flex-direction:column;gap:6px;margin:11px 0}.field label{font-size:13px;font-weight:700;color:#46536a}.field input,.field select,.field textarea,input.control,select.control{width:100%;padding:11px 12px;border:1px solid #cfd6e2;border-radius:8px;background:#fff;color:var(--ink);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,input.control:focus,select.control:focus{border-color:var(--wine2);box-shadow:0 0 0 3px #8d29451a}.login-card form .btn{width:100%;margin-top:10px;padding:12px}.error{color:var(--red);font-size:13px;min-height:20px;margin-top:8px}.module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.tile{padding:18px;text-align:left;border:1px solid var(--line);color:var(--ink);min-height:100px}.tile:hover{border-color:var(--wine2);transform:translateY(-1px)}.tile .emoji{font-size:24px;display:block;margin-bottom:8px}.tile b{display:block}.tile small{display:block;color:var(--muted);margin-top:5px}.notice{background:var(--navy);color:#fff;padding:10px 18px;text-align:center;font-size:12px}.app-shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px}.sidebar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;height:max-content;position:sticky;top:82px}.side-title{font-size:11px;color:var(--muted);padding:8px}.navbtn{display:block;width:100%;border:0;text-align:left;background:transparent;padding:11px 12px;border-radius:8px;color:#354258;margin:2px 0}.navbtn:hover,.navbtn.active{background:#f5e9ed;color:var(--wine);font-weight:700}.workspace{min-width:0}.viewhead{display:flex;align-items:center;gap:10px;margin:0 0 14px}.viewhead h1{font-size:23px;margin:0;color:var(--navy)}.panel{padding:17px;margin-bottom:14px}.panel h3{margin:0 0 14px;color:var(--wine)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.stat{padding:15px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:22px;margin-top:8px;color:var(--navy)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.form-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:580px}th,td{padding:10px 9px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{background:#f5f6fa;color:#46536a;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:22px}.tag{display:inline-block;border-radius:30px;padding:4px 9px;background:#edf7f2;color:var(--green);font-size:11px}.tag.due{background:#fff2e8;color:#a65319}.hint{font-size:12px;color:var(--muted);line-height:1.6}.split{display:grid;grid-template-columns:1.4fr .8fr;gap:14px}.hidden{display:none!important}.logo-preview{max-width:130px;max-height:90px;object-fit:contain;border:1px solid var(--line);padding:5px;border-radius:8px}.chart{height:130px;display:flex;align-items:end;gap:9px;padding:12px 4px 0;border-bottom:1px solid var(--line)}.bar{flex:1;background:linear-gradient(#d18a9e,var(--wine));border-radius:5px 5px 0 0;min-height:4px;position:relative}.bar small{position:absolute;bottom:-20px;left:0;right:0;text-align:center;color:var(--muted);font-size:10px}
+@media(max-width:950px){.login-layout{grid-template-columns:1fr 1.3fr}.center-welcome{grid-column:1/-1;grid-row:2;min-height:190px}.login-card{grid-column:2;grid-row:1}.developer{grid-column:1;grid-row:1}.app-shell{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}.side-title{grid-column:1/-1}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){header{padding:7px 10px;height:58px}.brand b{font-size:14px}.brand small{display:none}.clock{font-size:10px}.headbtn{padding:8px;font-size:11px}main{padding:10px}.login-layout{grid-template-columns:1fr}.developer,.login-card,.center-welcome{grid-column:1;grid-row:auto}.developer{display:grid;grid-template-columns:70px 1fr;gap:4px;text-align:left;align-items:center;padding:12px}.developer .logo{width:60px;height:60px;grid-row:span 2}.developer .portrait{display:none}.developer h2{font-size:15px}.developer p{margin:0}.developer .dev-contact{grid-column:1/-1}.center-welcome{min-height:160px}.center-welcome h1{font-size:23px}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tile{padding:13px;min-height:92px}.tile b{font-size:13px}.tile small{font-size:11px}.sidebar{grid-template-columns:repeat(2,1fr);padding:7px}.navbtn{font-size:12px;padding:9px}.viewhead h1{font-size:19px}.stats{gap:8px}.stat{padding:11px}.stat strong{font-size:18px}.form-grid,.form-grid.three,.split{grid-template-columns:1fr}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brandmark"><img id="headerLogo" src="Logo.jpg" alt="LAL"></div>
+ <div class="brand"><b id="headerName">LAL Pharmacy</b><small>Pharmacy Management System</small></div>
+ <div class="grow"></div><div class="clock"><div id="dateText"></div><div id="timeText"></div></div>
+ <button class="headbtn hidden" id="backBtn" type="button">← ব্যাক</button>
+ <button class="headbtn hidden" id="logoutBtn" type="button">লগআউট</button>
+</header>
+<main>
+<section id="loginScreen">
+ <div class="login-layout">
+  <section class="card developer">
+   <img class="logo" src="Logo.jpg" alt="LAL Logo">
+   <div><img class="portrait" src="Uzzal.jpg" alt="Developer"></div>
+   <div><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p>Developer & Founder</p></div>
+   <div class="dev-contact subtle">স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর<br>☎ 01711167661<br>✉ mslalenterprise@gmail.com</div>
   </section>
-
-  <aside class="user-column">
-    <section class="glass-card user-card">
-      <div class="card-kicker">PHARMACY / OWNER</div>
-      <div class="user-avatar" id="orgAvatar">LAL</div>
-      <h2 id="orgDisplayName">LAL Pharmacy</h2>
-      <p id="orgDisplayOwner">Pharmacy Management System</p>
-      <div class="user-contact" id="orgDisplayContact">প্রতিষ্ঠানের তথ্য সেটিংস থেকে যুক্ত করুন</div>
-      <div class="user-login-title">🔒 PHARMACY LOGIN</div>
-      <form id="loginForm">
-        <label>ইউজার আইডি / Username</label><input id="uid" autocomplete="username" placeholder="আপনার ইউজার আইডি" required>
-        <label>পাসওয়ার্ড / Password</label><input id="pwd" type="password" autocomplete="current-password" placeholder="পাসওয়ার্ড লিখুন" required>
-        <button type="submit">Login / লগইন</button>
-        <div class="err" id="err"></div>
-      </form>
-      <div class="user-footnote">প্রতিষ্ঠানের পরিচয় ও ছবি ডেভেলপার কর্তৃক সেটআপ করা হবে।</div>
-    </section>
-  </aside>
-</div>
-<div class="module-box landing-modules"><div class="grid">
-<button class="tile t1" onclick="openInvoice()"><i>🧾</i><b>কাস্টমার ইনভয়েস</b><small>সরাসরি ইনভয়েস খুলুন</small><em>Open ➜</em></button>
-<button class="tile t2" onclick="needLogin('purchase')"><i>📦</i><b>পারচেজ / ক্রয়</b><small>ওষুধ ক্রয় এন্ট্রি</small><em>Login ➜</em></button>
-<button class="tile t3" onclick="needLogin('stock')"><i>💊</i><b>স্টক ম্যানেজমেন্ট</b><small>মজুদ ও মেয়াদ</small><em>Login ➜</em></button>
-<button class="tile t4" onclick="needLogin('today')"><i>📊</i><b>আজকের বিক্রি</b><small>দৈনিক বিক্রয় হিসাব</small><em>Login ➜</em></button>
-<button class="tile t5" onclick="needLogin('dues')"><i>💳</i><b>বাকি / পাওনা</b><small>গ্রাহকের বকেয়া</small><em>Login ➜</em></button>
-<button class="tile t6" onclick="needLogin('reports')"><i>📈</i><b>রিপোর্ট</b><small>লাভ-ক্ষতি ও হিসাব</small><em>Login ➜</em></button>
-<button class="tile t7" onclick="needLogin('customers')"><i>👥</i><b>কাস্টমার তালিকা</b><small>গ্রাহক ব্যবস্থাপনা</small><em>Login ➜</em></button>
-<button class="tile t8" onclick="needLogin('medicines')"><i>💉</i><b>ওষুধের তালিকা</b><small>মেডিসিন মাস্টার</small><em>Login ➜</em></button>
-<button class="tile t9" onclick="needLogin('settings')"><i>⚙️</i><b>সেটিংস</b><small>সিস্টেম সেটআপ</small><em>Login ➜</em></button>
-</div></div>
+  <section class="card center-welcome">
+   <div class="subtle" style="color:#f2cbd5">WELCOME TO LAL PHARMACY</div>
+   <h1>আপনার ফার্মেসি পরিচালনা হোক আরও সহজ ও গোছানো</h1>
+   <p>বিক্রি, ক্রয়, ওষুধের স্টক, কাস্টমার ও বাকি হিসাব—সবকিছু এক জায়গায় রাখুন।</p>
+   <div class="today-box">আজকের মোট বিক্রি<strong id="loginSales">৳ ০.০০</strong></div>
+  </section>
+  <section class="card login-card">
+   <h2 id="loginOrgName">LAL Pharmacy</h2><p class="subtle">PHARMACY OWNER LOGIN</p>
+   <form id="loginForm" autocomplete="on">
+    <div class="field"><label for="uid">ইউজার আইডি</label><input id="uid" name="username" autocomplete="username" required placeholder="আপনার ইউজার আইডি"></div>
+    <div class="field"><label for="pwd">পাসওয়ার্ড</label><input id="pwd" name="password" type="password" autocomplete="current-password" required placeholder="পাসওয়ার্ড লিখুন"></div>
+    <button class="btn" type="submit">Login / লগইন</button>
+    <div id="loginError" class="error" role="alert"></div>
+   </form>
+   <p class="hint">প্রথমবার প্রবেশ: admin / 1234</p>
+  </section>
+ </div>
+ <div class="module-grid">
+  <button class="tile" data-page="invoice"><span class="emoji">🧾</span><b>কাস্টমার ইনভয়েস</b><small>বিক্রির ইনভয়েস তৈরি</small></button>
+  <button class="tile" data-login-required="purchase"><span class="emoji">📦</span><b>পারচেজ / ক্রয়</b><small>ওষুধ ক্রয় এন্ট্রি</small></button>
+  <button class="tile" data-login-required="stock"><span class="emoji">💊</span><b>স্টক ম্যানেজমেন্ট</b><small>মজুদ ও মেয়াদ</small></button>
+ </div>
 </section>
-<section class="view" id="view"><div class="viewtop"><h2 id="title"></h2><button class="action" onclick="goBack()">← ফিরে যান</button></div><div id="content"></div></section></main>
-<footer class="notice"><span style="font-size:23px">📢</span><b>RUNNING NOTICE</b><div class="ticker"><span>ফার্মেসির স্টক নিয়মিত আপডেট করুন　•　মেয়াদোত্তীর্ণ ওষুধ বিক্রি করবেন না　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　LAL Pharmacy</span></div></footer>
+<section id="appScreen" class="hidden">
+ <div class="app-shell">
+  <nav class="sidebar" id="sideNav">
+   <div class="side-title">প্রধান মেনু</div>
+   <button class="navbtn" data-page="dashboard">🏠 ড্যাশবোর্ড</button>
+   <button class="navbtn" data-page="invoice">🧾 কাস্টমার ইনভয়েস</button>
+   <button class="navbtn" data-page="purchase">📦 পারচেজ / ক্রয়</button>
+   <button class="navbtn" data-page="stock">💊 স্টক ম্যানেজমেন্ট</button>
+   <button class="navbtn" data-page="medicines">💉 ওষুধের তালিকা</button>
+   <button class="navbtn" data-page="customers">👥 কাস্টমার তালিকা</button>
+   <button class="navbtn" data-page="dues">💳 বাকি / পাওনা</button>
+   <button class="navbtn" data-page="reports">📈 বিক্রয় রিপোর্ট</button>
+   <button class="navbtn" data-page="settings">⚙️ সেটিংস</button>
+  </nav>
+  <div class="workspace">
+   <div class="viewhead"><h1 id="pageTitle">ড্যাশবোর্ড</h1></div>
+   <div id="pageContent"></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer class="notice">📢 RUNNING NOTICE　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　ওষুধের মেয়াদ নিয়মিত পরীক্ষা করুন　•　LAL Pharmacy</footer>
 <script>
-let logged=false,stack=[];const names={dashboard:'ড্যাশবোর্ড',invoice:'কাস্টমার ইনভয়েস',purchase:'পারচেজ / ক্রয় এন্ট্রি',stock:'স্টক ম্যানেজমেন্ট',today:'আজকের বিক্রি',dues:'বাকি / পাওনা হিসাব',reports:'রিপোর্ট ও লাভ-ক্ষতি',customers:'কাস্টমার তালিকা',medicines:'ওষুধের তালিকা',settings:'সেটিংস'};
-function needLogin(k){if(!logged){document.getElementById('err').textContent='এই পেজ দেখতে আগে লগইন করুন। ডেমো: admin / 1234';document.getElementById('uid').focus();return}openModule(k)}
-document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();if(document.getElementById('uid').value===(localStorage.getItem('lalPharmacyUser')||'admin')&&document.getElementById('pwd').value===(localStorage.getItem('lalPharmacyPass')||'1234')){logged=true;document.getElementById('err').textContent='';openModule('dashboard')}else document.getElementById('err').textContent='ভুল আইডি বা পাসওয়ার্ড। ডেমো: admin / 1234'});
-function openInvoice(){try{invoiceCart=[];stack=['invoice'];document.getElementById('landing').style.display='none';const view=document.getElementById('view');view.style.display='block';document.getElementById('title').textContent='কাস্টমার ইনভয়েস';document.getElementById('content').innerHTML=invoiceView();window.scrollTo(0,0);const first=document.getElementById('invCustomer');if(first)first.focus()}catch(err){const view=document.getElementById('view');document.getElementById('landing').style.display='none';view.style.display='block';document.getElementById('title').textContent='কাস্টমার ইনভয়েস';document.getElementById('content').innerHTML='<div class="panel"><h3>ইনভয়েস খুলতে সমস্যা হয়েছে</h3><p>'+String(err&&err.message||err)+'</p><button class="action" onclick="openInvoice()">আবার চেষ্টা করুন</button></div>';console.error('Invoice open error:',err)}}function openModule(k){stack.push(k);show()}function show(){document.getElementById('landing').style.display='none';document.getElementById('view').style.display='block';let k=stack[stack.length-1];document.getElementById('title').textContent=names[k];document.getElementById('content').innerHTML=page(k);scrollTo(0,0)}
-function goBack(){if(stack.length>1){stack.pop();show()}else{stack=[];document.getElementById('view').style.display='none';document.getElementById('landing').style.display='block'}}
-function logout(){logged=false;stack=[];document.getElementById('pwd').value='';document.getElementById('view').style.display='none';document.getElementById('landing').style.display='block';document.getElementById('err').textContent=''}
-function dashboard(){return '<div class="stats"><div class="stat"><span>আজকের মোট বিক্রি</span><strong>৳ ১২,৫০০</strong></div><div class="stat"><span>আজকের ক্রয়</span><strong>৳ ৮,০০০</strong></div><div class="stat"><span>মোট স্টক মূল্য</span><strong>৳ ৭৫,০০০</strong></div><div class="stat"><span>মোট বাকি</span><strong>৳ ৩,২০০</strong></div></div><div class="quick">'+[['invoice','🧾','কাস্টমার ইনভয়েস'],['purchase','📦','পারচেজ'],['stock','💊','স্টক'],['today','📊','আজকের বিক্রি'],['dues','💳','বাকি হিসাব'],['reports','📈','রিপোর্ট']].map(x=>'<button onclick="openModule(\''+x[0]+'\')"><i>'+x[1]+'</i><br>'+x[2]+'</button>').join('')+'</div>'}
-function fields(a){return '<div class="panel"><div class="fields">'+a.map(x=>'<label>'+x+'<input placeholder="'+x+'"></label>').join('')+'</div><button class="action" onclick="alert(\'ডেটা সংরক্ষণ পরবর্তী উন্নয়নে যুক্ত হবে।\')">সংরক্ষণ করুন</button><p class="hint">প্রাথমিক নকশা; ডেটাবেস ও প্রকৃত হিসাব সংযোগ এখনো করা হয়নি।</p></div>'}
-function table(h,r){return '<div class="panel"><div class="tablewrap"><table><thead><tr>'+h.map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>'+r.map(row=>'<tr>'+row.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table></div><p class="hint">এগুলো নমুনা তথ্য; বাস্তব ডেটা সংরক্ষণ এখনো যুক্ত হয়নি।</p></div>'}
-function page(k){if(k==='dashboard')return dashboard();if(k==='invoice')return fields(['ইনভয়েস নম্বর','তারিখ','কাস্টমারের নাম','মোবাইল নম্বর','ওষুধের নাম','ব্যাচ নম্বর','পরিমাণ','একক বিক্রয় মূল্য','জমা টাকা']);if(k==='purchase')return fields(['চালান নম্বর','তারিখ','সরবরাহকারীর নাম','ওষুধের নাম','কোম্পানি','ব্যাচ নম্বর','মেয়াদ উত্তীর্ণের তারিখ','পরিমাণ','ক্রয়মূল্য','বিক্রয়মূল্য']);if(k==='stock')return table(['ওষুধ','ব্যাচ','মেয়াদ','স্টক','ক্রয়মূল্য','বিক্রয়মূল্য'],[['Paracetamol 500mg','P-101','2027-08','120','৳1.20','৳2.00'],['Omeprazole 20mg','O-221','2027-03','45','৳3.00','৳5.00']]);if(k==='today')return table(['সময়','ইনভয়েস','গ্রাহক','মোট','পরিশোধ'],[['10:30','INV-001','নমুনা গ্রাহক','৳1,250','৳1,250']]);if(k==='dues')return table(['গ্রাহক','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='reports')return table(['বিবরণ','আজ','এই মাস'],[['বিক্রয়','৳12,500','৳1,25,000'],['ক্রয়','৳8,000','৳82,000'],['আনুমানিক লাভ','৳2,100','৳18,500']]);if(k==='customers')return table(['নাম','মোবাইল','বাকি'],[['নমুনা গ্রাহক','01XXXXXXXXX','৳700']]);if(k==='medicines')return table(['ওষুধ','জেনেরিক','শক্তি','ধরন'],[['Paracetamol','Paracetamol','500mg','Tablet']]);if(k==='settings'){const v=(key)=>localStorage.getItem('lalOrg_'+key)||'';return '<div class="panel"><h3>প্রতিষ্ঠানের তথ্য</h3><div class="fields">'+[['name','প্রতিষ্ঠানের নাম'],['owner','মালিকের নাম'],['phone','মোবাইল নম্বর'],['address','ঠিকানা'],['license','লাইসেন্স / ট্রেড লাইসেন্স নম্বর'],['email','ইমেইল']].map(a=>'<label>'+a[1]+'<input id="org_'+a[0]+'" value="'+v(a[0]).replace(/"/g,'&quot;')+'" placeholder="'+a[1]+'"></label>').join('')+'</div><h3>প্রতিষ্ঠানের লোগো</h3><label class="logo-upload-label">লোগো নির্বাচন করুন (JPG, PNG বা WebP)<input id="orgLogoFile" type="file" accept="image/jpeg,image/png,image/webp" onchange="handleOrgLogoUpload(this)"></label><div class="org-logo-preview"><img id="orgLogoPreview" alt="নির্বাচিত প্রতিষ্ঠানের লোগো" style="max-width:120px;max-height:80px;object-fit:contain"><small>এখানে নির্বাচিত লোগোটিই হেডার বারে প্রদর্শিত হবে।</small></div><button class="action" onclick="saveOrg()">প্রতিষ্ঠানের তথ্য সংরক্ষণ</button><hr><h3>ব্যবহারকারীর লগইন পরিবর্তন</h3><div class="fields"><label>নতুন ইউজার আইডি<input id="newUser" placeholder="নতুন ইউজার আইডি"></label><label>নতুন পাসওয়ার্ড<input id="newPass" type="password" placeholder="নতুন পাসওয়ার্ড"></label></div><button class="action" onclick="changeLogin()">আইডি ও পাসওয়ার্ড পরিবর্তন</button><p class="hint">প্রতিষ্ঠানের লাইসেন্স/অ্যাক্টিভেশন পরিবর্তন এই প্যানেল থেকে করা যাবে না। এই ওয়েব সংস্করণে সার্ভার-ভিত্তিক লাইসেন্স যাচাই এখনো সংযুক্ত হয়নি।</p></div>'}}
-function handleOrgLogoUpload(input){const file=input.files&&input.files[0];if(!file)return;if(!/^image\\/(jpeg|png|webp)$/.test(file.type)){alert('JPG, PNG অথবা WebP ছবি নির্বাচন করুন।');input.value='';return}if(file.size>1500000){alert('লোগো ফাইল ১.৫ MB-এর মধ্যে রাখুন।');input.value='';return}const reader=new FileReader();reader.onload=()=>{try{localStorage.setItem('lalOrg_logo',reader.result);updateOrgIdentity();alert('প্রতিষ্ঠানের লোগো সংরক্ষণ হয়েছে এবং হেডারে দেখানো হচ্ছে।')}catch(e){alert('লোগো সংরক্ষণ করা যায়নি। ছোট ফাইল ব্যবহার করুন।')}};reader.readAsDataURL(file)}function saveOrg(){['name','owner','phone','address','license','email'].forEach(k=>localStorage.setItem('lalOrg_'+k,document.getElementById('org_'+k).value.trim()));updateOrgIdentity();alert('প্রতিষ্ঠানের তথ্য সংরক্ষণ হয়েছে।')}function changeLogin(){const u=document.getElementById('newUser').value.trim(),p=document.getElementById('newPass').value;if(!u||!p){alert('নতুন আইডি ও পাসওয়ার্ড দুটোই লিখুন।');return}localStorage.setItem('lalPharmacyUser',u);localStorage.setItem('lalPharmacyPass',p);alert('লগইন তথ্য পরিবর্তন হয়েছে। পরবর্তী লগইনে নতুন তথ্য ব্যবহার করুন।')}
-(()=>{const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.slide-dots i')];let n=0;setInterval(()=>{slides[n].classList.remove('active');dots[n].classList.remove('active');n=(n+1)%slides.length;slides[n].classList.add('active');dots[n].classList.add('active')},4000)})();
-function clock(){let d=new Date();document.getElementById('date').textContent=d.toLocaleDateString('bn-BD',{day:'numeric',month:'short',year:'numeric'});document.getElementById('time').textContent=d.toLocaleTimeString('bn-BD')}clock();setInterval(clock,1000);
-
-
-function updateLiveSalesPanel(){const el=document.getElementById('liveSalesTotal');if(!el)return;let data={invoices:[]};try{if(typeof db==='function')data=db()}catch(e){}const today=new Date().toLocaleDateString('en-CA');const todays=(data.invoices||[]).filter(x=>x.date===today);const total=todays.reduce((a,x)=>a+Number(x.total||0),0);el.textContent=money(total);const count=document.getElementById('liveInvoiceCount');if(count)count.textContent=String(todays.length).replace(/[0-9]/g,d=>'০১২৩৪৫৬৭৮৯'[d]);const stamp=document.getElementById('liveUpdateTime');if(stamp)stamp.textContent=new Date().toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit'});const vals=[];for(let h=0;h<8;h++){const v=todays.filter(x=>{const dt=new Date((x.date||today)+'T'+(x.time||'00:00'));return dt.getHours()<=h*3}).reduce((a,x)=>a+Number(x.total||0),0);vals.push(v)}const max=Math.max(1,...vals);const pts=vals.map((v,i)=>[i*320/7,98-(v/max)*78]);const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');const area=line+' L320 112 L0 112 Z';const lp=document.getElementById('liveLinePath'),ap=document.getElementById('liveAreaPath'),dot=document.getElementById('liveLineDot');if(lp)lp.setAttribute('d',line);if(ap)ap.setAttribute('d',area);if(dot){dot.setAttribute('cx',pts[7][0]);dot.setAttribute('cy',pts[7][1])}}
-function toggleDevAccess(){const p=document.getElementById('devAccessPanel');p.hidden=!p.hidden}
-function developerLogin(){document.getElementById('devErr').textContent='Developer account authentication is not yet connected to a secure server. This static website cannot safely verify developer credentials or protect client setup actions.'}
-function updateLandingSummary(){const d=db(),today=new Date().toLocaleDateString('en-CA');const total=d.invoices.filter(x=>x.date===today).reduce((a,x)=>a+Number(x.total||0),0);const el=document.getElementById('landingTodaySales');if(el)el.textContent=money(total)}
-function updateOrgIdentity(){const get=k=>localStorage.getItem('lalOrg_'+k)||'';const name=get('name')||'LAL Pharmacy',owner=get('owner')||'Pharmacy Management System',logo=localStorage.getItem('lalOrg_logo')||'Logo.jpg';document.getElementById('orgDisplayName').textContent=name;document.getElementById('orgDisplayOwner').textContent=owner;const bits=[get('phone'),get('address'),get('email')].filter(Boolean);document.getElementById('orgDisplayContact').textContent=bits.length?bits.join(' • '):'প্রতিষ্ঠানের তথ্য সেটিংস থেকে যুক্ত করুন';document.getElementById('orgAvatar').textContent=(name.trim().slice(0,3)||'LAL').toUpperCase();const h=document.getElementById('headerOrgLogo');if(h)h.src=logo;const p=document.getElementById('orgLogoPreview');if(p)p.src=logo}
-
-/* CUSTOMER, INVOICE AND MEDICINE MASTER DATA */
-const DBKEY='lalPharmacyDataV1';
-function db(){let d;try{d=JSON.parse(localStorage.getItem(DBKEY))}catch(e){}if(!d)d={customers:[],invoices:[],medicines:[]};d.customers=d.customers||[];d.invoices=d.invoices||[];d.medicines=d.medicines||[];if(!localStorage.getItem(DBKEY+'_seeded')){const seed=['Paracetamol','Omeprazole','Esomeprazole','Pantoprazole','Rabeprazole','Famotidine','Cetirizine','Fexofenadine','Loratadine','Montelukast','Azithromycin','Amoxicillin','Cefixime','Cefuroxime','Ciprofloxacin','Metronidazole','Doxycycline','Flucloxacillin','Diclofenac Sodium','Naproxen','Ibuprofen','Aceclofenac','Ketorolac','Amlodipine','Losartan','Telmisartan','Atenolol','Metformin','Gliclazide','Sitagliptin','Atorvastatin','Rosuvastatin','Clopidogrel','Aspirin','Calcium Carbonate','Vitamin D3','Vitamin B Complex','Iron + Folic Acid','ORS','Zinc Sulphate','Salbutamol','Ambroxol','Bromhexine','Domperidone','Ondansetron','Loperamide','Mebendazole','Albendazole'];if(!d.medicines.length)d.medicines=seed.map(n=>({name:n,generic:n,strength:'',form:'',company:'',code:''}));localStorage.setItem(DBKEY+'_seeded','1');putDB(d)}return d}
-function putDB(d){localStorage.setItem(DBKEY,JSON.stringify(d))}
-function money(n){return '৳ '+(Number(n)||0).toLocaleString('en-IN',{maximumFractionDigits:2})}
-function safe(t){return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function nextInvoice(){let n=Number(localStorage.getItem('lalInvoiceSeq')||0)+1;return 'LAL-'+new Date().getFullYear()+'-'+String(n).padStart(5,'0')}
-function customerDue(name){const d=db();return d.invoices.filter(x=>x.customer===name).reduce((a,x)=>a+Math.max(0,Number(x.total)-Number(x.paid)),0)}
-function dashboard(){const d=db(),today=new Date().toLocaleDateString('en-CA');const sales=d.invoices.filter(x=>x.date===today).reduce((a,x)=>a+x.total,0);const due=d.invoices.reduce((a,x)=>a+Math.max(0,x.total-x.paid),0);return '<div class="stats"><div class="stat"><span>আজকের মোট বিক্রি</span><strong>'+money(sales)+'</strong></div><div class="stat"><span>মোট কাস্টমার</span><strong>'+d.customers.length+'</strong></div><div class="stat"><span>মোট বাকি</span><strong>'+money(due)+'</strong></div><div class="stat"><span>মাস্টার ডাটা ওষুধ</span><strong>'+d.medicines.length+'</strong></div></div><div class="quick"><button onclick="openModule(\'invoice\')">🧾<br>কাস্টমার ইনভয়েস</button><button onclick="openModule(\'purchase\')">📦<br>পারচেজ</button><button onclick="openModule(\'stock\')">💊<br>স্টক</button><button onclick="openModule(\'today\')">📊<br>আজকের বিক্রি</button><button onclick="openModule(\'dues\')">💳<br>বাকি হিসাব</button><button onclick="openModule(\'customdata\')">🗂️<br>কাস্টম ডাটা</button><button onclick="openModule(\'medicines\')">💉<br>মাস্টার ডাটা</button><button onclick="openModule(\'customers\')">👥<br>কাস্টমার লিস্ট</button><button onclick="openModule(\'reports\')">📈<br>রিপোর্ট</button></div>'}
-function medicineOptions(){return db().medicines.map(m=>'<option value="'+safe(m.name)+'">'+safe(m.generic||'')+' '+safe(m.strength||'')+'</option>').join('')}
-function invoiceView(){const d=db(),no=nextInvoice();return '<div class="panel" id="invoicePanel"><h3>কাস্টমার ইনভয়েস</h3><div class="fields"><label>ইনভয়েস নম্বর<input id="invNo" value="'+no+'" readonly></label><label>তারিখ<input id="invDate" type="date" value="'+new Date().toLocaleDateString('en-CA')+'"></label><label>কাস্টমারের নাম<input id="invCustomer" list="customerNames" placeholder="নতুন নাম লিখুন অথবা নির্বাচন করুন" oninput="fillCustomer()"><datalist id="customerNames">'+d.customers.map(c=>'<option value="'+safe(c.name)+'">').join('')+'</datalist></label><label>মোবাইল নম্বর<input id="invPhone" placeholder="01XXXXXXXXX"></label><label>ঠিকানা<input id="invAddress" placeholder="কাস্টমারের ঠিকানা"></label><label>আগের বকেয়া<input id="oldDue" value="৳ 0" readonly></label></div><hr><h3>ওষুধের বিবরণ</h3><div class="fields"><label>ওষুধ খুঁজুন / নির্বাচন করুন<input id="medSearch" list="medicineNames" placeholder="নাম বা জেনেরিক লিখুন"><datalist id="medicineNames">'+medicineOptions()+'</datalist></label><label>পরিমাণ<input id="medQty" type="number" min="1" value="1"></label><label>একক বিক্রয় মূল্য<input id="medPrice" type="number" min="0" step=".01" placeholder="টাকা"></label><label>লাইন যোগ করুন<button type="button" class="action" onclick="addInvoiceItem()">+ ওষুধ যোগ</button></label></div><div id="invoiceItems" class="tablewrap"><table><thead><tr><th>ওষুধ</th><th>পরিমাণ</th><th>দর</th><th>মোট</th><th></th></tr></thead><tbody id="invoiceRows"></tbody></table></div><div class="fields"><label>মোট টাকা<input id="invTotal" value="0" readonly></label><label>জমা টাকা<input id="invPaid" type="number" min="0" value="0" oninput="updateInvoiceDue()"></label><label>এই ইনভয়েসে বাকি<input id="invDue" value="0" readonly></label><label>মন্তব্য<input id="invNote" placeholder="প্রয়োজনে লিখুন"></label></div><button class="action" onclick="saveInvoice()">সংরক্ষণ</button><button class="action" onclick="printInvoice()">প্রিন্ট</button><div class="hint" id="invoiceMsg"></div></div>'}
-let invoiceCart=[];
-function fillCustomer(){const d=db(),n=document.getElementById('invCustomer').value,c=d.customers.find(x=>x.name===n);if(c){document.getElementById('invPhone').value=c.phone||'';document.getElementById('invAddress').value=c.address||'';document.getElementById('oldDue').value=money(customerDue(n))}else{document.getElementById('oldDue').value=money(0)}}
-function addInvoiceItem(){const name=document.getElementById('medSearch').value.trim(),qty=Number(document.getElementById('medQty').value),price=Number(document.getElementById('medPrice').value);if(!name||qty<=0||price<0||!Number.isFinite(price)){alert('ওষুধ, পরিমাণ ও সঠিক মূল্য দিন।');return}invoiceCart.push({name,qty,price,total:qty*price});renderInvoiceRows();document.getElementById('medSearch').value='';document.getElementById('medQty').value=1;document.getElementById('medPrice').value=''}
-function renderInvoiceRows(){const body=document.getElementById('invoiceRows');if(!body)return;body.innerHTML=invoiceCart.map((x,i)=>'<tr><td>'+safe(x.name)+'</td><td>'+x.qty+'</td><td>'+money(x.price)+'</td><td>'+money(x.total)+'</td><td><button onclick="removeInvoiceItem('+i+')">✕</button></td></tr>').join('');document.getElementById('invTotal').value=invoiceCart.reduce((a,x)=>a+x.total,0).toFixed(2);updateInvoiceDue()}
-function removeInvoiceItem(i){invoiceCart.splice(i,1);renderInvoiceRows()}
-function updateInvoiceDue(){const total=Number(document.getElementById('invTotal')?.value||0),paid=Number(document.getElementById('invPaid')?.value||0);document.getElementById('invDue').value=Math.max(0,total-paid).toFixed(2)}
-function saveInvoice(){const name=document.getElementById('invCustomer').value.trim(),total=invoiceCart.reduce((a,x)=>a+x.total,0),paid=Number(document.getElementById('invPaid').value||0);if(!name||!invoiceCart.length){alert('কাস্টমারের নাম এবং অন্তত একটি ওষুধ যোগ করুন।');return}if(paid<0||paid>total){alert('জমার পরিমাণ মোট টাকার বেশি হতে পারবে না।');return}const d=db(),phone=document.getElementById('invPhone').value.trim(),address=document.getElementById('invAddress').value.trim();let c=d.customers.find(x=>x.name.toLowerCase()===name.toLowerCase());if(!c){c={name,phone,address,created:new Date().toISOString()};d.customers.push(c)}else{c.phone=phone||c.phone;c.address=address||c.address}const no=document.getElementById('invNo').value;d.invoices.push({no,date:document.getElementById('invDate').value,time:new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}),customer:name,phone,address,items:[...invoiceCart],total,paid,note:document.getElementById('invNote').value});putDB(d);localStorage.setItem('lalInvoiceSeq',String(Number(localStorage.getItem('lalInvoiceSeq')||0)+1));document.getElementById('invoiceMsg').textContent='ইনভয়েস সংরক্ষিত হয়েছে। নতুন ইনভয়েস নম্বর পরবর্তী ইনভয়েসে তৈরি হবে।';document.getElementById('invNo').value=nextInvoice();invoiceCart=[];renderInvoiceRows();document.getElementById('oldDue').value=money(customerDue(name));}
-function printInvoice(){const name=document.getElementById('invCustomer').value.trim(),total=invoiceCart.reduce((a,x)=>a+x.total,0),paid=Number(document.getElementById('invPaid').value||0);if(!name||!invoiceCart.length){alert('প্রিন্টের আগে কাস্টমার ও ওষুধ যোগ করুন।');return}const rows=invoiceCart.map((x,i)=>'<tr><td>'+(i+1)+'</td><td>'+safe(x.name)+'</td><td>'+x.qty+'</td><td>'+money(x.price)+'</td><td>'+money(x.total)+'</td></tr>').join('');const w=window.open('','_blank');if(!w){alert('প্রিন্ট পেজ খুলতে পপ-আপ অনুমতি দিন।');return}w.document.write('<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Invoice</title><style>@page{size:A5 portrait;margin:8mm}*{box-sizing:border-box}body{font-family:Arial,"Noto Sans Bengali",sans-serif;color:#111;margin:0;font-size:11px}.receipt{width:100%;border:1px solid #333;padding:7mm}h2{text-align:center;font-size:17px;margin:0 0 4px}.sub{text-align:center;font-size:9px;margin-bottom:12px}.meta{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #777;border-bottom:1px solid #777;padding:7px 0;margin:8px 0}table{width:100%;border-collapse:collapse;margin-top:10px}td,th{border:1px solid #777;padding:5px 4px;text-align:left;font-size:10px}th{background:#eee}.sum{width:58%;margin:12px 0 0 auto;line-height:1.9}.sum div{display:flex;justify-content:space-between;border-bottom:1px dotted #aaa}.sum .grand{font-weight:bold;font-size:12px;border-top:1px solid #333;margin-top:3px}.thanks{text-align:center;border-top:1px dashed #777;margin-top:15px;padding-top:8px;font-size:9px}@media screen{body{background:#eee;padding:10px}.receipt{max-width:148mm;min-height:200mm;margin:auto;background:white;box-shadow:0 2px 12px #0002}}@media print{body{padding:0}.receipt{border:0;padding:0;min-height:0}}</style></head><body><div class="receipt"><h2>'+safe(localStorage.getItem('lalOrg_name')||'LAL Pharmacy')+'</h2><div class="sub">'+safe(localStorage.getItem('lalOrg_address')||'')+'　'+safe(localStorage.getItem('lalOrg_phone')||'')+'</div><div class="meta"><span>ইনভয়েস: '+safe(document.getElementById('invNo').value)+'</span><span>তারিখ: '+safe(document.getElementById('invDate').value)+'</span></div><div>কাস্টমার: <b>'+safe(name)+'</b>　মোবাইল: '+safe(document.getElementById('invPhone').value)+'</div><table><thead><tr><th>নং</th><th>ওষুধের নাম</th><th>পরিমাণ</th><th>দর</th><th>মোট</th></tr></thead><tbody>'+rows+'</tbody></table><div class="sum"><div><span>মোট টাকা</span><b>'+money(total)+'</b></div><div><span>জমা</span><b>'+money(paid)+'</b></div><div class="grand"><span>বাকি</span><b>'+money(Math.max(0,total-paid))+'</b></div></div><div class="thanks">আপনার কেনাকাটার জন্য ধন্যবাদ। আবার আসবেন।</div></div><script>window.onload=()=>window.print()<\/script></body></html>');w.document.close()}
-function medicinePage(){const d=db();return '<div class="panel"><h3>মাস্টার ডাটা — ওষুধের তালিকা</h3><div class="fields"><label>ব্র্যান্ড / ওষুধের নাম<input id="mName" placeholder="যেমন: ব্র্যান্ড নাম"></label><label>জেনেরিক নাম<input id="mGeneric" placeholder="Generic name"></label><label>শক্তি<input id="mStrength" placeholder="যেমন 500 mg"></label><label>ধরন<input id="mForm" placeholder="Tablet / Capsule / Syrup"></label><label>কোম্পানি<input id="mCompany" placeholder="প্রস্তুতকারক"></label><label>বারকোড / কোড<input id="mCode" placeholder="ঐচ্ছিক"></label></div><button class="action" onclick="addMedicine()">মাস্টারে সংরক্ষণ</button><p class="hint">ওষুধের নাম বা জেনেরিক লিখে খুঁজুন। বিক্রির আগে ব্র্যান্ড, শক্তি ও প্রস্তুতকারক প্যাকেট/লাইসেন্সকৃত সরবরাহকারীর তথ্যের সঙ্গে মিলিয়ে নিন।</p><input style="width:100%;padding:10px;margin:12px 0" placeholder="ওষুধ খুঁজুন..." oninput="filterMedicineTable(this.value)"><div class="tablewrap"><table><thead><tr><th>ওষুধ</th><th>জেনেরিক</th><th>শক্তি</th><th>ধরন</th><th>কোম্পানি</th></tr></thead><tbody id="medicineTable">'+medicineRows(d.medicines)+'</tbody></table></div><p><a href="https://adr.dgdagov.info/medicines" target="_blank" rel="noopener">DGDA ঔষধ অনুসন্ধান</a></p></div>'}
-function medicineRows(a){return a.map(m=>'<tr><td>'+safe(m.name)+'</td><td>'+safe(m.generic)+'</td><td>'+safe(m.strength)+'</td><td>'+safe(m.form)+'</td><td>'+safe(m.company)+'</td></tr>').join('')}
-function addMedicine(){const m={name:document.getElementById('mName').value.trim(),generic:document.getElementById('mGeneric').value.trim(),strength:document.getElementById('mStrength').value.trim(),form:document.getElementById('mForm').value.trim(),company:document.getElementById('mCompany').value.trim(),code:document.getElementById('mCode').value.trim()};if(!m.name){alert('ওষুধের নাম লিখুন');return}const d=db();if(d.medicines.some(x=>x.name.toLowerCase()===m.name.toLowerCase())){alert('এই ওষুধ মাস্টারে আছে');return}d.medicines.push(m);putDB(d);openModule('medicines')}
-function filterMedicineTable(q){const rows=db().medicines.filter(m=>(m.name+' '+m.generic+' '+m.strength+' '+m.company).toLowerCase().includes(q.toLowerCase()));document.getElementById('medicineTable').innerHTML=medicineRows(rows)}
-function customersPage(){const d=db();return '<div class="panel"><h3>কাস্টমার তালিকা</h3><div class="tablewrap"><table><thead><tr><th>নাম</th><th>মোবাইল</th><th>ঠিকানা</th><th>মোট বাকি</th></tr></thead><tbody>'+d.customers.map(c=>'<tr><td>'+safe(c.name)+'</td><td>'+safe(c.phone)+'</td><td>'+safe(c.address)+'</td><td>'+money(customerDue(c.name))+'</td></tr>').join('')+'</tbody></table></div></div>'}
-function customDataPage(){const d=db();return '<div class="stats"><div class="stat"><span>কাস্টমার</span><strong>'+d.customers.length+'</strong></div><div class="stat"><span>ইনভয়েস</span><strong>'+d.invoices.length+'</strong></div><div class="stat"><span>মাস্টার ওষুধ</span><strong>'+d.medicines.length+'</strong></div><div class="stat"><span>মোট পাওনা</span><strong>'+money(d.invoices.reduce((a,x)=>a+Math.max(0,x.total-x.paid),0))+'</strong></div></div><div class="panel"><h3>কাস্টম ডাটা</h3><p>ইনভয়েস থেকে কাস্টমার স্বয়ংক্রিয়ভাবে যুক্ত হবে। এখানে কাস্টমার, ইনভয়েস ও ওষুধের মাস্টার ডাটার সারাংশ দেখা যাবে।</p><button class="action" onclick="openModule(\'customers\')">কাস্টমার লিস্ট</button><button class="action" onclick="openModule(\'medicines\')">মেডিসিন মাস্টার</button><button class="action" onclick="openModule(\'invoice\')">নতুন ইনভয়েস</button></div>'}
-function page(k){if(k==='dashboard')return dashboard();if(k==='invoice'){invoiceCart=[];return invoiceView()}if(k==='customdata')return customDataPage();if(k==='medicines')return medicinePage();if(k==='customers')return customersPage();if(k==='dues'){const d=db();return '<div class="panel"><h3>বাকি / পাওনা</h3><div class="tablewrap"><table><thead><tr><th>কাস্টমার</th><th>মোবাইল</th><th>বাকি</th></tr></thead><tbody>'+d.customers.map(c=>'<tr><td>'+safe(c.name)+'</td><td>'+safe(c.phone)+'</td><td>'+money(customerDue(c.name))+'</td></tr>').join('')+'</tbody></table></div></div>'}if(k==='today'){const d=db(),day=new Date().toLocaleDateString('en-CA');return '<div class="panel"><h3>আজকের বিক্রি</h3><div class="tablewrap"><table><tr><th>ইনভয়েস</th><th>কাস্টমার</th><th>মোট</th><th>জমা</th></tr>'+d.invoices.filter(x=>x.date===day).map(x=>'<tr><td>'+safe(x.no)+'</td><td>'+safe(x.customer)+'</td><td>'+money(x.total)+'</td><td>'+money(x.paid)+'</td></tr>').join('')+'</table></div></div>'}if(k==='stock')return '<div class="panel"><h3>স্টক ম্যানেজমেন্ট</h3><p>স্টক পরিমাণ ব্যাচভিত্তিক ক্রয় এন্ট্রির সঙ্গে সংযুক্ত করার পর এখানে পূর্ণ স্টক দেখানো হবে।</p><button class="action" onclick="openModule(\'medicines\')">মেডিসিন মাস্টার</button><button class="action" onclick="openModule(\'purchase\')">পারচেজ</button></div>';return '<div class="panel"><h3>'+safe(names[k]||'')+'</h3><p>এই অংশের পূর্ণ কার্যক্রম পরবর্তী ধাপে সংযুক্ত করা হবে।</p></div>'}
-names.customdata='কাস্টম ডাটা';
-
-updateLandingSummary();updateOrgIdentity();updateLiveSalesPanel();setInterval(updateLiveSalesPanel,15000);
-</script></body></html>
+(function(){
+"use strict";
+const KEY="lalPharmacyFreshV1";
+const $=id=>document.getElementById(id);
+const money=n=>"৳ "+(Number(n)||0).toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2});
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const read=(k,def)=>{try{const v=localStorage.getItem(k);return v===null?def:v}catch(e){return def}};
+function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.isArray(d.medicines)?d.medicines:[],customers:Array.isArray(d.customers)?d.customers:[],purchases:Array.isArray(d.purchases)?d.purchases:[],invoices:Array.isArray(d.invoices)?d.invoices:[]}}catch(e){return {medicines:[],customers:[],purchases:[],invoices:[]}}}
+let db=load(),logged=false,currentPage="dashboard",history=[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert("ডেটা সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ পূর্ণ হতে পারে।");return false}}
+function org(k){return read("lalOrg_"+k,"")}
+function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo}
+function salesToday(){return db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)}
+function dueTotal(){return db.invoices.reduce((a,x)=>a+Math.max(0,Number(x.total||0)-Number(x.paid||0)),0)}
+function clock(){const d=new Date();$("dateText").textContent=d.toLocaleDateString("bn-BD",{day:"numeric",month:"short",year:"numeric"});$("timeText").textContent=d.toLocaleTimeString("bn-BD")}
+function enter(){logged=true;$("loginScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");$("backBtn").classList.remove("hidden");$("logoutBtn").classList.remove("hidden");history=[];showPage("dashboard",false)}
+function logout(){logged=false;history=[];$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden");$("backBtn").classList.add("hidden");$("logoutBtn").classList.add("hidden");$("pwd").value="";$("loginError").textContent=""}
+function showPage(page,push=true){if(!logged)return;if(push&&currentPage!==page)history.push(currentPage);currentPage=page;const names={dashboard:"ড্যাশবোর্ড",invoice:"কাস্টমার ইনভয়েস",purchase:"পারচেজ / ক্রয়",stock:"স্টক ম্যানেজমেন্ট",medicines:"ওষুধের তালিকা",customers:"কাস্টমার তালিকা",dues:"বাকি / পাওনা",reports:"বিক্রয় রিপোর্ট",settings:"সেটিংস"};$("pageTitle").textContent=names[page]||"ড্যাশবোর্ড";$("pageContent").innerHTML=render(page);document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo(0,0)}
+function back(){if(history.length){const p=history.pop();showPage(p,false)}else showPage("dashboard",false)}
+function stat(label,value){return '<div class="stat"><span>'+label+'</span><strong>'+value+'</strong></div>'}
+function dashboard(){const inv=db.invoices.filter(x=>x.date===today());const max=Math.max(1,...Array.from({length:7},(_,i)=>db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)));return '<div class="stats">'+stat("আজকের বিক্রি",money(salesToday()))+stat("আজকের ইনভয়েস",inv.length)+stat("মোট কাস্টমার",db.customers.length)+stat("মোট বাকি",money(dueTotal()))+'</div><div class="split"><section class="panel"><h3>সাম্প্রতিক ইনভয়েস</h3>'+invoiceTable(db.invoices.slice(-6).reverse())+'</section><section class="panel"><h3>দ্রুত কাজ</h3><div class="actions"><button class="btn" data-page="invoice">+ নতুন ইনভয়েস</button><button class="btn secondary" data-page="purchase">+ ক্রয় এন্ট্রি</button><button class="btn light" data-page="medicines">ওষুধ যোগ</button></div><p class="hint">এই অ্যাপের তথ্য এই ব্রাউজার/ডিভাইসের স্থানীয় স্টোরেজে থাকে। নিয়মিত ব্যাকআপ রাখুন।</p></section></div>'}
+function invoiceTable(rows){if(!rows.length)return '<div class="empty">এখনো কোনো ইনভয়েস নেই।</div>';return '<div class="tablewrap"><table><thead><tr><th>ইনভয়েস</th><th>তারিখ</th><th>কাস্টমার</th><th>মোট</th><th>জমা</th><th>বাকি</th></tr></thead><tbody>'+rows.map(x=>'<tr><td>'+esc(x.no)+'</td><td>'+esc(x.date)+'</td><td>'+esc(x.customer)+'</td><td>'+money(x.total)+'</td><td>'+money(x.paid)+'</td><td>'+money(Math.max(0,x.total-x.paid))+'</td></tr>').join("")+'</tbody></table></div>'}
+function field(label,id,type="text",placeholder="",value=""){return '<div class="field"><label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+type+'" placeholder="'+placeholder+'" value="'+esc(value)+'"></div>'}
+function medicineOptions(){return db.medicines.map(m=>'<option value="'+esc(m.name)+'">'+esc(m.generic||"")+' '+esc(m.strength||"")+'</option>').join("")}
+function invoicePage(){return '<section class="panel"><h3>নতুন বিক্রয় ইনভয়েস</h3><div class="form-grid">'+field("কাস্টমারের নাম","invCustomer")+field("মোবাইল নম্বর","invPhone","tel")+field("তারিখ","invDate","date","",today())+field("ইনভয়েস নম্বর","invNo","text","", "LAL-"+Date.now().toString().slice(-8))+'</div><hr><h3>ওষুধ যোগ করুন</h3><div class="form-grid three">'+field("ওষুধের নাম","invMedicine")+field("পরিমাণ","invQty","number","", "1")+field("একক বিক্রয় মূল্য (৳)","invPrice","number","")+'</div><datalist id="medList">'+medicineOptions()+'</datalist><div class="actions"><button class="btn secondary" data-action="add-line">ওষুধ যোগ করুন</button></div><div id="invoiceLines" class="tablewrap" style="margin-top:14px"><div class="empty">এখনো কোনো ওষুধ যোগ করা হয়নি।</div></div><div class="form-grid">'+field("জমা টাকা (৳)","invPaid","number","","0")+field("মন্তব্য","invNote")+'</div><div class="actions"><button class="btn success" data-action="save-invoice">ইনভয়েস সংরক্ষণ</button></div><p class="hint" id="invoiceMessage"></p></section>'}
+let cart=[];
+function addLine(){const name=$("invMedicine").value.trim(),qty=Number($("invQty").value),price=Number($("invPrice").value);if(!name||qty<=0||price<0||!Number.isFinite(price)){alert("ওষুধের নাম, পরিমাণ ও সঠিক মূল্য লিখুন।");return}cart.push({name,qty,price,total:qty*price});$("invMedicine").value="";$("invQty").value="1";$("invPrice").value="";renderCart()}
+function renderCart(){const el=$("invoiceLines");if(!el)return;if(!cart.length){el.innerHTML='<div class="empty">এখনো কোনো ওষুধ যোগ করা হয়নি।</div>';return}el.innerHTML='<table><thead><tr><th>ওষুধ</th><th>পরিমাণ</th><th>দর</th><th>মোট</th><th></th></tr></thead><tbody>'+cart.map((x,i)=>'<tr><td>'+esc(x.name)+'</td><td>'+x.qty+'</td><td>'+money(x.price)+'</td><td>'+money(x.total)+'</td><td><button class="btn danger" data-action="remove-line" data-index="'+i+'">বাদ</button></td></tr>').join("")+'</tbody></table><p><b>সর্বমোট: '+money(cart.reduce((a,x)=>a+x.total,0))+'</b></p>'}
+function saveInvoice(){const customer=$("invCustomer").value.trim(),total=cart.reduce((a,x)=>a+x.total,0),paid=Number($("invPaid").value||0);if(!customer||!cart.length){alert("কাস্টমারের নাম ও অন্তত একটি ওষুধ যোগ করুন।");return}if(paid<0||paid>total){alert("জমা টাকা মোট টাকার চেয়ে বেশি বা ঋণাত্মক হতে পারবে না।");return}const old=db.customers.find(x=>x.name.toLowerCase()===customer.toLowerCase());if(old){old.phone=$("invPhone").value.trim()||old.phone}else db.customers.push({name:customer,phone:$("invPhone").value.trim()});const inv={no:$("invNo").value,date:$("invDate").value||today(),customer,phone:$("invPhone").value.trim(),items:cart.slice(),total,paid,note:$("invNote").value.trim(),created:new Date().toISOString()};db.invoices.push(inv);if(!save())return;cart=[];alert("ইনভয়েস সংরক্ষণ হয়েছে।");showPage("dashboard",false)}
+function purchasePage(){return '<section class="panel"><h3>ওষুধ ক্রয় এন্ট্রি</h3><div class="form-grid three">'+field("ওষুধের নাম","purName")+field("কোম্পানি","purCompany")+field("ব্যাচ নম্বর","purBatch")+field("মেয়াদ উত্তীর্ণ","purExpiry","date")+field("পরিমাণ","purQty","number")+field("প্রতি ইউনিট ক্রয়মূল্য","purCost","number")+field("প্রতি ইউনিট বিক্রয়মূল্য","purPrice","number")+field("সরবরাহকারী","purSupplier")+field("তারিখ","purDate","date","",today())+'</div><div class="actions"><button class="btn success" data-action="save-purchase">ক্রয় সংরক্ষণ</button></div></section>'}
+function savePurchase(){const name=$("purName").value.trim(),qty=Number($("purQty").value),cost=Number($("purCost").value),price=Number($("purPrice").value);if(!name||qty<=0||cost<0||price<0){alert("ওষুধ, পরিমাণ ও মূল্য সঠিকভাবে দিন।");return}db.purchases.push({name,company:$("purCompany").value.trim(),batch:$("purBatch").value.trim(),expiry:$("purExpiry").value,qty,cost,price,supplier:$("purSupplier").value.trim(),date:$("purDate").value||today()});if(save()){alert("ক্রয় এন্ট্রি সংরক্ষণ হয়েছে।");showPage("stock",false)}}
+function stockPage(){const items={};db.purchases.forEach(p=>{const k=p.name+"|"+p.batch;items[k]=items[k]||{name:p.name,batch:p.batch,expiry:p.expiry,qty:0,cost:p.cost,price:p.price};items[k].qty+=Number(p.qty)});return '<section class="panel"><h3>ব্যাচভিত্তিক স্টক</h3><div class="tablewrap"><table><thead><tr><th>ওষুধ</th><th>ব্যাচ</th><th>মেয়াদ</th><th>মজুদ</th><th>ক্রয়মূল্য</th><th>বিক্রয়মূল্য</th></tr></thead><tbody>'+Object.values(items).map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.batch)+'</td><td>'+esc(x.expiry)+'</td><td>'+x.qty+'</td><td>'+money(x.cost)+'</td><td>'+money(x.price)+'</td></tr>').join("")+'</tbody></table></div><p class="hint">প্রাথমিক সংস্করণে বিক্রির পর স্টক স্বয়ংক্রিয়ভাবে কমানো হয় না; ব্যাচভিত্তিক বিক্রয়-স্টক মিলানোর পরবর্তী ধাপে এটি যুক্ত করা প্রয়োজন।</p></section>'}
+function medicinesPage(){return '<section class="panel"><h3>মেডিসিন মাস্টার</h3><div class="form-grid three">'+field("ব্র্যান্ড / ওষুধের নাম","medName")+field("জেনেরিক নাম","medGeneric")+field("শক্তি","medStrength")+field("ধরন","medForm")+field("কোম্পানি","medCompany")+field("কোড","medCode")+'</div><div class="actions"><button class="btn success" data-action="save-medicine">ওষুধ সংরক্ষণ</button></div></section><section class="panel"><h3>ওষুধের তালিকা</h3><div class="tablewrap"><table><thead><tr><th>নাম</th><th>জেনেরিক</th><th>শক্তি</th><th>ধরন</th><th>কোম্পানি</th></tr></thead><tbody>'+db.medicines.map(m=>'<tr><td>'+esc(m.name)+'</td><td>'+esc(m.generic)+'</td><td>'+esc(m.strength)+'</td><td>'+esc(m.form)+'</td><td>'+esc(m.company)+'</td></tr>').join("")+'</tbody></table></div></section>'}
+function saveMedicine(){const m={name:$("medName").value.trim(),generic:$("medGeneric").value.trim(),strength:$("medStrength").value.trim(),form:$("medForm").value.trim(),company:$("medCompany").value.trim(),code:$("medCode").value.trim()};if(!m.name){alert("ওষুধের নাম লিখুন।");return}if(db.medicines.some(x=>x.name.toLowerCase()===m.name.toLowerCase())){alert("এই ওষুধটি তালিকায় আগে থেকেই আছে।");return}db.medicines.push(m);if(save())showPage("medicines",false)}
+function customersPage(){return '<section class="panel"><h3>কাস্টমার তালিকা</h3><div class="tablewrap"><table><thead><tr><th>নাম</th><th>মোবাইল</th><th>মোট বাকি</th></tr></thead><tbody>'+db.customers.map(c=>{const due=db.invoices.filter(i=>i.customer===c.name).reduce((a,i)=>a+Math.max(0,i.total-i.paid),0);return '<tr><td>'+esc(c.name)+'</td><td>'+esc(c.phone)+'</td><td>'+money(due)+'</td></tr>'}).join("")+'</tbody></table></div></section>'}
+function duesPage(){return '<section class="panel"><h3>বাকি / পাওনা হিসাব</h3>'+invoiceTable(db.invoices.filter(x=>x.total>x.paid).slice().reverse())+'<p><b>মোট পাওনা: '+money(dueTotal())+'</b></p></section>'}
+function reportsPage(){return '<div class="stats">'+stat("আজকের বিক্রি",money(salesToday()))+stat("আজকের ক্রয়",money(db.purchases.filter(x=>x.date===today()).reduce((a,x)=>a+x.qty*x.cost,0)))+stat("মোট ইনভয়েস",db.invoices.length)+stat("মোট পাওনা",money(dueTotal()))+'</div><section class="panel"><h3>বিক্রয় রিপোর্ট</h3>'+invoiceTable(db.invoices.slice().reverse())+'</section>'}
+function settingsPage(){return '<section class="panel"><h3>প্রতিষ্ঠানের তথ্য</h3><div class="form-grid">'+field("প্রতিষ্ঠানের নাম","orgName","text","",org("name"))+field("মালিকের নাম","orgOwner","text","",org("owner"))+field("মোবাইল","orgPhone","tel","",org("phone"))+field("ইমেইল","orgEmail","email","",org("email"))+field("ঠিকানা","orgAddress","text","",org("address"))+field("লাইসেন্স নম্বর","orgLicense","text","",org("license"))+'</div><div class="field"><label>প্রতিষ্ঠানের লোগো</label><input id="orgLogoFile" type="file" accept="image/png,image/jpeg,image/webp"></div><img id="orgLogoPreview" class="logo-preview" src="'+esc(read("lalOrg_logo","Logo.jpg"))+'" alt="Logo preview"><div class="actions"><button class="btn success" data-action="save-org">তথ্য সংরক্ষণ</button></div></section><section class="panel"><h3>লগইন তথ্য পরিবর্তন</h3><div class="form-grid">'+field("নতুন ইউজার আইডি","newUser")+field("নতুন পাসওয়ার্ড","newPass","password")+'</div><button class="btn secondary" data-action="change-login">লগইন পরিবর্তন</button><p class="hint">এই ওয়েব সংস্করণে লগইন তথ্য একই ব্রাউজারের লোকাল স্টোরেজে থাকে; এটি সার্ভারভিত্তিক নিরাপত্তা বা বহু-ডিভাইস অ্যাকাউন্ট নয়।</p></section><section class="panel"><h3>ডেটা ব্যাকআপ</h3><div class="actions"><button class="btn" data-action="backup">JSON ব্যাকআপ ডাউনলোড</button><label class="btn light" for="restoreFile">ব্যাকআপ পুনরুদ্ধার</label><input class="hidden" id="restoreFile" type="file" accept="application/json"></div></section>'}
+function saveOrg(){const map={name:"orgName",owner:"orgOwner",phone:"orgPhone",email:"orgEmail",address:"orgAddress",license:"orgLicense"};Object.keys(map).forEach(k=>localStorage.setItem("lalOrg_"+k,$(map[k]).value.trim()));setOrgHeader();alert("প্রতিষ্ঠানের তথ্য সংরক্ষণ হয়েছে।")}
+function changeLogin(){const u=$("newUser").value.trim(),p=$("newPass").value;if(!u||!p){alert("নতুন ইউজার আইডি ও পাসওয়ার্ড লিখুন।");return}localStorage.setItem("lalPharmacyUser",u);localStorage.setItem("lalPharmacyPass",p);alert("লগইন তথ্য পরিবর্তন হয়েছে।")}
+function backup(){const blob=new Blob([JSON.stringify({db,created:new Date().toISOString()},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="LAL-Pharmacy-Backup-"+today()+".json";a.click();URL.revokeObjectURL(url)}
+function restore(file){const reader=new FileReader();reader.onload=()=>{try{const obj=JSON.parse(reader.result);const d=obj.db||obj;if(!Array.isArray(d.invoices)||!Array.isArray(d.medicines)||!Array.isArray(d.customers)||!Array.isArray(d.purchases))throw new Error("Invalid backup");db=d;if(save()){alert("ব্যাকআপ পুনরুদ্ধার হয়েছে।");showPage(currentPage,false)}}catch(e){alert("ব্যাকআপ ফাইলটি সঠিক নয়।")}};reader.readAsText(file)}
+function render(page){cart=[];if(page==="dashboard")return dashboard();if(page==="invoice")return invoicePage();if(page==="purchase")return purchasePage();if(page==="stock")return stockPage();if(page==="medicines")return medicinesPage();if(page==="customers")return customersPage();if(page==="dues")return duesPage();if(page==="reports")return reportsPage();if(page==="settings")return settingsPage();return dashboard()}
+$("loginForm").addEventListener("submit",function(e){e.preventDefault();e.stopPropagation();const u=$("uid").value.trim(),p=$("pwd").value;const savedUser=read("lalPharmacyUser","admin"),savedPass=read("lalPharmacyPass","1234");if(u===savedUser&&p===savedPass){$("loginError").textContent="";enter()}else{$("loginError").textContent="ইউজার আইডি অথবা পাসওয়ার্ড ভুল। ডেমো: admin / 1234";$("pwd").select()}});
+document.addEventListener("click",function(e){const pageBtn=e.target.closest("[data-page]");if(pageBtn){e.preventDefault();if(!logged){$("loginError").textContent="এই মডিউল খুলতে আগে লগইন করুন।";$("uid").focus();return}showPage(pageBtn.dataset.page);return}const req=e.target.closest("[data-login-required]");if(req){$("loginError").textContent="এই মডিউল খুলতে আগে লগইন করুন।";$("uid").focus();return}const act=e.target.closest("[data-action]");if(!act)return;const a=act.dataset.action;if(a==="add-line")addLine();if(a==="remove-line"){cart.splice(Number(act.dataset.index),1);renderCart()}if(a==="save-invoice")saveInvoice();if(a==="save-purchase")savePurchase();if(a==="save-medicine")saveMedicine();if(a==="save-org")saveOrg();if(a==="change-login")changeLogin();if(a==="backup")backup()});
+$("backBtn").addEventListener("click",back);$("logoutBtn").addEventListener("click",logout);
+$("pageContent").addEventListener("change",function(e){if(e.target.id==="orgLogoFile"){const f=e.target.files&&e.target.files[0];if(!f)return;if(f.size>1500000){alert("১.৫ MB-এর কম লোগো নির্বাচন করুন।");return}if(!/^image\/(png|jpeg|webp)$/.test(f.type)){alert("JPG, PNG বা WebP ছবি দিন।");return}const rd=new FileReader();rd.onload=()=>{try{localStorage.setItem("lalOrg_logo",rd.result);$("orgLogoPreview").src=rd.result;setOrgHeader()}catch(err){alert("লোগো সংরক্ষণ করা যায়নি।")}};rd.readAsDataURL(f)}if(e.target.id==="restoreFile"&&e.target.files[0])restore(e.target.files[0])});
+$("pageContent").addEventListener("input",function(e){if(e.target.id==="invMedicine")e.target.setAttribute("list","medList")});
+setOrgHeader();clock();setInterval(clock,1000);$("loginSales").textContent=money(salesToday());
+})();
+</script>
+</body>
+</html>
