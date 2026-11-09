@@ -109,7 +109,7 @@ const money=n=>"৳ "+(Number(n)||0).toLocaleString("en-IN",{minimumFractionDigi
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
 const read=(k,def)=>{try{const v=localStorage.getItem(k);return v===null?def:v}catch(e){return def}};
-function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.isArray(d.medicines)?d.medicines:[],customers:Array.isArray(d.customers)?d.customers:[],purchases:Array.isArray(d.purchases)?d.purchases:[],invoices:Array.isArray(d.invoices)?d.invoices:[]}}catch(e){return {medicines:[],customers:[],purchases:[],invoices:[]}}}
+function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.isArray(d.medicines)?d.medicines.map((m,i)=>({...m,id:m.id||("OLD"+i+"-"+String(m.name||"").replace(/\\W/g,""))})):[],customers:Array.isArray(d.customers)?d.customers:[],purchases:Array.isArray(d.purchases)?d.purchases:[],invoices:Array.isArray(d.invoices)?d.invoices:[]}}catch(e){return {medicines:[],customers:[],purchases:[],invoices:[]}}}
 let db=load(),logged=false,currentPage="dashboard",history=[];
 function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert("ডেটা সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ পূর্ণ হতে পারে।");return false}}
 function org(k){return read("lalOrg_"+k,"")}
