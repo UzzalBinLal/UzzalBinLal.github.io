@@ -49,9 +49,54 @@ th{background:linear-gradient(90deg,#172943,#54243a);color:#fff}
 .panel h3{border-left:4px solid var(--gold);padding-left:9px}
 .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e8edf6);box-shadow:inset 3px 0 var(--wine2)}
 
+
+/* Full-screen centered login, as requested */
+body.login-mode{min-height:100vh;background:radial-gradient(ellipse at 18% 18%,#263d68 0%,transparent 38%),radial-gradient(ellipse at 82% 82%,#762b4b 0%,transparent 42%),linear-gradient(135deg,#070d19,#111b30 55%,#090d18);color:#fff}
+body.login-mode header,body.login-mode footer{display:none}
+body.login-mode main{max-width:none;width:100%;min-height:100vh;margin:0;padding:24px;display:grid;place-items:center}
+.login-screen{width:100%;min-height:calc(100vh - 48px);display:grid;place-items:center}
+.login-stack{width:min(460px,100%);display:flex;flex-direction:column;gap:14px}
+.login-glass{background:linear-gradient(145deg,#ffffff24,#ffffff0b)!important;border:1px solid #ffffff55!important;border-radius:24px!important;box-shadow:0 22px 65px #0008,inset 0 1px #ffffff65!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);padding:24px;color:#fff}
+.login-brand{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:18px;text-align:left}
+.login-brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:14px;padding:5px}
+.login-brand h2{color:#fff;margin:0;font-size:24px}
+.login-brand p{color:#e8dbe5;font-size:11px;letter-spacing:2px;margin:4px 0}
+.login-glass .field label{color:#fff}
+.login-glass .field input{background:#ffffffed;border:1px solid #ffffff80;border-radius:11px;padding:14px}
+.login-submit{width:100%;margin-top:10px;padding:14px;border-radius:12px;background:linear-gradient(100deg,#f18a3c,#d83e71,#665be8);box-shadow:0 8px 22px #d83e7150;font-size:16px}
+.login-hint{color:#e6dce8;text-align:center}
+.login-glass .error{color:#ffd1d1;text-align:center}
+.developer-profile{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center;padding:18px 16px;background:linear-gradient(145deg,#ffffff20,#ffffff09);border:1px solid #ffffff42;border-radius:20px;box-shadow:0 14px 40px #0005;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.dev-logo{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}
+.dev-photo{width:76px;height:76px;object-fit:cover;border-radius:50%;border:2px solid #ffffffa8}
+.dev-details{font-size:12px;line-height:1.7;color:#f1eaf1}
+.dev-details h2{font-size:16px;color:#fff;margin:0 0 2px}
+.dev-details p{margin:0 0 5px;color:#f5bdcf}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:14px 0 18px}
+.glass-tile{position:relative;isolation:isolate;overflow:hidden;min-height:132px;padding:18px;text-align:left;color:#fff;border:1px solid #ffffff8a;border-radius:18px;background:linear-gradient(135deg,#ffffff38,#ffffff0c);box-shadow:0 12px 28px #17294322,inset 0 1px #ffffff80;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);transition:transform .18s,box-shadow .18s}
+.glass-tile:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.84;background:linear-gradient(135deg,var(--tile-a),var(--tile-b))}
+.glass-tile:after{content:"";position:absolute;width:120px;height:120px;right:-32px;top:-44px;border-radius:50%;background:#ffffff28;filter:blur(2px);z-index:-1}
+.glass-tile:hover{transform:translateY(-4px);box-shadow:0 17px 34px #17294342,inset 0 1px #ffffffb0}
+.glass-tile .emoji{font-size:30px;display:block;margin-bottom:10px;filter:drop-shadow(0 2px 4px #0004)}
+.glass-tile b{display:block;font-size:16px}
+.glass-tile small{display:block;color:#fff;font-size:12px;margin-top:5px;opacity:.9}
+.glass-tile:nth-child(6n+1){--tile-a:#1769aa;--tile-b:#38b7c5}
+.glass-tile:nth-child(6n+2){--tile-a:#9d315a;--tile-b:#e66d72}
+.glass-tile:nth-child(6n+3){--tile-a:#6a42b6;--tile-b:#b15bd0}
+.glass-tile:nth-child(6n+4){--tile-a:#087d72;--tile-b:#55b78c}
+.glass-tile:nth-child(6n+5){--tile-a:#b36b1d;--tile-b:#e8b84d}
+.glass-tile:nth-child(6n){--tile-a:#354d86;--tile-b:#657fe0}
+body:not(.login-mode){background:linear-gradient(135deg,#101a2d,#202d49 48%,#321d32);color:#f5f7fb}
+body:not(.login-mode) .panel,body:not(.login-mode) .stat,body:not(.login-mode) .sidebar{background:linear-gradient(145deg,#ffffffed,#e9edf6f2);color:#202b3c}
+body:not(.login-mode) .viewhead h1{color:#fff}
+body:not(.login-mode) .navbtn{color:#28364d}
+body:not(.login-mode) .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e8edf6);color:#651d32}
+@media(max-width:700px){body.login-mode main{padding:14px}.login-screen{min-height:calc(100vh - 28px)}.login-glass{padding:20px}.developer-profile{gap:9px}.dev-details{width:100%}.dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.glass-tile{min-height:116px;padding:14px}.glass-tile b{font-size:14px}}
+@media(max-width:380px){.dashboard-grid{grid-template-columns:1fr}.login-brand h2{font-size:20px}}
+
 </style>
 </head>
-<body>
+<body class="login-mode">
 <header>
  <div class="brandmark"><img id="headerLogo" src="Logo.jpg" alt="LAL"></div>
  <div class="brand"><b id="headerName">LAL Pharmacy</b><small>Pharmacy Management System</small></div>
@@ -60,35 +105,23 @@ th{background:linear-gradient(90deg,#172943,#54243a);color:#fff}
  <button class="headbtn hidden" id="logoutBtn" type="button">লগআউট</button>
 </header>
 <main>
-<section id="loginScreen">
- <div class="login-layout">
-  <section class="card developer">
-   <img class="logo" src="Logo.jpg" alt="LAL Logo">
-   <div><img class="portrait" src="Uzzal.jpg" alt="Developer"></div>
-   <div><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p>Developer & Founder</p></div>
-   <div class="dev-contact subtle">স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর<br>☎ 01711167661<br>✉ mslalenterprise@gmail.com</div>
-  </section>
-  <section class="card center-welcome">
-   <div class="subtle" style="color:#f2cbd5">WELCOME TO LAL PHARMACY</div>
-   <h1>আপনার ফার্মেসি পরিচালনা হোক আরও সহজ ও গোছানো</h1>
-   <p>বিক্রি, ক্রয়, ওষুধের স্টক, কাস্টমার ও বাকি হিসাব—সবকিছু এক জায়গায় রাখুন।</p>
-   <div class="today-box">আজকের মোট বিক্রি<strong id="loginSales">৳ ০.০০</strong></div>
-  </section>
-  <section class="card login-card">
-   <h2 id="loginOrgName">LAL Pharmacy</h2><p class="subtle">PHARMACY OWNER LOGIN</p>
+<section id="loginScreen" class="login-screen">
+ <div class="login-stack">
+  <section class="login-card login-glass">
+   <div class="login-brand"><img src="Logo.jpg" alt="LAL"><div><h2 id="loginOrgName">LAL Pharmacy</h2><p>PHARMACY OWNER LOGIN</p></div></div>
    <form id="loginForm" autocomplete="on">
     <div class="field"><label for="uid">ইউজার আইডি</label><input id="uid" name="username" autocomplete="username" required placeholder="আপনার ইউজার আইডি"></div>
     <div class="field"><label for="pwd">পাসওয়ার্ড</label><input id="pwd" name="password" type="password" autocomplete="current-password" required placeholder="পাসওয়ার্ড লিখুন"></div>
-    <button class="btn" type="submit">Login / লগইন</button>
+    <button class="btn login-submit" type="submit">লগইন করুন</button>
     <div id="loginError" class="error" role="alert"></div>
    </form>
-   <p class="hint">প্রথমবার প্রবেশ: admin / 1234</p>
+   <p class="hint login-hint">প্রথমবার প্রবেশ: admin / 1234</p>
   </section>
- </div>
- <div class="module-grid">
-  <button class="tile" data-page="invoice"><span class="emoji">🧾</span><b>কাস্টমার ইনভয়েস</b><small>বিক্রির ইনভয়েস তৈরি</small></button>
-  <button class="tile" data-login-required="purchase"><span class="emoji">📦</span><b>পারচেজ / ক্রয়</b><small>ওষুধ ক্রয় এন্ট্রি</small></button>
-  <button class="tile" data-login-required="stock"><span class="emoji">💊</span><b>স্টক ম্যানেজমেন্ট</b><small>মজুদ ও মেয়াদ</small></button>
+  <section class="developer-profile">
+   <img class="dev-logo" src="Logo.jpg" alt="LAL Logo">
+   <img class="dev-photo" src="Uzzal.jpg" alt="Developer">
+   <div class="dev-details"><h2>মোঃ অহিদুল হক উজ্জ্বল বিন লাল</h2><p>Developer &amp; Founder</p><div>স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর</div><div>☎ 01711167661</div><div>✉ mslalenterprise@gmail.com</div></div>
+  </section>
  </div>
 </section>
 <section id="appScreen" class="hidden">
@@ -130,12 +163,12 @@ function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").t
 function salesToday(){return db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)}
 function dueTotal(){return db.invoices.reduce((a,x)=>a+Math.max(0,Number(x.total||0)-Number(x.paid||0)),0)}
 function clock(){const d=new Date();$("dateText").textContent=d.toLocaleDateString("bn-BD",{day:"numeric",month:"short",year:"numeric"});$("timeText").textContent=d.toLocaleTimeString("bn-BD")}
-function enter(){logged=true;$("loginScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");$("backBtn").classList.remove("hidden");$("logoutBtn").classList.remove("hidden");history=[];showPage("dashboard",false)}
-function logout(){logged=false;history=[];$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden");$("backBtn").classList.add("hidden");$("logoutBtn").classList.add("hidden");$("pwd").value="";$("loginError").textContent=""}
+function enter(){document.body.classList.remove("login-mode");logged=true;$("loginScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");$("backBtn").classList.remove("hidden");$("logoutBtn").classList.remove("hidden");history=[];showPage("dashboard",false)}
+function logout(){document.body.classList.add("login-mode");logged=false;history=[];$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden");$("backBtn").classList.add("hidden");$("logoutBtn").classList.add("hidden");$("pwd").value="";$("loginError").textContent=""}
 function showPage(page,push=true){if(!logged)return;if(push&&currentPage!==page)history.push(currentPage);currentPage=page;const names={dashboard:"ড্যাশবোর্ড",invoice:"কাস্টমার ইনভয়েস",purchase:"পারচেজ / ক্রয়",stock:"স্টক ম্যানেজমেন্ট",medicines:"ওষুধের তালিকা",customers:"কাস্টমার তালিকা",dues:"বাকি / পাওনা",reports:"বিক্রয় রিপোর্ট",settings:"সেটিংস"};$("pageTitle").textContent=names[page]||"ড্যাশবোর্ড";$("pageContent").innerHTML=render(page);document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo(0,0)}
 function back(){if(history.length){const p=history.pop();showPage(p,false)}else showPage("dashboard",false)}
 function stat(label,value){return '<div class="stat"><span>'+label+'</span><strong>'+value+'</strong></div>'}
-function dashboard(){const inv=db.invoices.filter(x=>x.date===today());const max=Math.max(1,...Array.from({length:7},(_,i)=>db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)));return '<div class="stats">'+stat("আজকের বিক্রি",money(salesToday()))+stat("আজকের ইনভয়েস",inv.length)+stat("মোট কাস্টমার",db.customers.length)+stat("মোট বাকি",money(dueTotal()))+'</div><div class="split"><section class="panel"><h3>সাম্প্রতিক ইনভয়েস</h3>'+invoiceTable(db.invoices.slice(-6).reverse())+'</section><section class="panel"><h3>দ্রুত কাজ</h3><div class="actions"><button class="btn" data-page="invoice">+ নতুন ইনভয়েস</button><button class="btn secondary" data-page="purchase">+ ক্রয় এন্ট্রি</button><button class="btn light" data-page="medicines">ওষুধ যোগ</button></div><p class="hint">এই অ্যাপের তথ্য এই ব্রাউজার/ডিভাইসের স্থানীয় স্টোরেজে থাকে। নিয়মিত ব্যাকআপ রাখুন।</p></section></div>'}
+function dashboard(){const inv=db.invoices.filter(x=>x.date===today());const modules=[["invoice","🧾","কাস্টমার ইনভয়েস","বিক্রয় ও প্রিন্ট"],["purchase","📦","পারচেজ / ক্রয়","নতুন পণ্য ক্রয়"],["stock","💊","স্টক ম্যানেজমেন্ট","মজুদ ও মেয়াদ"],["medicines","💉","ঔষধ মাস্টার","ঔষধের তালিকা ও মূল্য"],["customers","👥","কাস্টমার তালিকা","ক্রেতার তথ্য"],["dues","💳","বাকি / পাওনা","বকেয়া হিসাব"],["reports","📈","বিক্রয় রিপোর্ট","বিক্রয় ও ক্রয় বিশ্লেষণ"],["settings","⚙️","সেটিংস","প্রতিষ্ঠান ও ব্যাকআপ"]];return '<div class="stats">'+stat("আজকের বিক্রি",money(salesToday()))+stat("আজকের ইনভয়েস",inv.length)+stat("মোট কাস্টমার",db.customers.length)+stat("মোট বাকি",money(dueTotal()))+'</div><h3 style="color:#fff;margin:18px 0 10px">প্রধান মডিউল</h3><div class="dashboard-grid">'+modules.map(m=>'<button class="glass-tile" data-page="'+m[0]+'"><span class="emoji">'+m[1]+'</span><b>'+m[2]+'</b><small>'+m[3]+'</small></button>').join("")+'</div><section class="panel"><h3>সাম্প্রতিক ইনভয়েস</h3>'+invoiceTable(db.invoices.slice(-6).reverse())+'</section>'}
 function invoiceTable(rows){if(!rows.length)return '<div class="empty">এখনো কোনো ইনভয়েস নেই।</div>';return '<div class="tablewrap"><table><thead><tr><th>ইনভয়েস</th><th>তারিখ</th><th>কাস্টমার</th><th>মোট</th><th>জমা</th><th>বাকি</th></tr></thead><tbody>'+rows.map(x=>'<tr><td>'+esc(x.no)+'</td><td>'+esc(x.date)+'</td><td>'+esc(x.customer)+'</td><td>'+money(x.total)+'</td><td>'+money(x.paid)+'</td><td>'+money(Math.max(0,x.total-x.paid))+'</td></tr>').join("")+'</tbody></table></div>'}
 function field(label,id,type="text",placeholder="",value=""){return '<div class="field"><label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+type+'" placeholder="'+placeholder+'" value="'+esc(value)+'"></div>'}
 function medicineOptions(){return db.medicines.map(m=>'<option value="'+esc(m.name)+'">'+esc(m.generic||"")+' '+esc(m.strength||"")+'</option>').join("")}
@@ -143,7 +176,7 @@ function invoicePage(){return '<section class="panel"><div class="no-print"><h3>
 function addLine(){const name=$("invMedicine").value.trim(),qty=Number($("invQty").value),price=Number($("invPrice").value);if(!name||qty<=0||price<0||!Number.isFinite(price)){alert("তালিকা থেকে ঔষধ নির্বাচন, পরিমাণ ও সঠিক মূল্য দিন।");return}const master=db.medicines.find(m=>m.name.toLowerCase()===name.toLowerCase());if(!master){alert("এই ঔষধটি ঔষধ মাস্টারে নেই। আগে ঔষধ মাস্টারে যোগ করুন।");return}cart.push({medicineId:master.id,name:master.name,qty,price,total:qty*price});$("invMedicine").value="";$("invQty").value="1";$("invPrice").value="";renderCart()}
 function renderCart(){const el=$("invoiceLines");if(!el)return;if(!cart.length){el.innerHTML='<div class="empty">এখনো কোনো ওষুধ যোগ করা হয়নি।</div>';return}el.innerHTML='<table><thead><tr><th>ওষুধ</th><th>পরিমাণ</th><th>দর</th><th>মোট</th><th></th></tr></thead><tbody>'+cart.map((x,i)=>'<tr><td>'+esc(x.name)+'</td><td>'+x.qty+'</td><td>'+money(x.price)+'</td><td>'+money(x.total)+'</td><td><button class="btn danger" data-action="remove-line" data-index="'+i+'">বাদ</button></td></tr>').join("")+'</tbody></table><p><b>সর্বমোট: '+money(cart.reduce((a,x)=>a+x.total,0))+'</b></p>'}
 function saveInvoice(){const customer=$("invCustomer").value.trim(),total=cart.reduce((a,x)=>a+x.total,0),paid=Number($("invPaid").value||0);if(!customer||!cart.length){alert("কাস্টমারের নাম ও অন্তত একটি ঔষধ যোগ করুন।");return}if(paid<0||paid>total){alert("জমা টাকা মোট টাকার চেয়ে বেশি বা ঋণাত্মক হতে পারবে না।");return}const old=db.customers.find(x=>x.name.toLowerCase()===customer.toLowerCase());if(old){old.phone=$("invPhone").value.trim()||old.phone}else db.customers.push({name:customer,phone:$("invPhone").value.trim()});const inv={no:$("invNo").value,date:$("invDate").value||today(),customer,phone:$("invPhone").value.trim(),items:cart.slice(),total,paid,note:$("invNote").value.trim(),created:new Date().toISOString()};db.invoices.push(inv);if(!save())return;const print=$("invoicePrint");print.innerHTML='<div style="text-align:center;border-bottom:2px solid #333;padding-bottom:8px"><h2>'+esc(org("name")||"LAL Pharmacy")+'</h2><div>'+esc(org("address"))+' | '+esc(org("phone"))+'</div><h3>বিক্রয় ইনভয়েস</h3></div><p>ইনভয়েস: '+esc(inv.no)+'　তারিখ: '+esc(inv.date)+'</p><p>কাস্টমার: '+esc(inv.customer)+'　মোবাইল: '+esc(inv.phone)+'</p><table><thead><tr><th>ঔষধ</th><th>পরিমাণ</th><th>দর</th><th>মোট</th></tr></thead><tbody>'+inv.items.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+x.qty+'</td><td>'+money(x.price)+'</td><td>'+money(x.total)+'</td></tr>').join("")+'</tbody></table><div style="text-align:right;margin-top:14px"><p>সর্বমোট: <b>'+money(total)+'</b></p><p>জমা: <b>'+money(paid)+'</b></p><p>বাকি: <b>'+money(total-paid)+'</b></p></div><p>মন্তব্য: '+esc(inv.note)+'</p><p style="text-align:center;margin-top:35px">ধন্যবাদ, আবার আসবেন।</p>';cart=[];alert("ইনভয়েস সংরক্ষণ হয়েছে। প্রিন্ট করতে OK চাপুন।");window.print();showPage("dashboard",false)}
-function purchasePage(){{return '<section class="panel"><h3>ওষুধ ক্রয় এন্ট্রি</h3><div class="form-grid three">'+field("ওষুধের নাম","purName")+field("কোম্পানি","purCompany")+field("ব্যাচ নম্বর","purBatch")+field("মেয়াদ উত্তীর্ণ","purExpiry","date")+field("পরিমাণ","purQty","number")+field("প্রতি ইউনিট ক্রয়মূল্য","purCost","number")+field("প্রতি ইউনিট বিক্রয়মূল্য","purPrice","number")+field("সরবরাহকারী","purSupplier")+field("তারিখ","purDate","date","",today())+'</div><div class="actions"><button class="btn success" data-action="save-purchase">ক্রয় সংরক্ষণ</button></div></section>'}
+function purchasePage(){return '<section class="panel"><h3>ওষুধ ক্রয় এন্ট্রি</h3><div class="form-grid three">'+field("ওষুধের নাম","purName")+field("কোম্পানি","purCompany")+field("ব্যাচ নম্বর","purBatch")+field("মেয়াদ উত্তীর্ণ","purExpiry","date")+field("পরিমাণ","purQty","number")+field("প্রতি ইউনিট ক্রয়মূল্য","purCost","number")+field("প্রতি ইউনিট বিক্রয়মূল্য","purPrice","number")+field("সরবরাহকারী","purSupplier")+field("তারিখ","purDate","date","",today())+'</div><div class="actions"><button class="btn success" data-action="save-purchase">ক্রয় সংরক্ষণ</button></div></section>'}
 function savePurchase(){const name=$("purName").value.trim(),qty=Number($("purQty").value),cost=Number($("purCost").value),price=Number($("purPrice").value);if(!name||qty<=0||cost<0||price<0){alert("ওষুধ, পরিমাণ ও মূল্য সঠিকভাবে দিন।");return}db.purchases.push({name,company:$("purCompany").value.trim(),batch:$("purBatch").value.trim(),expiry:$("purExpiry").value,qty,cost,price,supplier:$("purSupplier").value.trim(),date:$("purDate").value||today()});if(save()){alert("ক্রয় এন্ট্রি সংরক্ষণ হয়েছে।");showPage("stock",false)}}
 function stockPage(){const items={};db.purchases.forEach(p=>{const k=p.name+"|"+p.batch;items[k]=items[k]||{name:p.name,batch:p.batch,expiry:p.expiry,qty:0,cost:p.cost,price:p.price};items[k].qty+=Number(p.qty)});return '<section class="panel"><h3>ব্যাচভিত্তিক স্টক</h3><div class="tablewrap"><table><thead><tr><th>ওষুধ</th><th>ব্যাচ</th><th>মেয়াদ</th><th>মজুদ</th><th>ক্রয়মূল্য</th><th>বিক্রয়মূল্য</th></tr></thead><tbody>'+Object.values(items).map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.batch)+'</td><td>'+esc(x.expiry)+'</td><td>'+x.qty+'</td><td>'+money(x.cost)+'</td><td>'+money(x.price)+'</td></tr>').join("")+'</tbody></table></div><p class="hint">প্রাথমিক সংস্করণে বিক্রির পর স্টক স্বয়ংক্রিয়ভাবে কমানো হয় না; ব্যাচভিত্তিক বিক্রয়-স্টক মিলানোর পরবর্তী ধাপে এটি যুক্ত করা প্রয়োজন।</p></section>'}
 function medicinesPage(){return '<div class="medicine-layout"><section class="panel medicine-entry"><h3>＋ নতুন ঔষধ এন্ট্রি</h3><p class="hint" style="color:#f3dce4">নতুন ব্র্যান্ড/ঔষধ বাজারে এলে এখানে যোগ করুন।</p>'+field("ঔষধ / ব্র্যান্ডের নাম *","medName")+field("জেনেরিক নাম","medGeneric")+field("শক্তি / মাত্রা","medStrength")+field("ঔষধের ধরন","medForm")+field("কোম্পানি","medCompany")+field("কোড","medCode")+field("ক্রয় মূল্য (৳)","medCost","number")+field("বিক্রয় মূল্য (৳)","medSale","number")+'<div class="actions"><button class="btn success" data-action="save-medicine">ঔষধ সংরক্ষণ</button><button class="btn light" data-action="clear-medicine">নতুন এন্ট্রি</button></div><p class="hint" id="medEditHint" style="color:#f3dce4">একবার সংরক্ষণ করলে ইনভয়েসের তালিকায় পাওয়া যাবে।</p></section><section class="panel medicine-list"><h3>স্থায়ী ঔষধের তালিকা <span class="tag">'+db.medicines.length+' টি</span></h3><div class="medicine-toolbar"><input class="control" id="medSearch" placeholder="ঔষধের নাম, জেনেরিক বা কোম্পানি দিয়ে খুঁজুন"><span class="hint">তালিকা ডিভাইসে সংরক্ষিত থাকবে</span></div><div class="tablewrap"><table><thead><tr><th>ঔষধের নাম</th><th>জেনেরিক</th><th>শক্তি</th><th>ধরন</th><th>কোম্পানি</th><th>ক্রয়</th><th>বিক্রয়</th><th>কাজ</th></tr></thead><tbody id="medicineRows">'+medicineRows()+'</tbody></table></div></section></div>'}
