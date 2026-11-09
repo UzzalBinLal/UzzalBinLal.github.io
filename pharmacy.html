@@ -171,6 +171,7 @@ const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth
 const read=(k,def)=>{try{const v=localStorage.getItem(k);return v===null?def:v}catch(e){return def}};
 function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.isArray(d.medicines)?d.medicines.map((m,i)=>({...m,id:m.id||("OLD"+i+"-"+String(m.name||"").replace(/\\W/g,""))})):[],customers:Array.isArray(d.customers)?d.customers:[],purchases:Array.isArray(d.purchases)?d.purchases:[],invoices:Array.isArray(d.invoices)?d.invoices:[]}}catch(e){return {medicines:[],customers:[],purchases:[],invoices:[]}}}
 let db=load(),logged=false,currentPage="dashboard",history=[];
+let cart=[]; // ইনভয়েসের অস্থায়ী ঔষধ তালিকা
 function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert("ডেটা সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ পূর্ণ হতে পারে।");return false}}
 function org(k){return read("lalOrg_"+k,"")}
 function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo}
