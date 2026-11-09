@@ -149,7 +149,7 @@ function clock(){let d=new Date();document.getElementById('date').textContent=d.
 
 /* CUSTOMER, INVOICE AND MEDICINE MASTER DATA */
 const DBKEY='lalPharmacyDataV1';
-function db(){try{return JSON.parse(localStorage.getItem(DBKEY))||{customers:[],invoices:[],medicines:[]}}catch(e){return {customers:[],invoices:[],medicines:[]}}}
+function db(){let d;try{d=JSON.parse(localStorage.getItem(DBKEY))}catch(e){}if(!d)d={customers:[],invoices:[],medicines:[]};d.customers=d.customers||[];d.invoices=d.invoices||[];d.medicines=d.medicines||[];if(!localStorage.getItem(DBKEY+'_seeded')){const seed=['Paracetamol','Omeprazole','Esomeprazole','Pantoprazole','Rabeprazole','Famotidine','Cetirizine','Fexofenadine','Loratadine','Montelukast','Azithromycin','Amoxicillin','Cefixime','Cefuroxime','Ciprofloxacin','Metronidazole','Doxycycline','Flucloxacillin','Diclofenac Sodium','Naproxen','Ibuprofen','Aceclofenac','Ketorolac','Amlodipine','Losartan','Telmisartan','Atenolol','Metformin','Gliclazide','Sitagliptin','Atorvastatin','Rosuvastatin','Clopidogrel','Aspirin','Calcium Carbonate','Vitamin D3','Vitamin B Complex','Iron + Folic Acid','ORS','Zinc Sulphate','Salbutamol','Ambroxol','Bromhexine','Domperidone','Ondansetron','Loperamide','Mebendazole','Albendazole'];if(!d.medicines.length)d.medicines=seed.map(n=>({name:n,generic:n,strength:'',form:'',company:'',code:''}));localStorage.setItem(DBKEY+'_seeded','1');putDB(d)}return d}
 function putDB(d){localStorage.setItem(DBKEY,JSON.stringify(d))}
 function money(n){return '৳ '+(Number(n)||0).toLocaleString('en-IN',{maximumFractionDigits:2})}
 function safe(t){return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
