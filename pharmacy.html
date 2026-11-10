@@ -210,13 +210,6 @@ function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.i
 let db=load(),logged=false,currentPage="dashboard",history=[];
 let cart=[]; // ইনভয়েসের অস্থায়ী ঔষধ তালিকা
 function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert("ডেটা সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ পূর্ণ হতে পারে।");return false}}
-function seedStarterMedicines(){
- const existing=new Set(db.medicines.map(m=>String(m.name||"").trim().toLowerCase()));
- const fresh=starterMedicines.filter(m=>!existing.has(m.name.toLowerCase()));
- if(fresh.length){db.medicines.push(...fresh);save();}
-}
-seedStarterMedicines();
-
 
 // বাংলাদেশে প্রচলিত ঔষধের প্রাথমিক ক্যাটালগ (ব্র্যান্ড/শক্তি/কোম্পানি যাচাইকৃত তালিকা)
 const starterMedicines = [
@@ -262,6 +255,13 @@ const starterMedicines = [
  ["Ecal-D3 500 mg+200 IU","Calcium Carbonate + Vitamin D3","500 mg+200 IU","Tablet","Ethical Drugs Limited"],
  ["Vilet B","Vitamin B Complex","Standard","Tablet","Bengal Drugs Ltd."]
 ].map((x,i)=>({id:"BDSTART"+(i+1),name:x[0],generic:x[1],strength:x[2],form:x[3],company:x[4],code:"BD-START",cost:0,sale:0}));
+function seedStarterMedicines(){
+ const existing=new Set(db.medicines.map(m=>String(m.name||"").trim().toLowerCase()));
+ const fresh=starterMedicines.filter(m=>!existing.has(m.name.toLowerCase()));
+ if(fresh.length){db.medicines.push(...fresh);save();}
+}
+seedStarterMedicines();
+
 
 function org(k){return read("lalOrg_"+k,"")}
 function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo}
