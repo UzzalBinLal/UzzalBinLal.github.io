@@ -262,7 +262,7 @@ body.login-mode footer.notice{display:none}
 <section id="loginScreen" class="login-screen">
  <div class="login-stack">
   <section class="login-card login-glass">
-   <div class="login-brand"><img src="Logo.jpg" alt="LAL"><div><h2 id="loginOrgName">LAL Pharmacy</h2><p>PHARMACY OWNER LOGIN</p></div></div>
+   <div class="login-brand"><img id="loginOrgLogo" src="Logo.jpg" alt="প্রতিষ্ঠানের লোগো"><div><h2 id="loginOrgName">LAL Pharmacy</h2><p>PHARMACY OWNER LOGIN</p></div></div>
    <form id="loginForm" autocomplete="on">
     <div class="field"><label for="uid">ইউজার আইডি</label><input id="uid" name="username" autocomplete="username" required placeholder="আপনার ইউজার আইডি"></div>
     <div class="field"><label for="pwd">পাসওয়ার্ড</label><input id="pwd" name="password" type="password" autocomplete="current-password" required placeholder="পাসওয়ার্ড লিখুন"></div>
@@ -358,7 +358,7 @@ seedStarterMedicines();
 
 
 function org(k){return read("lalOrg_"+k,"")}
-function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo}
+function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo;$("loginOrgLogo").src=logo}
 function salesToday(){return db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)}
 function dueTotal(){return db.invoices.reduce((a,x)=>a+Math.max(0,Number(x.total||0)-Number(x.paid||0)),0)}
 function clock(){const d=new Date();$("dateText").textContent=d.toLocaleDateString("bn-BD",{day:"numeric",month:"short",year:"numeric"});$("timeText").textContent=d.toLocaleTimeString("bn-BD")}
