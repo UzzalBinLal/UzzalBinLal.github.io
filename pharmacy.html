@@ -157,6 +157,42 @@ body:not(.login-mode) .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e
  .purchase-layout{display:block}
 }
 
+
+/* Final layout refinements: compact dashboard, bottom notice, sticky purchase list header */
+.dashboard-grid{gap:11px;margin:10px 0 14px}
+.glass-tile{min-height:104px;padding:13px 15px;border-radius:15px}
+.glass-tile .emoji{font-size:24px;margin-bottom:6px}
+.glass-tile b{font-size:14px}
+.glass-tile small{font-size:11px;margin-top:3px}
+@media(max-width:700px){
+ .dashboard-grid{gap:8px;margin:8px 0 12px}
+ .glass-tile{min-height:88px;padding:11px;border-radius:13px}
+ .glass-tile .emoji{font-size:21px;margin-bottom:5px}
+ .glass-tile b{font-size:12px}
+ .glass-tile small{font-size:10px}
+}
+body:not(.login-mode){padding-bottom:38px}
+body:not(.login-mode) footer.notice{
+ position:fixed;left:0;right:0;bottom:0;z-index:20;
+ min-height:34px;padding:9px 12px;
+ box-shadow:0 -4px 14px #07132635;
+}
+body.login-mode footer.notice{display:none}
+.purchase-completed{min-height:540px}
+.purchase-list-head{
+ position:sticky;top:0;z-index:4;flex:0 0 auto;
+ margin:-17px -17px 0;padding:17px 17px 12px;
+ background:linear-gradient(145deg,#fff,#edf1f8);
+ box-shadow:0 3px 8px #17294312;
+}
+.purchase-list-scroll{position:relative;overflow:auto;flex:1 1 auto;min-height:0}
+.purchase-list-footer{flex:0 0 auto;background:#edf1f8}
+@media(max-width:760px){
+ body:not(.login-mode){padding-bottom:42px}
+ body:not(.login-mode) footer.notice{font-size:10px;padding:10px 6px;min-height:38px}
+ .purchase-list-head{margin:-13px -13px 0;padding:13px 13px 10px}
+}
+
 </style>
 </head>
 <body class="login-mode">
