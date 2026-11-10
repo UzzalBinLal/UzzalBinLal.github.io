@@ -171,13 +171,21 @@ body:not(.login-mode) .navbtn.active{background:linear-gradient(90deg,#f2dfe7,#e
  .glass-tile b{font-size:12px}
  .glass-tile small{font-size:10px}
 }
-body:not(.login-mode){padding-bottom:38px}
-body:not(.login-mode) footer.notice{
- position:fixed;left:0;right:0;bottom:0;z-index:20;
- min-height:34px;padding:9px 12px;
+/* প্রতিটি স্ক্রিনে স্থায়ী হেডার ও নিচের চলমান নোটিশ */
+body{padding-bottom:44px}
+header{position:sticky;top:0;z-index:30}
+footer.notice{
+ position:fixed;left:0;right:0;bottom:0;z-index:40;
+ height:40px;min-height:40px;padding:0 12px;
+ display:flex;align-items:center;overflow:hidden;white-space:nowrap;
  box-shadow:0 -4px 14px #07132635;
 }
-body.login-mode footer.notice{display:none}
+.notice-track{display:flex;align-items:center;width:max-content;min-width:200%;animation:notice-scroll 32s linear infinite}
+.notice-track span{display:block;flex:0 0 auto;padding-right:32px;white-space:nowrap}
+@keyframes notice-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.notice:hover .notice-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.notice-track{animation:none}}
+@media print{footer.notice{display:none!important}}
 .purchase-completed{min-height:540px}
 .purchase-list-head{
  position:sticky;top:0;z-index:4;flex:0 0 auto;
@@ -188,8 +196,9 @@ body.login-mode footer.notice{display:none}
 .purchase-list-scroll{position:relative;overflow:auto;flex:1 1 auto;min-height:0}
 .purchase-list-footer{flex:0 0 auto;background:#edf1f8}
 @media(max-width:760px){
- body:not(.login-mode){padding-bottom:42px}
- body:not(.login-mode) footer.notice{font-size:10px;padding:10px 6px;min-height:38px}
+ body{padding-bottom:44px}
+ footer.notice{height:40px;min-height:40px;font-size:10px;padding:0 6px}
+ .notice-track{animation-duration:26s}
  .purchase-list-head{margin:-13px -13px 0;padding:13px 13px 10px}
 }
 
@@ -287,7 +296,7 @@ body.login-mode footer.notice{display:none}
  </div>
 </section>
 </main>
-<footer class="notice">📢 RUNNING NOTICE　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　ওষুধের মেয়াদ নিয়মিত পরীক্ষা করুন　•　LAL Pharmacy</footer>
+<footer class="notice" aria-label="চলমান নোটিশ"><div class="notice-track"><span>📢 RUNNING NOTICE　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　ওষুধের মেয়াদ নিয়মিত পরীক্ষা করুন　•　LAL Pharmacy　　✦　　গ্রাহকের বাকি হিসাব নিয়মিত হালনাগাদ করুন　•　ঔষধের মেয়াদ যাচাই করে বিক্রয় করুন　　</span><span aria-hidden="true">📢 RUNNING NOTICE　•　প্রতিদিন বিক্রয় ও ক্রয়ের হিসাব মিলিয়ে নিন　•　ওষুধের মেয়াদ নিয়মিত পরীক্ষা করুন　•　LAL Pharmacy　　✦　　গ্রাহকের বাকি হিসাব নিয়মিত হালনাগাদ করুন　•　ঔষধের মেয়াদ যাচাই করে বিক্রয় করুন　　</span></div></footer>
 <script>
 (function(){
 "use strict";
