@@ -210,6 +210,59 @@ function load(){try{const d=JSON.parse(read(KEY,"{}"));return {medicines:Array.i
 let db=load(),logged=false,currentPage="dashboard",history=[];
 let cart=[]; // ইনভয়েসের অস্থায়ী ঔষধ তালিকা
 function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert("ডেটা সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ পূর্ণ হতে পারে।");return false}}
+function seedStarterMedicines(){
+ const existing=new Set(db.medicines.map(m=>String(m.name||"").trim().toLowerCase()));
+ const fresh=starterMedicines.filter(m=>!existing.has(m.name.toLowerCase()));
+ if(fresh.length){db.medicines.push(...fresh);save();}
+}
+seedStarterMedicines();
+
+
+// বাংলাদেশে প্রচলিত ঔষধের প্রাথমিক ক্যাটালগ (ব্র্যান্ড/শক্তি/কোম্পানি যাচাইকৃত তালিকা)
+const starterMedicines = [
+ ["Napa 500 mg","Paracetamol","500 mg","Tablet","Beximco Pharmaceuticals PLC"],
+ ["Napa 120 mg/5 ml","Paracetamol","120 mg/5 ml","Syrup","Beximco Pharmaceuticals PLC"],
+ ["Napa 80 mg/ml","Paracetamol","80 mg/ml","Pediatric Drops","Beximco Pharmaceuticals PLC"],
+ ["Napa Extend 665 mg","Paracetamol","665 mg","Extended Release Tablet","Beximco Pharmaceuticals PLC"],
+ ["Napa One 1000 mg","Paracetamol","1000 mg","Tablet","Beximco Pharmaceuticals PLC"],
+ ["Ace 500 mg","Paracetamol","500 mg","Tablet","Square Pharmaceuticals PLC"],
+ ["Ace 120 mg/5 ml","Paracetamol","120 mg/5 ml","Oral Suspension","Square Pharmaceuticals PLC"],
+ ["Ace 80 mg/ml","Paracetamol","80 mg/ml","Pediatric Drops","Square Pharmaceuticals PLC"],
+ ["Ace XR 665 mg","Paracetamol","665 mg","Extended Release Tablet","Square Pharmaceuticals PLC"],
+ ["A-One 120 mg/5 ml","Paracetamol","120 mg/5 ml","Oral Suspension","Apex Pharma Ltd."],
+ ["Acep 500 mg","Paracetamol","500 mg","Tablet","Zenith Pharmaceuticals Ltd."],
+ ["Aceta 500 mg","Paracetamol","500 mg","Tablet","Biopharma Limited"],
+ ["Alargol 10 mg","Cetirizine Hydrochloride","10 mg","Tablet","Ethical Drugs Limited"],
+ ["Alargol 5 mg/5 ml","Cetirizine Hydrochloride","5 mg/5 ml","Syrup","Ethical Drugs Limited"],
+ ["Alater 10 mg","Cetirizine Hydrochloride","10 mg","Tablet","Bengal Drugs Ltd."],
+ ["ED-Fex 120 mg","Fexofenadine Hydrochloride","120 mg","Tablet","Ethical Drugs Limited"],
+ ["ED-Fex 30 mg/5 ml","Fexofenadine Hydrochloride","30 mg/5 ml","Suspension","Ethical Drugs Limited"],
+ ["Alanil 120 mg","Fexofenadine Hydrochloride","120 mg","Tablet","ACME Laboratories Ltd."],
+ ["Alagra 60 mg","Fexofenadine Hydrochloride","60 mg","Tablet","Alco Pharma Ltd."],
+ ["Ambeet 15 mg/5 ml","Ambroxol Hydrochloride","15 mg/5 ml","Syrup","Ethical Drugs Limited"],
+ ["Ambeet 75 mg","Ambroxol Hydrochloride","75 mg","Capsule","Ethical Drugs Limited"],
+ ["Ambrop 15 mg/5 ml","Ambroxol Hydrochloride","15 mg/5 ml","Syrup","Bengal Drugs Ltd."],
+ ["E-Hexin 4 mg/5 ml","Bromhexine Hydrochloride","4 mg/5 ml","Syrup","Ethical Drugs Limited"],
+ ["Amlovas 5 mg","Amlodipine Besilate","5 mg","Tablet","Popular Pharmaceuticals PLC"],
+ ["Amlovas 10 mg","Amlodipine Besilate","10 mg","Tablet","Popular Pharmaceuticals PLC"],
+ ["Amlovas AT 5 mg+50 mg","Amlodipine Besilate + Atenolol","5 mg+50 mg","Tablet","Popular Pharmaceuticals PLC"],
+ ["Besectil 20 mg","Omeprazole","20 mg","Capsule","Bengal Drugs Ltd."],
+ ["Omegut 20 mg","Omeprazole","20 mg","Capsule","Popular Pharmaceuticals PLC"],
+ ["Omenix 20 mg","Omeprazole","20 mg","Capsule","Incepta Pharmaceuticals Ltd."],
+ ["E-Reb 20 mg","Rabeprazole Sodium","20 mg","Tablet","Ethical Drugs Limited"],
+ ["Emoxil 500 mg","Amoxicillin Trihydrate","500 mg","Capsule","Ethical Drugs Limited"],
+ ["Xtramox 500 mg","Amoxicillin Trihydrate","500 mg","Capsule","Bengal Drugs Ltd."],
+ ["Ambeexin 250 mg","Amoxicillin Trihydrate","250 mg","Capsule","Ambee Pharmaceuticals Ltd."],
+ ["Odazin 500 mg","Azithromycin Dihydrate","500 mg","Tablet","Bengal Drugs Ltd."],
+ ["Efloxin 500 mg","Ciprofloxacin","500 mg","Tablet","Ethical Drugs Limited"],
+ ["Newcip 500 mg","Ciprofloxacin","500 mg","Tablet","Bengal Drugs Ltd."],
+ ["Benzol 400 mg","Metronidazole","400 mg","Tablet","Bengal Drugs Ltd."],
+ ["Bedom 10 mg","Domperidone Maleate","10 mg","Tablet","Bengal Drugs Ltd."],
+ ["Cal-aid 500 mg","Calcium Carbonate","500 mg","Tablet","Ethical Drugs Limited"],
+ ["Ecal-D3 500 mg+200 IU","Calcium Carbonate + Vitamin D3","500 mg+200 IU","Tablet","Ethical Drugs Limited"],
+ ["Vilet B","Vitamin B Complex","Standard","Tablet","Bengal Drugs Ltd."]
+].map((x,i)=>({id:"BDSTART"+(i+1),name:x[0],generic:x[1],strength:x[2],form:x[3],company:x[4],code:"BD-START",cost:0,sale:0}));
+
 function org(k){return read("lalOrg_"+k,"")}
 function setOrgHeader(){const name=org("name")||"LAL Pharmacy";$("headerName").textContent=name;$("loginOrgName").textContent=name;const logo=read("lalOrg_logo","Logo.jpg");$("headerLogo").src=logo}
 function salesToday(){return db.invoices.filter(x=>x.date===today()).reduce((a,x)=>a+Number(x.total||0),0)}
