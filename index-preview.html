@@ -21,6 +21,9 @@ main{width:min(1100px,92%);margin:auto}.hero{text-align:center;padding:48px 0 30
 .ticker{position:fixed;z-index:20;bottom:0;left:0;right:0;height:52px;display:flex;align-items:center;gap:10px;padding:5px 12px;background:linear-gradient(100deg,#142e48,#1c4762,#302b59);border-top:2px solid #e4bd72;box-shadow:0 -5px 18px #0005}.ticker img{width:38px;height:38px;object-fit:contain;background:#fff;border-radius:8px;padding:2px}.ticker-window{overflow:hidden;white-space:nowrap;flex:1}.ticker-track{display:flex;width:max-content;gap:60px;animation:run 32s linear infinite}.ticker-track span{font-size:12px;color:#fff;letter-spacing:.2px}@keyframes run{to{transform:translateX(-50%)}}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){header{padding:8px 10px}.brand{gap:8px}.brand img{width:44px;height:44px}.brand p{font-size:9px}.tools button{padding:8px;font-size:11px}.hero{padding:32px 0 20px}.grid{gap:9px}.card{min-height:160px;padding:12px;border-radius:13px}.card h3{font-size:12px}.card p{font-size:10px;line-height:1.55;margin:9px 0 10px}.ico{width:34px;height:34px;flex-basis:34px;font-size:19px}.open{font-size:10px;padding:9px 5px}.section-title{font-size:14px}.ticker{height:48px}}
 @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}.card{transition:none}}
+
+.settings-trigger{border:1px solid #f4c87999;background:linear-gradient(135deg,#9d2348,#d16a32);color:#fff;border-radius:10px;padding:12px 14px;font:700 13px Arial,"Noto Sans Bengali",sans-serif;cursor:pointer;box-shadow:0 5px 16px #0004}.settings-trigger:hover{filter:brightness(1.12)}
+.admin-panel{display:none;margin:0 0 30px;padding:clamp(15px,3vw,25px);border:1px solid #f4c87966;border-radius:18px;background:linear-gradient(145deg,#201b2b,#171d2c);box-shadow:0 15px 35px #0004}.admin-panel.show{display:block}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.admin-head h2{margin:0;color:#f4c879;font-size:20px}.admin-close{border:1px solid #ffffff33;background:#ffffff10;color:#fff;border-radius:8px;padding:8px 12px;cursor:pointer}.admin-intro{font-size:13px;line-height:1.8;color:#c8c1d0}.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.admin-action{border:1px solid #f4c87966;background:#9d2348;color:#fff;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer}.admin-action:disabled{opacity:.45;cursor:not-allowed}.admin-status{padding:12px;border-radius:10px;background:#ffffff0b;border:1px solid #ffffff1c;color:#f3d9a1;font-size:12px;line-height:1.8;overflow-wrap:anywhere}.admin-modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.admin-module{padding:13px;border:1px solid #ffffff20;border-radius:11px;background:#ffffff08}.admin-module strong{display:block;color:#fff;font-size:13px;margin-bottom:5px}.admin-module small{color:#c8c1d0;font-size:11px;line-height:1.6}.admin-link-list{margin-top:14px;font-size:12px;color:#ddd;line-height:1.8}.admin-link-list a{color:#f4c879;overflow-wrap:anywhere}@media(max-width:520px){.settings-trigger{padding:9px 7px;font-size:10px}.admin-modules{grid-template-columns:1fr}.admin-head h2{font-size:17px}}
 </style>
 </head>
 <body>
@@ -55,13 +58,35 @@ main{width:min(1100px,92%);margin:auto}.hero{text-align:center;padding:48px 0 30
    <img class="owner-logo" src="Logo.jpg" alt="মেসার্স লাল এন্টারপ্রাইজ লোগো">
    <div class="owner-details owner-company"><strong class="owner-main-name">মেসার্স লাল এন্টারপ্রাইজ</strong><br>স্টেডিয়াম রোড বোয়ালমারী ফরিদপুর<br>০১৭১৬৫৩২৪৬১</div>
   </div>
-  <div class="owner-part owner-middle"><strong>সেটিং</strong></div>
+  <div class="owner-part owner-middle"><button class="settings-trigger" id="settingsOpen" type="button">⚙ সেটিং</button></div>
   <div class="owner-part owner-right">
    <img class="owner-photo" src="Uzzal.jpg" alt="ডেভেলপারের ছবি">
    <div class="owner-details owner-founder"><strong>ডেভেলপার ও প্রতিষ্ঠাতা</strong><span class="owner-main-name">মোঃ অহিদুল হক উজ্জ্বল বিন লাল</span><br><span>ওয়েবসাইট: uzzalbinlal.com</span><br><span>Mobile: 01711167661</span></div>
   </div>
  </div>
 </section>
+
+<section class="admin-panel" id="developerPanel" aria-labelledby="developerPanelTitle">
+ <div class="admin-head"><h2 id="developerPanelTitle">⚙ ডেভেলপার কন্ট্রোল প্যানেল</h2><button class="admin-close" id="settingsClose" type="button">বন্ধ করুন ✕</button></div>
+ <p class="admin-intro">এই অংশটি শুধু অনুমোদিত ডেভেলপারের জন্য। গ্রাহক বা সাধারণ ভিজিটর এখানে মডিউল ডাউনলোড করতে পারবেন না। ডেভেলপার পরিচয় যাচাইয়ের জন্য নির্দিষ্ট Google অ্যাকাউন্ট ব্যবহার হবে।</p>
+ <div class="admin-actions"><button class="admin-action" id="adminGoogleLogin" type="button">Google দিয়ে ডেভেলপার লগইন</button><button class="admin-action" id="adminRefresh" type="button" disabled>তথ্য রিফ্রেশ</button><button class="admin-action" id="adminLogout" type="button" disabled>লগআউট</button></div>
+ <div class="admin-status" id="adminStatus" role="status">Backend সংযুক্ত না হওয়া পর্যন্ত নিরাপদ লগইন ও ডাউনলোড লিংক চালু হবে না।</div>
+ <h3 class="section-title">মডিউল ব্যবস্থাপনা</h3>
+ <div class="admin-modules" id="adminModules">
+  <div class="admin-module"><strong>Lal Bangla AI Video Studio</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>LAL Pharmacy Management</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>Smart Calculator</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>Upazila Mini Kids Park</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>LAL Digital Pathshala</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>Rod & Cement Management</strong><small>ওয়েব অ্যাপ • নিরাপদ প্যাকেজ এখনো সংযুক্ত নয়</small></div>
+  <div class="admin-module"><strong>LAL Sales Management</strong><small>ডেস্কটপ অ্যাপ • প্যাকেজ প্রস্তুত হলে যুক্ত হবে</small></div>
+  <div class="admin-module"><strong>LAL CNC Craftworks</strong><small>সেবা • প্যাকেজ প্রস্তুত হলে যুক্ত হবে</small></div>
+ </div>
+ <h3 class="section-title">একবার ব্যবহারযোগ্য ডাউনলোড লিংক</h3>
+ <p class="admin-intro">পেমেন্ট নিশ্চিত করার পর মডিউল নির্বাচন করে মেয়াদযুক্ত লিংক তৈরি করা যাবে। প্রথম সফল ডাউনলোডের পর লিংকটি আর ব্যবহার করা যাবে না। চালুর আগে প্রতিটি মডিউলের ব্যক্তিগত ZIP/ইনস্টলার ফাইল নিরাপদ সার্ভারে রাখতে হবে।</p>
+ <div class="admin-status" id="adminLinks">এখনো কোনো নিরাপদ প্যাকেজ বা ডাউনলোড লিংক যুক্ত করা হয়নি।</div>
+</section>
+
 </main>
 <footer>© <span id="year"></span> LAL DIGITAL SERVICES • UzzalBinLal</footer>
 <div class="ticker"><img src="Logo.jpg" alt="LAL"><div class="ticker-window"><div class="ticker-track"><span id="tickerText">লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span><span aria-hidden="true">লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span></div></div></div>
@@ -79,6 +104,20 @@ main{width:min(1100px,92%);margin:auto}.hero{text-align:center;padding:48px 0 30
  const clock=document.getElementById('clock');
  function tick(){const d=new Date();clock.textContent=d.toLocaleDateString('bn-BD',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' • '+d.toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
  tick();setInterval(tick,1000);document.getElementById('year').textContent=new Date().getFullYear();
+
+ const API_BASE='';
+ const panel=document.getElementById('developerPanel'),statusBox=document.getElementById('adminStatus'),modulesBox=document.getElementById('adminModules'),linksBox=document.getElementById('adminLinks');
+ const loginBtn=document.getElementById('adminGoogleLogin'),refreshBtn=document.getElementById('adminRefresh'),logoutBtn=document.getElementById('adminLogout');
+ function adminMessage(message){statusBox.textContent=message;}
+ document.getElementById('settingsOpen').addEventListener('click',()=>{panel.classList.add('show');panel.scrollIntoView({behavior:'smooth',block:'start'});if(!API_BASE)adminMessage('Backend এখনো সংযুক্ত হয়নি। নিরাপদ Google লগইন, মডিউল নিয়ন্ত্রণ ও ডাউনলোড লিংক চালু করতে Backend ও ডেটাবেজ সংযুক্ত করতে হবে।');});
+ document.getElementById('settingsClose').addEventListener('click',()=>panel.classList.remove('show'));
+ async function adminRequest(path,options={}){const response=await fetch(API_BASE+path,{...options,credentials:'include',headers:{'Content-Type':'application/json',...(options.headers||{})}});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(data.error||'সার্ভারের সঙ্গে যোগাযোগ করা যায়নি।');return data;}
+ async function loadAdminData(){if(!API_BASE){adminMessage('Backend সংযুক্ত না হওয়া পর্যন্ত ডেভেলপার লগইন ও লিংক ব্যবস্থাপনা বন্ধ থাকবে।');return;}try{const auth=await adminRequest('/api/auth/status');if(!auth.authenticated){adminMessage('ডেভেলপার লগইন প্রয়োজন।');refreshBtn.disabled=true;logoutBtn.disabled=true;return;}adminMessage('লগইন সফল: '+auth.email);refreshBtn.disabled=false;logoutBtn.disabled=false;loginBtn.disabled=true;const result=await adminRequest('/api/admin/modules');modulesBox.innerHTML='';result.modules.forEach(m=>{const el=document.createElement('div');el.className='admin-module';const name=document.createElement('strong');name.textContent=m.name;const meta=document.createElement('small');meta.textContent=m.kind+' • নিরাপদ প্যাকেজ যুক্ত থাকলে লিংক তৈরি করা যাবে';el.append(name,meta);modulesBox.append(el);});const links=await adminRequest('/api/admin/links');linksBox.textContent=links.links.length?links.links.map(x=>x.module_id+' • '+(x.used_at?'ব্যবহৃত':x.revoked_at?'বাতিল':'সক্রিয়')+' • '+x.expires_at).join(' | '):'এখনো কোনো লিংক তৈরি হয়নি।';}catch(e){adminMessage(e.message);}}
+ loginBtn.addEventListener('click',()=>{if(!API_BASE){adminMessage('Google লগইন চালু করতে আগে নিরাপদ Backend, Google OAuth ও ডেটাবেজ সেটআপ করতে হবে।');return;}window.location.href=API_BASE+'/api/auth/google';});
+ refreshBtn.addEventListener('click',loadAdminData);
+ logoutBtn.addEventListener('click',async()=>{try{await adminRequest('/api/auth/logout',{method:'POST'});loginBtn.disabled=false;refreshBtn.disabled=true;logoutBtn.disabled=true;adminMessage('আপনি লগআউট করেছেন।');}catch(e){adminMessage(e.message);}});
+ if(new URLSearchParams(location.search).get('admin')==='1'){panel.classList.add('show');loadAdminData();}
+
 })();
 </script>
 </body>
