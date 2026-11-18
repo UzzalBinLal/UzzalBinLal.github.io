@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171323">
+<title>UzzalBinLal | LAL Digital Services</title>
+<meta name="description" content="UzzalBinLal — LAL Digital Services-এর অফিসিয়াল ডিজিটাল প্ল্যাটফর্ম।">
+<link rel="icon" href="Logo.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="Logo.jpg">
+<style>
+:root{color-scheme:dark;--bg:#11111d;--panel:#201b2b;--panel2:#171d2c;--line:#ffffff1c;--text:#fff8f5;--muted:#c8c1d0;--gold:#f4c879;--red:#b52d50}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;padding-bottom:66px;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--text);background:radial-gradient(ellipse at 8% 0%,#8e264d55,transparent 38%),radial-gradient(ellipse at 95% 25%,#44428744,transparent 35%),linear-gradient(145deg,#11111d,#201323 50%,#111927)}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(12px,4vw,42px);background:#11111df2;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 8px 24px #0004}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border:1px solid #f4c87988;border-radius:12px;padding:3px}.brand h1{font-size:clamp(18px,3vw,27px);margin:0;color:var(--gold);line-height:1.3}.brand p{font-size:11px;margin:3px 0 0;color:var(--muted)}
+.tools{display:flex;align-items:center;gap:7px}.tools button{border:1px solid #f4c87966;background:#ffffff0d;color:var(--text);border-radius:9px;padding:9px 11px;font-weight:700;cursor:pointer}.tools button.active{background:var(--gold);color:#211321}
+main{width:min(1100px,92%);margin:auto}.hero{text-align:center;padding:48px 0 30px}.hero .tag{display:inline-block;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;border:1px solid #f4c87955;border-radius:30px;padding:7px 12px}.hero h2{font-size:clamp(28px,5vw,48px);line-height:1.3;margin:16px 0 9px;background:linear-gradient(90deg,#fff8f5,#f4c879,#f5a5bd);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:660px;margin:auto;color:var(--muted);font-size:14px;line-height:1.9}.clock{margin-top:14px;color:#f4c879;font-size:12px}
+.section-title{display:flex;align-items:center;gap:10px;margin:20px 0 13px;font-size:17px}.section-title:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#f4c87966,transparent)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;min-width:0;min-height:175px;padding:18px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#ffffff14,#ffffff05);box-shadow:0 12px 28px #0002;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:#f4c87977}.card-head{display:flex;align-items:center;gap:11px}.ico{width:43px;height:43px;flex:0 0 43px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#b52d5077,#6253a477);font-size:23px}.card h3{font-size:15px;line-height:1.4;margin:0}.card p{font-size:12px;line-height:1.7;color:var(--muted);margin:12px 0 14px}.open{display:block;margin-top:auto;text-align:center;text-decoration:none;color:#fff;background:linear-gradient(110deg,#a92249,#c43d58);border:1px solid #ffffff22;border-radius:9px;padding:10px 12px;font-size:12px;font-weight:800}.open:hover{filter:brightness(1.15)}.soon{border-style:dashed;background:#ffffff08}.soon .open{background:#ffffff0b;color:#f4c879;border-color:#f4c87944}
+.owner{margin:28px 0 26px;padding:18px;border:1px solid #f4c87944;border-radius:16px;background:#ffffff08;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}.owner strong{color:var(--gold)}footer{text-align:center;padding:20px;color:#aaa3b4;border-top:1px solid var(--line);font-size:11px;line-height:1.8}
+.ticker{position:fixed;z-index:20;bottom:0;left:0;right:0;height:52px;display:flex;align-items:center;gap:10px;padding:5px 12px;background:linear-gradient(100deg,#142e48,#1c4762,#302b59);border-top:2px solid #e4bd72;box-shadow:0 -5px 18px #0005}.ticker img{width:38px;height:38px;object-fit:contain;background:#fff;border-radius:8px;padding:2px}.ticker-window{overflow:hidden;white-space:nowrap;flex:1}.ticker-track{display:flex;width:max-content;gap:60px;animation:run 32s linear infinite}.ticker-track span{font-size:12px;color:#fff;letter-spacing:.2px}@keyframes run{to{transform:translateX(-50%)}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){header{padding:8px 10px}.brand{gap:8px}.brand img{width:44px;height:44px}.brand p{font-size:9px}.tools button{padding:8px;font-size:11px}.hero{padding:32px 0 20px}.grid{gap:9px}.card{min-height:160px;padding:12px;border-radius:13px}.card h3{font-size:12px}.card p{font-size:10px;line-height:1.55;margin:9px 0 10px}.ico{width:34px;height:34px;flex-basis:34px;font-size:19px}.open{font-size:10px;padding:9px 5px}.section-title{font-size:14px}.ticker{height:48px}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><img src="Logo.jpg" alt="LAL Logo"><div><h1>LAL DIGITAL SERVICES</h1><p>Uzzal Bin Lal • Digital Platform</p></div></div>
+ <div class="tools"><button id="bn" class="active" type="button">বাংলা</button><button id="en" type="button">EN</button></div>
+</header>
+<main>
+ <section class="hero">
+  <span class="tag">WELCOME TO UZZALBINLAL</span>
+  <h2 data-bn="আপনার ডিজিটাল কাজের নির্ভরযোগ্য ঠিকানা" data-en="Your trusted destination for digital work">আপনার ডিজিটাল কাজের নির্ভরযোগ্য ঠিকানা</h2>
+  <p data-bn="ব্যবসা, শিক্ষা ও দৈনন্দিন কাজকে সহজ করতে LAL Digital Services-এর তৈরি বিভিন্ন ডিজিটাল সেবা এক জায়গায়।" data-en="Digital services from LAL Digital Services, bringing business, education and everyday tools together in one place.">ব্যবসা, শিক্ষা ও দৈনন্দিন কাজকে সহজ করতে LAL Digital Services-এর তৈরি বিভিন্ন ডিজিটাল সেবা এক জায়গায়।</p>
+  <div class="clock" id="clock"></div>
+ </section>
+ <h2 class="section-title" data-bn="চালু ও ব্যবহারযোগ্য সেবা" data-en="Available services">চালু ও ব্যবহারযোগ্য সেবা</h2>
+ <section class="grid" aria-label="Available modules">
+  <article class="card"><div class="card-head"><div class="ico">🎬</div><h3>Lal Bangla AI Video Studio</h3></div><p data-bn="AI দিয়ে ছবি, ভয়েস ও ভিডিও তৈরির স্টুডিও।" data-en="Create videos, voice and image-based content with AI.">AI দিয়ে ছবি, ভয়েস ও ভিডিও তৈরির স্টুডিও।</p><a class="open" href="https://lal-bangla-ai-studio.onrender.com/" target="_blank" rel="noopener noreferrer" data-bn="স্টুডিও খুলুন ↗" data-en="Open Studio ↗">স্টুডিও খুলুন ↗</a></article>
+  <article class="card"><div class="card-head"><div class="ico">💊</div><h3 data-bn="LAL ফার্মেসি ম্যানেজমেন্ট" data-en="LAL Pharmacy Management">LAL ফার্মেসি ম্যানেজমেন্ট</h3></div><p data-bn="ঔষধ, ক্রয়, স্টক, কাস্টমার ইনভয়েস ও বিক্রির হিসাব।" data-en="Medicine, purchase, stock, customer invoices and sales.">ঔষধ, ক্রয়, স্টক, কাস্টমার ইনভয়েস ও বিক্রির হিসাব।</p><a class="open" href="pharmacy.html" data-bn="ফার্মেসি খুলুন ↗" data-en="Open Pharmacy ↗">ফার্মেসি খুলুন ↗</a></article>
+  <article class="card"><div class="card-head"><div class="ico">🧮</div><h3 data-bn="স্মার্ট ক্যালকুলেটর" data-en="Smart Calculator">স্মার্ট ক্যালকুলেটর</h3></div><p data-bn="দৈনন্দিন ও বৈজ্ঞানিক হিসাবের জন্য।" data-en="For everyday and scientific calculations.">দৈনন্দিন ও বৈজ্ঞানিক হিসাবের জন্য।</p><a class="open" href="calculator.html" data-bn="ক্যালকুলেটর খুলুন ↗" data-en="Open Calculator ↗">ক্যালকুলেটর খুলুন ↗</a></article>
+  <article class="card"><div class="card-head"><div class="ico">🎟️</div><h3 data-bn="উপজেলা মিনি শিশু পার্ক" data-en="Upazila Mini Kids Park">উপজেলা মিনি শিশু পার্ক</h3></div><p data-bn="টিকিট, এন্ট্রি ও দৈনিক হিসাব ব্যবস্থাপনা।" data-en="Ticket, entry and daily account management.">টিকিট, এন্ট্রি ও দৈনিক হিসাব ব্যবস্থাপনা।</p><a class="open" href="park.html" data-bn="পার্ক সিস্টেম খুলুন ↗" data-en="Open Park System ↗">পার্ক সিস্টেম খুলুন ↗</a></article>
+  <article class="card"><div class="card-head"><div class="ico">📚</div><h3 data-bn="লাল ডিজিটাল পাঠশালা" data-en="LAL Digital Pathshala">লাল ডিজিটাল পাঠশালা</h3></div><p data-bn="শিশুদের বাংলা, ইংরেজি, সংখ্যা, আরবি ও প্রাথমিক গণিত শেখার মজার জায়গা।" data-en="A fun place for children to learn Bangla, English, numbers, Arabic and basic maths.">শিশুদের বাংলা, ইংরেজি, সংখ্যা, আরবি ও প্রাথমিক গণিত শেখার মজার জায়গা।</p><a class="open" href="pathshala/" data-bn="পাঠশালা খুলুন ↗" data-en="Open Pathshala ↗">পাঠশালা খুলুন ↗</a></article>
+  <article class="card"><div class="card-head"><div class="ico">🏗️</div><h3 data-bn="রড-সিমেন্ট ম্যানেজমেন্ট" data-en="Rod & Cement Management">রড-সিমেন্ট ম্যানেজমেন্ট</h3></div><p data-bn="রড-সিমেন্ট ব্যবসার স্টক, ক্রয়, বিক্রি ও বাকি ব্যবস্থাপনা।" data-en="Stock, purchase, sales and dues for rod and cement business.">রড-সিমেন্ট ব্যবসার স্টক, ক্রয়, বিক্রি ও বাকি ব্যবস্থাপনা।</p><a class="open" href="rod-cement.html" data-bn="ডেমো খুলুন ↗" data-en="Open Demo ↗">ডেমো খুলুন ↗</a></article>
+ </section>
+ <h2 class="section-title" data-bn="পরবর্তী উন্নয়ন" data-en="Coming next">পরবর্তী উন্নয়ন</h2>
+ <section class="grid">
+  <article class="card soon"><div class="card-head"><div class="ico">🧾</div><h3 data-bn="LAL Sales Management" data-en="LAL Sales Management">LAL Sales Management</h3></div><p data-bn="বিক্রয়, ইনভয়েস, স্টক ও হিসাব ব্যবস্থাপনা।" data-en="Sales, invoices, inventory and accounts.">বিক্রয়, ইনভয়েস, স্টক ও হিসাব ব্যবস্থাপনা।</p><span class="open" data-bn="উন্নয়নাধীন" data-en="In development">উন্নয়নাধীন</span></article>
+  <article class="card soon"><div class="card-head"><div class="ico">🪚</div><h3 data-bn="LAL CNC Craftworks" data-en="LAL CNC Craftworks">LAL CNC Craftworks</h3></div><p data-bn="CNC ডিজাইন ও কাস্টম কাঠের পণ্যের সেবা।" data-en="CNC design and custom wood products.">CNC ডিজাইন ও কাস্টম কাঠের পণ্যের সেবা।</p><span class="open" data-bn="উন্নয়নাধীন" data-en="In development">উন্নয়নাধীন</span></article>
+ </section>
+ <section class="owner"><strong>ডেভেলপার ও প্রতিষ্ঠাতা</strong><br>মোঃ অহিদুল হক উজ্জ্বল বিন লাল<br>LAL Digital Services<br>স্টেডিয়াম রোড, বোয়ালমারী, ফরিদপুর</section>
+</main>
+<footer>© <span id="year"></span> LAL DIGITAL SERVICES • UzzalBinLal</footer>
+<div class="ticker"><img src="Logo.jpg" alt="LAL"><div class="ticker-window"><div class="ticker-track"><span id="tickerText">লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span><span aria-hidden="true">লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span></div></div></div>
+<script>
+(function(){
+ const bn=document.getElementById('bn'),en=document.getElementById('en');
+ function language(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-bn][data-en]').forEach(el=>{el.textContent=el.getAttribute(lang==='en'?'data-en':'data-bn')});
+  bn.classList.toggle('active',lang==='bn');en.classList.toggle('active',lang==='en');
+  try{localStorage.setItem('lal-site-language',lang)}catch(e){}
+ }
+ bn.addEventListener('click',()=>language('bn'));en.addEventListener('click',()=>language('en'));
+ let lang='bn';try{lang=localStorage.getItem('lal-site-language')||'bn'}catch(e){}language(lang);
+ const clock=document.getElementById('clock');
+ function tick(){const d=new Date();clock.textContent=d.toLocaleDateString('bn-BD',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' • '+d.toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+ tick();setInterval(tick,1000);document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
