@@ -791,7 +791,8 @@ setLanguage(savedLanguage);
   function arrangeModules(){
     const grid=document.querySelector('.apps');
     if(!grid) return;
-    const cards=Array.from(grid.children).filter(el=>el.matches('.module-card'));
+    const children=Array.from(grid.children);
+    const cards=children.filter(el=>el.matches('.module-card'));
     if(!cards.length) return;
     const isComplete=card=>Array.from(card.querySelectorAll('.module-actions a[href]'))
       .some(link=>{
@@ -800,16 +801,19 @@ setLanguage(savedLanguage);
       });
     const completed=cards.filter(isComplete);
     const upcoming=cards.filter(card=>!isComplete(card));
-    grid.querySelectorAll(':scope > .module-group-heading').forEach(el=>el.remove());
+    const other=children.filter(el=>!el.matches('.module-card,.module-group-heading'));
     const heading=(label,extra)=>{const h=document.createElement('div');h.className='module-group-heading'+(extra?' '+extra:'');h.textContent=label;return h;};
+    const fragment=document.createDocumentFragment();
     if(completed.length){
-      grid.insertBefore(heading('✓ সম্পন্ন মডিউল'),cards[0]);
-      completed.forEach(card=>grid.appendChild(card));
+      fragment.appendChild(heading('✓ সম্পন্ন মডিউল'));
+      completed.forEach(card=>fragment.appendChild(card));
     }
     if(upcoming.length){
-      grid.appendChild(heading('⏳ উন্নয়নাধীন মডিউল','upcoming'));
-      upcoming.forEach(card=>grid.appendChild(card));
+      fragment.appendChild(heading('⏳ উন্নয়নাধীন মডিউল','upcoming'));
+      upcoming.forEach(card=>fragment.appendChild(card));
     }
+    other.forEach(el=>fragment.appendChild(el));
+    grid.replaceChildren(fragment);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',arrangeModules);
   else arrangeModules();
