@@ -481,6 +481,44 @@ main{position:fixed!important;top:112px!important;bottom:54px!important;left:0!i
 
 
 
+<style id="lal-detail-pages-style">
+/* Individual service pages and developer desk */
+.lal-route{width:min(980px,94%);margin:24px auto 90px;color:#26364a}
+.lal-route .route-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.lal-route .route-back{display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border:1px solid #dfe5ec;border-radius:10px;background:#fff;color:#34445a;text-decoration:none;font-weight:700}
+.lal-route .route-kicker{color:#8e3048;font-size:12px;font-weight:800;letter-spacing:1px}
+.lal-route .route-hero{padding:clamp(20px,4vw,34px);border:1px solid #e1e6ec;border-radius:20px;background:linear-gradient(135deg,#fff,#f7f8fa);box-shadow:0 8px 25px rgba(31,45,61,.06)}
+.lal-route .route-title-row{display:flex;align-items:center;gap:16px}
+.lal-route .route-icon{width:64px;height:64px;display:grid;place-items:center;flex:0 0 64px;border-radius:17px;background:#f7edf0;color:#8e3048;font-size:34px}
+.lal-route h1{margin:0;color:#26364a;font-size:clamp(22px,4vw,34px);line-height:1.4}
+.lal-route .route-subtitle{margin:7px 0 0;color:#8e3048;font-weight:700;font-size:13px;line-height:1.7}
+.lal-route .route-description{margin:18px 0 0;color:#596a7e;font-size:15px;line-height:1.9}
+.lal-route .route-status{display:inline-flex;margin-top:16px;padding:6px 10px;border-radius:30px;background:#f1f4f7;color:#596a7e;font-size:12px;font-weight:700}
+.lal-route .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.lal-route .route-panel{padding:20px;border:1px solid #e1e6ec;border-radius:16px;background:#fff;box-shadow:0 4px 15px rgba(31,45,61,.035)}
+.lal-route h2{margin:0 0 13px;font-size:18px;color:#26364a}
+.lal-route .route-list{margin:0;padding-left:22px;color:#5c6c7f;line-height:1.9;font-size:14px}
+.lal-route .route-list li{padding:3px 0}
+.lal-route .route-steps{display:grid;gap:10px;counter-reset:route}
+.lal-route .route-step{display:flex;gap:11px;align-items:flex-start;color:#596a7e;line-height:1.75;font-size:14px}
+.lal-route .route-step:before{counter-increment:route;content:counter(route);width:27px;height:27px;display:grid;place-items:center;flex:0 0 27px;border-radius:50%;background:#f7edf0;color:#8e3048;font-weight:800}
+.lal-route .route-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.lal-route .route-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 17px;border:1px solid #8e3048;border-radius:10px;background:#8e3048;color:#fff;text-decoration:none;font-size:14px;font-weight:800;cursor:pointer}
+.lal-route .route-button.light{background:#fff;color:#8e3048;border-color:#e5cbd3}
+.lal-route .route-note{margin-top:14px;padding:13px 15px;border-radius:12px;background:#f7f8fa;color:#69788a;font-size:12px;line-height:1.8}
+.lal-route .dev-lock-note{padding:15px;border:1px solid #ead9bf;border-radius:12px;background:#fffaf1;color:#755b32;font-size:13px;line-height:1.8}
+.lal-route .dev-table{width:100%;border-collapse:collapse;font-size:13px}
+.lal-route .dev-table th,.lal-route .dev-table td{padding:10px 8px;border-bottom:1px solid #edf0f3;text-align:left;vertical-align:top}
+.lal-route .dev-table th{color:#526174}
+.lal-route .dev-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lal-route .dev-form label{display:grid;gap:5px;color:#526174;font-size:12px;font-weight:700}
+.lal-route .dev-form input,.lal-route .dev-form select{width:100%;min-height:42px;padding:9px 11px;border:1px solid #dfe5ec;border-radius:9px;background:#fff;color:#26364a;font:inherit}
+.lal-route .dev-form .wide{grid-column:1/-1}
+.module-card .module-actions .action{min-height:40px!important;font-size:12px!important}
+#lalDeveloperButton{display:inline-flex;align-items:center;justify-content:center;background:#8e3048;color:#fff!important;border:1px solid #8e3048;text-decoration:none;font-weight:800;box-shadow:0 2px 7px #8e304822}
+.module-card .module-actions .action:not(.secondary)::after{content:none!important}
+@media(max-width:680px){.lal-route .route-grid{grid-template-columns:1fr}.lal-route .dev-form{grid-template-columns:1fr}.lal-route .dev-form .wide{grid-column:auto}.lal-route .route-icon{width:52px;height:52px;flex-basis:52px;font-size:28px}.lal-route{margin-top:14px}}
+</style>
 <style id="lal-clean-home-design">
 :root{color-scheme:dark}
 html,body{min-height:100%;background:#101827!important}
