@@ -767,24 +767,64 @@ setLanguage(savedLanguage);
 <div class="fixed-running-bar"><img src="Logo.jpg" alt="LAL"><div class="ticker-window"><div class="ticker-track"><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span><span>লাল ডিজিটাল সেবা • আপনার ডিজিটাল কাজকে সহজ ও সুন্দর করতে আমরা আছি আপনার পাশে।</span></div></div></div>
 
 <style id="lal-module-groups-style">
-.apps .module-group-heading{
-  grid-column:1/-1;
-  margin:7px 0 0;
-  padding:0;
-  color:#fff;
-  font-size:14px;
-  line-height:1.35;
-  font-weight:700;
-  letter-spacing:0;
-  background:none;
-  border:0;
-  border-radius:0;
-  box-shadow:none;
+/* Calm, professional LAL home-page palette */
+:root{--bg:#f4f6f8;--border:#e2e7ed;--text:#202b3a;--muted:#657386;--gold:#a87532;--red:#8e3048}
+html{background:#f4f6f8}
+body{color:#202b3a;background:linear-gradient(180deg,#f8fafc 0%,#f1f4f7 52%,#edf1f5 100%)}
+header.three-panel-header{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dfe5ec!important;box-shadow:0 5px 22px rgba(26,39,56,.07)!important;backdrop-filter:blur(16px)}
+.header-box{background:linear-gradient(145deg,#fff,#f5f7fa)!important;border:1px solid #e2e7ed!important;box-shadow:inset 0 1px 0 #fff,0 3px 10px rgba(27,42,60,.05)!important}
+.header-left .brand-copy h1{color:#812d45!important}
+.header-left .brand-copy .brand-address,.header-left .brand-copy .brand-person{color:#687587!important}
+.header-center h1{color:#26364a!important;text-shadow:none!important}
+.header-clock{color:#667487!important}.header-clock strong{color:#8e3048!important}
+.language{background:#f1f4f7!important;border-color:#e0e6ed!important}
+.language button{color:#526174!important}.language button.active{background:#8e3048!important;color:#fff!important;box-shadow:0 2px 7px #8e304833!important}
+.lifetime-banner{background:linear-gradient(115deg,#fff,#f2f5f8 58%,#f7eff2)!important;border:1px solid #e0e5eb!important;box-shadow:0 8px 24px rgba(30,45,62,.06)!important}
+.lifetime-banner .eyebrow{color:#8e3048!important;letter-spacing:1.4px}
+.lifetime-banner h2{background:none!important;color:#26364a!important}
+.lifetime-banner p{color:#657386!important}
+.lifetime-banner .action{background:#8e3048!important;color:#fff!important}
+.section-heading h2{color:#26364a}
+.section-heading span{color:#8e3048!important}
+.apps{gap:14px!important;padding-bottom:86px!important}
+.apps .module-group-heading{grid-column:1/-1;margin:10px 0 0;padding:11px 14px;border:1px solid #e1e6ec;border-radius:12px;background:#fff;color:#26364a;font-size:15px;font-weight:750;box-shadow:0 3px 10px rgba(30,45,62,.035)}
+.apps .module-group-heading:before{content:"";display:inline-block;width:4px;height:17px;margin-right:9px;vertical-align:-4px;border-radius:5px;background:#8e3048}
+.apps .module-group-heading.upcoming{margin-top:12px;color:#667487;background:#f7f9fb}
+.module-card.card{background:#fff!important;border:1px solid #e1e6ec!important;border-radius:16px!important;box-shadow:0 5px 16px rgba(31,45,61,.055)!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.module-card.card:before{display:none}
+.module-card.card:hover{transform:translateY(-3px);border-color:#c9d2dd!important;box-shadow:0 10px 24px rgba(31,45,61,.09)!important;background:#fff!important}
+.module-card .app-icon{background:#f7edf0!important;border:1px solid #f0dce2!important;color:#8e3048}
+.module-card h3{color:#26364a!important}
+.module-card .module-subtitle{color:#8e3048!important;letter-spacing:.5px}
+.module-card .module-short{color:#687587!important}
+.module-card details{border-top:1px solid #edf0f3!important}
+.module-card summary{color:#8e3048!important}
+.module-card .module-quote{background:#f7f9fb!important;border-left-color:#8e3048!important;color:#526174!important}
+.module-card .module-actions .action{background:#8e3048!important;border:1px solid #8e3048!important;color:#fff!important;border-radius:9px!important;min-height:38px!important;font-size:12px!important}
+.module-card .module-actions .action.secondary{background:#f4f6f8!important;color:#788596!important;border-color:#e3e8ee!important}
+.fixed-running-bar{background:rgba(255,255,255,.97)!important;border-top:1px solid #dfe5ec!important;box-shadow:0 -4px 18px rgba(31,45,61,.07)!important}
+.fixed-running-bar .ticker-track{color:#526174}
+@media(max-width:700px){
+ .apps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .module-card.card{padding:13px 11px!important}
+ .module-card .module-top{align-items:center;gap:8px!important}
+ .module-card .app-icon{width:38px!important;height:38px!important;flex-basis:38px!important;font-size:21px!important}
+ .module-card h3{font-size:12px!important;line-height:1.4!important}
+ .module-card .module-subtitle{font-size:9px!important}
+ .module-card .module-short{display:block!important;font-size:10px!important;line-height:1.5!important}
+ .module-card details{display:block!important}
+ .module-card summary{font-size:10px!important}
+ .module-card .module-actions{margin-top:9px!important}
+ .module-card .module-actions .action{display:inline-flex!important;width:100%!important;min-height:34px!important;font-size:10px!important;padding:7px 5px!important}
+ .module-card .module-actions .action:not(.secondary)::after{content:none!important}
+ .module-card .module-actions .action.secondary{display:inline-flex!important}
 }
-.apps .module-group-heading.upcoming{
-  margin-top:12px;
-  color:#d5e2ed;
+@media(max-width:390px){
+ .apps{gap:7px!important}
+ .module-card.card{padding:11px 9px!important}
+ .module-card h3{font-size:11px!important}
 }
+@media(prefers-reduced-motion:reduce){.module-card.card{transition:none!important}}
 </style>
 <script id="lal-auto-module-groups">
 (function(){
@@ -794,23 +834,32 @@ setLanguage(savedLanguage);
     const children=Array.from(grid.children);
     const cards=children.filter(el=>el.matches('.module-card'));
     if(!cards.length) return;
-    const isComplete=card=>Array.from(card.querySelectorAll('.module-actions a[href]'))
-      .some(link=>{
+    const isWorking=card=>{
+      const links=Array.from(card.querySelectorAll('.module-actions a[href]'));
+      const hasDestination=links.some(link=>{
         const href=(link.getAttribute('href')||'').trim();
         return href!=='' && href!=='#' && !/^javascript:/i.test(href);
       });
-    const completed=cards.filter(isComplete);
-    const upcoming=cards.filter(card=>!isComplete(card));
+      const status=(card.querySelector('.status')?.textContent||'')+' '+(card.querySelector('.module-actions')?.textContent||'');
+      return hasDestination || /চালু|চলমান|প্রায় শেষ|প্রায় শেষ|পরীক্ষামূলক|ready|live|in progress/i.test(status);
+    };
+    const working=cards.filter(isWorking);
+    const planned=cards.filter(card=>!isWorking(card));
     const other=children.filter(el=>!el.matches('.module-card,.module-group-heading'));
-    const heading=(label,extra)=>{const h=document.createElement('div');h.className='module-group-heading'+(extra?' '+extra:'');h.textContent=label;return h;};
+    const heading=(label,extra)=>{
+      const h=document.createElement('div');
+      h.className='module-group-heading'+(extra?' '+extra:'');
+      h.textContent=label;
+      return h;
+    };
     const fragment=document.createDocumentFragment();
-    if(completed.length){
-      fragment.appendChild(heading('✓ সম্পন্ন মডিউল'));
-      completed.forEach(card=>fragment.appendChild(card));
+    if(working.length){
+      fragment.appendChild(heading('✓ প্রস্তুত ও চলমান মডিউল'));
+      working.forEach(card=>fragment.appendChild(card));
     }
-    if(upcoming.length){
-      fragment.appendChild(heading('⏳ উন্নয়নাধীন মডিউল','upcoming'));
-      upcoming.forEach(card=>fragment.appendChild(card));
+    if(planned.length){
+      fragment.appendChild(heading('পরবর্তী ধাপে তৈরি হবে'));
+      planned.forEach(card=>fragment.appendChild(card));
     }
     other.forEach(el=>fragment.appendChild(el));
     grid.replaceChildren(fragment);
