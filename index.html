@@ -543,6 +543,35 @@ header{background:rgba(13,17,29,.58)!important;backdrop-filter:blur(22px) satura
 @media(prefers-reduced-motion:reduce){.module-card.card{transition:none!important}}
 </style>
 
+
+<style id="lal-final-glass-correction">
+/* Final homepage correction: remove the blank group panel and make each whole module tile the button */
+body{background:radial-gradient(ellipse at 12% 4%,rgba(133,35,69,.34),transparent 38%),radial-gradient(ellipse at 88% 24%,rgba(45,91,137,.28),transparent 38%),linear-gradient(140deg,#0b1220 0%,#171a2b 52%,#101b2a 100%)!important;background-attachment:fixed!important}
+main{background:transparent!important}
+.apps{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;align-items:stretch!important;padding:10px 0 70px!important}
+.apps>.module-group-heading{grid-column:1/-1!important;display:flex!important;align-items:center!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;margin:8px 0 2px!important;padding:10px 14px!important;border:1px solid rgba(255,255,255,.18)!important;border-left:4px solid #f2a04a!important;border-radius:12px!important;background:linear-gradient(110deg,rgba(255,255,255,.13),rgba(255,255,255,.035))!important;color:#fff1df!important;font-size:14px!important;line-height:1.5!important;box-shadow:inset 0 1px rgba(255,255,255,.16),0 7px 18px rgba(0,0,0,.13)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important}
+.apps>.module-group-heading:before{content:""!important;display:inline-block!important;width:4px!important;height:17px!important;margin-right:9px!important;vertical-align:middle!important;border-radius:8px!important;background:#f2a04a!important}
+.module-card.card{position:relative!important;isolation:isolate!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:0!important;min-width:0!important;min-height:205px!important;height:100%!important;overflow:hidden!important;padding:19px 17px 16px!important;border:1px solid rgba(255,255,255,.27)!important;border-radius:21px!important;background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.075) 48%,rgba(255,255,255,.11))!important;backdrop-filter:blur(19px) saturate(145%)!important;-webkit-backdrop-filter:blur(19px) saturate(145%)!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.42),inset 0 -1px 1px rgba(255,255,255,.08),0 12px 28px rgba(0,0,0,.28)!important;cursor:pointer!important;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease!important}
+.module-card.card:before{content:""!important;position:absolute!important;z-index:-1!important;display:block!important;inset:0 0 auto!important;width:100%!important;height:52%!important;left:0!important;right:0!important;border-radius:20px 20px 48% 48%!important;background:linear-gradient(180deg,rgba(255,255,255,.20),transparent)!important;opacity:1!important;pointer-events:none!important}
+.module-card.card:after{content:""!important;position:absolute!important;z-index:-1!important;display:block!important;width:160px!important;height:160px!important;right:-75px!important;bottom:-85px!important;border-radius:50%!important;background:radial-gradient(circle,rgba(242,160,74,.19),transparent 70%)!important;pointer-events:none!important}
+.module-card.card:hover{transform:translateY(-5px)!important;border-color:rgba(255,211,161,.72)!important;background:linear-gradient(145deg,rgba(255,255,255,.25),rgba(255,255,255,.095))!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.5),0 18px 34px rgba(0,0,0,.34),0 0 24px rgba(183,70,98,.13)!important}
+.module-card.card:active{transform:translateY(-1px) scale(.99)!important}
+.module-card .module-top{display:flex!important;align-items:center!important;gap:12px!important;position:relative!important;z-index:1!important}
+.module-card .app-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;display:grid!important;place-items:center!important;border:1px solid rgba(255,255,255,.34)!important;border-radius:15px!important;background:linear-gradient(145deg,rgba(255,255,255,.28),rgba(255,255,255,.08))!important;color:#fff!important;box-shadow:inset 0 1px 1px #ffffff77,0 5px 12px #0002!important;font-size:26px!important}
+.module-card h3{margin:0!important;color:#fff!important;font-size:17px!important;font-weight:800!important;line-height:1.5!important;text-shadow:0 2px 10px rgba(0,0,0,.35)!important}
+.module-card .module-subtitle{margin:12px 0 7px!important;color:#ffd39e!important;font-size:11px!important;font-weight:800!important;line-height:1.6!important}
+.module-card .module-short{margin:0 0 10px!important;min-height:0!important;color:rgba(255,255,255,.9)!important;font-size:13px!important;line-height:1.8!important;text-shadow:0 1px 4px rgba(0,0,0,.2)!important}
+.module-card details{display:none!important}
+.module-card .module-actions{display:none!important}
+.module-card .status{color:#ffe0b8!important}
+.module-card:focus-visible{outline:3px solid #ffc77c!important;outline-offset:3px!important}
+#lalDeveloperButton{background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.07))!important;border:1px solid rgba(255,255,255,.32)!important;border-radius:12px!important;box-shadow:inset 0 1px #ffffff66,0 6px 16px #0003!important;backdrop-filter:blur(14px)!important}
+@media(max-width:850px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}}
+@media(max-width:560px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:8px 0 55px!important}.apps>.module-group-heading{font-size:12px!important;margin:3px 0 1px!important;padding:9px 11px!important}.module-card.card{min-height:190px!important;padding:14px 12px 13px!important;border-radius:18px!important}.module-card.card:before{border-radius:17px 17px 42% 42%!important}.module-card .module-top{gap:8px!important}.module-card .app-icon{width:40px!important;height:40px!important;flex-basis:40px!important;border-radius:12px!important;font-size:21px!important}.module-card h3{font-size:13px!important;line-height:1.45!important}.module-card .module-subtitle{font-size:9px!important;margin:9px 0 5px!important}.module-card .module-short{font-size:11px!important;line-height:1.65!important}}
+@media(max-width:360px){.apps{grid-template-columns:1fr!important}.module-card.card{min-height:160px!important;padding:16px!important}.module-card h3{font-size:15px!important}.module-card .module-short{font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.module-card.card{transition:none!important}}
+</style>
+
 </head>
 <body>
 <div class="top-glow"></div>
