@@ -870,5 +870,161 @@ header.three-panel-header{background:rgba(255,255,255,.96)!important;border-bott
 })();
 </script>
 
+
+<style id="lal-detail-pages-style">
+/* Individual service pages and developer desk */
+.lal-route{width:min(980px,94%);margin:24px auto 90px;color:#26364a}
+.lal-route .route-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.lal-route .route-back{display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border:1px solid #dfe5ec;border-radius:10px;background:#fff;color:#34445a;text-decoration:none;font-weight:700}
+.lal-route .route-kicker{color:#8e3048;font-size:12px;font-weight:800;letter-spacing:1px}
+.lal-route .route-hero{padding:clamp(20px,4vw,34px);border:1px solid #e1e6ec;border-radius:20px;background:linear-gradient(135deg,#fff,#f7f8fa);box-shadow:0 8px 25px rgba(31,45,61,.06)}
+.lal-route .route-title-row{display:flex;align-items:center;gap:16px}
+.lal-route .route-icon{width:64px;height:64px;display:grid;place-items:center;flex:0 0 64px;border-radius:17px;background:#f7edf0;color:#8e3048;font-size:34px}
+.lal-route h1{margin:0;color:#26364a;font-size:clamp(22px,4vw,34px);line-height:1.4}
+.lal-route .route-subtitle{margin:7px 0 0;color:#8e3048;font-weight:700;font-size:13px;line-height:1.7}
+.lal-route .route-description{margin:18px 0 0;color:#596a7e;font-size:15px;line-height:1.9}
+.lal-route .route-status{display:inline-flex;margin-top:16px;padding:6px 10px;border-radius:30px;background:#f1f4f7;color:#596a7e;font-size:12px;font-weight:700}
+.lal-route .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.lal-route .route-panel{padding:20px;border:1px solid #e1e6ec;border-radius:16px;background:#fff;box-shadow:0 4px 15px rgba(31,45,61,.035)}
+.lal-route h2{margin:0 0 13px;font-size:18px;color:#26364a}
+.lal-route .route-list{margin:0;padding-left:22px;color:#5c6c7f;line-height:1.9;font-size:14px}
+.lal-route .route-list li{padding:3px 0}
+.lal-route .route-steps{display:grid;gap:10px;counter-reset:route}
+.lal-route .route-step{display:flex;gap:11px;align-items:flex-start;color:#596a7e;line-height:1.75;font-size:14px}
+.lal-route .route-step:before{counter-increment:route;content:counter(route);width:27px;height:27px;display:grid;place-items:center;flex:0 0 27px;border-radius:50%;background:#f7edf0;color:#8e3048;font-weight:800}
+.lal-route .route-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.lal-route .route-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 17px;border:1px solid #8e3048;border-radius:10px;background:#8e3048;color:#fff;text-decoration:none;font-size:14px;font-weight:800;cursor:pointer}
+.lal-route .route-button.light{background:#fff;color:#8e3048;border-color:#e5cbd3}
+.lal-route .route-note{margin-top:14px;padding:13px 15px;border-radius:12px;background:#f7f8fa;color:#69788a;font-size:12px;line-height:1.8}
+.lal-route .dev-lock-note{padding:15px;border:1px solid #ead9bf;border-radius:12px;background:#fffaf1;color:#755b32;font-size:13px;line-height:1.8}
+.lal-route .dev-table{width:100%;border-collapse:collapse;font-size:13px}
+.lal-route .dev-table th,.lal-route .dev-table td{padding:10px 8px;border-bottom:1px solid #edf0f3;text-align:left;vertical-align:top}
+.lal-route .dev-table th{color:#526174}
+.lal-route .dev-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lal-route .dev-form label{display:grid;gap:5px;color:#526174;font-size:12px;font-weight:700}
+.lal-route .dev-form input,.lal-route .dev-form select{width:100%;min-height:42px;padding:9px 11px;border:1px solid #dfe5ec;border-radius:9px;background:#fff;color:#26364a;font:inherit}
+.lal-route .dev-form .wide{grid-column:1/-1}
+.module-card .module-actions .action{min-height:40px!important;font-size:12px!important}
+.module-card .module-actions .action:not(.secondary)::after{content:none!important}
+@media(max-width:680px){.lal-route .route-grid{grid-template-columns:1fr}.lal-route .dev-form{grid-template-columns:1fr}.lal-route .dev-form .wide{grid-column:auto}.lal-route .route-icon{width:52px;height:52px;flex-basis:52px;font-size:28px}.lal-route{margin-top:14px}}
+</style>
+<script id="lal-detail-pages">
+(function(){
+  const qs=new URLSearchParams(location.search);
+  const cards=Array.from(document.querySelectorAll('.module-card'));
+  const slugify=s=>(s||'module').toLowerCase().normalize('NFKD').replace(/[^a-z0-9\u0980-\u09ff]+/g,'-').replace(/^-|-$/g,'')||'module';
+  const modules=cards.map((card,index)=>{
+    const title=card.querySelector('h3')?.textContent.trim()||('মডিউল '+(index+1));
+    const icon=card.querySelector('.app-icon')?.textContent.trim()||'▣';
+    const subtitle=card.querySelector('.module-subtitle')?.textContent.trim()||'LAL DIGITAL SERVICES';
+    const description=card.querySelector('.module-short')?.textContent.trim()||'এই মডিউলের বিস্তারিত তথ্য প্রস্তুত করা হচ্ছে।';
+    const quote=card.querySelector('.module-quote')?.textContent.trim()||'';
+    const oldLink=card.querySelector('.module-actions a[href]');
+    const source=oldLink?.getAttribute('href')||'';
+    const slug=slugify(title)+'-'+(index+1);
+    const available=!!oldLink;
+    return {card,title,icon,subtitle,description,quote,source,slug,available,index};
+  });
+  function addDeveloperButton(){
+    const right=document.querySelector('.header-right');
+    if(!right||document.getElementById('lalDeveloperButton'))return;
+    const b=document.createElement('a');b.id='lalDeveloperButton';b.className='route-button';b.href='?developer=1';b.textContent='⚙ ডেভেলপার সেটিংস';
+    b.style.cssText='min-height:34px;padding:7px 10px;font-size:11px;border-radius:9px;white-space:nowrap';
+    right.appendChild(b);
+  }
+  function contactUrl(m){
+    const msg='আসসালামু আলাইকুম। আমি '+m.title+' মডিউলটি ব্যবহার করতে আগ্রহী। বিস্তারিত, মূল্য, পেমেন্ট এবং ইনস্টলেশন পদ্ধতি জানাবেন।';
+    return 'https://wa.me/8801711167661?text='+encodeURIComponent(msg);
+  }
+  function makeRoute(){
+    const main=document.querySelector('body > main');
+    const footer=document.querySelector('footer');
+    if(main)main.style.display='none';
+    if(footer)footer.style.display='none';
+    const page=document.createElement('main');page.className='lal-route';page.id='lal-route';
+    document.querySelector('header')?.insertAdjacentElement('afterend',page);
+    return page;
+  }
+  function homeLink(){return '<a class="route-back" href="/">← মূল ওয়েবসাইটে ফিরে যান</a>';}
+  function renderModule(m){
+    const page=makeRoute();
+    const features=(m.subtitle.split(/[•|,]/).map(x=>x.trim()).filter(x=>x&&x!=='LAL DIGITAL SERVICES'));
+    const steps=[
+      'মডিউলটির পরিচিতি ও আপনার প্রতিষ্ঠানের প্রয়োজন অনুযায়ী সেটআপের বিষয়গুলো ডেভেলপারের সঙ্গে নিশ্চিত করুন।',
+      'প্রতিষ্ঠানের নাম, ঠিকানা, যোগাযোগের তথ্য এবং প্রয়োজনীয় প্রাথমিক সেটিংস নির্ধারণ করুন।',
+      'মডিউল অনুযায়ী পণ্য, গ্রাহক, সেবা বা অন্যান্য প্রয়োজনীয় তথ্য যুক্ত করুন।',
+      'দৈনন্দিন কাজের সময় এন্ট্রি, হিসাব ও প্রয়োজনীয় নথি সংরক্ষণ করুন।',
+      'রিপোর্ট ও ব্যাকআপের ব্যবস্থা বুঝে নিয়ে ব্যবহার শুরু করুন।'
+    ];
+    const status=m.available?'এই মডিউলের একটি লিংক বা ডেমো রেফারেন্স পাওয়া গেছে; পূর্ণাঙ্গ ইনস্টলেশন ও লাইসেন্স ডেভেলপারের মাধ্যমে নিশ্চিত হবে।':'এই মডিউলটি পরিকল্পনা/উন্নয়ন পর্যায়ে রয়েছে। প্রস্তুত হলে ডেভেলপার জানাবেন।';
+    page.innerHTML=
+      '<div class="route-top">'+homeLink()+'<span class="route-kicker">LAL DIGITAL SERVICES / MODULE DETAILS</span></div>'+
+      '<section class="route-hero"><div class="route-title-row"><div class="route-icon"></div><div><h1></h1><div class="route-subtitle"></div></div></div><p class="route-description"></p><span class="route-status"></span>'+
+      '<div class="route-actions"><a class="route-button contact-developer" target="_blank" rel="noopener">ডেভেলপারের সঙ্গে যোগাযোগ / মূল্য জানুন</a><a class="route-button light" href="mailto:mslalenterprise@gmail.com?subject='+encodeURIComponent('LAL Digital Services - '+m.title)+'">ইমেইল করুন</a></div>'+
+      '<div class="route-note">ভিজিটররা এই পেজে মডিউলের কাজ ও সুবিধা দেখতে পারবেন। সরাসরি ডাউনলোড বা ইনস্টল সুবিধা এখানে দেওয়া হচ্ছে না। যাচাই করা পেমেন্টের পর ডেভেলপার গ্রাহককে আলাদা ইনস্টলেশন/ডাউনলোড লিংক দেবেন।</div></section>'+
+      '<div class="route-grid"><section class="route-panel"><h2>এই মডিউলে যে কাজগুলো অন্তর্ভুক্ত</h2><ul class="route-list feature-list"></ul></section>'+
+      '<section class="route-panel"><h2>ব্যবহারের ধারাবাহিক ধাপ</h2><div class="route-steps"></div></section></div>'+
+      '<section class="route-panel" style="margin-top:14px"><h2>ব্যবহার ও সরবরাহ পদ্ধতি</h2><ol class="route-list"><li>মডিউলের বিস্তারিত দেখে প্রয়োজনীয়তা নিশ্চিত করুন।</li><li>ডেভেলপারের সঙ্গে যোগাযোগ করে মূল্য ও পেমেন্ট পদ্ধতি জেনে নিন।</li><li>পেমেন্ট যাচাই হলে ডেভেলপার আপনার প্রতিষ্ঠানের জন্য নির্দিষ্ট লিংক প্রস্তুত করবেন।</li><li>প্রাপ্ত লিংক দিয়ে নির্ধারিত মডিউল ডাউনলোড/ইনস্টল করুন।</li><li>প্রয়োজনে ডেভেলপারের কাছ থেকে প্রাথমিক সেটআপ সহায়তা নিন।</li></ol></section>';
+    page.querySelector('.route-icon').textContent=m.icon;
+    page.querySelector('h1').textContent=m.title;
+    page.querySelector('.route-subtitle').textContent=m.subtitle;
+    page.querySelector('.route-description').textContent=m.description+(m.quote?' '+m.quote:'');
+    page.querySelector('.route-status').textContent=status;
+    page.querySelector('.contact-developer').href=contactUrl(m);
+    const ul=page.querySelector('.feature-list');
+    (features.length?features:['প্রতিষ্ঠানের প্রয়োজন অনুযায়ী প্রাথমিক সেটআপ','দৈনন্দিন তথ্য ব্যবস্থাপনা','রিপোর্ট ও প্রয়োজনীয় হিসাব','ডেটা সংরক্ষণ ও ব্যাকআপ']).forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    const stepBox=page.querySelector('.route-steps');
+    steps.forEach(x=>{const d=document.createElement('div');d.className='route-step';d.textContent=x;stepBox.appendChild(d);});
+    document.title=m.title+' | LAL Digital Services';
+  }
+  function renderDeveloper(){
+    const page=makeRoute();
+    page.innerHTML='<div class="route-top">'+homeLink()+'<span class="route-kicker">DEVELOPER CONTROL DESK</span></div>'+
+      '<section class="route-hero"><div class="route-title-row"><div class="route-icon">⚙</div><div><h1>ডেভেলপার সেটিংস</h1><div class="route-subtitle">LAL DIGITAL SERVICES • MODULE CONTROL</div></div></div>'+
+      '<p class="route-description">মডিউলগুলোর অবস্থা দেখা, গ্রাহকের অর্ডার/যোগাযোগের বার্তা তৈরি এবং সরবরাহের ধাপ পরিচালনার জন্য এই কন্ট্রোল পেজ।</p></section>'+
+      '<section class="route-panel" style="margin-top:14px"><div class="dev-lock-note"><b>নিরাপত্তা সংক্রান্ত গুরুত্বপূর্ণ কথা:</b> এই ওয়েবসাইট এখন GitHub Pages-এর স্ট্যাটিক সংস্করণ। তাই এখানে পাসওয়ার্ড, পেমেন্ট যাচাই বা সত্যিকারের একবার-ব্যবহারযোগ্য ডাউনলোড লিংক নিরাপদভাবে চালু করা সম্ভব নয়। সেগুলোর জন্য Backend ও Developer Login সংযুক্ত করতে হবে। আপাতত নিচের অর্ডার বার্তা ও মডিউল তালিকা কাজ করবে; নিরাপদ নিয়ন্ত্রণ সার্ভার সংযুক্তির পর সক্রিয় হবে।</div></section>'+
+      '<div class="route-grid"><section class="route-panel"><h2>গ্রাহকের অর্ডার / পেমেন্ট যোগাযোগ</h2><div class="dev-form">'+
+      '<label>গ্রাহকের নাম<input id="lalCustomerName" placeholder="গ্রাহকের নাম"></label><label>মোবাইল নম্বর<input id="lalCustomerPhone" placeholder="01XXXXXXXXX" inputmode="tel"></label>'+
+      '<label class="wide">মডিউল<select id="lalCustomerModule"></select></label><label class="wide">অর্ডারের অবস্থা<select id="lalOrderState"><option>মূল্য জানতে চেয়েছেন</option><option>পেমেন্টের অপেক্ষায়</option><option>পেমেন্ট যাচাই করতে হবে</option><option>পেমেন্ট যাচাই হয়েছে</option><option>ইনস্টলেশন সহায়তা প্রয়োজন</option></select></label>'+
+      '<div class="wide"><button type="button" class="route-button" id="lalMakeOrderMessage">WhatsApp-এ অর্ডার বার্তা তৈরি করুন</button></div></div></section>'+
+      '<section class="route-panel"><h2>মডিউল সরবরাহ নিয়ন্ত্রণ</h2><p class="route-description" style="margin-top:0">পেমেন্ট যাচাইয়ের পর ডেভেলপার নির্দিষ্ট গ্রাহকের জন্য ডাউনলোড লিংক ইস্যু করবেন।</p><button type="button" class="route-button light" disabled>একবার ব্যবহারযোগ্য লিংক তৈরি — Backend প্রয়োজন</button><div class="route-note">শুধু বাটন লুকিয়ে রাখলে নিরাপত্তা হয় না। লিংক একবার ব্যবহারের পর বাতিল, মেয়াদ, গ্রাহক-ভিত্তিক অনুমতি এবং ডাউনলোড লগ সার্ভার থেকে নিয়ন্ত্রণ করতে হবে।</div></section></div>'+
+      '<section class="route-panel" style="margin-top:14px"><h2>সব মডিউল — ডেভেলপার তালিকা</h2><div style="overflow-x:auto"><table class="dev-table"><thead><tr><th>মডিউল</th><th>বর্তমান রেফারেন্স</th><th>পেজ</th></tr></thead><tbody id="lalDeveloperModuleRows"></tbody></table></div></section>';
+    const select=page.querySelector('#lalCustomerModule');
+    modules.forEach(m=>{const o=document.createElement('option');o.value=m.slug;o.textContent=m.title;select.appendChild(o);});
+    const rows=page.querySelector('#lalDeveloperModuleRows');
+    modules.forEach(m=>{const tr=document.createElement('tr');const a=document.createElement('a');a.href='?module='+encodeURIComponent(m.slug);a.textContent='বিস্তারিত';a.style.color='#8e3048';const td1=document.createElement('td');td1.textContent=m.title;const td2=document.createElement('td');td2.textContent=m.available?'ডেমো/লিংক রেফারেন্স আছে':'পরিকল্পিত/উন্নয়নাধীন';const td3=document.createElement('td');td3.appendChild(a);tr.append(td1,td2,td3);rows.appendChild(tr);});
+    page.querySelector('#lalMakeOrderMessage').addEventListener('click',()=>{
+      const name=page.querySelector('#lalCustomerName').value.trim();
+      const phone=page.querySelector('#lalCustomerPhone').value.trim();
+      const m=modules.find(x=>x.slug===select.value);
+      const state=page.querySelector('#lalOrderState').value;
+      if(!name||!phone){alert('গ্রাহকের নাম ও মোবাইল নম্বর লিখুন।');return;}
+      const message='LAL DIGITAL SERVICES — গ্রাহক অর্ডার\nনাম: '+name+'\nমোবাইল: '+phone+'\nমডিউল: '+m.title+'\nঅবস্থা: '+state+'\nপরবর্তী কাজ: মূল্য/পেমেন্ট যাচাই ও অনুমোদিত ডাউনলোড লিংক প্রদান।';
+      window.open('https://wa.me/8801711167661?text='+encodeURIComponent(message),'_blank','noopener');
+    });
+    document.title='ডেভেলপার সেটিংস | LAL Digital Services';
+  }
+  function init(){
+    addDeveloperButton();
+    modules.forEach(m=>{
+      const actions=m.card.querySelector('.module-actions');
+      if(!actions)return;
+      actions.innerHTML='';
+      const a=document.createElement('a');a.className='action';a.href='?module='+encodeURIComponent(m.slug);a.textContent='বিস্তারিত দেখুন →';
+      actions.appendChild(a);
+      m.card.style.cursor='pointer';
+      m.card.addEventListener('click',e=>{if(e.target.closest('a,button,summary'))return;location.href=a.href;});
+      m.card.setAttribute('tabindex','0');
+      m.card.setAttribute('role','link');
+      m.card.addEventListener('keydown',e=>{if(e.key==='Enter'){location.href=a.href;}});
+    });
+    if(qs.get('developer')==='1'){renderDeveloper();return;}
+    const wanted=qs.get('module');
+    if(wanted){const m=modules.find(x=>x.slug===wanted);if(m){renderModule(m);return;}}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
 </body>
 </html>
