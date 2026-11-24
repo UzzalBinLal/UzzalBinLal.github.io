@@ -981,28 +981,16 @@ header.three-panel-header{background:rgba(255,255,255,.96)!important;border-bott
   function renderDeveloper(){
     const page=makeRoute();
     page.innerHTML='<div class="route-top">'+homeLink()+'<span class="route-kicker">DEVELOPER CONTROL DESK</span></div>'+
-      '<section class="route-hero"><div class="route-title-row"><div class="route-icon">⚙</div><div><h1>ডেভেলপার সেটিংস</h1><div class="route-subtitle">LAL DIGITAL SERVICES • MODULE CONTROL</div></div></div>'+
-      '<p class="route-description">মডিউলগুলোর অবস্থা দেখা, গ্রাহকের অর্ডার/যোগাযোগের বার্তা তৈরি এবং সরবরাহের ধাপ পরিচালনার জন্য এই কন্ট্রোল পেজ।</p></section>'+
-      '<section class="route-panel" style="margin-top:14px"><div class="dev-lock-note"><b>নিরাপত্তা সংক্রান্ত গুরুত্বপূর্ণ কথা:</b> এই ওয়েবসাইট এখন GitHub Pages-এর স্ট্যাটিক সংস্করণ। তাই এখানে পাসওয়ার্ড, পেমেন্ট যাচাই বা সত্যিকারের একবার-ব্যবহারযোগ্য ডাউনলোড লিংক নিরাপদভাবে চালু করা সম্ভব নয়। সেগুলোর জন্য Backend ও Developer Login সংযুক্ত করতে হবে। আপাতত নিচের অর্ডার বার্তা ও মডিউল তালিকা কাজ করবে; নিরাপদ নিয়ন্ত্রণ সার্ভার সংযুক্তির পর সক্রিয় হবে।</div></section>'+
-      '<div class="route-grid"><section class="route-panel"><h2>গ্রাহকের অর্ডার / পেমেন্ট যোগাযোগ</h2><div class="dev-form">'+
-      '<label>গ্রাহকের নাম<input id="lalCustomerName" placeholder="গ্রাহকের নাম"></label><label>মোবাইল নম্বর<input id="lalCustomerPhone" placeholder="01XXXXXXXXX" inputmode="tel"></label>'+
-      '<label class="wide">মডিউল<select id="lalCustomerModule"></select></label><label class="wide">অর্ডারের অবস্থা<select id="lalOrderState"><option>মূল্য জানতে চেয়েছেন</option><option>পেমেন্টের অপেক্ষায়</option><option>পেমেন্ট যাচাই করতে হবে</option><option>পেমেন্ট যাচাই হয়েছে</option><option>ইনস্টলেশন সহায়তা প্রয়োজন</option></select></label>'+
-      '<div class="wide"><button type="button" class="route-button" id="lalMakeOrderMessage">WhatsApp-এ অর্ডার বার্তা তৈরি করুন</button></div></div></section>'+
-      '<section class="route-panel"><h2>মডিউল সরবরাহ নিয়ন্ত্রণ</h2><p class="route-description" style="margin-top:0">পেমেন্ট যাচাইয়ের পর ডেভেলপার নির্দিষ্ট গ্রাহকের জন্য ডাউনলোড লিংক ইস্যু করবেন।</p><button type="button" class="route-button light" disabled>একবার ব্যবহারযোগ্য লিংক তৈরি — Backend প্রয়োজন</button><div class="route-note">শুধু বাটন লুকিয়ে রাখলে নিরাপত্তা হয় না। লিংক একবার ব্যবহারের পর বাতিল, মেয়াদ, গ্রাহক-ভিত্তিক অনুমতি এবং ডাউনলোড লগ সার্ভার থেকে নিয়ন্ত্রণ করতে হবে।</div></section></div>'+
-      '<section class="route-panel" style="margin-top:14px"><h2>সব মডিউল — ডেভেলপার তালিকা</h2><div style="overflow-x:auto"><table class="dev-table"><thead><tr><th>মডিউল</th><th>বর্তমান রেফারেন্স</th><th>পেজ</th></tr></thead><tbody id="lalDeveloperModuleRows"></tbody></table></div></section>';
-    const select=page.querySelector('#lalCustomerModule');
-    modules.forEach(m=>{const o=document.createElement('option');o.value=m.slug;o.textContent=m.title;select.appendChild(o);});
+      '<section class="route-hero"><div class="route-title-row"><div class="route-icon">⚙</div><div><h1>ডেভেলপার সেটিংস</h1><div class="route-subtitle">শুধুমাত্র অনুমোদিত ডেভেলপারের জন্য</div></div></div>'+
+      '<p class="route-description">মডিউল, গ্রাহকের পেমেন্ট যাচাই এবং একবার ব্যবহারযোগ্য ডাউনলোড লিংক পরিচালনার জন্য নিরাপদ ডেভেলপার লগইন প্রয়োজন।</p></section>'+
+      '<section class="route-panel" style="margin-top:14px"><div class="dev-lock-note"><b>নিরাপত্তা অবস্থা:</b> মূল ওয়েবসাইট GitHub Pages-এ আছে। নিরাপদ Developer Login ও একবার ব্যবহারযোগ্য লিংক চালু করার Backend কোড আলাদা Private GitHub Repository-তে প্রস্তুত আছে। কিন্তু Render-এ সার্ভার ও PostgreSQL এখনো Deploy/সংযুক্ত হয়নি। তাই এই পেজে এখনো কোনো গোপন নিয়ন্ত্রণ বা লিংক ইস্যু খোলা হচ্ছে না।</div>'+
+      '<div class="route-actions"><button type="button" class="route-button light" disabled>Google দিয়ে ডেভেলপার লগইন — Backend চালুর অপেক্ষায়</button><a class="route-button" href="mailto:mslalenterprise@gmail.com?subject=LAL%20Digital%20Services%20Developer%20Setup">ডেভেলপার ইমেইল</a></div>'+
+      '<div class="route-note">নিরাপদ লগইন চালু হলে অনুমোদিত Google অ্যাকাউন্ট দিয়েই প্রবেশ করা যাবে। সাধারণ ভিজিটর বা গ্রাহক মডিউল নিয়ন্ত্রণ, পেমেন্ট যাচাই কিংবা ডাউনলোড লিংক তৈরি করতে পারবেন না।</div></section>'+
+      '<div class="route-grid"><section class="route-panel"><h2>ডেভেলপার কন্ট্রোল</h2><ul class="route-list"><li>মডিউল চালু/বন্ধ ও প্রকাশনার অবস্থা নিয়ন্ত্রণ</li><li>গ্রাহক ও পেমেন্ট যাচাইয়ের তথ্য দেখা</li><li>নির্দিষ্ট মডিউলের জন্য একবার ব্যবহারযোগ্য লিংক তৈরি</li><li>লিংকের মেয়াদ, ব্যবহার ও বাতিলের অবস্থা দেখা</li><li>প্রয়োজনে লিংক বাতিল করা</li></ul></section>'+
+      '<section class="route-panel"><h2>গ্রাহকের জন্য সরবরাহ পদ্ধতি</h2><ol class="route-list"><li>গ্রাহক মডিউলের বিস্তারিত পেজ থেকে যোগাযোগ করবেন।</li><li>ডেভেলপার মূল্য ও পেমেন্ট নিশ্চিত করবেন।</li><li>পেমেন্ট যাচাই হলে নির্দিষ্ট প্যাকেজের লিংক তৈরি হবে।</li><li>লিংক একবার সফলভাবে ব্যবহার হলে স্বয়ংক্রিয়ভাবে বাতিল হবে।</li><li>গ্রাহক ডাউনলোড করে ইনস্টল করবেন।</li></ol></section></div>'+
+      '<section class="route-panel" style="margin-top:14px"><h2>সব মডিউল — ডেভেলপার তালিকা</h2><div style="overflow-x:auto"><table class="dev-table"><thead><tr><th>মডিউল</th><th>বর্তমান অবস্থা</th><th>বিস্তারিত</th></tr></thead><tbody id="lalDeveloperModuleRows"></tbody></table></div></section>';
     const rows=page.querySelector('#lalDeveloperModuleRows');
-    modules.forEach(m=>{const tr=document.createElement('tr');const a=document.createElement('a');a.href='?module='+encodeURIComponent(m.slug);a.textContent='বিস্তারিত';a.style.color='#8e3048';const td1=document.createElement('td');td1.textContent=m.title;const td2=document.createElement('td');td2.textContent=m.available?'ডেমো/লিংক রেফারেন্স আছে':'পরিকল্পিত/উন্নয়নাধীন';const td3=document.createElement('td');td3.appendChild(a);tr.append(td1,td2,td3);rows.appendChild(tr);});
-    page.querySelector('#lalMakeOrderMessage').addEventListener('click',()=>{
-      const name=page.querySelector('#lalCustomerName').value.trim();
-      const phone=page.querySelector('#lalCustomerPhone').value.trim();
-      const m=modules.find(x=>x.slug===select.value);
-      const state=page.querySelector('#lalOrderState').value;
-      if(!name||!phone){alert('গ্রাহকের নাম ও মোবাইল নম্বর লিখুন।');return;}
-      const message='LAL DIGITAL SERVICES — গ্রাহক অর্ডার\nনাম: '+name+'\nমোবাইল: '+phone+'\nমডিউল: '+m.title+'\nঅবস্থা: '+state+'\nপরবর্তী কাজ: মূল্য/পেমেন্ট যাচাই ও অনুমোদিত ডাউনলোড লিংক প্রদান।';
-      window.open('https://wa.me/8801711167661?text='+encodeURIComponent(message),'_blank','noopener');
-    });
+    modules.forEach(m=>{const tr=document.createElement('tr');const a=document.createElement('a');a.href='?module='+encodeURIComponent(m.slug);a.textContent='পেজ দেখুন';a.style.color='#8e3048';const td1=document.createElement('td');td1.textContent=m.title;const td2=document.createElement('td');td2.textContent=m.available?'ডেমো/লিংক রেফারেন্স আছে':'পরিকল্পিত/উন্নয়নাধীন';const td3=document.createElement('td');td3.appendChild(a);tr.append(td1,td2,td3);rows.appendChild(tr);});
     document.title='ডেভেলপার সেটিংস | LAL Digital Services';
   }
   function init(){
