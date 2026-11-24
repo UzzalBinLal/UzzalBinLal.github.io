@@ -1059,11 +1059,11 @@ header.three-panel-header{background:rgba(255,255,255,.96)!important;border-bott
       return h;
     };
     if(working.length){
-      fragment.appendChild(heading('✓ প্রবেশযোগ্য মডিউল / চালু পেজ','ready-heading'));
+      fragment.appendChild(heading('✓ লিংক/ডেমো সংযুক্ত মডিউল ('+working.length+')','ready-heading'));
       working.forEach(m=>{m.card.dataset.moduleStatus='ready';fragment.appendChild(m.card);});
     }
     if(planned.length){
-      fragment.appendChild(heading('◷ উন্নয়নাধীন / পরবর্তী ধাপে যুক্ত হবে','planned-heading'));
+      fragment.appendChild(heading('◷ এখনো লিংক যুক্ত হয়নি — উন্নয়নাধীন ('+planned.length+')','planned-heading'));
       planned.forEach(m=>{m.card.dataset.moduleStatus='planned';fragment.appendChild(m.card);});
     }
     grid.replaceChildren(fragment);
